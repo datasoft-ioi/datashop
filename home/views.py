@@ -7,3 +7,7 @@ def homepage(request):
 
 def cartpage(request):
     return render(request, 'cart.html')
+
+
+def productdtl(request):
+    return render(request, 'productdtl.html')
