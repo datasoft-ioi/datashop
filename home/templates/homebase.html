@@ -7,23 +7,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>datashop</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- style links -->
     <link rel="stylesheet" href="{% static 'style/app.css' %}">
     <link rel="stylesheet" href="{% static 'style/nav.css' %}">
     <link rel="stylesheet" href="{% static 'style/header.css' %}">
     <link rel="stylesheet" href="{% static 'style/main.css' %}">
+    <!-- google font links-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"rel="stylesheet">
+    <!-- swipwr links -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
 </head>
 
-
 <body>
+
+    <!-- Navbar -->
+
     <nav>
         <div class="navtop">
             <div class="navtopCon">
@@ -45,26 +50,26 @@
         <div class="navBottom">
             <div class="navBottomCon">
                 <div class="logo">
-                    <img src="../media/datashoplogo.png" alt="">
+                    <img src="{% static 'media/datashoplogo.png' %}" alt="">
                 </div>
                 <div class="category">
-                    <button><img src="../media/categoryLogo.svg" alt="">Категория</button>
+                    <button><img src="{% static 'media/categoryLogo.svg' %}" alt="">Категория</button>
                 </div>
                 <div class="navSerach">
                     <input type="text" placeholder="Введите запрос...">
-                    <button><img src="../media/search.svg" alt=""></button>
+                    <button><img src="{% static 'media/search.svg' %}" alt=""></button>
                 </div>
                 <div class="navbottomBtns">
                     <button>
-                        <img src="../media/korzinka.svg" alt="">
+                        <img src="{% static 'media/korzinka.svg' %}" alt="">
                         <span>Корзина</span>
                     </button>
                     <button>
-                        <img src="../media/izbrene.svg" alt="">
+                        <img src="{% static 'media/izbrene.svg' %}" alt="">
                         <span>Избранное</span>
                     </button>
                     <button>
-                        <img src="../media/person.svg" alt="">
+                        <img src="{% static 'media/person.svg' %}" alt="">
                         <span>Профиль</span>
                     </button>
                 </div>
@@ -75,11 +80,66 @@
     {% block content %}
     
     {% endblock content %}
+
+
+    <!-- footer -->
+
+    <footer>
+        <div class="footerCon">
+            <div class="footerHeader">
+                <img src="../media/datashoplogo.png" alt="">
+            </div>
+            <div class="footerMain">
+                <div class="footerAdres">
+                    <div class="chil">
+                        <label class="chil1">Телефон поддержки</label>
+                        <span class="chil2">+998 (99) 999 01 00</span>
+                    </div>
+                    <div class="chil">
+                        <label class="chil1">Адрес</label>
+                        <span class="chil2">Даритал, Ургенч</span>
+                    </div>
+                    <div class="chil">
+                        <label class="chil1">Email</label>
+                        <span class="chil2">datashop@gmail.com</span>
+                    </div>
+                </div>
+                <div class="footerServices">
+                    <ul>
+                        <li>О компании</li>
+                        <li>Вакансии</li>
+                        <li>Возврат и обмен товара</li>
+                        <li>Условия рассрочки</li>
+                        <li>Помощь</li>
+                        <li>Доставка</li>
+                    </ul>
+                    <ul>
+                        <li>О компании</li>
+                        <li>Вакансии</li>
+                        <li>Возврат и обмен товара</li>
+                        <li>Условия рассрочки</li>
+                        <li>Помощь</li>
+                        <li>Доставка</li>
+                    </ul>
+                </div>
+                <div class="FooterPay">
+                    <span class="footerPayTitle">Способы оплаты</span>
+                    <div class="payes">
+                        <button><img src="{% static 'media/uzcard.svg' %}" alt=""></button>
+                        <button><img src="{% static 'media/uzcard.svg' %}" alt=""></button>
+                        <button><img src="{% static 'media/uzcard.svg' %}" alt=""></button>
+                        <button><img src="{% static 'media/uzcard.svg' %}" alt=""></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
 
 <!-- Initialize Swiper -->
+
 <script>
     var swiper = new Swiper(".mySwiper", {
         spaceBetween: 30,
@@ -92,11 +152,39 @@
             el: ".swiper-pagination",
             clickable: true,
         },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+    });
+    const swiperEl = document.querySelector('swiper-container')
+    Object.assign(swiperEl, {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            "@0.00": {
+                slidesPerView: 4,
+                spaceBetween: 10,
+            },
+            "@0.75": {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            "@1.00": {
+                slidesPerView: 6,
+                spaceBetween: 20,
+            },
+            "@1.50": {
+                slidesPerView: 7,
+                spaceBetween: 10,
+            },
         },
     });
+
+    swiperEl.initialize();
+
 </script>
+
+<script src="{% static 'js/app.js' %}"></script>
 
 </html>

@@ -2,119 +2,271 @@
 {% load static %}
 
 {% block content %}
-    <header>
-        <!-- Swiper -->
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="{% static 'media/swiperImg.png' %}" alt=""></div>
-                <div class="swiper-slide"><img src="{% static 'media/swiperImg.png' %}" alt=""></div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-        <div class="headerCategroy">
-            <div class="headerCategroyBox">
-                <div class="headerCategroyBoxCon">
-                    <span>
-                        Ноутбуки
-                    </span>
-                    <img src="../media/Category.png" alt="">
-                </div>
-                <div class="headerCategroyBoxCon">
-                    <span>
-                        Ноутбуки
-                    </span>
-                    <img src="../media/Category.png" alt="">
-                </div>
-                <div class="headerCategroyBoxCon">
-                    <span>
-                        Ноутбуки
-                    </span>
-                    <img src="../media/Category.png" alt="">
-                </div>
-                <div class="headerCategroyBoxCon">
-                    <span>
-                        Ноутбуки
-                    </span>
-                    <img src="../media/Category.png" alt="">
-                </div>
-            </div>
-        </div>
-    </header>
-    <main>
-        <div class="mainProducts">
-            <div class="mainProductsHeader">
-                <div class="mainProductsHeader-title">
-                    <img src="../media/laptop.svg" alt="">
-                    <span>Ноутбуки</span>
-                </div>
-                <button>
-                    <span>Смотреть еще</span>
-                    <img src="../media/next.svg" alt="">
-                </button>
-            </div>
-            <div class="products">
-                <div class="product">
-                    <div class="productHeader">
-                        <span class="new">new</span>
-                        <i class="fa-regular fa-heart"></i>
-                    </div>
-                    <div class="productImg">
-                        <img src="https://dlcdnwebimgs.asus.com/gain/6FE37E07-B41F-4238-81D8-433B425405C5" alt="">
-                    </div>
-                    <div class="productBottomInfo">
-                        <span class="productTitle">
-                            HP Victus 15 RTX 3050 / i5 12400f / 512 GB SSD..
-                        </span>
-                        <div class="productStar">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <span class="productPrice">$1579</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+    
+<!-- header -->
 
-        <!-- Monitor -->
-
-        <div class="mainProducts">
-            <div class="mainProductsHeader">
-                <div class="mainProductsHeader-title">
-                    <img src="../media/Monitor.svg" alt="">
-                    <span>Мониторы</span>
-                </div>
-                <button>
-                    <span>Смотреть еще</span>
-                    <img src="../media/next.svg" alt="">
-                </button>
+<header>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="{% static 'media/swiperImg.png' %}" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'media/swiperImg.png' %}" alt=""></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="headerCategroy">
+        <div class="headerCategroyBox">
+            <div class="headerCategroyBoxCon">
+                <span>
+                    Ноутбуки
+                </span>
+                <img src="{% static 'media/Category.png' %}" alt="">
             </div>
-            <div class="products">
-                <div class="product">
-                    <div class="productHeader">
-                        <span class="new">new</span>
-                        <i class="fa-regular fa-heart"></i>
+            <div class="headerCategroyBoxCon">
+                <span>
+                    Ноутбуки
+                </span>
+                <img src="{% static 'media/Category.png' %}" alt="">
+            </div>
+            <div class="headerCategroyBoxCon">
+                <span>
+                    Ноутбуки
+                </span>
+                <img src="{% static 'media/Category.png' %}" alt="">
+            </div>
+            <div class="headerCategroyBoxCon">
+                <span>
+                    Ноутбуки
+                </span>
+                <img src="{% static 'media/Category.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- main -->
+
+<main>
+    <div class="mainProducts">
+        <div class="mainProductsHeader">
+            <div class="mainProductsHeader-title">
+                <img src="{% static 'media/laptop.svg' %}" alt="">
+                <span>Ноутбуки</span>
+            </div>
+            <button>
+                <span>Смотреть еще</span>
+                <img src="{% static 'media/next.svg' %}" alt="">
+            </button>
+        </div>
+        <div class="products">
+            <div class="product">
+                <div class="productHeader">
+                    <span class="new">new</span>
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="productImg">
+                    <img src="https://dlcdnwebimgs.asus.com/gain/6FE37E07-B41F-4238-81D8-433B425405C5" alt="">
+                </div>
+                <div class="productBottomInfo">
+                    <span class="productTitle">
+                        HP Victus 15 RTX 3050 / i5 12400f / 512 GB SSD..
+                    </span>
+                    <div class="productStar">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
                     </div>
-                    <div class="productImg">
-                        <img src="https://dlcdnwebimgs.asus.com/gain/6FE37E07-B41F-4238-81D8-433B425405C5" alt="">
-                    </div>
-                    <div class="productBottomInfo">
-                        <span class="productTitle">
-                            HP Victus 15 RTX 3050 / i5 12400f / 512 GB SSD..
-                        </span>
-                        <div class="productStar">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <span class="productPrice">$1579</span>
-                    </div>
+                    <span class="productPrice">$1579</span>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
+
+    <!-- Monitor -->
+
+    <div class="mainProducts">
+        <div class="mainProductsHeader">
+            <div class="mainProductsHeader-title">
+                <img src="{% static 'media/Monitor.svg' %}" alt="">
+                <span>Мониторы</span>
+            </div>
+            <button>
+                <span>Смотреть еще</span>
+                <img src="{% static 'media/next.svg' %}" alt="">
+            </button>
+        </div>
+        <div class="products">
+            <div class="product">
+                <div class="productHeader">
+                    <span class="new">new</span>
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="productImg">
+                    <img src="https://dlcdnwebimgs.asus.com/gain/6FE37E07-B41F-4238-81D8-433B425405C5" alt="">
+                </div>
+                <div class="productBottomInfo">
+                    <span class="productTitle">
+                        HP Victus 15 RTX 3050 / i5 12400f / 512 GB SSD..
+                    </span>
+                    <div class="productStar">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <span class="productPrice">$1579</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- brend -->
+
+    <div class="brend">
+        <div class="brendCon">
+            <div class="mainProductsHeader-title">
+                <img src="{% static 'media/brend.svg' %}" alt="">
+                <span>Бренды</span>
+            </div>
+        </div>
+        <div class="swiperCon">
+            <swiper-container class="mySwiper2" init="false">
+                <swiper-slide>
+                    <div class="brendBox">
+                        <img src="{% static 'media/asus.png' %}" alt="">
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="brendBox">
+                        <img src="{% static 'media/asus.png' %}" alt="">
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="brendBox">
+                        <img src="{% static 'media/asus.png' %}" alt="">
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="brendBox">
+                        <img src="{% static 'media/asus.png' %}" alt="">
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="brendBox">
+                        <img src="{% static 'media/asus.png' %}" alt="">
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="brendBox">
+                        <img src="{% static 'media/asus.png' %}" alt="">
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="brendBox">
+                        <img src="{% static 'media/asus.png' %}" alt="">
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="brendBox">
+                        <img src="{% static 'media/asus.png' %}" alt="">
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="brendBox">
+                        <img src="{% static 'media/asus.png' %}" alt="">
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="brendBox">
+                        <img src="{% static 'media/asus.png' %}" alt="">
+                    </div>
+                </swiper-slide>
+            </swiper-container>
+        </div>
+    </div>
+
+    <!-- thing img -->
+
+    <div class="thing">
+        <div class="mainProductsHeader-title">
+            <img src="{% static 'media/thing.svg' %}" alt="">
+            <span>Наша подборка для вас</span>
+        </div>
+        <div class="thingimages">
+            <div class="thingImgLeft">
+                <img src="{% static 'media/thing1.png' %}" alt="" class="thingImg-1">
+                <img src="{% static 'media/thing2.png' %}" alt="" class="thingImg-2">
+            </div>
+            <div class="thingImgMain">
+                <img src="{% static 'media/thing3.png' %}" alt="" class="thingImg-3">
+                <img src="{% static 'media/thing4.png' %}" alt="" class="thingImg-4">
+            </div>
+            <div class="thingImgRigth">
+                <img src="{% static 'media/thing5.png' %}" alt="" class="thingImg-5">
+                <img src="{% static 'media/thing6.png' %}" alt="" class="thingImg-6">
+            </div>
+        </div>
+    </div>
+
+    <!-- Aksesuar -->
+
+    <div class="mainProducts">
+        <div class="mainProductsHeader">
+            <div class="mainProductsHeader-title">
+                <img src="{% static 'media/aksesuar.svg' %}" alt="">
+                <span>Аксессуары</span>
+            </div>
+            <button>
+                <span>Смотреть еще</span>
+                <img src="{% static 'media/next.svg' %}" alt="">
+            </button>
+        </div>
+        <div class="products">
+            <div class="product">
+                <div class="productHeader">
+                    <span class="new">new</span>
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="productImg">
+                    <img src="https://dlcdnwebimgs.asus.com/gain/6FE37E07-B41F-4238-81D8-433B425405C5" alt="">
+                </div>
+                <div class="productBottomInfo">
+                    <span class="productTitle">
+                        HP Victus 15 RTX 3050 / i5 12400f / 512 GB SSD..
+                    </span>
+                    <div class="productStar">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <span class="productPrice">$1579</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- app progarm info -->
+
+    <div class="mobileApp">
+        <div class="mobileAppCon">
+            <div class="mobileAppLeft">
+                <span class="mobileAppTitle">Tez kunda DataShop mobil ilovasi</span>
+                <div class="mobileAppDownoladBtns">
+                    <button><img src="{% static 'media/googleplasy.png' %}" alt=""></button>
+                    <button><img src="{% static 'media/App Store.png' %}" alt=""></button>
+                </div>
+            </div>
+            <div class="mobileAppRight">
+                <img src="{% static 'media/MacBook Pro 16.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+
+</main>
+
 {% endblock content %}
