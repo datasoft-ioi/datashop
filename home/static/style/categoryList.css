@@ -24,7 +24,7 @@
 /* Reset style for input range */
 
 .price-field input[type="range"] {
-    width: 188px;
+    width: 220px;
     height: 2px;
     border: 0;
     outline: 0;
@@ -69,7 +69,7 @@
     border-radius: 50%;
     height: 15px;
     width: 15px;
-    margin-top: -6px;
+    margin-top: -5px;
     background-color: #fff;
     cursor: pointer;
     cursor: pointer;
@@ -132,6 +132,7 @@
     background: #fff;
     border-radius: 5px;
 }
+
 .price-field input[type="range"]::-ms-track {
     /* IE */
     width: 178px;
@@ -212,4 +213,150 @@
     transition-duration: 0.3s;
     border: 2px solid #FF201F;
     /* background: #000; */
+}
+
+
+/* create list style */
+
+
+.categoryList {
+    width: 1140px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.categoryListHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.categoryListHeaderTitle {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.categoryListHeaderTitle-chil {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 31px;
+    color: #3C3C3C;
+}
+
+.categoryListHeaderTitle-chil2 {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #5A5A5A;
+}
+
+.categoryListHeaderRandomBtns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.categoryListHeaderRandomBtns button {
+    width: 139px;
+    height: 30px;
+    background: #F0F0F0;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+}
+
+.categoryListMain {
+    display: flex;
+    margin-top: 30px;
+    gap: 60px;
+}
+
+.categoryListMainFilter {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.categoryListMainFilterInputs {
+    margin-top: 15px;
+    display: flex;
+    gap: 5px;
+}
+
+.categoryListMainFilterInputs-chil {
+    display: flex;
+    flex-direction: column;
+}
+
+.categoryListMainFilterInputs-chil label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #686868;
+}
+
+.categoryListMainFilterInputs-chil input {
+    width: 105px;
+    height: 30px;
+    border: 1px solid #BBBBBB;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+.priceFilterTitle {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #3C3C3C;
+}
+
+
+.filterRanges {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.filterRangesBrend {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.filterRangesBrendHeader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.filterRangesBrendHeader span {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #3C3C3C;
+}
+
+.filterRangesBrendHeader i {
+    font-size: 12px;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #FF4D4C;
+}
+
+.filterRangesBrendInfo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
