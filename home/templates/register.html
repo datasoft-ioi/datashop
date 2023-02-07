@@ -5,7 +5,43 @@
 {% block content %}
     <div class="register">
         <div class="registerBox">
-            <span class="registerBoxTitle"></span>
+            <span class="registerBoxTitle">Вход / Регистрация</span>
+            <div class="registerInputs">
+                <div class="registerInputsChil">
+                    <label for="">Введите имя</label>
+                    <div class="registerInputsChilInput">
+                        <i class="fa-regular fa-user"></i>
+                        <input type="text" placeholder="Javlonbek">
+                    </div>
+                </div>
+                <div class="registerInputsChil">
+                    <label for="">Email</label>
+                    <div class="registerInputsChilInput">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="text" placeholder="example@gmail.com">
+                    </div>
+                </div>
+                <div class="registerInputsChil">
+                    <label for="">Пароль</label>
+                    <div class="registerInputsChilInput">
+                        <img src="{% static 'media/lock.svg' %}" alt="">
+                        <input type="password" placeholder="*********">
+                    </div>
+                </div>
+                <div class="registerInputsChil">
+                    <label for="">Подтвердите пароль</label>
+                    <div class="registerInputsChilInput">
+                        <img src="{% static 'media/lock.svg' %}" alt="">
+                        <input type="password" placeholder="*********">
+                    </div>
+                </div>
+            </div>
+            <div class="registerFooter">
+                <div class="registerFooterLoginNext">
+                    <span>У меня есть аккаунт</span><a href="">Войти</a>
+                </div>
+                <button>Зарегистрироваться</button>
+            </div>
         </div>
     </div>
 {% endblock content %}
