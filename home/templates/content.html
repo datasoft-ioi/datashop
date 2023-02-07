@@ -1,48 +1,4 @@
-{% extends 'homebase.html' %}
 {% load static %}
-
-{% block content %}
-    
-<!-- header -->
-
-<header>
-    <!-- Swiper -->
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="{% static 'media/swiperImg.png' %}" alt=""></div>
-            <div class="swiper-slide"><img src="{% static 'media/swiperImg.png' %}" alt=""></div>
-        </div>
-        <div class="swiper-pagination"></div>
-    </div>
-    <div class="headerCategroy">
-        <div class="headerCategroyBox">
-            <div class="headerCategroyBoxCon">
-                <span>
-                    Ноутбуки
-                </span>
-                <img src="{% static 'media/Category.png' %}" alt="">
-            </div>
-            <div class="headerCategroyBoxCon">
-                <span>
-                    Ноутбуки
-                </span>
-                <img src="{% static 'media/Category.png' %}" alt="">
-            </div>
-            <div class="headerCategroyBoxCon">
-                <span>
-                    Ноутбуки
-                </span>
-                <img src="{% static 'media/Category.png' %}" alt="">
-            </div>
-            <div class="headerCategroyBoxCon">
-                <span>
-                    Ноутбуки
-                </span>
-                <img src="{% static 'media/Category.png' %}" alt="">
-            </div>
-        </div>
-    </div>
-</header>
 
 <!-- main -->
 
@@ -58,18 +14,21 @@
                 <img src="{% static 'media/next.svg' %}" alt="">
             </button>
         </div>
+
+
         <div class="products">
+        {% for rs in products_latest %}    
             <div class="product">
                 <div class="productHeader">
                     <span class="new">new</span>
                     <i class="fa-regular fa-heart"></i>
                 </div>
                 <div class="productImg">
-                    <img src="https://dlcdnwebimgs.asus.com/gain/6FE37E07-B41F-4238-81D8-433B425405C5" alt="">
+                    <img width="55%" src="{{ rs.image.url }}" alt=""> 
                 </div>
                 <div class="productBottomInfo">
                     <span class="productTitle">
-                        HP Victus 15 RTX 3050 / i5 12400f / 512 GB SSD..
+                        {{ rs.title }}
                     </span>
                     <div class="productStar">
                         <i class="fa-solid fa-star"></i>
@@ -78,10 +37,13 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-regular fa-star"></i>
                     </div>
-                    <span class="productPrice">$1579</span>
+                    <span class="productPrice">${{ rs.price }}</span>
                 </div>
             </div>
+        {% endfor %}
         </div>
+
+        
     </div>
 
     <!-- Monitor -->
@@ -268,5 +230,3 @@
     </div>
 
 </main>
-
-{% endblock content %}

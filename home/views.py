@@ -29,19 +29,19 @@ def index(request):
         request.session['currency'] = settings.DEFAULT_CURRENCY
 
     setting = Setting.objects.get(pk=1)
-    products_latest = Product.objects.all().order_by('-id')[:4]  # last 4 products
+    products_latest = Product.objects.all().order_by('-id')[:5]  # last 5 products
     # >>>>>>>>>>>>>>>> M U L T I   L A N G U G A E >>>>>> START
     defaultlang = settings.LANGUAGE_CODE[0:2]
-    currentlang = request.LANGUAGE_CODE[0:2]
+    # currentlang = "request.LANGUAGE_CODE[0:2]"
 
-    if defaultlang != currentlang:
-        setting = SettingLang.objects.get(lang=currentlang)
-        products_latest = Product.objects.raw(
-            'SELECT p.id,p.price, l.title, l.description,l.slug  '
-            'FROM product_product as p '
-            'LEFT JOIN product_productlang as l '
-            'ON p.id = l.product_id '
-            'WHERE  l.lang=%s ORDER BY p.id DESC LIMIT 4', [currentlang])
+    # if defaultlang != currentlang:
+    #     setting = SettingLang.objects.get(lang=currentlang)
+    #     products_latest = Product.objects.raw(
+    #         'SELECT p.id,p.price, l.title, l.description,l.slug  '
+    #         'FROM product_product as p '
+    #         'LEFT JOIN product_productlang as l '
+    #         'ON p.id = l.product_id '
+    #         'WHERE  l.lang=%s ORDER BY p.id DESC LIMIT 4', [currentlang])
 
     products_slider = Product.objects.all().order_by('id')[:4]  #first 4 products
 
@@ -259,7 +259,20 @@ def savelangcur(request):
 
 # Create your views here.
 def homepage(request):
-    return render(request, 'home.html')
+
+    products_latest = Product.objects.all().order_by('-id')[:4]  # last 4 products
+
+    products_slider = Product.objects.all().order_by('id')[:4]  #first 4 products
+
+    products_picked = Product.objects.all().order_by('?')[:4]   #Random selected 4 products
+
+    context = {
+        "products_latest": products_latest,
+        "products_slider": products_slider,
+        "products_picked": products_picked
+    }
+
+    return render(request, 'index.html', context)
 
 
 def cartpage(request):

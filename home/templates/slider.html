@@ -1,0 +1,49 @@
+{% comment %} {% extends 'homebase.html' %} {% endcomment %}
+{% load static %}
+
+{% block content %}
+    
+<!-- header -->
+
+<header>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="{% static 'media/swiperImg.png' %}" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'media/swiperImg.png' %}" alt=""></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="headerCategroy">
+        <div class="headerCategroyBox">
+            <div class="headerCategroyBoxCon">
+                <span>
+                    Ноутбуки
+                </span>
+                <img src="{% static 'media/Category.png' %}" alt="">
+            </div>
+            <div class="headerCategroyBoxCon">
+                <span>
+                    Ноутбуки
+                </span>
+                <img src="{% static 'media/Category.png' %}" alt="">
+            </div>
+            <div class="headerCategroyBoxCon">
+                <span>
+                    Ноутбуки
+                </span>
+                <img src="{% static 'media/Category.png' %}" alt="">
+            </div>
+            <div class="headerCategroyBoxCon">
+                <span>
+                    Ноутбуки
+                </span>
+                <img src="{% static 'media/Category.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+{% endblock content %}
