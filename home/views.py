@@ -271,3 +271,6 @@ def productdtl(request):
 
 def category_list(request):
     return render(request, 'categoryList.html')
+
+def register(request): 
+    return render(request, 'register.html')
