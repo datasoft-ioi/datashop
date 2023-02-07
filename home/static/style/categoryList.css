@@ -360,3 +360,74 @@ input[type="radio"] {
     align-items: center;
     gap: 15px;
 }
+
+.categoryListMainProduct {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.categoryListMainProductHeader {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.filterClickBtns {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.filterClickBtnsBtn {
+    width: auto;
+    padding: 0px 12px;
+    height: 30px;
+    border: none;
+    background: #E81D1C;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.filterClickBtnsBtn span {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
+
+.filterClickBtnsBtn i {
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+}
+
+.daleteVse button {
+    width: 100%;
+    background: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-decoration-line: underline;
+    color: #000000;
+    cursor: pointer;
+    border: none;
+}
+
+.categoryListMainProductHeader select {
+    border: 1px solid #E81D1C;
+    border-radius: 5px;
+    display: flex;
+    outline: none;
+    cursor: pointer;
+}
+
+.categoryListMainProductMain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
