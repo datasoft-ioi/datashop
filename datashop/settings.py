@@ -39,6 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'home.apps.HomeConfig',
+    'user.apps.UserConfig',
+    'order.apps.OrderConfig',
+    'product.apps.ProductConfig',
+
+    'ckeditor',
+    'mptt',
+    'currencies',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +71,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'currencies.context_processors.currencies'
             ],
         },
     },
@@ -101,6 +109,15 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+LANGUAGES = [
+    ('en', ('English')),
+    ('tr', ('Turkish')),
+]
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
+DEFAULT_CURRENCY = 'USD'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
@@ -120,3 +137,26 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+MEDIA_URL = '/uploads/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+
+
+SITE_ID = 1
+
+####################################
+##  CKEDITOR CONFIGURATION ##
+####################################
+
+CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
+
+CKEDITOR_UPLOAD_PATH = 'images/'
+CKEDITOR_IMAGE_BACKEND = "pillow"
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': None,
+    },
+}
+
