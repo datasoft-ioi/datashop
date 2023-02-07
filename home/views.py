@@ -281,3 +281,6 @@ def cartpage(request):
 
 def productdtl(request):
     return render(request, 'productdtl.html')
+
+def category_list(request):
+    return render(request, 'categoryList.html')
