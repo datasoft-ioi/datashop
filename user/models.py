@@ -1,4 +1,4 @@
-# from currencies.models import Currency # keyin qoshiladi
+from currencies.models import Currency # keyin qoshiladi
 from django.contrib.auth.models import User
 from django.db import models
 
@@ -15,7 +15,7 @@ class UserProfile(models.Model):
     country = models.CharField(blank=True, max_length=50)
     image = models.ImageField(blank=True, upload_to='images/users/')
     language = models.ForeignKey(Language, on_delete=models.CASCADE, null=True,blank=True)
-    # currency = models.ForeignKey(Currency, on_delete=models.CASCADE, null=True,blank=True) # keyin qishman
+    currency = models.ForeignKey(Currency, on_delete=models.CASCADE, null=True,blank=True) # keyin qishman
 
 
     def __str__(self):
