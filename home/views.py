@@ -110,25 +110,25 @@ def contactus(request):
 
 def category_products(request,id,slug):
     defaultlang = settings.LANGUAGE_CODE[0:2]
-    currentlang = request.LANGUAGE_CODE[0:2]
+    # currentlang = request.LANGUAGE_CODE[0:2]
     catdata = Category.objects.get(pk=id)
     products = Product.objects.filter(category_id=id) #default language
-    if defaultlang != currentlang:
-        try:
-            products = Product.objects.raw(
-                'SELECT p.id,p.price,p.amount,p.image,p.variant,l.title, l.keywords, l.description,l.slug,l.detail '
-                'FROM product_product as p '
-                'LEFT JOIN product_productlang as l '
-                'ON p.id = l.product_id '
-                'WHERE p.category_id=%s and l.lang=%s', [id, currentlang])
-        except:
-            pass
-        catdata = CategoryLang.objects.get(category_id=id, lang=currentlang)
+    # if defaultlang != currentlang:
+    #     try:
+    #         products = Product.objects.raw(
+    #             'SELECT p.id,p.price,p.amount,p.image,p.variant,l.title, l.keywords, l.description,l.slug,l.detail '
+    #             'FROM product_product as p '
+    #             'LEFT JOIN product_productlang as l '
+    #             'ON p.id = l.product_id '
+    #             'WHERE p.category_id=%s and l.lang=%s', [id, currentlang])
+    #     except:
+    #         pass
+    #     catdata = CategoryLang.objects.get(category_id=id, lang=currentlang)
 
     context={'products': products,
              #'category':category,
              'catdata':catdata }
-    return render(request,'category_products.html',context)
+    return render(request,'categoryList.html',context)
 
 def search(request):
     if request.method == 'POST': # check post
@@ -168,22 +168,22 @@ def product_detail(request,id,slug):
     query = request.GET.get('q')
     # >>>>>>>>>>>>>>>> M U L T I   L A N G U G A E >>>>>> START
     defaultlang = settings.LANGUAGE_CODE[0:2] #en-EN
-    currentlang = request.LANGUAGE_CODE[0:2]
+    # currentlang = request.LANGUAGE_CODE[0:2]
     #category = categoryTree(0, '', currentlang)
     category = Category.objects.all()
 
     product = Product.objects.get(pk=id)
 
-    if defaultlang != currentlang:
-        try:
-            prolang =  Product.objects.raw('SELECT p.id,p.price,p.amount,p.image,p.variant,l.title, l.keywords, l.description,l.slug,l.detail '
-                                          'FROM product_product as p '
-                                          'INNER JOIN product_productlang as l '
-                                          'ON p.id = l.product_id '
-                                          'WHERE p.id=%s and l.lang=%s',[id,currentlang])
-            product=prolang[0]
-        except:
-            pass
+    # if defaultlang != currentlang:
+    #     try:
+    #         prolang =  Product.objects.raw('SELECT p.id,p.price,p.amount,p.image,p.variant,l.title, l.keywords, l.description,l.slug,l.detail '
+    #                                       'FROM product_product as p '
+    #                                       'INNER JOIN product_productlang as l '
+    #                                       'ON p.id = l.product_id '
+    #                                       'WHERE p.id=%s and l.lang=%s',[id,currentlang])
+    #         product=prolang[0]
+    #     except:
+    #         pass
     # <<<<<<<<<< M U L T I   L A N G U G A E <<<<<<<<<<<<<<< end
 
     images = Images.objects.filter(product_id=id)
@@ -206,7 +206,7 @@ def product_detail(request,id,slug):
         context.update({'sizes': sizes, 'colors': colors,
                         'variant': variant,'query': query
                         })
-    return render(request,'product_detail.html',context)
+    return render(request,'productdtl.html',context)
 
 def ajaxcolor(request):
     data = {}

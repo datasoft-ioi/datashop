@@ -6,9 +6,10 @@
 <div class="dtl">
     <ul class="links">
         <li>Главная</li>
+        <li>{{product.category  }}</li>
     </ul>
     <div class="dtlHeader">
-        <span>HP Victus 15 RTX 3050 / i5-12400F / 8 GB RAM</span>
+        <span>{{ product.title }}</span>
         <div class="starts">
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
@@ -21,12 +22,17 @@
     <div class="dtlMain">
         <div class="images">
             <div class="topImage">
-                <img src="{% static 'media/victus.png' %}" alt="">
+                <img src="{{ product.image.url }}" alt="">
             </div>
-            <div class="dtlProductImages">
+            {% comment %} <div class="dtlProductImages">
                 <img src="{% static 'media/victus.png' %}" alt="">
                 <img src="{% static 'media/victus2.png' %}" alt="">
                 <img src="{% static 'media/victus3.png' %}" alt="">
+            </div> {% endcomment %}
+            <div class="dtlProductImages">
+                {% for rs in images %}
+                    <img src="{{ rs.image.url }}" alt="">
+                {% endfor %}
             </div>
         </div>
         <div class="dtlProductInfo">
@@ -57,7 +63,7 @@
         </div>
         <div class="dtlPriceInfo">
             <div class="dtlPriceInfoPrice">
-                <span>6 800 000 СУМ</span>
+                <span>${{ product.price }}</span>
                 <button class="dtlPriceInfoPriceBtn1"><img src="{% static 'media/korzinkaWhite.svg' %}" alt=""><span>В
                         корзину</span></button>
                 <button class="dtlPriceInfoPriceBtn2">Купить в один клик</button>
