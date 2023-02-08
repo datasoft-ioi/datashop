@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="{% static 'style/header.css' %}">
     <link rel="stylesheet" href="{% static 'style/main.css' %}">
     <link rel="stylesheet" href="{% static 'style/productDtl.css' %}">
+    <link rel="stylesheet" href="{% static 'style/categoryList.css' %}">
+
+    <link rel="stylesheet" href="{% static 'style/register.css' %}">
+    <link rel="stylesheet" href="{% static 'style/korzinka.css' %}">
+
     <!-- google font links-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,10 +38,19 @@
     {% include 'header.html' %}
     {% block slider %} {% endblock %}
 
+
     {% block content %} {% endblock content %}
 
     {% include 'footer.html' %}
 
+
+
+
+    {% block content %} {% endblock content %}
+
+
+    {% include 'footer.html' %}
+    
 </body>
 
 </html>

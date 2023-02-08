@@ -1,0 +1,445 @@
+/* filter price input range */
+
+/* Range Prices */
+.filter-price {
+    width: 220px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.price-title {
+    position: relative;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.2em;
+    font-weight: 400;
+}
+
+
+.price-field input[type="range"] {
+    position: absolute;
+}
+
+/* Reset style for input range */
+
+.price-field input[type="range"] {
+
+    width: 220px;
+
+    width: 188px;
+
+    height: 2px;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    pointer-events: none;
+    -webkit-appearance: none;
+}
+
+.price-field input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+
+.price-field input[type="range"]:active,
+.price-field input[type="range"]:focus {
+    outline: 0;
+}
+
+.price-field input[type="range"]::-ms-track {
+    width: 178px;
+    height: 3px;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    pointer-events: none;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+    border-radius: 5px;
+}
+
+/* Style toddler input range */
+
+.price-field input[type="range"]::-webkit-slider-thumb {
+    /* WebKit/Blink */
+    position: relative;
+    -webkit-appearance: none;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+
+    margin-top: -5px;
+
+    margin-top: -6px;
+
+    background-color: #fff;
+    cursor: pointer;
+    cursor: pointer;
+    pointer-events: all;
+    z-index: 100;
+}
+
+.price-field input[type="range"]::-moz-range-thumb {
+    /* Firefox */
+    position: relative;
+    appearance: none;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    margin-top: -5px;
+    background-color: #fff;
+    cursor: pointer;
+    cursor: pointer;
+    pointer-events: all;
+    z-index: 100;
+}
+
+.price-field input[type="range"]::-ms-thumb {
+    /* IE */
+    position: relative;
+    appearance: none;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    margin-top: -5px;
+    background-color: #fff;
+    cursor: pointer;
+    cursor: pointer;
+    pointer-events: all;
+    z-index: 100;
+}
+
+/* Style track input range */
+
+.price-field input[type="range"]::-webkit-slider-runnable-track {
+    /* WebKit/Blink */
+    width: 188px;
+    height: 5px;
+    cursor: pointer;
+    background: #FF9898;
+    border-radius: 10px;
+}
+
+.price-field input[type="range"]::-moz-range-track {
+    /* Firefox */
+    width: 178px;
+    height: 3px;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 5px;
+}
+
+
+
+.price-field input[type="range"]::-ms-track {
+    /* IE */
+    width: 178px;
+    height: 3px;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 5px;
+}
+
+/* Style for input value block */
+
+.price-wrap {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: #232323;
+    font-size: 14px;
+    line-height: 1.2em;
+    font-weight: 400;
+    margin-bottom: 7px;
+}
+
+.price-wrap-1,
+.price-wrap-2 {
+    display: flex;
+}
+
+.price-title {
+    color: #232323;
+    margin-right: 16px;
+    font-size: 18px;
+    /* background: #d58e32; */
+}
+
+.price-wrap_line {
+    margin: 0 10px;
+}
+
+.price-wrap #one,
+.price-wrap #two {
+    width: 30px;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    margin-right: 2px;
+    background: 0;
+    border: 0;
+    outline: 0;
+    color: #fff;
+    font-family: "Karla", "Arial", sans-serif;
+    font-size: 18px;
+    line-height: 1.2em;
+    font-weight: 400;
+    color: #232323;
+}
+
+.price-wrap label {
+    text-align: right;
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Style for active state input */
+
+.price-field input[type="range"]:hover::-webkit-slider-thumb {
+    transition-duration: 0.3s;
+    border: 2px solid #FF201F;
+    /* background: #000; */
+}
+
+.price-field input[type="range"]:active::-webkit-slider-thumb {
+    transition-duration: 0.3s;
+    border: 2px solid #FF201F;
+    /* background: #000; */
+}
+
+.price-field input[type="range"]::-webkit-slider-thumb {
+    transition-duration: 0.3s;
+    border: 2px solid #FF201F;
+    /* background: #000; */
+
+}
+
+
+/* create list style */
+
+
+.categoryList {
+    width: 1140px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.categoryListHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.categoryListHeaderTitle {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.categoryListHeaderTitle-chil {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 31px;
+    color: #3C3C3C;
+}
+
+.categoryListHeaderTitle-chil2 {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #5A5A5A;
+}
+
+.categoryListHeaderRandomBtns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.categoryListHeaderRandomBtns button {
+    width: 139px;
+    height: 30px;
+    background: #F0F0F0;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+}
+
+.categoryListMain {
+    display: flex;
+    margin-top: 30px;
+    gap: 60px;
+}
+
+.categoryListMainFilter {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.categoryListMainFilterInputs {
+    margin-top: 15px;
+    display: flex;
+    gap: 5px;
+}
+
+.categoryListMainFilterInputs-chil {
+    display: flex;
+    flex-direction: column;
+}
+
+.categoryListMainFilterInputs-chil label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #686868;
+}
+
+.categoryListMainFilterInputs-chil input {
+    width: 105px;
+    height: 30px;
+    border: 1px solid #BBBBBB;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+.priceFilterTitle {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #3C3C3C;
+}
+
+
+.filterRanges {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.filterRangesBrend {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.filterRangesBrendHeader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.filterRangesBrendHeader span {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #3C3C3C;
+}
+
+.filterRangesBrendHeader i {
+    font-size: 12px;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #FF4D4C;
+}
+
+.filterRangesBrendInfo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.categoryListMainProduct {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.categoryListMainProductHeader {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.filterClickBtns {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.filterClickBtnsBtn {
+    width: auto;
+    padding: 0px 12px;
+    height: 30px;
+    border: none;
+    background: #E81D1C;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.filterClickBtnsBtn span {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
+
+.filterClickBtnsBtn i {
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+}
+
+.daleteVse button {
+    width: 100%;
+    background: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-decoration-line: underline;
+    color: #000000;
+    cursor: pointer;
+    border: none;
+}
+
+.categoryListMainProductHeader select {
+    border: 1px solid #E81D1C;
+    border-radius: 5px;
+    display: flex;
+    outline: none;
+    cursor: pointer;
+}
+
+.categoryListMainProductMain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}

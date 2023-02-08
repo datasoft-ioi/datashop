@@ -281,3 +281,18 @@ def cartpage(request):
 
 def productdtl(request):
     return render(request, 'productdtl.html')
+
+def category_list(request):
+
+    return render(request, 'categoryList.html')
+
+def register(request): 
+    return render(request, 'register.html')
+
+def login(request): 
+    return render(request, 'login.html')
+
+def korzinka(request):
+    return render(request, 'korzinka.html')
+
+
