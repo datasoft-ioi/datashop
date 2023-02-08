@@ -1,0 +1,53 @@
+{% extends 'homebase.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="korzinka">
+    <ul class="links">
+        <li>Главная</li>
+    </ul>
+    <div class="korHeader">
+        <span class="korHeader-Chil1">Корзина</span>
+        <span class="korHeader-Chil2">Товаров в корзине (3)</span>
+    </div>
+    <div class="korMain">
+        <div class="korMainProducts">
+            <div class="korMainProductsHeader">
+                <span>Детали продуктов</span>
+                <div class="korMainProductsHeaderRight">
+                    <span>Количество</span>
+                    <span>Цена</span>
+                </div>
+            </div>
+            <div class="korProducts">
+                <div class="korProduct">
+                    <div class="korProductInfo">
+                        <img src="https://dlcdnwebimgs.asus.com/gain/6FE37E07-B41F-4238-81D8-433B425405C5" alt="">
+                        <div>
+                            <span class="korProductInfoName">HP Victus 15 RTX 3050...</span>
+                            <span class="korProductInfoCategory">Ноутбук</span>
+                            <button>Удалить</button>
+                        </div>
+                    </div>
+                    <div class="korProductCount">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                    </div>
+                    <div class="korProductPrice">
+                        <span>$680</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="korMainPrice">
+            <div class="korMainPriceBox">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

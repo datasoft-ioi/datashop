@@ -1,0 +1,139 @@
+.korzinka {
+    width: 1140px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.korHeader {
+    width: 706px;
+    margin-top: 40px;
+    border-bottom: 1px solid #D9D9D9;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    align-items: center;
+}
+
+.korHeader-Chil1 {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 31px;
+    color: #3C3C3C;
+}
+
+.korHeader-Chil2 {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #3C3C3C;
+}
+
+.korMain {
+    display: flex;
+}
+
+.korMainProducts {
+    width: 706px;
+    display: flex;
+    flex-direction: column;
+}
+
+.korMainProductsHeader {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.korMainProductsHeader span {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #7D7D7D;
+}
+
+.korMainProductsHeaderRight {
+    display: flex;
+    gap: 120px;
+}
+
+.korProducts {
+    display: flex;
+    flex-direction: c;
+}
+
+.korProduct {
+    width: 706px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.korProductInfo {
+    display: flex;
+    align-items: center;
+}
+
+.korProductInfo img {
+    max-width: 140px;
+}
+
+.korProductInfo div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 17px;
+}
+
+.korProductInfo div .korProductInfoName {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #3C3C3C;
+}
+
+.korProductInfoCategory {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #E81D1C;
+}
+
+.korProductInfo div button {
+    border: none;
+    background: none;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #878787;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.korProductCount {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+}
+
+.korProductCount span {
+    min-width: 35px;
+    border: 1px solid #C1C1C1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.korProductCount button {
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    cursor: pointer;
+}
