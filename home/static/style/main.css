@@ -80,7 +80,6 @@ main {
 .productImg img {
     max-width: 188px;
 }
-
 .productHeader {
     display: flex;
     align-items: center;
@@ -125,6 +124,7 @@ main {
 }
 
 .productBottomInfo {
+    height: 50%;
     display: flex;
     flex-direction: column;
     padding: 0px 20px;
