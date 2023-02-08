@@ -132,7 +132,6 @@
     background: #fff;
     border-radius: 5px;
 }
-
 .price-field input[type="range"]::-ms-track {
     /* IE */
     width: 178px;
@@ -212,7 +211,6 @@
 .price-field input[type="range"]::-webkit-slider-thumb {
     transition-duration: 0.3s;
     border: 2px solid #FF201F;
-    /* background: #000; */
 }
 
 
