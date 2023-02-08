@@ -137,3 +137,15 @@
     font-size: 19px;
     cursor: pointer;
 }
+
+.korProductPrice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    text-align: end;
+}
+
+.korProductPrice span {
+    width: 100px;
+}
