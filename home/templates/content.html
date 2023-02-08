@@ -24,12 +24,16 @@
                     <i class="fa-regular fa-heart"></i>
                 </div>
                 <div class="productImg">
-                    <img width="55%" src="{{ rs.image.url }}" alt=""> 
+                    <a href="{% url 'product_detail' rs.id rs.slug %}">
+                        <img width="55%" src="{{ rs.image.url }}" alt=""> 
+                    </a>
                 </div>
                 <div class="productBottomInfo">
+                    <a href="{% url 'product_detail' rs.id rs.slug %}">
                     <span class="productTitle">
                         {{ rs.title }}
                     </span>
+                </a>
                     <div class="productStar">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
