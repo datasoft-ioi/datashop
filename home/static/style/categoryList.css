@@ -24,7 +24,11 @@
 /* Reset style for input range */
 
 .price-field input[type="range"] {
+
     width: 220px;
+
+    width: 188px;
+
     height: 2px;
     border: 0;
     outline: 0;
@@ -69,7 +73,11 @@
     border-radius: 50%;
     height: 15px;
     width: 15px;
+
     margin-top: -5px;
+
+    margin-top: -6px;
+
     background-color: #fff;
     cursor: pointer;
     cursor: pointer;
@@ -132,6 +140,8 @@
     background: #fff;
     border-radius: 5px;
 }
+
+
 
 .price-field input[type="range"]::-ms-track {
     /* IE */
@@ -213,6 +223,7 @@
     transition-duration: 0.3s;
     border: 2px solid #FF201F;
     /* background: #000; */
+
 }
 
 
@@ -430,4 +441,5 @@ input[type="radio"] {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
