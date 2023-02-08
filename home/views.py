@@ -295,5 +295,4 @@ def login(request):
 def korzinka(request):
     return render(request, 'korzinka.html')
 
-    return render(request, 'categoryList.html')
 
