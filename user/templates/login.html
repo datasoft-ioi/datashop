@@ -1,0 +1,48 @@
+{% extends 'homebase.html' %}
+{% load i18n %}
+{% block title %} User Login  {{ setting.title }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+
+
+{% load static %}
+
+{% block content %}
+<div class="register">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{message.tags}}" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <form action="" method="post" >
+        <div class="registerBox">
+            {% csrf_token %}
+            <span class="registerBoxTitle">Вход / Регистрация</span>
+            <div class="registerInputs">
+                <div class="registerInputsChil">
+                    <label for="">Введите имя</label>
+                    <div class="registerInputsChilInput">
+                        <i class="fa-regular fa-user"></i>
+                        <input type="text" name="username" placeholder="Javlonbek">
+                    </div>
+                </div>
+                <div class="registerInputsChil">
+                    <label for="">Пароль</label>
+                    <div class="registerInputsChilInput">
+                        <img src="{% static 'media/lock.svg' %}" alt="">
+                        <input type="password" name="password" placeholder="*********">
+                    </div>
+                </div>
+            </div>
+            <div class="registerFooter">
+                <div class="registerFooterLoginNext">
+                    <span>Создавать аккаунт</span><a href="/register">Регистрация</a>
+                </div>
+                <button type="submit">Входить</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock content %}
