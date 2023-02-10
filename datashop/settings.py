@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'product.apps.ProductConfig',
 
     'ckeditor',
+    'ckeditor_uploader',
     'mptt',
     'currencies',
 ]
