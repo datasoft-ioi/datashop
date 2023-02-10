@@ -23,7 +23,7 @@
         <div class="navBottom">
             <div class="navBottomCon">
                 <div class="logo">
-                    <a href="{% url 'index' %}">
+                    <a href="{% url 'home' %}">
                         <img src="{% static 'media/datashoplogo.png' %}" alt="">
                     </a>
                 </div>
@@ -35,10 +35,12 @@
                     <button><img src="{% static 'media/search.svg' %}" alt=""></button>
                 </div>
                 <div class="navbottomBtns">
-                    <button>
-                        <img src="{% static 'media/korzinka.svg' %}" alt="">
-                        <span>Savat</span>
-                    </button>
+                    <a href="{% url 'shopcart'%}">
+                        <button>
+                            <img src="{% static 'media/korzinka.svg' %}" alt="">
+                            <span>Savat</span>
+                        </button>
+                    </a>
                     <button>
                         <img src="{% static 'media/izbrene.svg' %}" alt="">
                         <span>Saqlanganlar</span>
