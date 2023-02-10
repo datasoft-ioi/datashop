@@ -61,28 +61,30 @@
             </ul>
             <span class="vseHarakter">Все характеристики</span>
         </div>
-        <div class="dtlPriceInfo">
-            <div class="dtlPriceInfoPrice">
-                <span>${{ product.price }}</span>
-                <button class="dtlPriceInfoPriceBtn1"><img src="{% static 'media/korzinkaWhite.svg' %}" alt=""><span>В
-                        корзину</span></button>
-                <button class="dtlPriceInfoPriceBtn2">Купить в один клик</button>
+        <form action="/order/addtoshopcart/{{ product.id }}" method="post">
+            <div class="dtlPriceInfo">
+                {% csrf_token %}
+                <div class="dtlPriceInfoPrice">
+                    <span>${{ product.price }}</span>
+                    <button class="dtlPriceInfoPriceBtn1"><img src="{% static 'media/korzinkaWhite.svg' %}" alt=""><span>В корзину</span></button>
+                    <button class="dtlPriceInfoPriceBtn2">Купить в один клик</button>
+                </div>
+                <div class="dtlPriceInfoPriceInfo">
+                    <div class="dtlPriceInfoPriceInfo-1">
+                        <img src="{% static 'media/dtl1.svg' %}" alt="">
+                        <span>Быстрая доставка в течении 3-4 дней</span>
+                    </div>
+                    <div class="dtlPriceInfoPriceInfo-1">
+                        <img src="{% static 'media/dtl2.svg' %}" alt="">
+                        <span>Возможность открыть товар у курьера</span>
+                    </div>
+                    <div class="dtlPriceInfoPriceInfo-1">
+                        <img src="{% static 'media/dtl3.svg' %}" alt="">
+                        <span>Все товары имееют гарантию</span>
+                    </div>
+                </div>
             </div>
-            <div class="dtlPriceInfoPriceInfo">
-                <div class="dtlPriceInfoPriceInfo-1">
-                    <img src="{% static 'media/dtl1.svg' %}" alt="">
-                    <span>Быстрая доставка в течении 3-4 дней</span>
-                </div>
-                <div class="dtlPriceInfoPriceInfo-1">
-                    <img src="{% static 'media/dtl2.svg' %}" alt="">
-                    <span>Возможность открыть товар у курьера</span>
-                </div>
-                <div class="dtlPriceInfoPriceInfo-1">
-                    <img src="{% static 'media/dtl3.svg' %}" alt="">
-                    <span>Все товары имееют гарантию</span>
-                </div>
-            </div>
-        </div>
+        </form>
     </div>
     <div class="dtlProductHaracter">
         <div class="dtlProductHaracterHeader">

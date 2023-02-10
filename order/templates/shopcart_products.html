@@ -1,0 +1,87 @@
+{% extends 'homebase.html' %}
+
+{% block content %}
+    <!-- Korzinka  -->
+
+
+    <div class="korzinka">
+        <ul class="links">
+            <li>Главная</li>
+        </ul>
+        <div class="korHeader">
+            <span class="korHeader-Chil1">Корзина</span>
+            <span class="korHeader-Chil2">Товаров в корзине (3)</span>
+        </div>
+        <div class="korMain">
+            <div class="korMainProducts">
+                <div class="korMainProductsHeader">
+                    <span>Детали продуктов</span>
+                    <div class="korMainProductsHeaderRight">
+                        <span>Количество</span>
+                        <span>Цена</span>
+                    </div>
+                </div>
+
+                {% for rs in shopcart %}
+                    <div class="korProducts">
+                        <div class="korProduct">
+                            <div class="korProductInfo">
+                                {% if rs.variant.image_id  > 0 %}
+                                    <img src="{{rs.variant.image }}" alt="">
+                                {% else %}
+                                    <img src="{{rs.product.image.url}}" alt="">
+                                {% endif %}
+                                <div>
+                                    <span class="korProductInfoName">HP Victus 15 RTX 3050...</span>
+                                    <span class="korProductInfoCategory">Ноутбук</span>
+                                    <a href="/order/deletefromcart/{{ rs.id }}">
+                                        <button>Удалить</button>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="korProductCount">
+                                <button>-</button>
+                                <span>1</span>
+                                <button>+</button>
+                            </div>
+                            <div class="korProductPrice">
+                                <span>$680</span>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="korMainPriceBox">
+                <div class="korMainPriceBoxTite">
+                    <span class="korMainPriceBoxTiteInfo">Итого:</span>
+                    <span class="korMainPriceBoxTitePrice">$766</span>
+                </div>
+                <ul class="korMainPriceBoxPriceInfo">
+                    <li>
+                        <span class="korMainPriceBoxPriceInfoName">Промокод:</span> 
+                        <span class="korMainPriceBoxPriceInfoPrice">0 сум</span>
+                    </li>
+                    <li>
+                        <span class="korMainPriceBoxPriceInfoName">Сумма доставки:</span> 
+                        <span class="korMainPriceBoxPriceInfoPrice">0 сум</span>
+                    </li>
+                    <li>
+                        <span class="korMainPriceBoxPriceInfoName">Сумма товара:</span> 
+                        <span class="korMainPriceBoxPriceInfoPrice">0 сум</span>
+                    </li>
+                </ul>
+                <div class="korMainPriceBoxFooter">
+                    <div class="korMainPriceBoxFooterDastafka">
+                        <span class="korMainPriceBoxFooterDastafka-chil1">Доставка:</span>
+                        <span class="korMainPriceBoxFooterDastafka-chil2">Курьером</span>
+                    </div>
+                    <div class="korMainPriceBoxFooterEnd">
+                        <button>Оформить заказ</button>
+                        <span>Нажимая 'Оформить заказ', я соглашаюсь с публичным договором оферты</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

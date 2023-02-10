@@ -29,7 +29,9 @@
 }
 
 .korMain {
+    width: 100%;
     display: flex;
+    justify-content: space-between;
 }
 
 .korMainProducts {
@@ -43,6 +45,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 .korMainProductsHeader span {
@@ -53,8 +56,10 @@
 }
 
 .korMainProductsHeaderRight {
+    width: 280px;
     display: flex;
-    gap: 120px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .korProducts {
@@ -148,4 +153,122 @@
 
 .korProductPrice span {
     width: 100px;
+}
+
+.korMainPrice {
+    display: flex;
+    width: 100%;
+}
+
+.korMainPriceBox {
+    width: 350px;
+    height: 393px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    padding: 0px 14px;
+}
+
+.korMainPriceBoxTite {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 23px;
+}
+
+.korMainPriceBoxTiteInfo {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    color: #3C3C3C;
+}
+
+.korMainPriceBoxTitePrice {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    color: #3C3C3C;
+}
+
+.korMainPriceBoxPriceInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    border-bottom: 1px solid #D9D9D9;
+    margin-top: 23px;
+    padding-bottom: 21px;
+}
+
+.korMainPriceBoxPriceInfo li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.korMainPriceBoxPriceInfoName {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #3C3C3C;
+}
+
+.korMainPriceBoxPriceInfoPrice {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #888888;
+}
+
+.korMainPriceBoxFooter {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 41px;
+}
+
+.korMainPriceBoxFooterDastafka {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.korMainPriceBoxFooterDastafka-chil1 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #3C3C3C;
+}
+
+.korMainPriceBoxFooterDastafka-chil2 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: right;
+    color: #888888;
+}
+
+.korMainPriceBoxFooterEnd {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.korMainPriceBoxFooterEnd button {
+    width: 320px;
+    height: 44px;
+    background: #E81D1C;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+}
+
+.korMainPriceBoxFooterEnd span {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #888888;
 }
