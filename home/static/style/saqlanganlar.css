@@ -1,0 +1,73 @@
+.izb {
+    width: 1140px;
+    margin: auto;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.izbMain {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.izbMainHeader {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.izbMainHeaderLeft {
+    display: flex;
+    gap: 50px;
+}
+
+.izbMainHeaderLeft span {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 31px;
+    color: #3C3C3C;
+}
+
+.izbMainHeaderLeft button {
+    border: none;
+    background: none;
+    text-decoration: underline;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration-line: underline;
+    color: #5E5E5E;
+    cursor: pointer;
+}
+
+.izbMainHeader select {
+    width: 163px;
+    height: 30px;
+    border-color: #E81D1C;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #000000
+}
+
+.izbMainProducts {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-row-gap: 28px;
+    grid-column-gap: 28px;
+}
+
+.rel {
+    position: relative;
+}
+
+.izbProductClose {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

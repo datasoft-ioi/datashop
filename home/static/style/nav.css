@@ -3,6 +3,10 @@ nav {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+.noneBox {
+    box-shadow: none;
+}
+
 
 .navtop {
     width: 100%;
@@ -42,7 +46,7 @@ nav {
 }
 
 .navtopTelefon .til {
-    border: none ;
+    border: none;
     background: none;
     color: #FFFFFF;
 }
@@ -56,6 +60,7 @@ nav {
 
 .navBottom {
     display: flex;
+    z-index: 9;
 }
 
 .navBottomCon {
@@ -65,6 +70,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .navBottomCon .logo img {
@@ -128,4 +134,217 @@ nav {
 .navbottomBtns button:hover {
     background-color: #acacac20;
     border-radius: 5px;
+}
+
+
+/* Kategory style */
+
+@keyframes kategoryAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.kategory {
+    width: 100%;
+    background: #FFFFFF;
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
+    position: absolute;
+    z-index: 3;
+    transform: translateY(-999px);
+    -webkit-box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.1);
+}
+
+.kategoryOn {
+    animation: kategoryAnimation 0.3s;
+    transform: translateY(0);
+}
+
+.kategoryCon {
+    width: 1140px;
+    margin: auto;
+    padding-top: 10px;
+    display: flex;
+    gap: 77px;
+}
+
+.kategoryLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.kategoryLinks li {
+    width: 231px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+    cursor: pointer;
+}
+
+.kategoryLinks li i {
+    font-size: 12px;
+}
+
+.kategoryLinks li:hover {
+    background-color: #00000010;
+    border-radius: 5px;
+}
+
+.kategoryLinksLeft {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.kategoryLinksLeft img {
+    max-width: 30px;
+    max-height: 30px;
+}
+
+.kategoryLinksLeft span {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #666363;
+}
+
+.kategoryRight {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 30px;
+}
+
+.kategoryRightTitle {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+}
+
+.kategoryInfos {
+    display: flex;
+    gap: 60px;
+}
+
+.kategoryInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.kategoryInfo span {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+}
+
+
+.kategoryInfo li {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #666363;
+    cursor: pointer;
+}
+
+.kategoryInfo li:hover {
+    color: #000;
+    font-weight: 500;
+}
+
+/* profil box */
+
+.profilBox {
+    width: 170px;
+    height: 188px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    position: absolute;
+    right: 0;
+    top: 55px;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-990px);
+}
+
+.profilBoxName {
+    width: 80%;
+    margin: auto;
+    padding: 0px 10px;
+    padding-top: 0px;
+    padding-bottom: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #3C3C3C;
+    text-align: center;
+    border-bottom: 1px solid #DEDEDE;
+}
+
+.profilBoxBtns {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+
+.profilBoxBtns button {
+    width: 100%;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    border: none;
+    background: none;
+    transition: 0.6s;
+}
+
+.profilBoxBtns button:hover {
+    transition: 0.6s;
+    padding-left: 5px;
+    cursor: pointer;
+}
+
+.profilBoxBtns button img {
+    width: 20px;
+}
+
+.profilBoxBtns button span {
+    padding-left: 10px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #3C3C3C;
+}
+.profilOn {
+    transform: translateY(0);
+    animation: kategoryAnimation 0.3s;
+}
+
+.closeKategory {
+    position: absolute;
+    width: 100%;
+    height: 100vh ;
+    background-color: #00000000;
+    z-index: 2;
+    transform: translateY(-9999px);
+}
+.closeKategoryOn {
+    transform: translateY(0);
 }

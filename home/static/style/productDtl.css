@@ -6,7 +6,7 @@
 
 .links {
     display: flex;
-    gap: 10px;
+    gap: 5px;
 }
 
 .links li {
@@ -60,10 +60,14 @@
     justify-content: center;
     border-radius: 10px;
 }
+
 .topImage img {
     max-width: 329px;
     max-height: 247px;
+    min-width: 329px;
+    min-height: 247px;
 }
+
 .dtlProductImages {
     width: 439px;
     display: flex;
@@ -260,4 +264,47 @@
     align-items: center;
     gap: 35px;
     margin-top: 30px;
+}
+
+.topImgCon {
+    width: 439px;
+    height: 409px;
+    background: #FFFFFF;
+    border: 0.5px solid #D1D1D1;
+    border-radius: 10px;
+}
+
+.imgBottomCon {
+    width: 439px;
+    height: 100px;
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.topIMg img {
+    max-width: 329px;
+    max-height: 247px;
+    min-width: 329px;
+    min-height: 247px;
+}
+
+.bottomIMg {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottomIMg img {
+    width: 70px;
+    height: auto;
 }
