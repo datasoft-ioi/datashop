@@ -29,7 +29,7 @@ def index(request):
         request.session['currency'] = settings.DEFAULT_CURRENCY
 
     setting = Setting.objects.get(pk=1)
-    products_latest = Product.objects.all().order_by('-id')[:5]  # last 5 products
+    products_latest = Product.objects.all().order_by('-id')[:10]  # last 5 products
     # >>>>>>>>>>>>>>>> M U L T I   L A N G U G A E >>>>>> START
     defaultlang = settings.LANGUAGE_CODE[0:2]
     # currentlang = "request.LANGUAGE_CODE[0:2]"

@@ -1,6 +1,6 @@
 {% load static %}
     
-    <!-- Navbar -->
+    {% comment %} <!-- Navbar -->
 
     <nav>
         <div class="navtop">
@@ -56,6 +56,94 @@
                         <a href="{% url 'login' %}"><span>Kirish</span></a>
                     </button>
                     {% endif %}
+                </div>
+
+                 <!-- profil  -->
+
+                 <div class="profilBox">
+                    <span class="profilBoxName">Javlonbek</span>
+                    <div class="profilBoxBtns">
+                        <button><img src="../media/person.svg" alt=""><span>Личный кабинет</span></button>
+                        <button><img src="../media/dastafka2.svg" alt=""><span>Мои заказы</span></button>
+                        <button><img src="../media/bell.svg" alt=""><span>Уведомления</span></button>
+                        <button><img src="../media/close.svg" alt=""><span>Выйти</span></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav> {% endcomment %}
+
+
+
+    <!-- Navbar -->
+
+    <nav>
+        <div class="navtop">
+            <div class="navtopCon">
+                <div class="navtopLocation">
+                    <span>Адрес: Urganch, Darital, 2-этаж</span>
+                </div>
+                <div class="navtopTelefon">
+                    <span>Телефон поддержки: (99) 900 10 10</span>
+                    <div>
+                        <img src="../media/uzflag.svg" alt="">
+                        <select class="til">
+                            <option value="UZB">UZB</option>
+                            <option value="RUS">RUS</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navBottom">
+            <div class="navBottomCon">
+                <a href="{% url 'home' %}">
+                    <div class="logo">
+                        <img src="{% static 'media/datashoplogo.png' %}" alt="">
+                    </div>
+                </a>
+                <div class="category">
+                    <button id="kategoryBtn"><img src="{% static 'media/categoryLogo.svg' %}" alt="">Категория</button>
+                </div>
+                <div class="navSerach">
+                    <input type="text" placeholder="Введите запрос...">
+                    <button><img src="{% static 'media/search.svg' %}" alt=""></button>
+                </div>
+                <div class="navbottomBtns">
+                <a href="{% url 'shopcart'%}">
+                    <button>
+                        <img src="{% static 'media/korzinka.svg' %}" alt="">
+                        <span>Корзина</span>
+                    </button>
+                </a>
+                    <button>
+                        <img src="{% static 'media/izbrene.svg' %}" alt="">
+                        <span>Избранное</span>
+                    </button>
+                    {% if user.is_authenticated %}
+                    <button class="profilBtn">
+                        <img src="{% static 'media/person.svg' %}" alt="">
+                        <span>{{ user.username }}</span>
+                    </button>
+                    {% else %}
+                    <button>
+                        <img src="{% static 'media/person.svg' %}" alt="">
+                        <a href="{% url 'login' %}"><span>Kirish</span></a>
+                    </button>
+                    {% endif %}
+                </div>
+
+                <!-- profil  -->
+
+                <div class="profilBox">
+                    <span class="profilBoxName">{{ user.username }}</span>
+                    <div class="profilBoxBtns">
+                        <button><img src="{% static 'media/person.svg' %}" alt=""><span>Личный кабинет</span></button>
+                        <button><img src="{% static 'media/dastafka2.svg' %}" alt=""><span>Мои заказы</span></button>
+                        <button><img src="{% static 'media/bell.svg' %}" alt=""><span>Уведомления</span></button>
+                        <button><img src="{% static 'media/close.svg' %}" alt=""><a href="{% url 'logout' %}"><span>Выйти</span></a></button>
+                    </div>
                 </div>
             </div>
         </div>
