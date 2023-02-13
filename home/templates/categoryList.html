@@ -1,6 +1,6 @@
 {% extends 'homebase.html' %}
-{% block title %}{{ catdata.title }} Products{% endblock %}
-{% block description %} {{ catdata.description }} {% endblock %}
+{% comment %} {% block title %}{{ catdata.title }} Products{% endblock %}
+{% block description %} {{ catdata.description }} {% endblock %} {% endcomment %}
 {% block keywords %} {{ category.keywords }} {% endblock %}
 
 {% load static %}
@@ -9,7 +9,7 @@
 <div class="categoryList">
     <ul class="links">
         <li>Asosiy</li>
-        <li>{{ catdata.title }}</li>
+        {% comment %} <li>{{ catdata.title }}</li> {% endcomment %}
     </ul>
     <div class="categoryListHeader">
         <div class="categoryListHeaderTitle">

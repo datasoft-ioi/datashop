@@ -28,7 +28,11 @@ class ShopCart(models.Model):
     def varamount(self):
         return (self.quantity * self.variant.price)
 
+    class Meta:
+        verbose_name = "Do'kon savati"
+        verbose_name_plural ="Do'konlar savati"
 
+        
 class ShopCartForm(ModelForm):
     class Meta:
         model = ShopCart
@@ -61,6 +65,10 @@ class Order(models.Model):
     def __str__(self):
         return self.user.first_name
 
+    class Meta:
+        verbose_name = "Burutma"
+        verbose_name_plural = "Burutmalar"
+
 class OrderForm(ModelForm):
     class Meta:
         model = Order
@@ -85,3 +93,8 @@ class OrderProduct(models.Model):
 
     def __str__(self):
         return self.product.title
+
+
+    class Meta:
+        verbose_name = "Maxsulot Buyurtmasi"
+        verbose_name_plural = "Maxsulot Buyurtmalari"

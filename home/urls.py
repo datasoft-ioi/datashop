@@ -13,6 +13,6 @@ urlpatterns = [
     path('login/', views.login) ,
     path('korzinka/', views.korzinka),
 
-    path('category/<int:id>/<slug:slug>/', views.category_products)
+    path('category/<int:id>/<slug:slug>/', views.category_products, name="category_products")
 
 ]

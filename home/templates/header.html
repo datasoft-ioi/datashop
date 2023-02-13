@@ -1,79 +1,5 @@
 {% load static %}
     
-    {% comment %} <!-- Navbar -->
-
-    <nav>
-        <div class="navtop">
-            <div class="navtopCon">
-                <div class="navtopLocation">
-                    <span>Адрес: Urganch, Darital, 2-этаж</span>
-                </div>
-                <div class="navtopTelefon">
-                    <span>Телефон поддержки: (99) 900 10 10</span>
-                    <div>
-                        <img src="../media/uzflag.svg" alt="">
-                        <select class="til">
-                            <option value="UZB">UZB</option>
-                            <option value="RUS">RUS</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="navBottom">
-            <div class="navBottomCon">
-                <div class="logo">
-                    <a href="{% url 'home' %}">
-                        <img src="{% static 'media/datashoplogo.png' %}" alt="">
-                    </a>
-                </div>
-                <div class="category">
-                    <button><img src="{% static 'media/categoryLogo.svg' %}" alt="">Категория</button>
-                </div>
-                <div class="navSerach">
-                    <input type="text" placeholder="Введите запрос...">
-                    <button><img src="{% static 'media/search.svg' %}" alt=""></button>
-                </div>
-                <div class="navbottomBtns">
-                    <a href="{% url 'shopcart'%}">
-                        <button>
-                            <img src="{% static 'media/korzinka.svg' %}" alt="">
-                            <span>Savat</span>
-                        </button>
-                    </a>
-                    <button>
-                        <img src="{% static 'media/izbrene.svg' %}" alt="">
-                        <span>Saqlanganlar</span>
-                    </button>
-                    {% if user.is_authenticated %}
-                    <button>
-                        <img src="{% static 'media/person.svg' %}" alt="">
-                        <span>{{ user.username }}</span>
-                    </button>
-                    {% else %}
-                    <button>
-                        <img src="{% static 'media/person.svg' %}" alt="">
-                        <a href="{% url 'login' %}"><span>Kirish</span></a>
-                    </button>
-                    {% endif %}
-                </div>
-
-                 <!-- profil  -->
-
-                 <div class="profilBox">
-                    <span class="profilBoxName">Javlonbek</span>
-                    <div class="profilBoxBtns">
-                        <button><img src="../media/person.svg" alt=""><span>Личный кабинет</span></button>
-                        <button><img src="../media/dastafka2.svg" alt=""><span>Мои заказы</span></button>
-                        <button><img src="../media/bell.svg" alt=""><span>Уведомления</span></button>
-                        <button><img src="../media/close.svg" alt=""><span>Выйти</span></button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </nav> {% endcomment %}
-
 
 
     <!-- Navbar -->
@@ -87,7 +13,7 @@
                 <div class="navtopTelefon">
                     <span>Телефон поддержки: (99) 900 10 10</span>
                     <div>
-                        <img src="../media/uzflag.svg" alt="">
+                        <img src="{% static 'media/uzflag.svg' %}" alt="">
                         <select class="til">
                             <option value="UZB">UZB</option>
                             <option value="RUS">RUS</option>
@@ -148,3 +74,98 @@
             </div>
         </div>
     </nav>
+
+    <!-- mobile version navbar -->
+    
+    <div class="resNav">
+        <div class="resNavTop">
+            <div class="logo">
+                <img src="{% static 'media/datashoplogo.png' %}" alt="">
+            </div>
+            <div class="resNavFlag">
+                <i class="fa-solid fa-phone"></i>
+                <div>
+                    <img src="{% static 'media/uzflag.svg' %}" alt="">
+                    <select class="til">
+                        <option value="UZB">UZB</option>
+                        <option value="RUS">RUS</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="navBottomCon">
+            <div class="logo none">
+                <img src="{% static 'media/datashoplogo.png' %}" alt="">
+            </div>
+            <div class="category">
+                <button class="kategoryBtn" id="kategoryBtn"><img src="{% static 'media/categoryLogo.svg' %}" alt=""></button>
+            </div>
+            <div class="navSerach">
+                <input type="text" placeholder="Введите запрос...">
+                <button><img src="{% static 'media/search.svg' %}" alt=""></button>
+            </div>
+        </div>
+    </div>
+
+    {% load mptt_tags %}
+    
+    <div class="kategory">
+        <div class="kategoryCon">
+            <ul class="kategoryLinks">
+                
+                {% recursetree category %}
+                <li>
+                <a href="{% url 'category_products' node.id node.slug %}">
+                    <div class="kategoryLinksLeft">
+                        <img src="{% static 'media/laptop.svg' %}" alt="">
+                        <span>{{node.title}}</span>
+                    </div>
+                </a>
+                <i class="fa-solid fa-chevron-right"></i>
+                    
+                </li>
+                
+                {% endrecursetree %}
+                
+
+            </ul>
+            <div class="kategoryRight">
+                <span class="kategoryRightTitle">Ноутбуки</span>
+                <div class="kategoryInfos">
+                    {% recursetree category %}
+                    {% for child in node.children.all %}
+                    <ul class="kategoryInfo">
+                            <a href="{% url 'category_products' child.id child.slug %}">
+                                <span>{{ child.title }}</span>
+                            </a>
+                            {% comment %} {{ children }} {% endcomment %}
+                            {% comment %} {% if not node.is_leaf_node %} {% endcomment %}
+                            {% recursetree child.children.set %}
+                                <a href="{% url 'category_products' node.id node.slug %}">
+                                    <li>{{node.title}}</li>
+                                </a>
+                            {% endrecursetree %}
+                            {% comment %} {% endif %} {% endcomment %}
+                            {% comment %}<li>Apple</li>
+                            <li>MSI</li>
+                            <li>Dell</li>
+                            <li>Lenovo</li> {% endcomment %}
+                        </ul>
+                    {% endfor %}
+                    {% endrecursetree %}
+                        {% comment %} <ul class="kategoryInfo">
+                            <span>Кулеры для ноутбуков</span>
+                            <li>1 Кулерный</li>
+                            <li>2 Кулерные</li>
+                            <li>Пластиковые</li>
+                            <li>Металлические</li>
+                        </ul>
+                        <ul class="kategoryInfo">
+                            <span>Сумки для ноутбуков</span>
+                        </ul> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="closeKategory"></div> 

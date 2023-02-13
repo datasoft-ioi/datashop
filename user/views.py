@@ -24,6 +24,7 @@ def index(request):
     return render(request,'user_profile.html',context)
 
 def login_form(request):
+    category = Category.objects.all()
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -46,7 +47,7 @@ def login_form(request):
     # Return an 'invalid login' error message.
 
     #category = Category.objects.all()
-    context = {#'category': category
+    context = {'category': category
      }
     return render(request, 'login.html',context)
 

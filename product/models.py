@@ -45,6 +45,9 @@ class Category(MPTTModel):
             k = k.parent
         return ' / '.join(full_path[::-1])
 
+    class Meta:
+        verbose_name = "Kategoriya"
+        verbose_name_plural = "Kategoriyalar"
 
 class Product(models.Model):
     STATUS = (
@@ -101,6 +104,9 @@ class Product(models.Model):
             cnt = int(reviews["count"])
         return cnt
 
+    class Meta:
+        verbose_name = "Maxsulotlar So'zlamasi"
+        verbose_name_plural = "Maxsulotlar So'zlamalari"
 
 class Images(models.Model):
     product=models.ForeignKey(Product,on_delete=models.CASCADE)
@@ -109,6 +115,11 @@ class Images(models.Model):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name = "Rasm / 'Images' "
+        verbose_name_plural = "Rasmlar / 'Images'"
+
 
 class Comment(models.Model):
     STATUS = (
@@ -129,6 +140,11 @@ class Comment(models.Model):
     def __str__(self):
         return self.subject
 
+
+    class Meta:
+        verbose_name = "Kamentariya"
+        verbose_name_plural = "Kamentariyalar"
+
 class CommentForm(ModelForm):
     class Meta:
         model = Comment
@@ -147,11 +163,21 @@ class Color(models.Model):
             return ""
 
 
+    class Meta:
+        verbose_name = "Rang"
+        verbose_name_plural = "Ranglar"
+
+
 class Size(models.Model):
     name = models.CharField(max_length=20)
     code = models.CharField(max_length=10, blank=True,null=True)
     def __str__(self):
         return self.name
+
+    
+    class Meta:
+        verbose_name = "Size"
+
 
 class Variants(models.Model):
     title = models.CharField(max_length=100, blank=True,null=True)
@@ -197,6 +223,10 @@ class ProductLang(models.Model):
 
     def get_absolute_url(self):
         return reverse('product_detail', kwargs={'slug': self.slug})
+
+    class Meta:
+        verbose_name = "Maxsulot Tili"
+        verbose_name_plural ="Maxslotlar Tillari"
 
 class CategoryLang(models.Model):
     category = models.ForeignKey(Category, related_name='categorylangs', on_delete=models.CASCADE) #many to one relation with Category

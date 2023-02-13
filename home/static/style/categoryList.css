@@ -132,6 +132,7 @@
     background: #fff;
     border-radius: 5px;
 }
+
 .price-field input[type="range"]::-ms-track {
     /* IE */
     width: 178px;
@@ -217,6 +218,7 @@
 /* create list style */
 
 
+
 .categoryList {
     width: 1140px;
     margin: auto;
@@ -299,6 +301,8 @@
     line-height: 18px;
     color: #686868;
 }
+
+
 
 .categoryListMainFilterInputs-chil input {
     width: 105px;
@@ -399,6 +403,7 @@ input[type="radio"] {
     color: #FFFFFF;
 }
 
+
 .filterClickBtnsBtn i {
     color: rgb(255, 255, 255);
     font-size: 18px;
@@ -431,3 +436,144 @@ input[type="radio"] {
     flex-wrap: wrap;
     gap: 10px;
 }
+
+.categoryListMainProducResponsive {
+    display: none;
+}
+
+
+.filterTop {
+    display: none;
+}
+
+.vh {
+    display: none;
+}
+
+@media screen and (max-width: 414px) and (min-width: 360px) {
+    .categoryListMainFilter {
+        display: flex;
+        gap: 0;
+    }
+
+    .categoryListHeader {
+        margin-top: 20px;
+    }
+
+
+
+    .categoryListMainProductHeader {
+        display: none;
+    }
+
+    .categoryListMainFilter {
+        display: none;
+        transform: translateX(-300px);
+        transition: all 0.5s ease;
+    }
+
+    .categoryListMainProductMain {
+        display: flex;
+        flex-wrap: nowrap;
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .categoryListMainProducResponsive {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: -20px;
+    }
+
+    .SliderItem {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        margin: 10px 0;
+    }
+
+    .sliderTitle {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        color: #000000;
+    }
+
+    .filterMenu {
+        display: flex;
+        transform: translateX(0);
+        background-color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        height: 100vh;
+        padding: 20px;
+        transition: all 0.5s ease;
+        overflow-y: scroll;
+    }
+
+
+    .filterTop {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    .filterTop p {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        color: #3C3C3C;
+
+    }
+
+    .vhh {
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        right: 0;
+        height: 100%;
+        background-color: #00000058;
+        z-index: 9;
+    }
+
+
+    .none {
+        display: none;
+    }
+
+    .categoryListHeaderRandomBtns button {
+        width: 94px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .categoryListHeaderTitle-chil {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .categoryListHeaderTitle-chil2 {
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 12px;
+    }
+
+    .links li {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    .priceFilterTitle{
+        margin: 20px 0;
+    }
+}   
