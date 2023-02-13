@@ -348,3 +348,93 @@ nav {
 .closeKategoryOn {
     transform: translateY(0);
 }
+.resNav {
+    display: none;
+}
+
+
+/* mobile version style */
+
+@media screen and (max-width: 414px) and (min-width: 360px) {
+    nav {
+        display: none;
+    }
+    .resNav {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0px 10px;
+        margin-top: 20px;
+    }
+    .resNavTop{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .navBottomCon {
+        justify-content: start;
+    }
+    #kategoryBtn {
+        width: 40px;
+        height: 40px;
+    }
+    .navSerach {
+        width: 100%;
+        height: 40px;
+    }
+    .navSerach button  {
+        width: 54px;
+        height: 40px;
+    }
+    .resNavFlag{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+    }
+    .resNavFlag div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+    }
+    .navBottomCon {
+        width: 100%;
+        justify-content: space-between;
+        gap: 7px;
+    }
+    .til {
+        border: none;
+    }
+    .kategoryCon {
+        width: 100%;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .kategoryRightTitle {
+        display: none;
+    }
+    .kategoryInfos {
+        flex-direction: column;
+        padding: 0px 10px;
+    }
+    .kategoryLinks {
+        width: 100%
+    }
+    .kategoryLinks li {
+        width: 100%;
+    }
+    .mySwiper {
+        width: 95%;
+        height: 181px;
+        padding: 0px 10px;
+        border-radius: 20px;
+    }
+    .swiper-wrapper {
+        width: 100%;
+        height: 181px;
+    }
+    .swiper-slide img {
+        width: 100%;
+    }
+}

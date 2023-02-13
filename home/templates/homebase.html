@@ -14,11 +14,8 @@
     <link rel="stylesheet" href="{% static 'style/nav.css' %}">
     <link rel="stylesheet" href="{% static 'style/header.css' %}">
     <link rel="stylesheet" href="{% static 'style/main.css' %}">
-    <link rel="stylesheet" href="{% static 'style/productDtl.css' %}">
     <link rel="stylesheet" href="{% static 'style/categoryList.css' %}">
-    <link rel="stylesheet" href="{% static 'style/register.css' %}">
     <link rel="stylesheet" href="{% static 'style/korzinka.css' %}">
-
     <link rel="stylesheet" href="{% static 'style/register.css' %}">
     <link rel="stylesheet" href="{% static 'style/order.css' %}">
     <link rel="stylesheet" href="{% static 'style/person.css' %}">
@@ -41,7 +38,7 @@
 </head>
 
 <body>
-
+    
     {% include 'header.html' %}
     {% block slider %} {% endblock %}
 
@@ -54,4 +51,5 @@
 </body>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
     <script src="{% static 'js/app.js' %}"></script>
+    <script src="{% static 'js/kategori.js' %}"></script>
 </html>

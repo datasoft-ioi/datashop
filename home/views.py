@@ -48,13 +48,16 @@ def index(request):
 
     products_picked = Product.objects.all().order_by('?')[:4]   #Random selected 4 products
 
+    category = Category.objects.all()
+
+
     page="home"
     context={'setting':setting,
              'page':page,
              'products_slider': products_slider,
              'products_latest': products_latest,
              'products_picked': products_picked,
-             #'category':category
+             'category':category
              }
     return render(request,'index.html',context)
 
@@ -112,6 +115,7 @@ def category_products(request,id,slug):
     defaultlang = settings.LANGUAGE_CODE[0:2]
     # currentlang = request.LANGUAGE_CODE[0:2]
     catdata = Category.objects.get(pk=id)
+    category = Category.objects.all()
     products = Product.objects.filter(category_id=id) #default language
     # if defaultlang != currentlang:
     #     try:
@@ -126,8 +130,9 @@ def category_products(request,id,slug):
     #     catdata = CategoryLang.objects.get(category_id=id, lang=currentlang)
 
     context={'products': products,
-             #'category':category,
-             'catdata':catdata }
+             'category':category,
+             'catdata':catdata 
+            }
     return render(request,'categoryList.html',context)
 
 def search(request):
