@@ -56,6 +56,10 @@ class Setting(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        verbose_name = "Sayt So'zlamasi"
+        verbose_name_plural = "Sayt So'zlamalari"
+
 
 class SettingLang(models.Model):
     setting = models.ForeignKey(Setting, on_delete=models.CASCADE) #many to one relation with Category
@@ -68,6 +72,10 @@ class SettingLang(models.Model):
     references = RichTextUploadingField(blank=True)
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name = "Til So'zlamasi"
+        verbose_name_plural = "Til So'zlamalari"
 
 class ContactMessage(models.Model):
     STATUS = (

@@ -29,7 +29,10 @@ def index(request):
         request.session['currency'] = settings.DEFAULT_CURRENCY
 
     setting = Setting.objects.get(pk=1)
-    products_latest = Product.objects.all().order_by('-id')[:10]  # last 5 products
+    products_latest = Product.objects.filter(category__title='Noutbuk').order_by('-id')[:10]  # last 5 products
+
+    #laptop 
+
     # >>>>>>>>>>>>>>>> M U L T I   L A N G U G A E >>>>>> START
     defaultlang = settings.LANGUAGE_CODE[0:2]
     # currentlang = "request.LANGUAGE_CODE[0:2]"
@@ -57,7 +60,8 @@ def index(request):
              'products_slider': products_slider,
              'products_latest': products_latest,
              'products_picked': products_picked,
-             'category':category
+             'category':category,
+
              }
     return render(request,'index.html',context)
 

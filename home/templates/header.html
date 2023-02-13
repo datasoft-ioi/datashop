@@ -112,19 +112,22 @@
     <div class="kategory">
         <div class="kategoryCon">
             <ul class="kategoryLinks">
-                {% recursetree category %}
                 
+                {% recursetree category %}
                 <li>
-                {% comment %} <a href="{% url 'category_products' node.id node.slug %}"> {% endcomment %}
+                <a href="{% url 'category_products' node.id node.slug %}">
                     <div class="kategoryLinksLeft">
                         <img src="{% static 'media/laptop.svg' %}" alt="">
                         <span>{{node.title}}</span>
                     </div>
-                {% comment %} </a> {% endcomment %}
-                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <i class="fa-solid fa-chevron-right"></i>
+                    
                 </li>
                 
                 {% endrecursetree %}
+                
+
             </ul>
             <div class="kategoryRight">
                 <span class="kategoryRightTitle">Ноутбуки</span>
@@ -137,7 +140,7 @@
                             </a>
                             {% comment %} {{ children }} {% endcomment %}
                             {% comment %} {% if not node.is_leaf_node %} {% endcomment %}
-                            {% recursetree child.children.all %}
+                            {% recursetree child.children.set %}
                                 <a href="{% url 'category_products' node.id node.slug %}">
                                     <li>{{node.title}}</li>
                                 </a>
