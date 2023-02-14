@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '+_kpygc=c942&rne8#tm07(iy$s69d9w3i1d9bl#h7%34+v)4&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["datashop.uz", ".datashop.uz", "localhost", "3.90.163.153", "localhost"]
 
