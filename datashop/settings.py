@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '+_kpygc=c942&rne8#tm07(iy$s69d9w3i1d9bl#h7%34+v)4&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["datashop.uz", ".datashop.uz", "localhost", "3.90.163.153", "localhost"]
 
@@ -138,6 +138,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATICFILES_DIRS = [
+#     '/home/ubuntu/datashop/static'
+# ]
+
 
 
 MEDIA_URL = '/uploads/'
