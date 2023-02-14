@@ -19,15 +19,16 @@
             {% for cat in category_latest %}
             <a href="{% url 'category_products' cat.id cat.slug %}">
                 <div class="headerCategroyBoxCon">
-                    <span>
-                        {{ cat.title }}
-                    </span>
-                    {% if cat.image %}
-                    <img style="width: 50%" src="{{cat.image.url}}" alt="">
-                    {% else %}
-                    <img style="width: 50%" src="{% static 'media/noimage.webp' %}" alt="">
-                    {% endif %}
+                        <span>
+                            {{ cat.title }}
+                        </span>
+                        {% if cat.image %}
+                        <img style="width: 50%" src="{{cat.image.url}}" alt="">
+                        {% else %}
+                        <img style="width: 50%" src="{% static 'media/noimage.webp' %}" alt="">
+                        {% endif %}
                 </div>
+            </a>
             {% endfor %}
             {% comment %} <div class="headerCategroyBoxCon">
                 <span>
