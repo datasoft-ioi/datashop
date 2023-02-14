@@ -25,7 +25,7 @@ SECRET_KEY = '+_kpygc=c942&rne8#tm07(iy$s69d9w3i1d9bl#h7%34+v)4&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["datashop.uz", ".datashop.uz", "localhost", "3.90.163.153", "127.0.0.1"]
+ALLOWED_HOSTS = ["datashop.uz", ".datashop.uz", "localhost", "3.90.163.153", "localhost"]
 
 
 # Application definition
