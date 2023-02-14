@@ -20,7 +20,7 @@ header {
     width: 270px;
     height: 120px;
     /* background: linear-gradient(180deg, #60B3FF 0%, rgba(41, 90, 185, 0.76) 100%); */
-    background: #d6d9e2;
+    /* background: #d6d9e2; */
     display: flex;
     align-items: center;
     justify-content: space-between;
