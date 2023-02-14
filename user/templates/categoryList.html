@@ -125,8 +125,9 @@
                 </select>
             </div>
             <div class="categoryListMainProductMain">
-                {% if product %}
+
                 {% for rs in products %}
+                    {% comment %} {% for obj in rs.children.all %} {% endcomment %}
                     <div class="product">
                         <div class="productHeader">
                             <span class="new">new</span>
@@ -154,41 +155,9 @@
 
                         </div>
                     </div>
+                    {% comment %} {% endfor %} {% endcomment %}
                 {% endfor %}
-                {% else %}
-                    {% for catobj in category %}
-                    {% for chid in catobj.children.id %}
-                    <div class="product">
-                        <div class="productHeader">
-                            <span class="new">new</span>
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                        <div class="productImg">
-                            <img src="{{ chid.image }}" alt="">
-                        </div>
-                        <div class="productBottomInfo">
-                            <span class="productTitle">
-                                {{ chid.title }}
-                            </span>
-                            <div class="productStar">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                            </div>
-                            <span class="productPrice">{{ rs.price }}</span>
 
-                            <div class="categoryListMain">
-
-                            </div>
-
-                        </div>
-                    </div>
-                    {% endfor %}
-                    {% endfor %}
-
-                {% endif %}
             </div>
 
         </div>
