@@ -80,7 +80,7 @@ def selectlanguage(request):
         #return HttpResponse(lang)
         return HttpResponseRedirect("/"+lang)
 
-def     aboutus(request):
+def aboutus(request):
     #category = categoryTree(0,'',currentlang)
     defaultlang = settings.LANGUAGE_CODE[0:2]
     currentlang = request.LANGUAGE_CODE[0:2]
