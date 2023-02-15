@@ -18,10 +18,27 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+from django.conf.urls.i18n import i18n_patterns
+
+from user import views as UserViews
+from order import views as OrderViews
+
+from home import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('home.urls')),
+    path('', views.index, name="home"),
+    path('home/', include('home.urls')),
+    path('product/', include('product.urls')),
+    path('order/', include('order.urls')),
+    path('user/', include('user.urls'), name='user'),
+
+    path('shopcart/', OrderViews.shopcart, name='shopcart'),
+
+    path('login/', UserViews.login_form, name='login'),
+    path('logout/', UserViews.logout_func, name='logout'),
+    path('signup/', UserViews.signup_form, name='signup'),
     # path('i18n/', include('django.conf.urls.i18n')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
