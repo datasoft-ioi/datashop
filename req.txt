@@ -1,5 +1,5 @@
-django==3.2
-beautifulsoup4==4.9.1
+django
+beautifulsoup4
 django-ckeditor
 django-currencies
 django-js-asset

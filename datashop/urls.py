@@ -1,7 +1,7 @@
 """datashop URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/2.2/topics/http/urls/
+    https://docs.djangoproject.com/en/4.1/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -15,44 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.conf.urls.static import static
 from django.conf import settings
-from django.conf.urls.i18n import i18n_patterns
-
-from user import views as UserViews
-from order import views as OrderViews
-
-from home import views
+from django.conf.urls.static import static
 
 
 urlpatterns = [
-    path('selectlanguage', views.selectlanguage, name='selectlanguage'),
-    path('selectcurrency', views.selectcurrency, name='selectcurrency'),
-    path('savelangcur', views.savelangcur, name='savelangcur'),
-    path('i18n/', include('django.conf.urls.i18n')),
-]
-
-urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
-    path('', views.index, name='home'),
-    path('home/', include('home.urls')),
-    path('product/', include('product.urls')),
-    path('order/', include('order.urls')),
-    path('user/', include('user.urls'), name='user'),
-
-    path('shopcart/', OrderViews.shopcart, name='shopcart'),
-
-    path('login/', UserViews.login_form, name='login'),
-    path('logout/', UserViews.logout_func, name='logout'),
-    path('signup/', UserViews.signup_form, name='signup'),
-
+    path('', include('home.urls')),
+    # path('i18n/', include('django.conf.urls.i18n')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-    prefix_default_language=False,
-) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-# # if settings.DEBUG:
-# urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-
-
+# if settings.DEBUG:
+#     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
