@@ -129,3 +129,11 @@
     border: none;
     cursor: pointer;
 }
+
+@media screen and (max-width: 414px) and (min-width: 360px) {
+    .registerBox {
+        height: 100%;
+        width: 100%;
+        align-items: center;
+    }
+}

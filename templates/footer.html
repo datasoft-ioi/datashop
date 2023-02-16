@@ -55,53 +55,8 @@
 </footer>
 </body>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
 
-<!-- Initialize Swiper -->
 
-<script>
-var swiper = new Swiper(".mySwiper", {
-    spaceBetween: 30,
-    centeredSlides: true,
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-});
-const swiperEl = document.querySelector('swiper-container')
-Object.assign(swiperEl, {
-    slidesPerView: 1,
-    spaceBetween: 10,
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-    },
-    breakpoints: {
-        "@0.00": {
-            slidesPerView: 4,
-            spaceBetween: 10,
-        },
-        "@0.75": {
-            slidesPerView: 2,
-            spaceBetween: 20,
-        },
-        "@1.00": {
-            slidesPerView: 6,
-            spaceBetween: 20,
-        },
-        "@1.50": {
-            slidesPerView: 7,
-            spaceBetween: 10,
-        },
-    },
-});
 
-swiperEl.initialize();
 
-</script>
 
-<script src="{% static 'js/app.js' %}"></script>

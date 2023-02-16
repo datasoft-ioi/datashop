@@ -11,18 +11,19 @@
     <meta name="description" content="{% block description %} Home description  {% endblock %}">
     <!-- style links -->
     <link rel="stylesheet" href="{% static 'style/app.css' %}">
-    <link rel="stylesheet" href="{% static 'style/nav.css' %}">
-    <link rel="stylesheet" href="{% static 'style/header.css' %}">
-    <link rel="stylesheet" href="{% static 'style/main.css' %}">
     <link rel="stylesheet" href="{% static 'style/categoryList.css' %}">
+    <link rel="stylesheet" href="{% static 'style/header.css' %}">
     <link rel="stylesheet" href="{% static 'style/korzinka.css' %}">
-    <link rel="stylesheet" href="{% static 'style/register.css' %}">
+    <link rel="stylesheet" href="{% static 'style/main.css' %}">
+    <link rel="stylesheet" href="{% static 'style/message.css' %}">
+    <link rel="stylesheet" href="{% static 'style/myorders.css' %}">
+    <link rel="stylesheet" href="{% static 'style/nav.css' %}">
     <link rel="stylesheet" href="{% static 'style/order.css' %}">
     <link rel="stylesheet" href="{% static 'style/person.css' %}">
     <link rel="stylesheet" href="{% static 'style/productDtl.css' %}">
-    <link rel="stylesheet" href="{% static 'style/myorders.css' %}">
-    <link rel="stylesheet" href="{% static 'style/message.css' %}">
+    <link rel="stylesheet" href="{% static 'style/register.css' %}">
     <link rel="stylesheet" href="{% static 'style/saqlanganlar.css' %}">
+
 
     <!-- google font links-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,7 +50,55 @@
 
 
 </body>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+
     <script src="{% static 'js/app.js' %}"></script>
     <script src="{% static 'js/kategori.js' %}"></script>
+    <!-- Initialize Swiper -->
+
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+        const swiperEl = document.querySelector('swiper-container')
+        Object.assign(swiperEl, {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                "@0.00": {
+                    slidesPerView: 4,
+                    spaceBetween: 0,
+                },
+                "@0.75": {
+                    slidesPerView: 4,
+                    spaceBetween: 0,
+                },
+                "@1.00": {
+                    slidesPerView: 6,
+                    spaceBetween: 20,
+                },
+                "@1.50": {
+                    slidesPerView: 7,
+                    spaceBetween: 10,
+                },
+            },
+        });
+
+        swiperEl.initialize();
+
+    </script> 
+    {% block script %}{% endblock script %}
 </html>

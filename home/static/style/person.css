@@ -129,3 +129,55 @@
     margin-top: 46px;
     margin-bottom: 100px;
 }
+
+
+@media screen and (max-width: 414px) and (min-width: 360px) {
+    .personInfo {
+        width: 100%;
+        padding: 0px 10px;
+    }
+
+    .personInfoMain {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .myProfilBox {
+        width: 100%;
+        height: 172px;
+    }
+
+    .personalInfosChil1Title {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        color: #3C3C3C;
+    }
+    .personalInfosChil1In {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        grid-gap: 10px;
+    }
+    .personalInfosChil1InChil label {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        color: #636363;
+    }
+    .personalInfosChil1InChil input {
+        width: 168px;
+        height: 40px;
+    }
+    .personalInfosChil1InChil select {
+        width: 168px;
+        height: 40px;
+    }
+    .personalInfosChil1InChil .personalInfosChil1InChilIn {
+        width: 100%;
+    }
+    .prsonalInoSave {
+        width: 100%;
+        margin-bottom: 0px;
+    }
+}

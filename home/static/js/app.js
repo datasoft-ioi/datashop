@@ -58,4 +58,3 @@ closeKategory.onclick = () => {
     profil.classList.remove('profilOn')
 }
 
-

@@ -71,3 +71,27 @@
     align-items: center;
     justify-content: center;
 }
+
+
+@media screen and (max-width:414px) and (min-width: 360px) {
+    .izb {
+        width: 100%;
+        padding: 0px 10px;
+        overflow-x: hidden;
+    }
+    .izbMainHeader {
+        flex-direction: row-reverse;
+    }
+    .izbMainHeaderLeft span{
+        display: none;
+    }
+    .izbMainProducts {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+        grid-row-gap: 15px;
+        grid-row-gap: 28px;
+        justify-content: center;
+    }
+}

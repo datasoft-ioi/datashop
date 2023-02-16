@@ -277,3 +277,116 @@
     flex-direction: column;
     gap: 70px;
 }
+
+.myorderProductMainProductConPrice {
+    display: none;
+}
+
+
+@media screen and (max-width: 414px) and (min-width: 360px) {
+    .myOrder {
+        width: 100%;
+        padding: 0px 10px;
+    }
+
+    .myOrderMain {
+        flex-direction: column;
+    }
+
+    .tableChil1 {
+        display: none;
+    }
+
+    .myOrderMain table .tableChil2 {
+        width: 100%;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .tableChil2Code {
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 150%;
+        color: #2B3445;
+    }
+
+    .tableChil2Status {
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 12px;
+        text-align: center;
+        color: #0F3460;
+    }
+
+    #tabelPrice {
+        display: none;
+    }
+
+    .tableData {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 150%;
+        color: #2B3445;
+    }
+
+    .myorderProductMainProductConPrice {
+        display: inline-block;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        color: #474747;
+    }
+
+    .myOrderProductMainProductInfo {
+        display: none;
+    }
+
+    .myOrderProduct {
+        width: 100%;
+        padding: 0px 10px;
+    }
+
+    .ProductsOrder {
+        padding: 0px;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .myorderProductMainProduct {
+        width: 100%;
+    }
+
+    .myOrderProductMainStatusChil1 {
+        display: none;
+    }
+
+    .myorderProductMainProductCon span {
+        font-weight: 5  00;
+        font-size: 12px;
+        line-height: 15px;
+        color: #3C3C3C;
+    }
+    .myorderProductMainProductInfos {
+        display: flex; 
+        flex-direction: column ;
+        gap: 10px;
+    }
+    .myOrderProductMainProduct {
+        width: 100%;
+        justify-content: space-between;
+        gap: 0px;
+    }
+    .myOrderProductMainProductHeader {
+        width: 100%;
+    }
+    .myorderProductMainProductCon {
+        gap: 0px;
+    }
+    .myorderProductMainProductCon img {
+        max-width: 100px;
+        max-height: 100px;
+    }
+    .myOrderProductMainProductHeader span {
+        padding-left: 0px;
+    }
+}

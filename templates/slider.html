@@ -3,54 +3,52 @@
 
 {% block content %}
     
-<!-- header -->
+    <!-- header -->
 
-<header>
-    <!-- Swiper -->
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="{% static 'media/swiperImg.png' %}" alt=""></div>
-            <div class="swiper-slide"><img src="{% static 'media/swiperImg.png' %}" alt=""></div>
+    <header>
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="{% static 'media/swiperImg.png' %}" alt=""></div>
+                <div class="swiper-slide"><img src="{% static 'media/swiperImg.png' %}" alt=""></div>
+            </div>
+            <div class="swiper-pagination"></div>
         </div>
-        <div class="swiper-pagination"></div>
-    </div>
-    <div class="headerCategroy">
-        <div class="headerCategroyBox">
-            {% for cat in category_lates %}
-            <a href="{% url 'category_products' cat.id cat.slug %}">
+        <div class="headerCategroyBoxConRes" style="background: linear-gradient(180deg, #60B3FF 0%, rgba(41, 90, 185, 0.76) 100%);">
+            <span>
+                Ноутбуки
+            </span>
+            <img src="../media/Category.png" alt="">
+        </div>
+        <div class="headerCategroy">
+            <div class="headerCategroyBox">
                 <div class="headerCategroyBoxCon">
-                        <span>
-                            {{ cat.title }}
-                        </span>
-                        {% if cat.image %}
-                        <img style="width: 50%" src="{{cat.image.url}}" alt="">
-                        {% else %}
-                        <img style="width: 50%" src="{% static 'media/noimage.webp' %}" alt="">
-                        {% endif %}
+                    <span>
+                        Ноутбуки
+                    </span>
+                    <img src="../media/Category.png" alt="">
                 </div>
-            </a>
-            {% endfor %}
-            {% comment %} <div class="headerCategroyBoxCon">
-                <span>
-                    Ноутбуки
-                </span>
-                <img src="{% static 'media/Category.png' %}" alt="">
+                <div class="headerCategroyBoxCon">
+                    <span>
+                        Ноутбуки
+                    </span>
+                    <img src="../media/Category.png" alt="">
+                </div>
+                <div class="headerCategroyBoxCon">
+                    <span>
+                        Ноутбуки
+                    </span>
+                    <img src="../media/Category.png" alt="">
+                </div>
+                <div class="headerCategroyBoxCon">
+                    <span>
+                        Ноутбуки
+                    </span>
+                    <img src="../media/Category.png" alt="">
+                </div>
             </div>
-            <div class="headerCategroyBoxCon">
-                <span>
-                    Ноутбуки
-                </span>
-                <img src="{% static 'media/Category.png' %}" alt="">
-            </div>
-            <div class="headerCategroyBoxCon">
-                <span>
-                    Ноутбуки
-                </span>
-                <img src="{% static 'media/Category.png' %}" alt="">
-            </div> {% endcomment %}
         </div>
-    </div>
-</header>
+    </header>
 
 
 
