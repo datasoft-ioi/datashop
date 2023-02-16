@@ -308,3 +308,120 @@
     width: 70px;
     height: auto;
 }
+
+@media screen and (max-width: 414px) and (min-width: 360px) {
+    .dtl {
+        width: 100%;
+        padding: 0px 10px;
+        overflow-x: hidden;
+    }
+
+    .dtlHeader span {
+        font-size: 18px;
+        width: 312px;
+    }
+
+    .starsCount {
+        font-size: 11px;
+    }
+
+    .dtlMain {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+    }
+
+    .dtlProductInfo {
+        display: none;
+    }
+
+    .dtlProductHaracterMenu {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .dtlProductHaracterHeader {
+        display: flex;
+        gap: 45px;
+        padding: 0px 10px;
+        width: 320px;
+    }
+
+    .dtlProductHaracterHeader span {
+        font-size: 14px;
+    }
+
+    .starsCount {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: #777777;
+    }
+    .images {
+        width: 100%;
+        padding: 0px 10px;
+    }
+    .dtlMain {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .topImgCon {
+        width: 100%;
+        height: 317.79px;
+    }
+
+    .topIMg img {
+        max-width: 255px;
+        max-height: 215px;
+    }
+
+    .dtlPriceInfo {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 20px;
+    }
+
+    .dtlPriceInfoPrice {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dtlPriceInfoPriceInfo {
+        width: 90%;
+    }
+
+    .imgBottomCon {
+        width: 355px;
+    }
+
+    .textRes {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: #777777;
+    }
+
+    .dtlProductReqomendasiaTItle {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        color: #3C3C3C;
+    }
+    .dtlProductReqomendasiaProducts {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2 ,1fr);
+        justify-content: center;
+        gap: 10px;
+        grid-row-gap: 20px;
+        padding-bottom: 20px;
+    }
+    .dtlProductHaracterHeader {
+        width: 100%;
+    }
+}

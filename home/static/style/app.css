@@ -6,7 +6,6 @@
   box-sizing: border-box;
   list-style-type: none;
   font-family: 'Inter', sans-serif;
-  text-decoration: none!important;
 }
 
 body {
@@ -57,10 +56,10 @@ body {
 .none {
   display: none;
 }
+.overflow {
+  overflow: hidden;
+}
 
-.textLogin{
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-  color: #000000;
+@media screen and (max-width:414px) and (min-width: 360px) {
+  
 }

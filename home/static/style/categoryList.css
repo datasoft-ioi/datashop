@@ -461,6 +461,10 @@ input[type="radio"] {
     }
 
 
+    .categoryList {
+        width: 100%;
+        padding: 0px 10px;
+    }
 
     .categoryListMainProductHeader {
         display: none;
@@ -543,8 +547,6 @@ input[type="radio"] {
         background-color: #00000058;
         z-index: 9;
     }
-
-
     .none {
         display: none;
     }
@@ -576,4 +578,13 @@ input[type="radio"] {
     .priceFilterTitle{
         margin: 20px 0;
     }
-}   
+    .categoryListMainProduct {
+        width: 100%;
+    }
+    .categoryListMainProductMain {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2 , 1fr);
+        grid-row-gap: 28px;
+    }
+}

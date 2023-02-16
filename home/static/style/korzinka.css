@@ -272,3 +272,110 @@
     line-height: 17px;
     color: #888888;
 }
+
+.myorderProductMainProductConPrice {
+    display: none;
+}
+
+@media screen and (max-width: 414px) and (min-width: 360px) {
+    .korzinka {
+        overflow-x: hidden;
+        width: 100%;
+        padding: 0px 10px;
+    }
+
+    .korMain {
+        width: 100%;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .korHeader {
+        width: 100%;
+    }
+
+    .korProducts {
+        width: 100%;
+    }
+
+    .korProduct {
+        width: 100%;
+    }
+
+    .korHeader-Chil1 {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        color: #3C3C3C;
+    }
+
+    .korHeader-Chil2 {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        color: #3C3C3C;
+    }
+
+    .korProductCount {
+        display: none;
+    }
+
+    .korProductPrice {
+        display: none;
+    }
+
+    .korMainProductsHeaderRight {
+        display: none;
+    }
+
+    .korProductInfoName {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        color: #3C3C3C;
+    }
+
+    .korMainPriceBox {
+        width: 100%;
+    }
+
+    .korMainProductsHeader span {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        color: #7D7D7D;
+    }
+    .korProductInfo {
+        gap: 16px;
+    }
+
+    .korProductInfo img {
+        max-width: 100px;
+        max-height: 100px;
+    }
+
+    .korProductInfo div .korProductInfoName {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 15px;
+        color: #3C3C3C;
+    }
+
+    .korProductInfoCategory {
+        display: none;
+    }
+
+    .myorderProductMainProductConPrice {
+        display: inline-block;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        color: #474747;
+    }
+    .korProductInfo div {
+        gap: 8px;
+    }
+    .korMainPriceBoxFooterEnd button {
+        width: 100%;
+    }
+}

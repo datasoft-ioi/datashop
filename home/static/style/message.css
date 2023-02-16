@@ -72,3 +72,20 @@
 .messageClose i {
     color: #FFFFFF;
 }
+
+@media screen and (max-width: 414px) and (min-width:360px) {
+    .message {
+        width: 100%;
+        padding: 0px 10px;
+    }
+    .messageMain {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .messages {
+        width: 100%;
+    }
+    .messagesBox {
+        width: 100%;
+    }
+}

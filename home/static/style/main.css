@@ -80,6 +80,7 @@ main {
 .productImg img {
     max-width: 188px;
 }
+
 .productHeader {
     display: flex;
     align-items: center;
@@ -396,4 +397,329 @@ footer {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     cursor: pointer;
+}
+
+.bottomBar {
+    display: none;
+}
+.headerCategroyBoxConRes {
+    display: none;
+}
+
+@media screen and (max-width: 414px) and (min-width: 360px) {
+    main {
+        width: 100%;
+    }
+
+    .mainProducts {
+        width: 100%;
+        padding: 0px 10px;
+    }
+
+    .mainProductsHeader {
+        width: 100%;
+    }
+
+    .mainProductsHeader-title span {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        color: #3C3C3C;
+    }
+
+    .mainProductsHeader button span {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        text-align: right;
+        color: #3C3C3C;
+    }
+
+    .mainProductsHeader button i {
+        font-size: 12px;
+    }
+
+    .products {
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+        padding: 0px 20px;
+    }
+
+    .product {
+        width: 168px;
+        height: 230px;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .productImg img {
+        max-width: 113px;
+        max-width: 100px;
+
+    }
+
+    .productBottomInfo {
+        gap: 10px;
+    }
+
+    .productTitle {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        color: #000000;
+    }
+
+    .fa-star {
+        font-size: 11px;
+    }
+
+    .productPrice {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        color: #3C3C3C;
+    }
+
+    .brend {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .brendCon {
+        width: 100%;
+    }
+
+    .mainProductsHeader-title {
+        padding: 0px 10px;
+    }
+
+    .brendCon img {
+        width: 30px;
+    }
+
+    .mySwiper2 {
+        width: 100%;
+        height: 105px;
+    }
+
+    .brendBox {
+        min-width: 80px;
+        height: 45px;
+        border-radius: 5px;
+    }
+
+    .brendBox img {
+        width: 50px;
+    }
+
+    .thing {
+        width: 100%;
+        padding: 0px 10px;
+        margin-top: 40px;
+    }
+
+    .thingimages {
+        width: 100%;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .thingImgLeft {
+        gap: 10px;
+    }
+
+    .thingImgMain {
+        gap: 10px;
+    }
+
+    .thingImgRigth {
+        gap: 10px;
+    }
+
+    .thingImg-1 {
+        width: 107px;
+        height: 136px;
+        border-radius: 10px;
+    }
+
+    .thingImg-2 {
+        width: 107px;
+        height: 73px;
+        border-radius: 10px;
+    }
+
+    .thingImg-3 {
+        width: 118px;
+        height: 63px;
+        border-radius: 10px;
+    }
+
+    .thingImg-4 {
+        width: 118px;
+        height: 146px;
+        border-radius: 10px;
+    }
+
+    .thingImg-5 {
+        width: 107px;
+        height: 134px;
+        border-radius: 10px;
+    }
+
+    .thingImg-6 {
+        width: 107px;
+        height: 75px;
+        border-radius: 10px;
+    }
+
+    .mobileApp {
+        display: none;
+    }
+
+    footer {
+        width: 100%;
+        background: #E81D1C;
+        padding: 50px 10px;
+        padding-bottom: 100px;
+    }
+
+    .footerCon {
+        width: 100%;
+    }
+
+    .footerHeader img {
+        width: 132px;
+    }
+
+    .footerMain {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 54px;
+        grid-column-gap: 20px;
+    }
+
+    .footerServices {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 1;
+    }
+
+    .FooterPay {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+
+    .footerAdres {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+
+    .payes button {
+        width: 70px;
+        height: 28px;
+        cursor: pointer;
+    }
+
+    .payes button img {
+        width: 57px;
+    }
+
+    .footerServices ul li {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        color: #FFFFFF;
+    }
+
+    .chil .chil1 {
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 12px;
+        color: #DBDBDB;
+    }
+
+    .chil .chil2 {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 15px;
+        color: #FFFFFF;
+    }
+
+    .footerPayTitle {
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 12px;
+        color: #DBDBDB;
+    }
+
+    .bottomBar {
+        position: fixed;
+        width: 100%;
+        height: 71px;
+        background-color: #E81D1C;
+        display: flex;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0px 20px;
+        z-index: 99;
+    }
+
+    .bottomBar ul {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .bottomBar ul li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 9px;
+    }
+
+    .bottomBar ul li span {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 15px;
+        color: #FFFFFF;
+    }
+
+    .headerCategroy {
+        display: none;
+    }
+
+    .headerCategroyBoxConRes {
+        width: 95%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 36px;
+        border-radius: 10px;
+        margin-left: 10px;
+        margin-top: 12px;
+    }
+
+    .headerCategroyBoxConRes img {
+        max-width: 99px;
+    }
+
+    .headerCategroyBoxConRes span {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 27px;
+        color: #FFFFFF;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
 }
