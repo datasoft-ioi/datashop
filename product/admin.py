@@ -5,7 +5,7 @@ from django.contrib import admin
 from mptt.admin import DraggableMPTTAdmin
 
 from product import models
-from product.models import Category, Product, Images, Comment, Color, Size, Variants, ProductLang, CategoryLang
+from product.models import Brands, Category, Product, Images, Comment, Color, Size, Variants, ProductLang, CategoryLang
 
 
 class CategoryLangInline(admin.TabularInline):
@@ -115,3 +115,4 @@ admin.site.register(Size,SizeAdmin)
 admin.site.register(Variants,VariantsAdmin)
 admin.site.register(ProductLang,ProductLangugaeAdmin)
 admin.site.register(CategoryLang,CategoryLangugaeAdmin)
+admin.site.register(Brands)

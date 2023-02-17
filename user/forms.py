@@ -24,7 +24,6 @@ class SignUpForm(UserCreationForm):
         # }
 
 
-
 class UserUpdateForm(UserChangeForm):
     class Meta:
         model = User
@@ -41,6 +40,7 @@ CITY = [
     ('Xonqa', 'Xonqa'),
     ('Shovot', 'Shovot'),
 ]
+
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = UserProfile

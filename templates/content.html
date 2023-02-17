@@ -248,7 +248,33 @@
             </button>
         </div>
         <div class="products">
+            {% for prod in products_latest %}
             <div class="product">
+                <div class="productHeader">
+                    <span class="new">new</span>
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="productImg">
+                    {% if prod.image %}
+                    <img src="{{ prod.image.url }}" alt="">
+                    {% endif %}
+                </div>
+                <div class="productBottomInfo">
+                    <span class="productTitle">
+                        {{prod.title}}
+                    </span>
+                    <div class="productStar">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <span class="productPrice">${{ prod.price }}</span>
+                </div>
+            </div>
+            {% endfor %}
+            {% comment %} <div class="product">
                 <div class="productHeader">
                     <span class="new">new</span>
                     <i class="fa-regular fa-heart"></i>
@@ -445,33 +471,23 @@
                     </div>
                     <span class="productPrice">$1579</span>
                 </div>
-            </div>
-            <div class="product">
-                <div class="productHeader">
-                    <span class="new">new</span>
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-                <div class="productImg">
-                    <img src="https://dlcdnwebimgs.asus.com/gain/6FE37E07-B41F-4238-81D8-433B425405C5" alt="">
-                </div>
-                <div class="productBottomInfo">
-                    <span class="productTitle">
-                        HP Victus 15 RTX 3050 / i5 12400f / 512 GB SSD..
-                    </span>
-                    <div class="productStar">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <span class="productPrice">$1579</span>
-                </div>
-            </div>
+            </div> {% endcomment %}
 
         </div>
     </div>
 
+    {% for one in noutbuk %}
+    <a href="{% url 'category_products' one.id one.slug%}">
+    <div class="headerCategroyBoxConRes" style="background: linear-gradient(180deg, {{one.bg_color}} 0%, #AC44A2 100%);">
+        <span>
+            {{one.title}}
+        </span>
+        {% if one.image %}
+        <img src="{{ one.image.url }}" alt="">
+        {% endif %}
+    </div>
+    </a>
+    {% endfor %}
     <!-- Monitor -->
 
     <div class="mainProducts">
@@ -486,30 +502,46 @@
             </button>
         </div>
         <div class="products">
-            <div class="product">
-                <div class="productHeader">
-                    <span class="new">new</span>
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-                <div class="productImg">
-                    <img src="https://dlcdnwebimgs.asus.com/gain/6FE37E07-B41F-4238-81D8-433B425405C5" alt="">
-                </div>
-                <div class="productBottomInfo">
-                    <span class="productTitle">
-                        HP Victus 15 RTX 3050 / i5 12400f / 512 GB SSD..
-                    </span>
-                    <div class="productStar">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
+            {% for mon in laptops_product %}
+                <div class="product">
+                    <div class="productHeader">
+                        <span class="new">new</span>
+                        <i class="fa-regular fa-heart"></i>
                     </div>
-                    <span class="productPrice">$1579</span>
+                    <div class="productImg">
+                        <img src="{{ mon.image.url }}" alt="">
+                    </div>
+                    <div class="productBottomInfo">
+                        <span class="productTitle">
+                            {{mon.title}}
+                        </span>
+                        <div class="productStar">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <span class="productPrice">$1579</span>
+                    </div>
                 </div>
-            </div>
+            {% endfor %}
+
         </div>
     </div>
+
+    {% for one in smartphone %}
+    <a href="{% url 'category_products' one.id one.slug%}">
+        <div class="headerCategroyBoxConRes" style="background: linear-gradient(180deg, {{one.bg_color}} 0%, #AC44A2 100%);">
+            <span>
+                {{one.title}}
+            </span>
+            {% if one.image %}
+            <img src="{{ one.image.url }}" alt="">
+            {% endif %}
+        </div>
+    </a>
+    {% endfor %}
 
     <!-- brend -->
 
@@ -522,7 +554,21 @@
         </div>
         <div class="swiperCon">
             <swiper-container class="mySwiper2" init="false">
-                <swiper-slide class="nonSwip">
+                {% comment %} <swiper-slide class="nonSwip">
+                    <div class="brendBox">
+                        <img style="width: 50% "src="{{brand.image.url}}" alt="">
+                    </div>
+                </swiper-slide> {% endcomment %}
+                {% for brand in brand_img %}
+                <swiper-slide>
+                    <a href="{% url 'all_products' %}">
+                        <div class="brendBox">
+                            <img style="width: 60% " src="{{brand.image.url}}" alt="">
+                        </div>
+                    </a>
+                </swiper-slide>
+                {% endfor %}
+                {% comment %}<swiper-slide>
                     <div class="brendBox">
                         <img src="{% static 'media/asus.png' %}" alt="">
                     </div>
@@ -561,20 +607,23 @@
                     <div class="brendBox">
                         <img src="{% static 'media/asus.png' %}" alt="">
                     </div>
-                </swiper-slide>
-                <swiper-slide>
-                    <div class="brendBox">
-                        <img src="{% static 'media/asus.png' %}" alt="">
-                    </div>
-                </swiper-slide>
-                <swiper-slide>
-                    <div class="brendBox">
-                        <img src="{% static 'media/asus.png' %}" alt="">
-                    </div>
-                </swiper-slide>
+                </swiper-slide> {% endcomment %}
             </swiper-container>
         </div>
     </div>
+
+    {% for one in monitor %}
+    <a href="{% url 'category_products' one.id one.slug%}">
+    <div class="headerCategroyBoxConRes" style="background: linear-gradient(180deg, {{one.bg_color}} 0%, #AC44A2 100%);">
+        <span>
+            {{one.title}}
+        </span>
+        {% if one.image %}
+        <img src="{{ one.image.url }}" alt="">
+        {% endif %}
+    </div>
+    </a>
+    {% endfor %}
 
     <!-- thing img -->
 

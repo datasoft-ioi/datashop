@@ -79,6 +79,7 @@ main {
 
 .productImg img {
     max-width: 188px;
+    max-height: 130px;
 }
 
 .productHeader {

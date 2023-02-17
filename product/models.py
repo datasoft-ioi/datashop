@@ -23,6 +23,7 @@ class Category(MPTTModel):
     keywords = models.CharField(max_length=255)
     description = models.TextField(max_length=255)
     image=models.ImageField(blank=True,upload_to='images/')
+    bg_color = models.CharField(max_length=255, blank=True)
     status=models.CharField(max_length=10, choices=STATUS)
     slug = models.SlugField(null=False, unique=True)
     create_at=models.DateTimeField(auto_now_add=True)
@@ -212,6 +213,7 @@ class Variants(models.Model):
 #     list1.append((rs.code,rs.name))
 # langlist= (list1)
 
+
 class ProductLang(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE) #many to one relation with Category
     lang =  models.CharField(max_length=6) # choices=langlist
@@ -228,6 +230,7 @@ class ProductLang(models.Model):
         verbose_name = "Maxsulot Tili"
         verbose_name_plural ="Maxslotlar Tillari"
 
+
 class CategoryLang(models.Model):
     category = models.ForeignKey(Category, related_name='categorylangs', on_delete=models.CASCADE) #many to one relation with Category
     lang =  models.CharField(max_length=6) # choices=langlist
@@ -238,3 +241,16 @@ class CategoryLang(models.Model):
 
     def get_absolute_url(self):
         return reverse('category_detail', kwargs={'slug': self.slug})
+
+
+class Brands(models.Model):
+    image = image=models.ImageField(upload_to='images/brands',null=False)
+    create_at=models.DateTimeField(auto_now_add=True)
+    update_at=models.DateTimeField(auto_now=True)
+
+
+    class Meta:
+        verbose_name = "Brend"    
+        verbose_name_plural = "Brandlar"
+
+

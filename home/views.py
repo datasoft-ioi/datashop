@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 
 import json
+import random
 
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -20,7 +21,7 @@ from django.utils import translation
 from home.forms import SearchForm
 from home.models import Setting, ContactForm, ContactMessage, FAQ, SettingLang, Language
 from datashop import settings
-from product.models import Category, Product, Images, Comment, Variants, CategoryLang # ProductLang
+from product.models import Category, Brands, Product, Images, Comment, Variants, CategoryLang # ProductLang
 from user.models import UserProfile
 
 
@@ -30,6 +31,7 @@ def index(request):
 
     setting = Setting.objects.get(pk=1)
     products_latest = Product.objects.filter(category__title='Noutbuk').order_by('-id')[:10]  # last 5 products
+    laptops_product = Product.objects.filter(category__title="Monitor").order_by('-id')[:10] # last 5
 
     #laptop 
 
@@ -50,9 +52,12 @@ def index(request):
 
 
     products_picked = Product.objects.all().order_by('?')[:4]   #Random selected 4 products
+ 
 
     category = Category.objects.all()
     category_lates = Category.objects.all().order_by('?')[:4] #Random selected
+
+
 
 
     page="home"
@@ -63,11 +68,21 @@ def index(request):
              'products_picked': products_picked,
              'category':category,
              'category_lates':category_lates,
+             "laptops_product": laptops_product,
+             "brand_img": Brands.objects.all().order_by('id')[:8],
+
+             "monitor": Category.objects.filter(title="Monitor")[:1],
+             "smartphone": Category.objects.filter(title="Smartfon")[:1],
+             "noutbuk": Category.objects.filter(title="Noutbuk")[:1],
 
              }
     return render(request,'index.html',context)
 
-
+def all_products(request):
+    context = {
+        "full_products": Product.objects.all().order_by('?'),
+    }
+    return render(request, 'all_prod.html', context)
 
 
 def selectlanguage(request):

@@ -13,6 +13,7 @@ urlpatterns = [
     path('register/', views.register) ,
     path('login/', views.login) ,
     path('korzinka/', views.korzinka),
+    path('all_products/', views.all_products, name='all_products'),
 
     path('category/<int:id>/<slug:slug>/', views.category_products, name="category_products")
     

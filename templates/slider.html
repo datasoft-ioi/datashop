@@ -14,15 +14,30 @@
             </div>
             <div class="swiper-pagination"></div>
         </div>
-        <div class="headerCategroyBoxConRes" style="background: linear-gradient(180deg, #60B3FF 0%, rgba(41, 90, 185, 0.76) 100%);">
-            <span>
-                Ноутбуки
-            </span>
-            <img src="../media/Category.png" alt="">
-        </div>
+
+        {% for cot in noutbuk %}
+        <a href="{% url 'category_products' cot.id cot.slug%}">
+            <div class="headerCategroyBoxConRes" style="background: linear-gradient(180deg, {{cot.bg_color}} 0%, rgba(41, 90, 185, 0.76) 100%);">
+                <span>
+                    {{cot.title}}
+                </span>
+                <img src="{{ cot.image.url }}" alt="">
+            </div>
+        </a>
+        {% endfor %}
         <div class="headerCategroy">
             <div class="headerCategroyBox">
-                <div class="headerCategroyBoxCon">
+                {% for cat in category_lates %}
+                    <div class="headerCategroyBoxCon"style="background: linear-gradient(180deg, {{ cat.bg_color }} 0%, rgba(41, 90, 185, 0.76) 100%);">
+                        <span>
+                            {{ cat.title}}
+                        </span>
+                        {% if cat.image %}
+                        <img style="width: 50%"src="{{ cat.image.url }}" alt="">
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                {% comment %} <div class="headerCategroyBoxCon">
                     <span>
                         Ноутбуки
                     </span>
@@ -39,13 +54,7 @@
                         Ноутбуки
                     </span>
                     <img src="../media/Category.png" alt="">
-                </div>
-                <div class="headerCategroyBoxCon">
-                    <span>
-                        Ноутбуки
-                    </span>
-                    <img src="../media/Category.png" alt="">
-                </div>
+                </div> {% endcomment %}
             </div>
         </div>
     </header>
