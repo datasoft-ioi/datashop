@@ -256,13 +256,17 @@
                 </div>
                 <div class="productImg">
                     {% if prod.image %}
-                    <img src="{{ prod.image.url }}" alt="">
+                    <a href="{% url 'product_detail' prod.id prod.slug%}">
+                        <img src="{{ prod.image.url }}" alt="">
+                    </a>
                     {% endif %}
                 </div>
                 <div class="productBottomInfo">
-                    <span class="productTitle">
-                        {{prod.title}}
-                    </span>
+                    <a href="{% url 'product_detail' prod.id prod.slug%}">
+                        <span class="productTitle">
+                            {{prod.title}}
+                        </span>
+                    </a>
                     <div class="productStar">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
