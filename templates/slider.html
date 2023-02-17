@@ -28,14 +28,16 @@
         <div class="headerCategroy">
             <div class="headerCategroyBox">
                 {% for cat in category_lates %}
+                <a href="{% url 'category_products' cat.id cat.slug%}">
                     <div class="headerCategroyBoxCon"style="background: linear-gradient(180deg, {{ cat.bg_color }} 0%, rgba(41, 90, 185, 0.76) 100%);">
                         <span>
-                            {{ cat.title}}
+                            {{ cat.title }}
                         </span>
                         {% if cat.image %}
-                        <img style="width: 50%"src="{{ cat.image.url }}" alt="">
+                            <img style="width: 50%"src="{{ cat.image.url }}" alt="">
                         {% endif %}
                     </div>
+                </a>
                 {% endfor %}
                 {% comment %} <div class="headerCategroyBoxCon">
                     <span>

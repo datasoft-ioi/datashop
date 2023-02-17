@@ -240,10 +240,10 @@
         <div class="mainProductsHeader">
             <div class="mainProductsHeader-title">
                 <img src="{% static 'media/laptop.svg' %}" alt="">
-                <span>Ноутбуки</span>
+                <span>Noutbuklar</span>
             </div>
             <button>
-                <span>Смотреть еще</span>
+                <a href="category/1/noutbuk"><span>Yana ko'rish</span></a>
                 <img src="{% static 'media/next.svg' %}" alt="">
             </button>
         </div>
@@ -251,7 +251,7 @@
             {% for prod in products_latest %}
             <div class="product">
                 <div class="productHeader">
-                    <span class="new">new</span>
+                    <span class="new">yangi</span>
                     <i class="fa-regular fa-heart"></i>
                 </div>
                 <div class="productImg">
@@ -278,205 +278,6 @@
                 </div>
             </div>
             {% endfor %}
-            {% comment %} <div class="product">
-                <div class="productHeader">
-                    <span class="new">new</span>
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-                <div class="productImg">
-                    <img src="https://dlcdnwebimgs.asus.com/gain/6FE37E07-B41F-4238-81D8-433B425405C5" alt="">
-                </div>
-                <div class="productBottomInfo">
-                    <span class="productTitle">
-                        HP Victus 15 RTX 3050 / i5 12400f / 512 GB SSD..
-                    </span>
-                    <div class="productStar">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <span class="productPrice">$1579</span>
-                </div>
-            </div>
-            <div class="product">
-                <div class="productHeader">
-                    <span class="new">new</span>
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-                <div class="productImg">
-                    <img src="https://dlcdnwebimgs.asus.com/gain/6FE37E07-B41F-4238-81D8-433B425405C5" alt="">
-                </div>
-                <div class="productBottomInfo">
-                    <span class="productTitle">
-                        HP Victus 15 RTX 3050 / i5 12400f / 512 GB SSD..
-                    </span>
-                    <div class="productStar">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <span class="productPrice">$1579</span>
-                </div>
-            </div>
-            <div class="product">
-                <div class="productHeader">
-                    <span class="new">new</span>
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-                <div class="productImg">
-                    <img src="https://dlcdnwebimgs.asus.com/gain/6FE37E07-B41F-4238-81D8-433B425405C5" alt="">
-                </div>
-                <div class="productBottomInfo">
-                    <span class="productTitle">
-                        HP Victus 15 RTX 3050 / i5 12400f / 512 GB SSD..
-                    </span>
-                    <div class="productStar">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <span class="productPrice">$1579</span>
-                </div>
-            </div>
-            <div class="product">
-                <div class="productHeader">
-                    <span class="new">new</span>
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-                <div class="productImg">
-                    <img src="https://dlcdnwebimgs.asus.com/gain/6FE37E07-B41F-4238-81D8-433B425405C5" alt="">
-                </div>
-                <div class="productBottomInfo">
-                    <span class="productTitle">
-                        HP Victus 15 RTX 3050 / i5 12400f / 512 GB SSD..
-                    </span>
-                    <div class="productStar">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <span class="productPrice">$1579</span>
-                </div>
-            </div>
-            <div class="product">
-                <div class="productHeader">
-                    <span class="new">new</span>
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-                <div class="productImg">
-                    <img src="https://dlcdnwebimgs.asus.com/gain/6FE37E07-B41F-4238-81D8-433B425405C5" alt="">
-                </div>
-                <div class="productBottomInfo">
-                    <span class="productTitle">
-                        HP Victus 15 RTX 3050 / i5 12400f / 512 GB SSD..
-                    </span>
-                    <div class="productStar">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <span class="productPrice">$1579</span>
-                </div>
-            </div>
-            <div class="product">
-                <div class="productHeader">
-                    <span class="new">new</span>
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-                <div class="productImg">
-                    <img src="https://dlcdnwebimgs.asus.com/gain/6FE37E07-B41F-4238-81D8-433B425405C5" alt="">
-                </div>
-                <div class="productBottomInfo">
-                    <span class="productTitle">
-                        HP Victus 15 RTX 3050 / i5 12400f / 512 GB SSD..
-                    </span>
-                    <div class="productStar">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <span class="productPrice">$1579</span>
-                </div>
-            </div>
-            <div class="product">
-                <div class="productHeader">
-                    <span class="new">new</span>
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-                <div class="productImg">
-                    <img src="https://dlcdnwebimgs.asus.com/gain/6FE37E07-B41F-4238-81D8-433B425405C5" alt="">
-                </div>
-                <div class="productBottomInfo">
-                    <span class="productTitle">
-                        HP Victus 15 RTX 3050 / i5 12400f / 512 GB SSD..
-                    </span>
-                    <div class="productStar">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <span class="productPrice">$1579</span>
-                </div>
-            </div>
-            <div class="product">
-                <div class="productHeader">
-                    <span class="new">new</span>
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-                <div class="productImg">
-                    <img src="https://dlcdnwebimgs.asus.com/gain/6FE37E07-B41F-4238-81D8-433B425405C5" alt="">
-                </div>
-                <div class="productBottomInfo">
-                    <span class="productTitle">
-                        HP Victus 15 RTX 3050 / i5 12400f / 512 GB SSD..
-                    </span>
-                    <div class="productStar">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <span class="productPrice">$1579</span>
-                </div>
-            </div>
-            <div class="product">
-                <div class="productHeader">
-                    <span class="new">new</span>
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-                <div class="productImg">
-                    <img src="https://dlcdnwebimgs.asus.com/gain/6FE37E07-B41F-4238-81D8-433B425405C5" alt="">
-                </div>
-                <div class="productBottomInfo">
-                    <span class="productTitle">
-                        HP Victus 15 RTX 3050 / i5 12400f / 512 GB SSD..
-                    </span>
-                    <div class="productStar">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <span class="productPrice">$1579</span>
-                </div>
-            </div> {% endcomment %}
-
         </div>
     </div>
 
@@ -498,10 +299,10 @@
         <div class="mainProductsHeader">
             <div class="mainProductsHeader-title">
                 <img src="{% static 'media/Monitor.svg' %}" alt="">
-                <span>Мониторы</span>
+                <span>Monitorlar</span>
             </div>
             <button>
-                <span>Смотреть еще</span>
+                <a href="category/3/monitor"><span>Yana ko'rish</span></a>
                 <img src="{% static 'media/next.svg' %}" alt="">
             </button>
         </div>
@@ -509,7 +310,7 @@
             {% for mon in laptops_product %}
                 <div class="product">
                     <div class="productHeader">
-                        <span class="new">new</span>
+                        <span class="new">yangi</span>
                         <i class="fa-regular fa-heart"></i>
                     </div>
                     <div class="productImg">
@@ -553,7 +354,7 @@
         <div class="brendCon">
             <div class="mainProductsHeader-title">
                 <img src="{% static 'media/brend.svg' %}" alt="">
-                <span>Бренды</span>
+                <span>Brendlar</span>
             </div>
         </div>
         <div class="swiperCon">
@@ -572,46 +373,6 @@
                     </a>
                 </swiper-slide>
                 {% endfor %}
-                {% comment %}<swiper-slide>
-                    <div class="brendBox">
-                        <img src="{% static 'media/asus.png' %}" alt="">
-                    </div>
-                </swiper-slide>
-                <swiper-slide>
-                    <div class="brendBox">
-                        <img src="{% static 'media/asus.png' %}" alt="">
-                    </div>
-                </swiper-slide>
-                <swiper-slide>
-                    <div class="brendBox">
-                        <img src="{% static 'media/asus.png' %}" alt="">
-                    </div>
-                </swiper-slide>
-                <swiper-slide>
-                    <div class="brendBox">
-                        <img src="{% static 'media/asus.png' %}" alt="">
-                    </div>
-                </swiper-slide>
-                <swiper-slide>
-                    <div class="brendBox">
-                        <img src="{% static 'media/asus.png' %}" alt="">
-                    </div>
-                </swiper-slide>
-                <swiper-slide>
-                    <div class="brendBox">
-                        <img src="{% static 'media/asus.png' %}" alt="">
-                    </div>
-                </swiper-slide>
-                <swiper-slide>
-                    <div class="brendBox">
-                        <img src="{% static 'media/asus.png' %}" alt="">
-                    </div>
-                </swiper-slide>
-                <swiper-slide>
-                    <div class="brendBox">
-                        <img src="{% static 'media/asus.png' %}" alt="">
-                    </div>
-                </swiper-slide> {% endcomment %}
             </swiper-container>
         </div>
     </div>
@@ -634,7 +395,7 @@
     <div class="thing">
         <div class="mainProductsHeader-title">
             <img src="{% static 'media/thing.svg' %}" alt="">
-            <span>Наша подборка для вас</span>
+            <span>Siz uchun bizning tanlovimiz</span>
         </div>
         <div class="thingimages">
             <div class="thingImgLeft">
@@ -658,10 +419,10 @@
         <div class="mainProductsHeader">
             <div class="mainProductsHeader-title">
                 <img src="{% static 'media/aksesuar.svg' %}" alt="">
-                <span>Аксессуары</span>
+                <span>Aksesuarlar</span>
             </div>
             <button>
-                <span>Смотреть еще</span>
+                <a href="category/4/aksesuar/"><span>Yana ko'rish</span></a>
                 <img src="{% static 'media/next.svg' %}" alt="">
             </button>
         </div>
@@ -717,19 +478,19 @@
     <ul>
         <li>
             <img src="{% static 'media/home.svg' %}" alt="">
-            <span>Главная</span>
+            <span>Asosiy</span>
         </li>
         <li>
             <img src="{% static 'media/star.svg' %}" alt="">
-            <span>Избранное</span>
+            <span>Tanlangan</span>
         </li>
         <li>
             <img src="{% static 'media/shop.svg' %}" alt="">
-            <span>Корзина</span>
+            <span>Savat</span>
         </li>
         <li>
             <img src="{% static 'media/user.svg' %}" alt="">
-            <span>Профиль</span>
+            <span>Kabinet</span>
         </li>
     </ul>
 </div>

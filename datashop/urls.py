@@ -28,8 +28,8 @@ from home import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name="home"),
-    path('home/', include('home.urls')),
+    # path('', views.index, name="home"),
+    path('', include('home.urls')),
     path('product/', include('product.urls')),
     path('order/', include('order.urls')),
     path('user/', include('user.urls'), name='user'),

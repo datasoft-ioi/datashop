@@ -17,8 +17,9 @@ header {
 }
 
 .headerCategroyBoxCon {
-    width: 270px;
-    height: 120px;
+    border-radius: 14px;
+    width: 275px;
+    height: 125px;
     /* background: linear-gradient(180deg, #60B3FF 0%, rgba(41, 90, 185, 0.76) 100%); */
     display: flex;
     align-items: center;
