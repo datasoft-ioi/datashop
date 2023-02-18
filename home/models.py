@@ -127,3 +127,6 @@ class FAQ(models.Model):
 
 
 
+class Banner(models.Model):
+    image = models.ImageField(upload_to='images/banners-home',null=False)
+

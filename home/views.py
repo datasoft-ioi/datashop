@@ -19,7 +19,7 @@ from django.urls import reverse
 from django.utils import translation
 
 from home.forms import SearchForm
-from home.models import Setting, ContactForm, ContactMessage, FAQ, SettingLang, Language
+from home.models import Setting, ContactForm, ContactMessage, FAQ, SettingLang, Language, Banner
 from datashop import settings
 from product.models import Category, Brands, Product, Images, Comment, Variants, CategoryLang # ProductLang
 from user.models import UserProfile
@@ -70,6 +70,8 @@ def index(request):
              'category_lates':category_lates,
              "laptops_product": laptops_product,
              "brand_img": Brands.objects.all().order_by('id')[:8],
+
+             "banner": Banner.objects.all().order_by('-id')[:8],
 
              "monitor": Category.objects.filter(title="Monitor")[:1],
              "smartphone": Category.objects.filter(title="Smartfon")[:1],

@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from home.models import Setting, ContactMessage, FAQ, Language, SettingLang
+from home.models import Setting, ContactMessage, FAQ, Language, SettingLang, Banner
 
 
 class SettingtAdmin(admin.ModelAdmin):
@@ -30,5 +30,6 @@ admin.site.register(SettingLang,SettingLangAdmin)
 admin.site.register(ContactMessage,ContactMessageAdmin)
 admin.site.register(FAQ,FAQAdmin)
 admin.site.register(Language,LanguagesAdmin)
+admin.site.register(Banner)
 
 

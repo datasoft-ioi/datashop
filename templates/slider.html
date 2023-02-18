@@ -9,8 +9,10 @@
         <!-- Swiper -->
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="{% static 'media/swiperImg.png' %}" alt=""></div>
-                <div class="swiper-slide"><img src="{% static 'media/swiperImg.png' %}" alt=""></div>
+                {% for bn in banner %}
+                    <div class="swiper-slide"><img src="{{ bn.image.url }}" alt=""></div>
+                {% endfor %}
+                {% comment %} <div class="swiper-slide"><img src="{% static 'media/swiperImg.png' %}" alt=""></div> {% endcomment %}
             </div>
             <div class="swiper-pagination"></div>
         </div>
