@@ -65,5 +65,12 @@ body {
 }
 
 @media screen and (max-width:414px) and (min-width: 360px) {
-  
+  .swiper-slide img {
+    min-width: 100%;
+    max-width: 100%;
+    max-height: 181px;
+    min-height: 181px;
+    object-fit: cover;
+    border-radius: 15px;
+  }
 }
