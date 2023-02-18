@@ -198,7 +198,7 @@
                 </div>
             </div>
         </div>
-        <div class="dtlProductInfo">
+        <div class="dtlProductInfo" >
             <span class="dtlProductInfoTitle">Maxsulot xaqida </span>
             {% comment %} <ul>
                 <li>
@@ -222,7 +222,7 @@
                     <span class="variant2">512 GB</span>
                 </li>
             </ul> {% endcomment %}
-            {{product.detail | safe | truncatewords:55}}
+            <ul>{{product.detail | safe  }}</ul>
             <span class="vseHarakter">Все характеристики</span>
         </div>
         <div class="dtlPriceInfo">
