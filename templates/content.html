@@ -264,7 +264,7 @@
                 <div class="productBottomInfo">
                     <a href="{% url 'product_detail' prod.id prod.slug%}">
                         <span class="productTitle">
-                            {{prod.title}}
+                            {{prod.title| truncatewords:5}}
                         </span>
                     </a>
                     <div class="productStar">
@@ -285,7 +285,7 @@
     <a href="{% url 'category_products' one.id one.slug%}">
     <div class="headerCategroyBoxConRes" style="background: linear-gradient(180deg, {{one.bg_color}} 0%, #AC44A2 100%);">
         <span>
-            {{one.title}}
+            {{one.title |truncatewords:2}}
         </span>
         {% if one.image %}
         <img src="{{ one.image.url }}" alt="">
@@ -314,12 +314,16 @@
                         <i class="fa-regular fa-heart"></i>
                     </div>
                     <div class="productImg">
-                        <img src="{{ mon.image.url }}" alt="">
+                        <a href="{% url 'product_detail' mon.id mon.slug %}">
+                            <img src="{{ mon.image.url }}" alt="">
+                        </a>
                     </div>
                     <div class="productBottomInfo">
+                        <a href="{% url 'product_detail' mon.id mon.slug %}">
                         <span class="productTitle">
-                            {{mon.title}}
+                            {{mon.title | truncatewords:5}}
                         </span>
+                        </a>
                         <div class="productStar">
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>

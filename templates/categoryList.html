@@ -132,12 +132,16 @@
                             <i class="fa-regular fa-heart"></i>
                         </div>
                         <div class="productImg">
+                            <a href="{% url 'product_detail' rs.id rs.slug %}">
                             <img src="{{ rs.image.url }}" alt="">
+                            </a>
                         </div>
                         <div class="productBottomInfo">
+                            <a href="{% url 'product_detail' rs.id rs.slug %}">
                             <span class="productTitle">
-                                {{ rs.title }}
+                                {{ rs.title | truncatewords:5 }}
                             </span>
+                            </a>
                             <div class="productStar">
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
@@ -145,7 +149,7 @@
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-regular fa-star"></i>
                             </div>
-                            <span class="productPrice">{{ rs.price }}</span>
+                            <span class="productPrice">${{ rs.price }}</span>
 
                             <div class="categoryListMain">
 

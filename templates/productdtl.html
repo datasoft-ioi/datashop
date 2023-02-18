@@ -133,10 +133,13 @@
 
 <div class="dtl">
     <ul class="links">
-        <li>Главная</li>
+        <li><a href="/">Asosiy</a></li>
+        /<li><a href="/category/{{ product.category.id }}/{{ product.category.slug }}">{{ product.category.title }}</a></li>
+        /<li>{{ product.title }}</li>
+
     </ul>
     <div class="dtlHeader">
-        <span>HP Victus 15 RTX 3050 / i5-12400F / 8 GB RAM</span>
+        <span>{{ product.title }}</span>
         <div class="starts">
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
@@ -151,34 +154,53 @@
             <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
                 class="swiper mySwiper2 topImgCon">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide topIMg">
-                        <img src="{% static 'media/victus.png' %}" />
-                    </div>
-                    <div class="swiper-slide topIMg">
-                        <img src="{% static 'media/victus2.png' %}" />
-                    </div>
-                    <div class="swiper-slide topIMg">
-                        <img src="{% static 'media/victus3.png' %}" />
-                    </div>
+                    {% if variant.image_id > 0 %}
+
+                        <div class="swiper-slide topIMg">
+                            <img src="{{ variant.image }}" />
+                        </div>
+                        
+                        {% else %}
+                        
+                        <div class="swiper-slide topIMg">
+                            <img src="{{ product.image.url }}" />
+                        </div>
+                        
+                        {% endif %}
+                        
+                            {% for rs in images %}
+                            
+                            <div class="swiper-slide topIMg">
+                                <img src="{{ rs.image.url }}" />
+                            </div>
+                            
+                            {% endfor %}
+
+                        
+
                 </div>
             </div>
             <div thumbsSlider="" class="swiper mySwiper imgBottomCon">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide bottomIMg">
-                        <img src="{% static 'media/victus.png' %}" />
-                    </div>
-                    <div class="swiper-slide bottomIMg">
+
+                    {% for rs in images %}
+                        <div class="swiper-slide bottomIMg">
+                            <img src="{{rs.image.url}}" />
+                        </div>
+                    {% endfor %}
+
+                    {% comment %} <div class="swiper-slide bottomIMg">
                         <img src="{% static 'media/victus2.png' %}" />
                     </div>
                     <div class="swiper-slide bottomIMg">
                         <img src="{% static 'media/victus3.png' %}" />
-                    </div>
+                    </div> {% endcomment %}
                 </div>
             </div>
         </div>
         <div class="dtlProductInfo">
-            <span class="dtlProductInfoTitle">Коротко о товаре</span>
-            <ul>
+            <span class="dtlProductInfoTitle">Maxsulot xaqida </span>
+            {% comment %} <ul>
                 <li>
                     <span class="variant">Бренд:</span>
                     <span class="variant2">HP</span>
@@ -199,12 +221,13 @@
                     <span class="variant">Жесткий диск (SSD):</span>
                     <span class="variant2">512 GB</span>
                 </li>
-            </ul>
+            </ul> {% endcomment %}
+            {{product.detail | safe | truncatewords:55}}
             <span class="vseHarakter">Все характеристики</span>
         </div>
         <div class="dtlPriceInfo">
             <div class="dtlPriceInfoPrice">
-                <span>6 800 000 СУМ</span>
+                <span>${{ product.price }}</span>
                 <button class="dtlPriceInfoPriceBtn1"><img src="{% static 'media/korzinkaWhite.svg' %}" alt=""><span>В
                         корзину</span></button>
                 <button class="dtlPriceInfoPriceBtn2">Купить в один клик</button>
