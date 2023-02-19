@@ -114,7 +114,6 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .productImg img {
@@ -475,18 +474,19 @@ footer {
         justify-self: center;
         align-self: center;
     }
-
     .productImg img {
-        max-width: 113px;
         max-width: 100px;
-
+        max-height: 87px;
     }
 
     .productBottomInfo {
-        gap: 10px;
+        gap: 6px;
+        padding: 0 10px;
+        margin-top: 0px;
     }
 
     .productTitle {
+        max-height: 35px;
         font-weight: 400;
         font-size: 12px;
         line-height: 15px;
