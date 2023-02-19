@@ -10,12 +10,15 @@
     <meta name="keywords" content="{% block keywords %} Home Keywords {% endblock %}">
     <meta name="description" content="{% block description %} Home description  {% endblock %}">
     <!-- style links -->
+    <link rel="stylesheet" href="{% static 'style/404.css' %}">
     <link rel="stylesheet" href="{% static 'style/app.css' %}">
     <link rel="stylesheet" href="{% static 'style/categoryList.css' %}">
     <link rel="stylesheet" href="{% static 'style/header.css' %}">
     <link rel="stylesheet" href="{% static 'style/korzinka.css' %}">
+    <link rel="stylesheet" href="{% static 'style/korzinkaPustoy.css' %}">
     <link rel="stylesheet" href="{% static 'style/main.css' %}">
     <link rel="stylesheet" href="{% static 'style/message.css' %}">
+    <link rel="stylesheet" href="{% static 'style/moyZakazPustoy.css' %}">
     <link rel="stylesheet" href="{% static 'style/myorders.css' %}">
     <link rel="stylesheet" href="{% static 'style/nav.css' %}">
     <link rel="stylesheet" href="{% static 'style/order.css' %}">
@@ -41,6 +44,7 @@
 <body>
     
     {% include 'header.html' %}
+    
     {% block slider %} {% endblock %}
 
 
@@ -48,11 +52,46 @@
 
     {% include 'footer.html' %}
 
+    <!-- bottom moblie version -->
+
+    <div class="bottomBar">
+        <ul>
+            <a href="{% url 'home' %}">
+            <li>
+                <img src="{% static 'media/home.svg' %}" alt="">
+                    <span>Asosiy</span>
+                </li>
+            </a>
+            <li>
+                <img src="{% static 'media/star.svg' %}" alt="">
+                <span>Tanlangan</span>
+            </li>
+            <a href="{% url 'shopcart' %}">
+                <li>
+                    <img src="{% static 'media/shop.svg' %}" alt="">
+                    <span>Savat</span>
+                </li>
+            </a>
+            {% if user.id %}
+                <li>
+                    <img src="{% static 'media/user.svg' %}" alt="">
+                    <span>{{ user.username }}</span>
+                </li>
+            {% else %}
+            <a href="{% url 'login' %}" >
+                <li>
+                    <img src="{% static 'media/user.svg' %}" alt="">
+                    <span>Kabinet</span>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
 
 </body>
 
     <script src="{% static 'js/app.js' %}"></script>
     <script src="{% static 'js/kategori.js' %}"></script>
+    <script src="{% static 'js/404.js' %}"></script>
     <!-- Initialize Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
 

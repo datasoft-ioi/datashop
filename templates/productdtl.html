@@ -130,23 +130,29 @@
         </div>
     </div>
 </div> -->
-
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{message.tags}}" role="alert">
+            {{ message |safe }}
+        </div>
+    {% endfor %}
+{% endif %}
 <div class="dtl">
     <ul class="links">
         <li><a href="/">Asosiy</a></li>
         /<li><a href="/category/{{ product.category.id }}/{{ product.category.slug }}">{{ product.category.title }}</a></li>
-        /<li>{{ product.title }}</li>
+        /<li>{{ product.title | truncatewords:3 }}</li>
 
     </ul>
     <div class="dtlHeader">
         <span>{{ product.title }}</span>
         <div class="starts">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <span class="starsCount textRes">4 отзывов</span>
+            <i class="fa fa-star{% if product.avaregereview < 1%}-o empty{% endif%}"></i>
+            <i class="fa fa-star{% if product.avaregereview < 2%}-o empty{% endif%}"></i>
+            <i class="fa fa-star{% if product.avaregereview < 3%}-o empty{% endif%}"></i>
+            <i class="fa fa-star{% if product.avaregereview < 4%}-o empty{% endif%}"></i>
+            <i class="fa fa-star{% if product.avaregereview < 5%}-o empty{% endif%}"></i>
+            <span class="starsCount textRes">{{ product.avaregereview |stringformat:".2f"}} отзывов</span>
         </div>
     </div>
     <div class="dtlMain">
@@ -168,13 +174,13 @@
                         
                         {% endif %}
                         
-                            {% for rs in images %}
-                            
-                            <div class="swiper-slide topIMg">
-                                <img src="{{ rs.image.url }}" />
-                            </div>
-                            
-                            {% endfor %}
+                        {% for rs in images %}
+                        
+                        <div class="swiper-slide topIMg">
+                            <img src="{{ rs.image.url }}" />
+                        </div>
+                        
+                        {% endfor %} 
 
                         
 
@@ -184,15 +190,15 @@
                 <div class="swiper-wrapper">
 
                     {% for rs in images %}
-                        <div class="swiper-slide bottomIMg">
+                        <div class="bottomIMg">
                             <img src="{{rs.image.url}}" />
                         </div>
                     {% endfor %}
 
-                    {% comment %} <div class="swiper-slide bottomIMg">
+                    {% comment %} <div class=" bottomIMg">
                         <img src="{% static 'media/victus2.png' %}" />
-                    </div>
-                    <div class="swiper-slide bottomIMg">
+                    </div> {% endcomment %}
+                    {% comment  %}<div class="swiper-slide bottomIMg">
                         <img src="{% static 'media/victus3.png' %}" />
                     </div> {% endcomment %}
                 </div>
@@ -226,12 +232,44 @@
             <span class="vseHarakter">Все характеристики</span>
         </div>
         <div class="dtlPriceInfo">
-            <div class="dtlPriceInfoPrice">
-                <span>${{ product.price }}</span>
-                <button class="dtlPriceInfoPriceBtn1"><img src="{% static 'media/korzinkaWhite.svg' %}" alt=""><span>В
-                        корзину</span></button>
-                <button class="dtlPriceInfoPriceBtn2">Купить в один клик</button>
-            </div>
+
+            {% if product.variant != 'None'%}
+                <form action="/order/addtoshopcart/{{ product.id }}" method="post"  id="addchart-form">
+                    {% csrf_token %}
+                    <input type="hidden" name="variantid" id="variantid" value="{{ variant.id }}">
+                    <span class="text-uppercase">QTY: </span>
+                    <input class="input" name="quantity" type="number" value="1" min="1" max="{{ product.amount }}">
+                    <div class="dtlPriceInfoPrice">
+                        <span>${{ variant.price }}</span>
+                        <span class="text-uppercase">QTY: </span>
+                        <input class="input" name="quantity" type="number" value="1" min="1" max="{{ variant.amount }}">
+                        <button type="submit" {% if variant.quantity < 1  %} disabled {% endif %} class="dtlPriceInfoPriceBtn1">
+                            <img src="{% static 'media/korzinkaWhite.svg' %}" alt="">
+                            <span>Savatga</span>
+                        </button>
+                        <button class="dtlPriceInfoPriceBtn2">Купить в один клик</button>
+                    </div>
+                </form>
+
+            {% else %}
+                <form action="/order/addtoshopcart/{{ product.id }}" method="post"  id="addchart-form">
+                    {% csrf_token %}
+                    <span class="text-uppercase">QTY: </span>
+                    <input class="input" name="quantity" type="number" value="1" min="1" max="{{ product.amount }}">
+                    <div class="dtlPriceInfoPrice">
+                        <span>${{ product.price }}</span>
+                        <button type="submit" {% if product.amount < 1  %} disabled {% endif %} class="dtlPriceInfoPriceBtn1">
+                            <img src="{% static 'media/korzinkaWhite.svg' %}" alt="">
+                            <span>Savatga</span>
+                        </button>
+                        <button class="dtlPriceInfoPriceBtn2">Kupit в один клик</button>
+                    </div>
+                </form>
+
+            {% endif %}
+
+
+
             <div class="dtlPriceInfoPriceInfo">
                 <div class="dtlPriceInfoPriceInfo-1">
                     <img src="{% static 'media/dtl1.svg' %}" alt="">

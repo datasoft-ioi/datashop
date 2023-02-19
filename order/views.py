@@ -48,10 +48,10 @@ def addtoshopcart(request,id):
                 data = ShopCart()
                 data.user_id = current_user.id
                 data.product_id =id
-                data.variant_id = variantid
+                # data.variant_id = variantid
                 data.quantity = form.cleaned_data['quantity']
                 data.save()
-        messages.success(request, "Product added to Shopcart ")
+        messages.success(request, "Maxsulot Savatga qoshildi ")
         return HttpResponseRedirect(url)
 
     else: # if there is no post
@@ -66,7 +66,7 @@ def addtoshopcart(request,id):
             data.quantity = 1
             data.variant_id =None
             data.save()  #
-        messages.success(request, "Product added to Shopcart")
+        messages.success(request, "Maxsulot Savatga qoshildi")
         return HttpResponseRedirect(url)
 
 

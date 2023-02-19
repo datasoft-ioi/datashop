@@ -286,42 +286,7 @@ def savelangcur(request):
     return HttpResponseRedirect(lasturl)
 
 # Create your views here.
-def homepage(request):
 
-    products_latest = Product.objects.all().order_by('-id')[:4]  # last 4 products
-
-    products_slider = Product.objects.all().order_by('id')[:4]  #first 4 products
-
-    products_picked = Product.objects.all().order_by('?')[:4]   #Random selected 4 products
-
-    context = {
-        "products_latest": products_latest,
-        "products_slider": products_slider,
-        "products_picked": products_picked
-    }
-
-    return render(request, 'index.html', context)
-
-
-def cartpage(request):
-    return render(request, 'cart.html')
-
-
-def productdtl(request):
-    return render(request, 'productdtl.html')
-
-def category_list(request):
-
-    return render(request, 'categoryList.html')
-
-def register(request): 
-    return render(request, 'register.html')
-
-def login(request): 
-    return render(request, 'login.html')
-
-def korzinka(request):
-    return render(request, 'korzinka.html')
 
 
 

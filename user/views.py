@@ -3,7 +3,9 @@ from django.contrib.auth import authenticate, login, logout, update_session_auth
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+
+from django.contrib.auth.forms import AuthenticationForm 
 
 # Create your views here.
 from django.utils import translation
@@ -11,7 +13,7 @@ from django.utils import translation
 from home.models import FAQ
 from order.models import Order, OrderProduct
 from product.models import Category, Comment
-from user.forms import SignUpForm, UserUpdateForm, ProfileUpdateForm
+from user.forms import SignUpForm, UserUpdateForm, ProfileUpdateForm, LoginForm
 from user.models import UserProfile
 
 @login_required(login_url='/login') # Check login
@@ -24,30 +26,35 @@ def index(request):
     return render(request,'user_profile.html',context)
 
 def login_form(request):
-    category = Category.objects.all()
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            current_user =request.user
-            userprofile=UserProfile.objects.get(user_id=current_user.id)
-            request.session['userimage'] = userprofile.image.url
+            # current_user =request.user
+            # userprofile=UserProfile.objects.get(user_id=current_user.id)
+            # request.session['userimage'] = userprofile.image.url
             #*** Multi Langugae
             # request.session[translation.LANGUAGE_SESSION_KEY] = userprofile.language.code
             # request.session['currency'] = userprofile.currency.code
             # translation.activate(userprofile.language.code)
 
             # Redirect to a success page.
-            return HttpResponseRedirect('/') # +userprofile.language.code
+            return HttpResponseRedirect('/')
         else:
             messages.warning(request,"Login Error !! Username or Password is incorrect")
             return HttpResponseRedirect('/login')
     # Return an 'invalid login' error message.
 
     #category = Category.objects.all()
-    context = {'category': category
+    context = {#'category': category
+     }
+    return render(request, 'login.html',context)
+    # category = Category.objects.all()
+    context = {
+        # 'category': category,
+        "login_form": form,
      }
     return render(request, 'login.html',context)
 

@@ -5,6 +5,10 @@ from django.forms import TextInput, EmailInput, Select, FileInput
 
 from user.models import UserProfile
 
+class LoginForm(forms.Form):
+    username = forms.CharField(max_length=65)
+    password = forms.CharField(max_length=65, widget=forms.PasswordInput)
+
 
 class SignUpForm(UserCreationForm):
     username = forms.CharField(max_length=30,label= 'Username :')

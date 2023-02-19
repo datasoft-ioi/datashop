@@ -79,7 +79,7 @@ main {
 
 .productImg img {
     max-width: 188px;
-    max-height: 130px;
+    max-height: 120px;
 }
 
 .productHeader {
@@ -403,8 +403,28 @@ footer {
 .bottomBar {
     display: none;
 }
+
 .headerCategroyBoxConRes {
     display: none;
+}
+
+#kategoryBtn {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.navSerach {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.navSerach button {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.headerCategroyBoxCon {
+    border-radius: 10px;
 }
 
 @media screen and (max-width: 414px) and (min-width: 360px) {
@@ -665,14 +685,18 @@ footer {
     .bottomBar {
         position: fixed;
         width: 100%;
-        height: 71px;
+        height: 61px;
         background-color: #E81D1C;
         display: flex;
         bottom: 0;
         left: 0;
         right: 0;
-        padding: 0px 20px;
+        padding: 0px 30px;
         z-index: 99;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        /* border-radius: 25px; */
+
     }
 
     .bottomBar ul {
