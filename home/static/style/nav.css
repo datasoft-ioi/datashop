@@ -466,7 +466,9 @@ nav {
     0% {
         transform: translateY(-20px);
         opacity: 0;
-    }100% {
+    }
+
+    100% {
         transform: translateY(0);
         opacity: 1;
     }
@@ -519,9 +521,33 @@ nav {
     color: #00000077;
 }
 
-@media screen and (max-width: 414px) and (min-width: 360px){
+@media screen and (max-width: 414px) and (min-width: 360px) {
     .navSerchProduct {
         width: 113%;
         left: -45px;
     }
+}
+
+.navbottomBtns {
+    position: relative;
+}
+
+
+.korzinkaConunt {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: 35px;
+    top: 2px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: #FFFFFF;
+    background-color: #E81D1C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    justify-items: center;
+    align-self: center;
 }

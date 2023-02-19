@@ -40,7 +40,7 @@
                 <a href="{% url 'shopcart'%}">
                     {% load myapptags %}
                     {% shopcartcount user.id as count %}
-                    <span >{{ count }}</span>
+                    <span class="korzinkaConunt">{{ count }}</span>
                     <button>
                         <img src="{% static 'media/korzinka.svg' %}" alt="">
                         <span>Savat</span>
