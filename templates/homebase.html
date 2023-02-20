@@ -67,10 +67,13 @@
                 <span>Tanlangan</span>
             </li>
             <a href="{% url 'shopcart' %}">
+                {% load myapptags %}
+                {% shopcartcount user.id as count %}
                 <li class="resKor">
+                    
                     <img src="{% static 'media/shop.svg' %}" alt="">
                     <span>Savat</span>
-                    <span class="resKorCount">0</span>
+                    <span class="resKorCount">{{ count }}</span>
                 </li>
             </a>
             {% if user.id %}

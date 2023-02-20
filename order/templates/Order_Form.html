@@ -1,0 +1,185 @@
+{% extends 'homebase.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    <div class="oreder">
+        <ul class="links">
+            <li>Главная</li>
+        </ul>
+        <div class="orederMain">
+            <div class="orderMainLeft">
+                <div class="location">
+                    <span class="locationHeader">1. Как вы хотите получить заказ?</span>
+                    <div class="locationBtns">
+                        <button><img src="../media/dastafka1.svg" alt=""><span>Самовызов</span></button>
+                        <button><img src="../media/dastafka2.svg" alt=""><span>Доставка</span></button>
+                    </div>
+                </div>
+                <div class="locationSelects">
+                    <span class="locationHeader">2. Укажите адрес доставки</span>
+                    <div class="selects">
+                        <div class="oblas">
+                            <label for="">Область</label>
+                            <select name="Выберите область" id="">
+                                <option value="">Xorazm</option>
+                            </select>
+                        </div>
+                        <div class="oblas">
+                            <label for="">Город</label>
+                            <select name="Выберите город" id="">
+                                <option value="">Urganch</option>
+                                <option value="">Xiva</option>
+                                <option value="">Shovot</option>
+                                <option value="">Yangiariq</option>
+                                <option value="">Gurlan</option>
+                                <option value="">Hozarasp</option>
+                                <option value="">Bog'ot</option>
+                            </select>
+                        </div>
+                        <div class="oblas">
+                            <label for="">Полный адрес</label>
+                            <input type="text" placeholder="Введите полный адрес">
+                        </div>
+                    </div>
+                </div>
+                <div class="selectPay">
+                    <span class="locationHeader">3. Выберите способ оплаты</span>
+                    <div class="selectPayBtns">
+                        <button class="payClick" ><img src="../media/click.png" alt=""></button>
+                        <button class="payPayme" ><img src="../media/payme.png" alt=""></button>
+                        <button class="payNaxt">Наличными</button>
+                    </div>
+                </div>
+                <div class="locationKontakt">
+                    <span class="locationHeader">4. Контактное имя</span>
+                    <div class="locationKontaktInputs">
+                        <div class="locationKontaktInputs-chil">
+                            <label for="">Имя</label>
+                            <input type="text" value="{{user.first_name }}">
+                        </div>
+                        <div class="locationKontaktInputs-chil">
+                            <label for="">Фамилия</label>
+                            <input type="text" value="{{user.last_name }}">
+                        </div>
+                        <div class="locationKontaktInputs-chil">
+                            <label for="">Телефон</label>
+                            <input type="text" placeholder="+998904299019">
+                        </div>
+                        <div class="locationKontaktInputs-chil"> 
+                            <label for="">Дополнительный тел</label>
+                            <input type="text" placeholder="+998904299019">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="korMainPriceBox">
+                <div class="korMainPriceBoxTite">
+                    <span class="korMainPriceBoxTiteInfo">Итого:</span>
+                    <span class="korMainPriceBoxTitePrice">${{ total }}</span>
+                </div>
+                <ul class="korMainPriceBoxPriceInfo">
+                    <li>
+                        <span class="korMainPriceBoxPriceInfoName">Промокод:</span>
+                        <span class="korMainPriceBoxPriceInfoPrice">0 сум</span>
+                    </li>
+                    <li>
+                        <span class="korMainPriceBoxPriceInfoName">Сумма доставки:</span>
+                        <span class="korMainPriceBoxPriceInfoPrice">0 сум</span>
+                    </li>
+                    <li>
+                        <span class="korMainPriceBoxPriceInfoName">Сумма товара:</span>
+                        <span class="korMainPriceBoxPriceInfoPrice">0 сум</span>
+                    </li>
+                </ul>
+                <div class="korMainPriceBoxFooter">
+                    <div class="korMainPriceBoxFooterDastafka">
+                        <span class="korMainPriceBoxFooterDastafka-chil1">Доставка:</span>
+                        <span class="korMainPriceBoxFooterDastafka-chil2">Курьером</span>
+                    </div>
+                    <div class="korMainPriceBoxFooterEnd">
+                        <button>Оформить заказ</button>
+                        <span>Нажимая 'Оформить заказ', я соглашаюсь с публичным договором оферты</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="myOrderProduct">
+        <div class="myOrderProductMain">
+            <div class="myOrderProductMainHeader">
+                {% comment %} <div class="myOrderProductMainKodData">
+                    <span class="myOrderProductMainKodDataChil1">Код заказа: 1050017AS</span>
+                    <span class="myOrderProductMainKodDataChil2">Дата: 26-10-2022</span>
+                </div> {% endcomment %}
+                {% comment %} <div class="myOrderProductMainStatus">
+                    <span class="myOrderProductMainStatusChil1">Статус</span>
+                    <span class="myOrderProductMainStatusChil2">Доставлено</span>
+                </div> {% endcomment %}
+            </div>
+            <div class="myOrderProductMainProducts">
+                <div class="myOrderProductMainProduct">
+                    <div class="myOrderProductMainProductHeader">
+                        <span>Maxsulotlar</span>
+                        <span>Donasi</span>
+                    </div>
+                    <div class="ProductsOrder">
+                        {% for rs in shopcart %}
+                        <div class="myorderProductMainProduct">
+                            <div class="myorderProductMainProductCon">
+                                <img src="{{ rs.product.image.url }}"alt="">
+                                <div class="myorderProductMainProductInfos">
+                                    <a href="{% url 'product_detail' rs.product.id rs.product.slug %}"><span class="myorderProductMainProductConName">{{ rs.product.title }}</span></a>
+                                    <span class="myorderProductMainProductConPrice">$568</span>
+                                </div>
+                            </div>
+                            <span class="shtuk">{{ rs.quantity }}</span>
+                        </div>
+                        {% endfor %}
+                        {% comment %} <div class="myorderProductMainProduct">
+                            <div class="myorderProductMainProductCon">
+                                <img src="https://dlcdnwebimgs.asus.com/gain/6FE37E07-B41F-4238-81D8-433B425405C5"alt="">
+                                <div class="myorderProductMainProductInfos">
+                                    <span class="myorderProductMainProductConName">HP Victus 15 RTX 3050...</span>
+                                    <span class="myorderProductMainProductConPrice">$568</span>
+                                </div>
+                            </div>
+                            <span class="shtuk">1</span>
+                        </div> {% endcomment %}
+                        
+                    </div>
+                </div>
+                {% comment %} <div class="myOrderProductMainProductInfo">
+                    <span class="myOrderProductMainProductInfoTitle">Детальная информация</span>
+                    <div class="myOrderProductMainProductInfoBox">
+                        <ul>
+                            <li>
+                                <span class="myOrderProductMainProductInfoBoxChil1">Адрес доставки:</span>
+                                <span class="myOrderProductMainProductInfoBoxChil2">Хорезм . Ургенч . A.Bahodirxon72-uy</span>
+                            </li>
+                            <li>
+                                <span class="myOrderProductMainProductInfoBoxChil1">Когда доставлено:</span>
+                                <span class="myOrderProductMainProductInfoBoxChil2">30-10-2022</span>
+                            </li>
+                            <li>
+                                <span class="myOrderProductMainProductInfoBoxChil1">Тип доставки:</span>
+                                <span class="myOrderProductMainProductInfoBoxChil2">Бесплатная</span>
+                            </li>
+                            <li>
+                                <span class="myOrderProductMainProductInfoBoxChil1">Тип оплаты:</span>
+                                <span class="myOrderProductMainProductInfoBoxChil2">**** **** **** 9123</span>
+                            </li>
+                        </ul>
+                        <div class="myOrderProductMainProductInfoBoxPrice">
+                            <span>Итого:</span><span>766.000 UZS</span>
+                        </div>
+                    </div>
+                </div> {% endcomment %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+
