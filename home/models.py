@@ -128,5 +128,10 @@ class FAQ(models.Model):
 
 
 class Banner(models.Model):
-    image = models.ImageField(upload_to='images/banners-home',null=False)
+    title = models.CharField(max_length=56, verbose_name="Banner Nomi: ")
+    image = models.ImageField(upload_to='images/banners-home',null=False, verbose_name="Banner Rasmi")
 
+    def __str__(self):
+        return self.title
+
+    

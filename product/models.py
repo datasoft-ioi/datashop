@@ -244,13 +244,14 @@ class CategoryLang(models.Model):
 
 
 class Brands(models.Model):
-    image = image=models.ImageField(upload_to='images/brands',null=False)
+    title = models.CharField(max_length=56, verbose_name="Brand Nomi: ")
+    image = image=models.ImageField(upload_to='images/brands',null=False, verbose_name="Brand Rasmi: ")
     create_at=models.DateTimeField(auto_now_add=True)
     update_at=models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.title
 
     class Meta:
         verbose_name = "Brend"    
         verbose_name_plural = "Brandlar"
-
-
