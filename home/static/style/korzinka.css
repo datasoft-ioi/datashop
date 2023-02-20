@@ -345,6 +345,7 @@
         line-height: 15px;
         color: #7D7D7D;
     }
+
     .korProductInfo {
         gap: 16px;
     }
@@ -372,10 +373,37 @@
         line-height: 17px;
         color: #474747;
     }
+
     .korProductInfo div {
         gap: 8px;
     }
+
     .korMainPriceBoxFooterEnd button {
         width: 100%;
+    }
+
+    .korMainPriceBoxTite span {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        color: #3C3C3C;
+    }
+
+    .korMainPriceBoxPriceInfo li .korMainPriceBoxPriceInfoName {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        color: #3C3C3C;
+    }
+
+    .korMainPriceBoxPriceInfoPrice {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+
+        color: #888888;
+    }
+    .korMainPriceBox {
+        margin-bottom: 10px;
     }
 }

@@ -37,6 +37,7 @@
                                 <div>
                                     <span class="korProductInfoName">{{ rs.product.title | truncatewords:3 }}</span>
                                     <span class="korProductInfoCategory">Ноутбук</span>
+                                    <span class="myorderProductMainProductConPrice">${{ rs.product.price }}</span>
                                     <a href="/order/deletefromcart/{{ rs.id }}">
                                         <button>Удалить</button>
                                     </a>
