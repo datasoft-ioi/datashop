@@ -1,4 +1,4 @@
-django
+django==3.2.13
 beautifulsoup4
 django-ckeditor
 django-currencies
@@ -7,3 +7,6 @@ Pillow
 python-gettext
 django-mptt
 django-admin-thumbnails
+python-dotenv
+django-ipware
+python-telegram-bot

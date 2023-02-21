@@ -25,14 +25,31 @@ from product.models import Category, Brands, Product, Images, Comment, Variants,
 from user.models import UserProfile
 
 
+
+URL = settings.BOT_URL
+my_token = settings.BOT_TOKEN
+my_chat_id = settings.BOT_CHAT_ID
+
+
+def bot(request, msg, chat_id=my_chat_id, token=my_token):
+
+    pass
+
 def index(request):
-    if not request.session.has_key('currency'):
-        request.session['currency'] = settings.DEFAULT_CURRENCY
+    # if not request.session.has_key('currency'):
+    #     request.session['currency'] = settings.DEFAULT_CURRENCY
+
+    # if request.user.is_anonymous():
+    #     pass
+
+    # else:
+    #     pass
+
 
     setting = Setting.objects.get(pk=1)
     products_latest = Product.objects.filter(category__title='Noutbuk').order_by('-id')[:10]  # last 5 products
     laptops_product = Product.objects.filter(category__title="Monitor").order_by('-id')[:10] # last 5
-
+    products = Product.objects.all()
     #laptop 
 
     # >>>>>>>>>>>>>>>> M U L T I   L A N G U G A E >>>>>> START
@@ -55,6 +72,12 @@ def index(request):
  
 
     category = Category.objects.all()
+    categoryID = request.GET.get('category')
+    if categoryID:
+        product = Product.objects.filter(parent=categoryID)
+
+    else:
+        product = Product.objects.all()
     category_lates = Category.objects.all().order_by('?')[:4] #Random selected
 
 
@@ -63,6 +86,8 @@ def index(request):
     page="home"
     context={'setting':setting,
              'page':page,
+            #  'product':product,
+             'products':products,
              'products_slider': products_slider,
              'products_latest': products_latest,
              'products_picked': products_picked,
@@ -139,6 +164,10 @@ def category_products(request,id,slug):
     # currentlang = request.LANGUAGE_CODE[0:2]
     catdata = Category.objects.get(pk=id)
     category = Category.objects.all()
+
+
+
+        
     products = Product.objects.filter(category_id=id) #default language
     # if defaultlang != currentlang:
     #     try:
@@ -154,6 +183,7 @@ def category_products(request,id,slug):
 
     context={'products': products,
              'category':category,
+
              'catdata':catdata 
             }
     return render(request,'categoryList.html',context)

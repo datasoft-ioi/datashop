@@ -44,14 +44,24 @@
             </fieldset>
             <div class="filterRanges">
                 <div class="filterRangesBrend">
-                    <div class="filterRangesBrendHeader">
-                        <span>Бренд</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="filterRangesBrendInfo">
-                        <input type="radio" name="gender">
-                        <span>Hp</span>
-                    </div>
+                    {% for cat in category %}
+                    <a href="{% url 'category_products' cat.id cat.slug %}">
+                        <div class="filterRangesBrendHeader">
+                            <span>{{ cat.title }}</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </a>
+                    {% if cat.children %}
+                    {% for ct in cat.children.all %}
+                    <a href="{% url 'category_products' ct.id ct.slug %}">
+                        <div class="filterRangesBrendInfo">
+                            {% comment %} <input type="text" name="gender"> {% endcomment %}
+                            <span>{{ ct.title }}</span>
+                        </div>
+                    </a>
+                    {% endfor %}
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="filterRangesBrend">
                     <div class="filterRangesBrendHeader">
@@ -125,6 +135,7 @@
                 </select>
             </div>
             <div class="categoryListMainProductMain">
+
                 {% for rs in products %}
                     <div class="product">
                         <div class="productHeader">
@@ -139,7 +150,7 @@
                         <div class="productBottomInfo">
                             <a href="{% url 'product_detail' rs.id rs.slug %}">
                             <span class="productTitle">
-                                {{ rs.title | truncatewords:5 }}
+                                {{ r.title | truncatewords:5 }}
                             </span>
                             </a>
                             <div class="productStar">
@@ -157,7 +168,9 @@
 
                         </div>
                     </div>
+
                 {% endfor %}
+
             </div>
 
         </div>

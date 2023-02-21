@@ -249,6 +249,7 @@
         </div>
         <div class="products">
             {% for prod in products_latest %}
+
             <div class="product">
                 <div class="productHeader">
                     <span class="new">yangi</span>
@@ -264,7 +265,7 @@
                 <div class="productBottomInfo">
                     <a href="{% url 'product_detail' prod.id prod.slug%}">
                         <span class="productTitle">
-                            {{prod.title| truncatewords:5}}
+                            {{pr.title| truncatewords:5}}
                         </span>
                     </a>
                     <div class="productStar">
@@ -277,6 +278,7 @@
                     <span class="productPrice">${{ prod.price }}</span>
                 </div>
             </div>
+
             {% endfor %}
         </div>
     </div>

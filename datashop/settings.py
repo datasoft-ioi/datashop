@@ -12,8 +12,11 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 import os
 from pathlib import Path
 
+from dotenv import load_dotenv
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,6 +29,10 @@ SECRET_KEY = 'django-insecure-m6#muzi-s5!r037)^1u-s9n80gc^z*39a47r*kkxy85%=zwgl)
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
+
+BOT_TOKEN = str(os.getenv('BOT_TOKEN'))
+BOT_URL = "https://api.telegram.org/bot%s/"%BOT_TOKEN
+BOT_CHAT_ID = "984573662"
 
 
 # Application definition
