@@ -45,18 +45,18 @@
             <div class="filterRanges">
                 <div class="filterRangesBrend">
                     {% for cat in category %}
-                    <a href="{% url 'category_products' cat.id cat.slug %}">
-                        <div class="filterRangesBrendHeader">
-                            <span>{{ cat.title }}</span>
-                            <i class="fa-solid fa-chevron-down"></i>
-                        </div>
-                    </a>
+                    <!-- <a href="{% url 'category_products' cat.id cat.slug %}"> -->
+                    <div class="filterRangesBrendHeader">
+                        <span>{{ cat.title }}</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <!-- </a> -->
                     {% if cat.children %}
                     {% for ct in cat.children.all %}
                     <a href="{% url 'category_products' ct.id ct.slug %}">
                         <div class="filterRangesBrendInfo">
                             {% comment %} <input type="text" name="gender"> {% endcomment %}
-                            <span>{{ ct.title }}</span>
+                            <span class="kategoryChiled">{{ ct.title }}</span>
                         </div>
                     </a>
                     {% endfor %}
@@ -137,37 +137,37 @@
             <div class="categoryListMainProductMain">
 
                 {% for rs in products %}
-                    <div class="product">
-                        <div class="productHeader">
-                            <span class="new">new</span>
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                        <div class="productImg">
-                            <a href="{% url 'product_detail' rs.id rs.slug %}">
+                <div class="product">
+                    <div class="productHeader">
+                        <span class="new">new</span>
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                    <div class="productImg">
+                        <a href="{% url 'product_detail' rs.id rs.slug %}">
                             <img src="{{ rs.image.url }}" alt="">
-                            </a>
-                        </div>
-                        <div class="productBottomInfo">
-                            <a href="{% url 'product_detail' rs.id rs.slug %}">
+                        </a>
+                    </div>
+                    <div class="productBottomInfo">
+                        <a href="{% url 'product_detail' rs.id rs.slug %}">
                             <span class="productTitle">
                                 {{ r.title | truncatewords:5 }}
                             </span>
-                            </a>
-                            <div class="productStar">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                            </div>
-                            <span class="productPrice">${{ rs.price }}</span>
+                        </a>
+                        <div class="productStar">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <span class="productPrice">${{ rs.price }}</span>
 
-                            <div class="categoryListMain">
-
-                            </div>
+                        <div class="categoryListMain">
 
                         </div>
+
                     </div>
+                </div>
 
                 {% endfor %}
 
@@ -180,3 +180,12 @@
 
 
 {% endblock content %}
+<!-- {% block script %} -->
+<script>
+
+    const filterRangesBrendInfo = document.querySelector('.filterRangesBrendInfo')
+    console.log(filterRangesBrendInfo.textContent);
+    filterRangesBrendInfo.classList.add('none')
+    
+</script>
+<!-- {% endblock script %} -->

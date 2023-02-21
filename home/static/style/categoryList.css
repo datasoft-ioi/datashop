@@ -588,3 +588,28 @@ input[type="radio"] {
         grid-row-gap: 28px;
     }
 }
+
+@keyframes categoryAnimate {
+     0% {
+        transform: translateY(-10px);
+        opacity: 0;
+     }100% {
+        transform: translateY(0px);
+        opacity: 1;
+     }
+}
+
+.filterRangesBrendHeader i {
+    color: #000000;
+}
+
+.kategoryChiled {
+    animation: categoryAnimate 0.3s ease;
+    padding-left: 12px;
+    font-weight: 500;
+    color: #686868;
+}
+
+.kategoryChiled:hover {
+    color: #232323;
+}

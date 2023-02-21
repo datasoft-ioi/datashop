@@ -8,7 +8,6 @@ const closeProfil = document.querySelector('.closeProfil')
 const kategoryBtnRes = document.querySelector('.kategoryBtn')
 
 
-
 let korOnOff = false
 let profilShow = false
 
