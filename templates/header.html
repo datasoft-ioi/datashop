@@ -124,12 +124,13 @@
                 {% comment %} <a href="{% url 'category_products' node.id node.slug %}"> {% endcomment %}
                     <div class="kategoryLinksLeft">
                         <img src="{% static 'media/laptop.svg' %}" alt="">
-                        <span>{{note.title}}</span>
+                        <span class="kategoryLinksLeftTitle">{{note.title}}</span>
+                        <div class="kategoryLinksLeftRight">
+                            <span>{{note.title}}</span>
+                        </div>
                     </div>
                     {% comment %} </a> {% endcomment %}
                     <i class="fa-solid fa-chevron-right"></i>
-
-
                 </li>
                 {% endfor %}    
                 

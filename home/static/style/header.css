@@ -39,3 +39,15 @@ header {
 .swiper-slider img {
     width: 100px;
 }
+.kategoryLinksLeft {
+    position: relative;
+}
+
+.kategoryLinksLeftRight {
+    min-width: 400px;
+    background-color: red;
+    position: absolute;
+    left: 300px;
+    top: 0;
+    padding: 10px 0px;
+}
