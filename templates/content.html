@@ -248,8 +248,8 @@
             </button>
         </div>
         <div class="products">
-            {% for prod in products_latest %}
-
+            {% for prod in cat_by_noutbuk %}
+            {% comment %} {% for chill in prod.children.all %} {% endcomment %}
             <div class="product">
                 <div class="productHeader">
                     <span class="new">yangi</span>
@@ -265,7 +265,7 @@
                 <div class="productBottomInfo">
                     <a href="{% url 'product_detail' prod.id prod.slug%}">
                         <span class="productTitle">
-                            {{pr.title| truncatewords:5}}
+                            {{prod.title| truncatewords:5}}
                         </span>
                     </a>
                     <div class="productStar">
@@ -278,8 +278,8 @@
                     <span class="productPrice">${{ prod.price }}</span>
                 </div>
             </div>
-
             {% endfor %}
+            {% comment %} {% endfor %} {% endcomment %}
         </div>
     </div>
 

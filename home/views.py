@@ -45,9 +45,10 @@ def index(request):
     # else:
     #     pass
 
+    category = Category.objects.filter(parent=None)
 
     setting = Setting.objects.get(pk=1)
-    products_latest = Product.objects.filter(category__title='Noutbuk').order_by('-id')[:10]  # last 5 products
+    products_latest = Product.objects.filter(category__title="Noutbuk").order_by('-id')[:10]  # last 5 products
     laptops_product = Product.objects.filter(category__title="Monitor").order_by('-id')[:10] # last 5
     products = Product.objects.all()
     #laptop 
@@ -71,38 +72,43 @@ def index(request):
     products_picked = Product.objects.all().order_by('?')[:4]   #Random selected 4 products
  
 
-    category = Category.objects.all()
     categoryID = request.GET.get('category')
     if categoryID:
         product = Product.objects.filter(parent=categoryID)
 
     else:
         product = Product.objects.all()
-    category_lates = Category.objects.all().order_by('?')[:4] #Random selected
+    category_lates = Category.objects.filter(parent=None).order_by('?')[:4] #Random selected
 
 
 
 
     page="home"
     context={'setting':setting,
-             'page':page,
+            'page':page,
             #  'product':product,
-             'products':products,
-             'products_slider': products_slider,
-             'products_latest': products_latest,
-             'products_picked': products_picked,
-             'category':category,
-             'category_lates':category_lates,
-             "laptops_product": laptops_product,
-             "brand_img": Brands.objects.all().order_by('id')[:8],
+            'products': products,
+            'products_slider': products_slider,
+            'products_latest': products_latest,
+            'products_picked': products_picked,
+            'category':category,
+            'category_lates':category_lates,
+            "laptops_product": laptops_product,
+            "brand_img": Brands.objects.all().order_by('id')[:8],
 
-             "banner": Banner.objects.all().order_by('-id')[:8],
+            "banner": Banner.objects.all().order_by('-id')[:8],
 
-             "monitor": Category.objects.filter(title="Monitor")[:1],
-             "smartphone": Category.objects.filter(title="Smartfon")[:1],
-             "noutbuk": Category.objects.filter(title="Noutbuk")[:1],
+            #mobile category by category
+            "monitor": Category.objects.filter(title="Monitor")[:1],
+            "smartphone": Category.objects.filter(title="Smartfon")[:1],
+            "noutbuk": Category.objects.filter(title="Noutbuk")[:1],
 
-             }
+            #Desktop contents
+            "cat_by_noutbuk": Product.objects.filter(category__parent=(1, 2, 3, 4, 5)).order_by('-id')[:10],
+
+
+    }
+
     return render(request,'index.html',context)
 
 def all_products(request):

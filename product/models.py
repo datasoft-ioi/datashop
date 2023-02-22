@@ -19,6 +19,8 @@ class Category(MPTTModel):
         ('False', 'False'),
     )
     parent = TreeForeignKey('self',blank=True, null=True ,related_name='children', on_delete=models.CASCADE)
+
+
     title = models.CharField(max_length=50)
     keywords = models.CharField(max_length=255)
     description = models.TextField(max_length=255)
@@ -28,6 +30,10 @@ class Category(MPTTModel):
     slug = models.SlugField(null=False, unique=True)
     create_at=models.DateTimeField(auto_now_add=True)
     update_at=models.DateTimeField(auto_now=True)
+
+
+
+
 
     def __str__(self):
         return self.title

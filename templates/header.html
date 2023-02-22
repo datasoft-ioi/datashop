@@ -119,16 +119,19 @@
             <ul class="kategoryLinks">
                 
                 {% comment %} {% recursetree category %} {% endcomment %}
+                {% for note in category %}
                 <li>
                 {% comment %} <a href="{% url 'category_products' node.id node.slug %}"> {% endcomment %}
                     <div class="kategoryLinksLeft">
                         <img src="{% static 'media/laptop.svg' %}" alt="">
-                        <span>{{node.title}}</span>
+                        <span>{{note.title}}</span>
                     </div>
-                {% comment %} </a> {% endcomment %}
-                <i class="fa-solid fa-chevron-right"></i>
-                    
+                    {% comment %} </a> {% endcomment %}
+                    <i class="fa-solid fa-chevron-right"></i>
+
+
                 </li>
+                {% endfor %}    
                 
                 {% comment %} {% endrecursetree %} {% endcomment %}
                 
@@ -138,24 +141,26 @@
                 <span class="kategoryRightTitle">Noutbuklar</span>
                 <div class="kategoryInfos">
                     {% comment %} {% recursetree category %} {% endcomment %}
-                    {% for child in node.children.all %}
+                    {% for child in category %}
+                    {% for cd in child.children.all %}
                     <ul class="kategoryInfo">
-                            <a href="{% url 'category_products' child.id child.slug %}">
-                                <span>{{ child.title }}</span>
-                            </a>
+                            {% comment %} <a href="{% url 'category_products' child.id child.slug %}"> {% endcomment %}
+                                <span>{{ cd.title }}</span>
+                            {% comment %} </a> {% endcomment %}
                             {% comment %} {{ children }} {% endcomment %}
                             {% comment %} {% if not node.is_leaf_node %} {% endcomment %}
-                            {% recursetree child.children.set %}
-                                <a href="{% url 'category_products' node.id node.slug %}">
-                                    <li>{{node.title}}</li>
-                                </a>
-                            {% endrecursetree %}
+
+                                {% comment %} <a href="{% url 'category_products' node.id node.slug %}"> {% endcomment %}
+                                    <li>{{cd.title}}</li>
+                                {% comment %} </a> {% endcomment %}
+
                             {% comment %} {% endif %} {% endcomment %}
                             {% comment %}<li>Apple</li>
                             <li>MSI</li>
                             <li>Dell</li>
                             <li>Lenovo</li> {% endcomment %}
                         </ul>
+                        {% endfor %}
                     {% endfor %}
                     {% comment %} {% endrecursetree %} {% endcomment %}
                         {% comment %} <ul class="kategoryInfo">
