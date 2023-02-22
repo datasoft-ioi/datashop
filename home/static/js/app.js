@@ -6,6 +6,8 @@ const profilBtn = document.querySelector('.profilBtn')
 const closeKategory = document.querySelector('.closeKategory')
 const closeProfil = document.querySelector('.closeProfil')
 const kategoryBtnRes = document.querySelector('.kategoryBtn')
+const massageBar = document.querySelector('.massageBar')
+const dtlPriceInfoPriceBtn1 = document.querySelector('.dtlPriceInfoPriceBtn1')
 
 
 let korOnOff = false
@@ -57,3 +59,8 @@ closeKategory.onclick = () => {
     profil.classList.remove('profilOn')
 }
 
+massageBar.classList.add('massageBarNone')
+
+setTimeout(() => {
+    massageBar.classList.remove('massageBarNone')
+}, 1000)§

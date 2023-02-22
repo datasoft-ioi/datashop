@@ -99,6 +99,23 @@ body {
   line-height: 12px;
   color: #E81D1C;
 }
-.alert span {
-  
+.massageBar {
+  width: 370px;
+  height: 60px;
+  background-color: #e81c1c41;;
+  color: #E81D1C;
+  display: flex;
+  align-items: center;
+  padding: 0px 10px;
+  border: 1px solid #E81D1C;;
+  border-radius: 3px;
+  position: absolute;
+  left: 6%;
+  top: 10%;
+  transition: 1s;
+}
+
+.massageBarNone {
+  left: -30%;
+  transition: 1s;
 }
