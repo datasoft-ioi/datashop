@@ -53,7 +53,7 @@ def login_form(request):
     return render(request, 'login.html',context)
     # category = Category.objects.all()
     context = {
-        # 'category': category,
+        'category': category,
         "login_form": form,
      }
     return render(request, 'login.html',context)

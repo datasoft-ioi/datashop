@@ -137,7 +137,7 @@
             <div class="kategoryRight">
                 <span class="kategoryRightTitle">Noutbuklar</span>
                 <div class="kategoryInfos">
-                    {% recursetree category %}
+                    {% comment %} {% recursetree category %} {% endcomment %}
                     {% for child in node.children.all %}
                     <ul class="kategoryInfo">
                             <a href="{% url 'category_products' child.id child.slug %}">
@@ -157,7 +157,7 @@
                             <li>Lenovo</li> {% endcomment %}
                         </ul>
                     {% endfor %}
-                    {% endrecursetree %}
+                    {% comment %} {% endrecursetree %} {% endcomment %}
                         {% comment %} <ul class="kategoryInfo">
                             <span>Кулеры для ноутбуков</span>
                             <li>1 Кулерный</li>
