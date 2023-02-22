@@ -102,7 +102,7 @@ def index(request):
             "monitor": Category.objects.filter(title="Monitor")[:1],
             "smartphone": Category.objects.filter(title="Smartfon")[:1],
             "noutbuk": Category.objects.filter(title="Noutbuk")[:1],
-
+        
             #Desktop contents
             "cat_by_noutbuk": Product.objects.filter(category__parent=(1, 2, 3, 4, 5)).order_by('-id')[:10],
 
@@ -173,7 +173,7 @@ def category_products(request,id,slug):
 
 
 
-        
+
     products = Product.objects.filter(category_id=id) #default language
     # if defaultlang != currentlang:
     #     try:

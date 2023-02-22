@@ -137,38 +137,37 @@
             <div class="categoryListMainProductMain">
 
                 {% for rs in products %}
-                <div class="product">
-                    <div class="productHeader">
-                        <span class="new">new</span>
-                        <i class="fa-regular fa-heart"></i>
-                    </div>
-                    <div class="productImg">
-                        <a href="{% url 'product_detail' rs.id rs.slug %}">
-                            <img src="{{ rs.image.url }}" alt="">
-                        </a>
-                    </div>
-                    <div class="productBottomInfo">
-                        <a href="{% url 'product_detail' rs.id rs.slug %}">
-                            <span class="productTitle">
-                                {{ r.title | truncatewords:5 }}
-                            </span>
-                        </a>
-                        <div class="productStar">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
+                    <div class="product">
+                        <div class="productHeader">
+                            <span class="new">new</span>
+                            <i class="fa-regular fa-heart"></i>
                         </div>
-                        <span class="productPrice">${{ rs.price }}</span>
+                        <div class="productImg">
+                            <a href="{% url 'product_detail' rs.id rs.slug %}">
+                                <img src="{{ rs.image.url }}" alt="">
+                            </a>
+                        </div>
+                        <div class="productBottomInfo">
+                            <a href="{% url 'product_detail' rs.id rs.slug %}">
+                                <span class="productTitle">
+                                    {{ r.title | truncatewords:5 }}
+                                </span>
+                            </a>
+                            <div class="productStar">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <span class="productPrice">${{ rs.price }}</span>
 
-                        <div class="categoryListMain">
+                            <div class="categoryListMain">
+
+                            </div>
 
                         </div>
-
                     </div>
-                </div>
-
                 {% endfor %}
 
             </div>
