@@ -248,15 +248,17 @@
             {% else %}
                 <form action="/order/addtoshopcart/{{ product.id }}" method="post"  id="addchart-form">
                     {% csrf_token %}
-                    <span class="text-uppercase">QTY: </span>
-                    <input class="input" name="quantity" type="number" value="1" min="1" max="{{ product.amount }}">
                     <div class="dtlPriceInfoPrice">
                         <span>${{ product.price }}</span>
                         <button type="submit" {% if product.amount < 1  %} disabled {% endif %} class="dtlPriceInfoPriceBtn1">
                             <img src="{% static 'media/korzinkaWhite.svg' %}" alt="">
                             <span>Savatga</span>
                         </button>
-                        <button class="dtlPriceInfoPriceBtn2">Kupit в один клик</button>
+                        <div class="count">
+                            <button class="plus"><i class="fa-solid fa-plus"></i></button>
+                            <span class="countNumber">0</span>
+                            <button class="minus"><i class="fa-solid fa-minus"></i></button>
+                        </div>
                     </div>
                 </form>
 

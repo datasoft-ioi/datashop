@@ -99,10 +99,20 @@ body {
   line-height: 12px;
   color: #E81D1C;
 }
+
+@keyframes massageBarAnime {
+  from{
+    transform: translateX(-999px);
+  }to{
+    transform: translateX(0px);
+  }
+}
+
+
 .massageBar {
   width: 370px;
   height: 60px;
-  background-color: #e81c1c41;;
+  background-color: #e81c1c41;
   color: #E81D1C;
   display: flex;
   align-items: center;
@@ -110,12 +120,12 @@ body {
   border: 1px solid #E81D1C;;
   border-radius: 3px;
   position: absolute;
-  left: 6%;
+  left: 2%;
   top: 10%;
   transition: 1s;
+  animation: massageBarAnime 1s ease;
 }
 
 .massageBarNone {
-  left: -30%;
-  transition: 1s;
+  transform: translateX(-999px);
 }
