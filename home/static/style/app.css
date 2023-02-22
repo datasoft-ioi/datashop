@@ -129,3 +129,34 @@ body {
 .massageBarNone {
   transform: translateX(-999px);
 }
+
+
+
+
+
+/* kategory demo css */
+.container {
+  position: relative;
+  width: 1140px;
+  height: 200px;
+  color: #ffffff;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.ropdown-menu.show {
+  display: flex;
+}
+
+.container .div {
+  display: flex;
+  padding: 10px;
+  gap: 30px;
+}
+
+.container .div ul {
+  display: flex;
+  flex-direction: column;
+}

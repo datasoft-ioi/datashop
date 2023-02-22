@@ -11,8 +11,6 @@ const dtlPriceInfoPriceBtn1 = document.querySelector('.dtlPriceInfoPriceBtn1')
 const plus = document.querySelector('.plus')
 const minus = document.querySelector('.minus')
 const countNumber = document.querySelector('.countNumber')
-const kategoryLinksLeftTitle = document.querySelector('.kategoryLinksLeftTitle')
-const kategoryLinksLeftRight = document.querySelector('.kategoryLinksLeftRight')
 
 
 
@@ -76,8 +74,6 @@ plus.onclick = () => {
 }
 
 console.log(typeof(+countNumber.textContent + 1));
-
-kategoryLinksLeftRight.classList.add('none')
 
 
 kategoryLinksLeftTitle.onclick = () => {
