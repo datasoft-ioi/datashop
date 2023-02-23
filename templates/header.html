@@ -119,113 +119,14 @@
 
 <div class="kategory">
     <div class="kategoryCon">
-        <div class="container">
-            <div class="btn-group dropend">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Noutbuklar
-                </button>
-                <ul class="dropdown-menu border-0">
-                    <h6 style="margin-left: 80px;">Noutbuklar</h6>
-                    <!-- Dropdown menu links -->
-                    <li style="margin-left: 68px; display: flex; gap: 60px;">
-                        <div class="lidev">
-                            <a class="dropdown-item text-left" href="#">brend</a>
-                            <a class="dropdown-item text-left" href="#">asus</a>
-                            <a class="dropdown-item text-left" href="#">apple</a>
-                            <a class="dropdown-item text-left" href="#">hp</a>
-                        </div>
-                        <div class="lidev">
-                            <a class="dropdown-item" href="#">sumka</a>
-                            <a class="dropdown-item" href="#">asus</a>
-                            <a class="dropdown-item" href="#">apple</a>
-                            <a class="dropdown-item" href="#">hp</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="btn-group dropend d-flex">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Noutbuklar
-                </button>
-                <ul class="dropdown-menu border-1 mt-0">
-                    <h6 style="margin-left: 80px;">Noutbuklar</h6>
-                    <!-- Dropdown menu links -->
-                    <li style="margin-left: 68px; display: flex; gap: 60px;">
-                        <div class="lidev">
-                            <a class="dropdown-item text-left" href="#">brend</a>
-                            <a class="dropdown-item text-left" href="#">asus</a>
-                            <a class="dropdown-item text-left" href="#">apple</a>
-                            <a class="dropdown-item text-left" href="#">hp</a>
-                        </div>
-                        <div class="lidev">
-                            <a class="dropdown-item" href="#">sumka</a>
-                            <a class="dropdown-item" href="#">asus</a>
-                            <a class="dropdown-item" href="#">apple</a>
-                            <a class="dropdown-item" href="#">hp</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+        <div class=categoryProducts">
+            <button class="categoryProductsName">Noutbuklar</button>
+            <ul class="categoryProduct">
+                <li>Asus</li>
+                <li>Acer</li>
+                <li>Apple</li>
+            </ul>
         </div>
-        <!-- <ul class="kategoryLinks">
-                
-                {% comment %} {% recursetree category %} {% endcomment %}
-                {% for note in category %}
-                <li>
-                {% comment %} <a href="{% url 'category_products' node.id node.slug %}"> {% endcomment %}
-                    <div class="kategoryLinksLeft">
-                        <img src="{% static 'media/laptop.svg' %}" alt="">
-                        <span class="kategoryLinksLeftTitle">{{note.title}}</span>
-                    </div>
-                    {% comment %} </a> {% endcomment %}
-                    <i class="fa-solid fa-chevron-right"></i>
-                </li>
-                {% endfor %}    
-                
-                {% comment %} {% endrecursetree %} {% endcomment %}
-                
-
-            </ul> -->
-        <!-- <div class="kategoryRight">
-                <span class="kategoryRightTitle">Noutbuklar</span>
-                <div class="kategoryInfos">
-                    {% comment %} {% recursetree category %} {% endcomment %}
-                    {% for child in category %}
-                    {% for cd in child.children.all %}
-                    <ul class="kategoryInfo">
-                            {% comment %} <a href="{% url 'category_products' child.id child.slug %}"> {% endcomment %}
-                                <span>{{ cd.title }}</span>
-                            {% comment %} </a> {% endcomment %}
-                            {% comment %} {{ children }} {% endcomment %}
-                            {% comment %} {% if not node.is_leaf_node %} {% endcomment %}
-
-                                {% comment %} <a href="{% url 'category_products' node.id node.slug %}"> {% endcomment %}
-                                    <li>{{cd.title}}</li>
-                                {% comment %} </a> {% endcomment %}
-
-                            {% comment %} {% endif %} {% endcomment %}
-                            {% comment %}<li>Apple</li>
-                            <li>MSI</li>
-                            <li>Dell</li>
-                            <li>Lenovo</li> {% endcomment %}
-                        </ul>
-                        {% endfor %}
-                    {% endfor %}
-                    {% comment %} {% endrecursetree %} {% endcomment %}
-                        {% comment %} <ul class="kategoryInfo">
-                            <span>Кулеры для ноутбуков</span>
-                            <li>1 Кулерный</li>
-                            <li>2 Кулерные</li>
-                            <li>Пластиковые</li>
-                            <li>Металлические</li>
-                        </ul>
-                        <ul class="kategoryInfo">
-                            <span>Сумки для ноутбуков</span>
-                        </ul> {% endcomment %}
-                    </div>
-                </div> -->
     </div>
 </div>
 </div>

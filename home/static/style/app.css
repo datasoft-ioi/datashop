@@ -149,14 +149,6 @@ body {
 .ropdown-menu.show {
   display: flex;
 }
-
-.container .div {
-  display: flex;
-  padding: 10px;
-  gap: 30px;
-}
-
-.container .div ul {
-  display: flex;
-  flex-direction: column;
+.categoryProducts {
+  display: none;
 }
