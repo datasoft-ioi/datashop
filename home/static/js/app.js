@@ -13,7 +13,6 @@ const minus = document.querySelector('.minus')
 const countNumber = document.querySelector('.countNumber')
 
 
-
 let korOnOff = false
 let profilShow = false
 

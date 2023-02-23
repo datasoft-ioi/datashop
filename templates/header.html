@@ -119,15 +119,48 @@
 
 <div class="kategory">
     <div class="kategoryCon">
-        <div class=categoryProducts">
-            <button class="categoryProductsName">Noutbuklar</button>
-            <ul class="categoryProduct">
-                <li>Asus</li>
-                <li>Acer</li>
-                <li>Apple</li>
-            </ul>
+        <div class="kategorymain">
+            <div class="categoryProducts">
+                <button class="categoryProductsName">Noutbuklar</button>
+                <ul class="categoryProduct">
+                    <li>Asus</li>
+                    <li>Acer</li>
+                    <li>Apple</li>
+                </ul>
+            </div>
+            <div class="categoryProducts">
+                <button class="categoryProductsName">Noutbuklar</button>
+                <ul class="categoryProduct">
+                    <li>Asus</li>
+                    <li>Acer</li>
+                    <li>Apple</li>
+                </ul>
+            </div>
+            <div class="categoryProducts">
+                <button class="categoryProductsName">Noutbuklar</button>
+                <ul class="categoryProduct">
+                    <li>Asus</li>
+                    <li>Acer</li>
+                    <li>Apple</li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
 </div>
 <div class="closeKategory"></div>
+
+<script>
+    const categoryProducts = document.querySelectorAll('.categoryProducts')
+
+    categoryProducts.forEach(categoryProduct => {
+        const btn = categoryProduct.querySelector('.categoryProductsName')
+        const ul = categoryProduct.querySelector('.categoryProduct')
+
+        btn.onclick = () => {
+            ul.classList.toggle('none')
+        }
+    })
+
+
+</script>

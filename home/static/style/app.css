@@ -149,6 +149,3 @@ body {
 .ropdown-menu.show {
   display: flex;
 }
-.categoryProducts {
-  display: none;
-}

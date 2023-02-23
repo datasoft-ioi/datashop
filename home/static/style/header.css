@@ -52,3 +52,11 @@ header {
     padding: 10px 0px;
 }
 
+.kategorymain {
+    display: flex;
+}
+
+.kategorymain .categoryProducts {
+    display: flex;
+    flex-direction: column;
+}
