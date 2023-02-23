@@ -150,7 +150,7 @@
                         <div class="productBottomInfo">
                             <a href="{% url 'product_detail' rs.id rs.slug %}">
                                 <span class="productTitle">
-                                    {{ r.title | truncatewords:5 }}
+                                    {{ rs.title | truncatewords:5 }}
                                 </span>
                             </a>
                             <div class="productStar">

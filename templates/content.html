@@ -432,29 +432,32 @@
                 <img src="{% static 'media/next.svg' %}" alt="">
             </button>
         </div>
+
         <div class="products">
-            <div class="product">
-                <div class="productHeader">
-                    <span class="new">new</span>
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-                <div class="productImg">
-                    <img src="https://dlcdnwebimgs.asus.com/gain/6FE37E07-B41F-4238-81D8-433B425405C5" alt="">
-                </div>
-                <div class="productBottomInfo">
-                    <span class="productTitle">
-                        HP Victus 15 RTX 3050 / i5 12400f / 512 GB SSD..
-                    </span>
-                    <div class="productStar">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
+            {% for ct in cat_by_aksesuar %}
+                <div class="product">
+                    <div class="productHeader">
+                        <span class="new">new</span>
+                        <i class="fa-regular fa-heart"></i>
                     </div>
-                    <span class="productPrice">$1579</span>
+                    <div class="productImg">
+                        <a href="{% url 'product_detail' ct.id ct.slug %}"><img src="{{ ct.image.url }}" alt=""></a>
+                    </div>
+                    <div class="productBottomInfo">
+                        <span class="productTitle">
+                            {{ ct.title }}
+                        </span>
+                        <div class="productStar">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <span class="productPrice">${{ ct.price }}</span>
+                    </div>
                 </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 

@@ -104,8 +104,8 @@ def index(request):
             "noutbuk": Category.objects.filter(title="Noutbuk")[:1],
         
             #Desktop contents
-            "cat_by_noutbuk": Product.objects.filter(category__parent=(1, 2, 3, 4, 5)).order_by('-id')[:10],
-
+            "cat_by_noutbuk": Product.objects.filter(category__parent=(1, 2, 3, 5)).order_by('-id')[:10],
+            "cat_by_aksesuar": Product.objects.filter(category__parent=(4)).order_by('-id')[:10],
 
     }
 
