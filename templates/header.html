@@ -120,15 +120,18 @@
 <div class="kategory">
     <div class="kategoryCon">
         <div class="kategorymain">
+            {% for ca in category %}
             <div class="categoryProducts">
-                <button class="categoryProductsName">Noutbuklar</button>
+
+                <button class="categoryProductsName">{{ ca.title }}</button>
                 <ul class="categoryProduct">
-                    <li>Asus</li>
-                    <li>Acer</li>
-                    <li>Apple</li>
+                    {% for ct in ca.children.all %}
+                    <li>{{ct.title}}</li>
+                    {% endfor %}
                 </ul>
             </div>
-            <div class="categoryProducts">
+            {% endfor %}
+            {% comment %} <div class="categoryProducts">
                 <button class="categoryProductsName">Noutbuklar</button>
                 <ul class="categoryProduct">
                     <li>Tuf Gaming</li>
@@ -143,7 +146,7 @@
                     <li>Hp</li>
                     <li>BuzzMax</li>
                 </ul>
-            </div>
+            </div> {% endcomment %}
         </div>
     </div>
 </div>

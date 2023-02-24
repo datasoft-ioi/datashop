@@ -34,6 +34,10 @@ BOT_TOKEN = str(os.getenv('BOT_TOKEN'))
 BOT_URL = "https://api.telegram.org/bot%s/"%BOT_TOKEN
 BOT_CHAT_ID = "984573662"
 
+TELEGRAM = {
+    'bot_token': str(os.getenv('BOT_TOKEN')),
+    'channel_name': 'devto_uz',
+}
 
 # Application definition
 

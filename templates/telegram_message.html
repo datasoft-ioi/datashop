@@ -1,0 +1,5 @@
+{% for product in products %}
+<a href="/">{{ product.title }}</a>
+{{ product.description|truncatewords:30 }}
+{% endfor %}
+<strong>Date:</strong>{{ event.start_date|date:'SHORT_DATE_FORMAT' }}

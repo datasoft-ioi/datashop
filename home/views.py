@@ -3,6 +3,8 @@ from django.shortcuts import render
 
 import json
 import random
+import requests
+
 
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -30,10 +32,11 @@ URL = settings.BOT_URL
 my_token = settings.BOT_TOKEN
 my_chat_id = settings.BOT_CHAT_ID
 
+message = "Nagap!"
 
-def bot(request, msg, chat_id=my_chat_id, token=my_token):
+url = f"https://api.telegram.org/bot{my_token}/sendMessage?chat_id={my_chat_id}&text={message}"
 
-    pass
+
 
 def index(request):
     # if not request.session.has_key('currency'):
@@ -117,6 +120,13 @@ def all_products(request):
     }
     return render(request, 'all_prod.html', context)
 
+def full_cat_products(request, id, slug):
+
+    context = {
+        "full_products": Product.objects.filter(category_id=id),
+    }
+
+    return render(request, 'full_cat_prod.html', context)
 
 def selectlanguage(request):
     if request.method == 'POST':  # check post
