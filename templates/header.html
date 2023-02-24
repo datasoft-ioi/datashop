@@ -122,7 +122,7 @@
         <div class="kategorymain">
             <div class="categoryProducts">
                 <button class="categoryProductsName">Noutbuklar</button>
-                <ul class="categoryProduct">
+                <ul class="categoryProduct none">
                     <li>Asus</li>
                     <li>Acer</li>
                     <li>Apple</li>
@@ -130,7 +130,7 @@
             </div>
             <div class="categoryProducts">
                 <button class="categoryProductsName">Noutbuklar</button>
-                <ul class="categoryProduct">
+                <ul class="categoryProduct none">
                     <li>Tuf Gaming</li>
                     <li>Rog Strix</li>
                     <li>Legion</li>
@@ -138,7 +138,7 @@
             </div>
             <div class="categoryProducts">
                 <button class="categoryProductsName">Noutbuklar</button>
-                <ul class="categoryProduct">
+                <ul class="categoryProduct none">
                     <li>Lenova</li>
                     <li>Hp</li>
                     <li>BuzzMax</li>
@@ -152,6 +152,7 @@
 
 <script>
     const categoryProducts = document.querySelectorAll('.categoryProducts')
+    let lastSelected = null
 
     categoryProducts.forEach(categoryProduct => {
         const btn = categoryProduct.querySelector('.categoryProductsName')
@@ -159,7 +160,13 @@
 
         btn.onclick = () => {
             ul.classList.toggle('none')
+
+            if (!ul.classList.contains('none')) {
+                if (lastSelected != null) {
+                    lastSelected.classList.add('none')
+                }
+                lastSelected = ul
+            }
         }
     })
-
 </script>
