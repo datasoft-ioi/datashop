@@ -39,6 +39,7 @@ header {
 .swiper-slider img {
     width: 100px;
 }
+
 .kategoryLinksLeft {
     position: relative;
 }
@@ -51,12 +52,45 @@ header {
     top: 0;
     padding: 10px 0px;
 }
+.kategoryCon {
+    position: relative;
+}
 
 .kategorymain {
     display: flex;
+    flex-direction: column;
 }
 
 .kategorymain .categoryProducts {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: start;
+    gap: 70px;
+}
+
+.categoryProductsName {
+    width: 230px;
+    height: 32px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    border: none;
+    color: #666363;
+}
+
+.categoryProductsName:hover {
+    background: #E81D1C;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    cursor: pointer;
+}
+
+.categoryProduct {
+    position: absolute;
+    top: 5px;
+    left: 300px;
+    width: 100%;
+    /* background-color: #FFFFFF;   */
 }
