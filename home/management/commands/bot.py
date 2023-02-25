@@ -18,5 +18,7 @@ class Command(BaseCommand):
             request=request,
             token=settings.BOT_TOKEN,
         )
+
+        # bot.send_message(text="Hello BOT!", chat_id=settings.BOT_CHAT_ID)
         print(bot.get_me())
 
