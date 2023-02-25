@@ -52,6 +52,10 @@ header {
     top: 0;
     padding: 10px 0px;
 }
+.kategory {
+    min-height: 380px;
+}
+
 .kategoryCon {
     position: relative;
 }
@@ -79,8 +83,7 @@ header {
 }
 
 .categoryProductsName:hover {
-    background: #E81D1C;
-    color: #FFFFFF;
+    background: #5552521f;
     font-weight: 400;
     font-size: 12px;
     line-height: 15px;
@@ -92,5 +95,41 @@ header {
     top: 10px;
     left: 300px;
     width: 100%;
-    /* background-color: #FFFFFF;   */
+    display: flex;
+    gap: 100px;
+}
+
+.categoryProductsName {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 5px;
+}
+
+.categoryProductsName span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.categoryProduct ul li {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #666363;
+    padding: 5px 0px;
+    cursor: pointer;
+}
+
+.categoryProduct ul li:hover {
+    color: #000;
+}
+
+.categoryProduct ul span {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    margin-top: 20px;
+    padding-bottom: 10px;
 }

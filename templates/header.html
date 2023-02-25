@@ -120,37 +120,32 @@
 <div class="kategory">
     <div class="kategoryCon">
         <div class="kategorymain">
-            {% for ca in category %}
             <div class="categoryProducts">
-                <button class="categoryProductsName">Noutbuklar</button>
-                <ul class="categoryProduct none">
-                    <li>Asus</li>
-                    <li>Acer</li>
-                    <li>Apple</li>
-                <button class="categoryProductsName">{{ ca.title }}</button>
-                <ul class="categoryProduct">
-                    {% for ct in ca.children.all %}
-                    <li>{{ct.title}}</li>
-                    {% endfor %}
+                <button class="categoryProductsName"><span><img src="{% static 'media/laptop.svg' %}" alt=""> <span>Noutbuk</span> </span><i class="fa-solid fa-angle-right"></i></button>
+                <ul class="categoryProduct" style="background-color: #FFFFFF; ">
+                    <ul>
+                        <span>Ноутбуки по брендам</span>
+                        <li>Asus</li>
+                        <li>Hp</li>
+                        <li>Acer</li>
+                        <li>Lenova</li>
+                        <li>Apple</li>
+                        <li>Dell</li>
+                        <li>MSI</li>
+                    </ul>
+                    <ul>
+                        <span>Кулеры для ноутбуков</span>
+                        <li>1 Кулерный</li>
+                        <li>2 Кулерный</li>
+                        <li>Пластиковые</li>
+                        <li>Металлические</li>
+                    </ul>
+                    <ul>
+                        <span>Сумки для ноутбуков</span>
+                        <li></li>
+                    </ul>
                 </ul>
             </div>
-            {% endfor %}
-            {% comment %} <div class="categoryProducts">
-                <button class="categoryProductsName">Noutbuklar</button>
-                <ul class="categoryProduct none">
-                    <li>Tuf Gaming</li>
-                    <li>Rog Strix</li>
-                    <li>Legion</li>
-                </ul>
-            </div>
-            <div class="categoryProducts">
-                <button class="categoryProductsName">Noutbuklar</button>
-                <ul class="categoryProduct none">
-                    <li>Lenova</li>
-                    <li>Hp</li>
-                    <li>BuzzMax</li>
-                </ul>
-            </div> {% endcomment %}
         </div>
     </div>
 </div>
