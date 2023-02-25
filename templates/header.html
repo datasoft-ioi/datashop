@@ -156,16 +156,16 @@
     const categoryProducts = document.querySelectorAll('.categoryProducts')
     let lastSelected = null
 
-    categoryProducts.forEach(categoryProduct => {
-        const btn = categoryProduct.querySelector('.categoryProductsName')
-        const ul = categoryProduct.querySelector('.categoryProduct')
+    categoryProducts.forEach(categoryProductt => {
+        const btn = categoryProductt.querySelector('.categoryProductsName')
+        const ul = categoryProductt.querySelector('.categoryProduct')
 
         btn.onclick = () => {
-            ul.classList.toggle('none')
+            ul.classList.toggle('no')
 
-            if (!ul.classList.contains('none')) {
+            if (!ul.classList.contains('no')) {
                 if (lastSelected != null) {
-                    lastSelected.classList.add('none')
+                    lastSelected.classList.add('no')
                 }
                 lastSelected = ul
             }
