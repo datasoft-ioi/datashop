@@ -80,6 +80,7 @@ header {
     line-height: 15px;
     border: none;
     color: #666363;
+    background-color: #FFFFFF;
 }
 
 .categoryProductsName:hover {
