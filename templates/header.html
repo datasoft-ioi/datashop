@@ -120,20 +120,24 @@
 <div class="kategory">
     <div class="kategoryCon">
         <div class="kategorymain">
+            {% for cat in category %}
             <div class="categoryProducts">
-                <button class="categoryProductsName"><span><img src="{% static 'media/laptop.svg' %}" alt=""> <span>Noutbuk</span> </span><i class="fa-solid fa-angle-right"></i></button>
+                <button class="categoryProductsName"><span><img src="{% static 'media/laptop.svg' %}" alt=""> <span>{{ cat.title }}</span> </span><i class="fa-solid fa-angle-right"></i></button>
                 <ul class="categoryProduct" style="background-color: #FFFFFF;">
+                    {% for chill in cat.children.all %}
                     <ul>
-                        <span>Ноутбуки по брендам</span>
-                        <li>Asus</li>
-                        <li>Hp</li>
+                        <span>{{ chill.title }}</span>
+                        {% for ch in chill.children.all %}
+                        <li>{{ ch.title }}</li>
+                        {% endfor %}
+                        {% comment %} <li>Hp</li>
                         <li>Acer</li>
                         <li>Lenova</li>
                         <li>Apple</li>
                         <li>Dell</li>
-                        <li>MSI</li>
+                        <li>MSI</li> {% endcomment %}
                     </ul>
-                    <ul>
+                    {% comment %} <ul>
                         <span>Кулеры для ноутбуков</span>
                         <li>1 Кулерный</li>
                         <li>2 Кулерный</li>
@@ -143,9 +147,11 @@
                     <ul>
                         <span>Сумки для ноутбуков</span>
                         <li></li>
-                    </ul>
+                    </ul> {% endcomment %}
+                    {% endfor %}
                 </ul>
             </div>
+            {% endfor %}
         </div>
     </div>
 </div>
