@@ -181,10 +181,10 @@ def category_products(request,id,slug):
     catdata = Category.objects.get(pk=id)
     category = Category.objects.all()
 
-
-
-
-    products = Product.objects.filter(category_id=id) #default language
+    categoryID = request.GET.get('category')
+    if categoryID:
+        
+        products = Product.objects.filter(category_id=id) #default language
     # if defaultlang != currentlang:
     #     try:
     #         products = Product.objects.raw(
