@@ -18,7 +18,7 @@
         </div>
 
         {% for cot in noutbuk %}
-        <a href="{% url 'category_products' cot.id cot.slug%}">
+        <a href="{% url 'category_products' cot.slug%}">
             <div class="headerCategroyBoxConRes" style="background: linear-gradient(180deg, {{cot.bg_color}} 0%, rgba(41, 90, 185, 0.76) 100%);">
                 <span>
                     {{cot.title}}
@@ -30,7 +30,7 @@
         <div class="headerCategroy">
             <div class="headerCategroyBox">
                 {% for cat in category_lates %}
-                <a href="{% url 'category_products' cat.id cat.slug%}">
+                <a href="{% url 'category_products' cat.slug%}">
                     <div class="headerCategroyBoxCon"style="background: linear-gradient(180deg, {{ cat.bg_color }} 0%, rgba(186,48,48, 3.76) 100%);">
                         <span>
                             {{ cat.title }}
