@@ -18,8 +18,8 @@ class Category(MPTTModel):
         ('True', 'True'),
         ('False', 'False'),
     )
-    # parent = TreeForeignKey('self',blank=True, null=True ,related_name='children', on_delete=models.CASCADE)
-    parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='children', null=True, blank=True)
+    parent = TreeForeignKey('self',blank=True, null=True ,related_name='children', on_delete=models.CASCADE)
+
 
     title = models.CharField(max_length=50)
     keywords = models.CharField(max_length=255)
@@ -69,8 +69,7 @@ class Product(models.Model):
         ('Size-Color', 'Size-Color'),
 
     )
-    # category = models.ForeignKey(Category, on_delete=models.CASCADE) #many to one relation with Category
-    category = models.ManyToManyField(Category, related_name='products')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE) #many to one relation with Category
     title = models.CharField(max_length=150)
     keywords = models.CharField(max_length=255)
     description = models.TextField(max_length=255)

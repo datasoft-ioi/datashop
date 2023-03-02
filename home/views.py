@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 
 
 import json
@@ -107,8 +107,8 @@ def index(request):
             "noutbuk": Category.objects.filter(title="Noutbuk")[:1],
         
             #Desktop contents
-            "cat_by_noutbuk": Product.objects.all().order_by('-id')[:10],
-            "cat_by_aksesuar": Product.objects.all().order_by('-id')[:10],
+            "cat_by_noutbuk": Product.objects.filter(category__parent=(1, 2, 3, 5)).order_by('-id')[:10],
+            "cat_by_aksesuar": Product.objects.filter(category__parent=(4)).order_by('-id')[:10],
 
     }
 
@@ -175,19 +175,16 @@ def contactus(request):
     context={'setting':setting,'form':form  }
     return render(request, 'contactus.html', context)
 
-def category_products(request, slug=None):
+def category_products(request,id,slug):
     defaultlang = settings.LANGUAGE_CODE[0:2]
     # currentlang = request.LANGUAGE_CODE[0:2]
-    # catdata = Category.objects.get(pk=id)
-    category = Category.objects.filter(parent=None)
-    products = Product.objects.all() #default language
+    catdata = Category.objects.get(pk=id)
+    category = Category.objects.all()
 
-    if slug:
-        categorys = get_object_or_404(Category, slug=slug)
-        products = products.filter(category=categorys)
-
-    
-
+    categoryID = request.GET.get('category')
+    if categoryID:
+        
+        products = Product.objects.filter(category_id=id) #default language
     # if defaultlang != currentlang:
     #     try:
     #         products = Product.objects.raw(
@@ -202,9 +199,8 @@ def category_products(request, slug=None):
 
     context={'products': products,
              'category':category,
-             'categorys':categorys,
 
-            #  'catdata':catdata 
+             'catdata':catdata 
             }
     return render(request,'categoryList.html',context)
 

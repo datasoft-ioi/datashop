@@ -243,7 +243,7 @@
                 <span>Noutbuklar</span>
             </div>
             <button>
-                <a href="#"><span>Yana ko'rish</span></a>
+                <a href="category/1/noutbuk"><span>Yana ko'rish</span></a>
                 <img src="{% static 'media/next.svg' %}" alt="">
             </button>
         </div>
@@ -284,7 +284,7 @@
     </div>
 
     {% for one in noutbuk %}
-    <a href="{% url 'category_products' one.slug%}">
+    <a href="{% url 'category_products' one.id one.slug%}">
     <div class="headerCategroyBoxConRes" style="background: linear-gradient(180deg, {{one.bg_color}} 0%, #AC44A2 100%);">
         <span>
             {{one.title |truncatewords:2}}
@@ -342,7 +342,7 @@
     </div>
 
     {% for one in smartphone %}
-    <a href="{% url 'category_products' one.slug%}">
+    <a href="{% url 'category_products' one.id one.slug%}">
         <div class="headerCategroyBoxConRes" style="background: linear-gradient(180deg, {{one.bg_color}} 0%, #AC44A2 100%);">
             <span>
                 {{one.title}}
@@ -384,7 +384,7 @@
     </div>
 
     {% for one in monitor %}
-    <a href="{% url 'category_products' one.slug%}">
+    <a href="{% url 'category_products' one.id one.slug%}">
     <div class="headerCategroyBoxConRes" style="background: linear-gradient(180deg, {{one.bg_color}} 0%, #AC44A2 100%);">
         <span>
             {{one.title}}
