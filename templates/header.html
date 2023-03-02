@@ -126,7 +126,10 @@
                 <ul class="categoryProduct" style="background-color: #FFFFFF;">
                     <ul>
                         {% for chill in cat.children.all %}
-                            <a href="{% url 'category_products' chill.id chill.slug %}"><li>{{ chill.title }}</li></a>
+                            <a href="{% url 'category_products' chill.id chill.slug %}"><span>{{ chill.title }}</span></a>
+                            {% for i in chill.children.all %}
+                                <a href="{% url 'category_products' i.id i.slug %}"><li>{{ i.title }}</li></a>
+                            {% endfor %}
                         {% endfor %}
                     </ul>
                 </ul>
