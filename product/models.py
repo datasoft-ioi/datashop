@@ -69,7 +69,8 @@ class Product(models.Model):
         ('Size-Color', 'Size-Color'),
 
     )
-    category = models.ForeignKey(Category, on_delete=models.CASCADE) #many to one relation with Category
+    # category = models.ForeignKey(Category, on_delete=models.CASCADE) #many to one relation with Category
+    category = models.ManyToManyField(Category)
     title = models.CharField(max_length=150)
     keywords = models.CharField(max_length=255)
     description = models.TextField(max_length=255)

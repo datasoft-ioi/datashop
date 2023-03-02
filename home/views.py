@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 
 import json
@@ -107,7 +107,7 @@ def index(request):
             "noutbuk": Category.objects.filter(title="Noutbuk")[:1],
         
             #Desktop contents
-            "cat_by_noutbuk": Product.objects.filter(category__parent=(1, 2, 3, 5)).order_by('-id')[:10],
+            "cat_by_noutbuk": Product.objects.filter(category__title="Noutbuk").order_by('-id')[:10],
             "cat_by_aksesuar": Product.objects.filter(category__parent=(4)).order_by('-id')[:10],
 
     }
@@ -181,10 +181,13 @@ def category_products(request,id,slug):
     catdata = Category.objects.get(pk=id)
     category = Category.objects.all()
 
-    categoryID = request.GET.get('category')
-    if categoryID:
+       
+    products = Product.objects.all() 
+
+    if slug:
+        categorys = get_object_or_404(Category, slug=slug)
+        products = products.filter(category=categorys)
         
-        products = Product.objects.filter(category_id=id) #default language
     # if defaultlang != currentlang:
     #     try:
     #         products = Product.objects.raw(
