@@ -124,6 +124,7 @@
             <div class="categoryProducts">
                 <button class="categoryProductsName"><span><img src="{% static 'media/laptop.svg' %}" alt=""> <span>{{ cat.title }}</span> </span><i class="fa-solid fa-angle-right"></i></button>
                 <ul class="categoryProduct" style="background-color: #FFFFFF;">
+                    {% if cat.children %}
                     {% for chill in cat.children.all %}
                     <ul>
                             <a href="{% url 'category_products' chill.id chill.slug %}"><span>{{ chill.title }}</span></a>
@@ -132,6 +133,7 @@
                             {% endfor %}
                     </ul>
                     {% endfor %}
+                    {% endif %}
                 </ul>
             </div>
             {% endfor %}
