@@ -179,7 +179,7 @@ def category_products(request,id,slug):
     defaultlang = settings.LANGUAGE_CODE[0:2]
     # currentlang = request.LANGUAGE_CODE[0:2]
     catdata = Category.objects.get(pk=id)
-    category = Category.objects.all()
+    category = Category.objects.filter(parent=None)
 
        
     products = Product.objects.all() 
