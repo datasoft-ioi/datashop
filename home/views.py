@@ -36,7 +36,13 @@ message = "Nagap!"
 
 url = f"https://api.telegram.org/bot{my_token}/sendMessage?chat_id={my_chat_id}&text={message}"
 
+def alibek(request):
 
+    cateory = Category.objects.filter(parent=None)
+    context = {
+        "cateory": cateory,
+    }
+    return render(request, 'alibek.html', context)
 
 def index(request):
     # if not request.session.has_key('currency'):
