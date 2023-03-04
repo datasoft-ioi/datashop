@@ -4,50 +4,83 @@
 
 {% block content %}
 
-<div class="korzinka">
-    <ul class="links">
-        <li>Главная</li>
-    </ul>
-    <div class="korHeader">
-        <span class="korHeader-Chil1">Корзина</span>
-        <span class="korHeader-Chil2">Товаров в корзине (3)</span>
-    </div>
-    <div class="korMain">
-        <div class="korMainProducts">
-            <div class="korMainProductsHeader">
-                <span>Детали продуктов</span>
-                <div class="korMainProductsHeaderRight">
-                    <span>Количество</span>
-                    <span>Цена</span>
-                </div>
+    <!-- prsonal info -->
+
+    <div class="personInfo">
+        <ul class="links">
+            <li>Главная</li>
+        </ul>
+        <div class="personInfoMain">
+            <div class="myProfilBox">
+                <a href=""><img src="{% static 'media/profilIcons/profilRedOrder.svg' %}" alt=""><span style="color: #E81D1C;">Персональные данные</span></a>
+                <a href=""><img src="{% static 'media/profilIcons/moyZakazOrder.svg' %}" alt=""><span>Мои заказы</span></a>
+                <a href=""><img src="{% static 'media/profilIcons/bellOrder.svg' %}" alt=""><span>Уведомления</span></a>
             </div>
-            <div class="korProducts">
-                <div class="korProduct">
-                    <div class="korProductInfo">
-                        <img src="https://dlcdnwebimgs.asus.com/gain/6FE37E07-B41F-4238-81D8-433B425405C5" alt="">
-                        <div>
-                            <span class="korProductInfoName">HP Victus 15 RTX 3050...</span>
-                            <span class="korProductInfoCategory">Ноутбук</span>
-                            <button>Удалить</button>
+            <div class="personalInfos">
+                <div class="personalInfosChil1">
+                    <span class="personalInfosChil1Title">Информация о пользователе</span>
+                    <div class="personalInfosChil1In">
+                        <div class="personalInfosChil1InChil">
+                            <label for="">Телефон номер</label>
+                            <input type="text" placeholder="+998904299019">
+                        </div>
+                        <div class="personalInfosChil1InChil">
+                            <label for="">Имя</label>
+                            <input type="text" placeholder="Javlonbek">
+                        </div>
+                        <div class="personalInfosChil1InChil">
+                            <label for="">Фамилия</label>
+                            <input type="text" placeholder="Bekchanov">
                         </div>
                     </div>
-                    <div class="korProductCount">
-                        <button>-</button>
-                        <span>1</span>
-                        <button>+</button>
-                    </div>
-                    <div class="korProductPrice">
-                        <span>$680</span>
+                </div>
+                <div class="personalInfosChil1">
+                    <span class="personalInfosChil1Title">Информация об учетной записи пользователя</span>
+                    <div class="personalInfosChil1In">
+                        <div class="personalInfosChil1InChil">
+                            <label for="">Email</label>
+                            <input type="text" placeholder="javlanbay@gmail.com">
+                        </div>
+                        <div class="personalInfosChil1InChil">
+                            <label for="">Пароль</label>
+                            <input type="password" placeholder="*********">
+                        </div>
+                        <div class="personalInfosChil1InChil">
+                            <label for="">Подтвержедение Пароля</label>
+                            <input type="password" placeholder="*********">
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="korMainPrice">
-            <div class="korMainPriceBox">
-
+                <div class="personalInfosChil1">
+                    <span class="personalInfosChil1Title">Адрес доставки</span>
+                    <div class="personalInfosChil1In">
+                        <div class="personalInfosChil1InChil">
+                            <label for="">Область</label>
+                            <select name="" id="">
+                                <option value="">Xorazm</option>
+                            </select>
+                        </div>
+                        <div class="personalInfosChil1InChil">
+                            <label for="">Город</label>
+                            <select name="" id="">
+                                <option value="">Urganch</option>
+                                <option value="">Xiva</option>
+                                <option value="">Shovot</option>
+                                <option value="">Yangiariq</option>
+                                <option value="">Gurlan</option>
+                                <option value="">Hozarasp</option>
+                                <option value="">Bog'ot</option>
+                            </select>
+                        </div>
+                        <div class="personalInfosChil1InChil">
+                            <label for="">Полный адрес</label>
+                            <input class="personalInfosChil1InChilIn" type="text" placeholder="Введите полный адрес">
+                        </div>
+                    </div>
+                </div>
+                <button class="prsonalInoSave">Сохранить</button>
             </div>
         </div>
     </div>
-</div>
 
 {% endblock content %}
