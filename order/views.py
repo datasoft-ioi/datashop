@@ -71,7 +71,7 @@ def addtoshopcart(request,id):
 
 
 def shopcart(request):
-    category = Category.objects.all()
+    category = Category.objects.filter(parent=None)
     current_user = request.user  # Access User Session information
     shopcart = ShopCart.objects.filter(user_id=current_user.id)
     total=0
@@ -92,7 +92,7 @@ def deletefromcart(request,id):
 
 
 def orderproduct(request):
-    category = Category.objects.all()
+    category = Category.objects.filter(parent=None)
     current_user = request.user
     shopcart = ShopCart.objects.filter(user_id=current_user.id)
     total = 0

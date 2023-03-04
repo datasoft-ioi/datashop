@@ -54,7 +54,7 @@ def index(request):
     # else:
     #     pass
 
-    category = Category.objects.filter(parent=None)[:4]
+    category = Category.objects.filter(parent=None)
 
     setting = Setting.objects.get(pk=1)
     products_latest = Product.objects.filter(category__title="Noutbuk").order_by('-id')[:10]  # last 5 products
