@@ -253,7 +253,7 @@ def product_detail(request,id,slug):
     defaultlang = settings.LANGUAGE_CODE[0:2] #en-EN
     # currentlang = request.LANGUAGE_CODE[0:2]
     #category = categoryTree(0, '', currentlang)
-    category = Category.objects.all()
+    category = Category.objects.filter(parent=None)
 
     product = Product.objects.get(pk=id)
 
