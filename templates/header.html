@@ -120,23 +120,23 @@
 <div class="kategory">
     <div class="kategoryCon">
         <div class="kategorymain">
-            {% for cat in category %}
-            <div class="categoryProducts">
-                <button class="categoryProductsName"><span><img src="{% static 'media/laptop.svg' %}" alt=""> <span>{{ cat.title }}</span> </span><i class="fa-solid fa-angle-right"></i></button>
-                <ul class="categoryProduct" style="background-color: #FFFFFF;">
-                    {% if cat.children %}
-                    {% for chill in cat.children.all %}
-                    <ul>
-                            <a href="{% url 'category_products' chill.id chill.slug %}"><span>{{ chill.title }}</span></a>
-                            {% for i in chill.children.all %}
-                                <a href="{% url 'category_products' i.id i.slug %}"><li>{{ i.title }}</li></a>
-                            {% endfor %}
-                    </ul>
-                    {% endfor %}
-                    {% endif %}
-                </ul>
+                <button class="categoryProductsName elektronika"><span><img src="{% static 'media/laptop.svg' %}" alt=""> <span>Elektronika</span> </span><i class="fa-solid fa-angle-right"></i></button>
+                <button class="categoryProductsName aksesuar"><span><img src="{% static 'media/laptop.svg' %}" alt=""> <span>Aksesuar</span> </span><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+        <div class="kategoryMain_text">
+            <div class="kategoryLists notebook">
+                <div class="kategoryText">
+                    <p class="kategoryTitle">Noteboook</p>
+                    <span class="kategoryTitle">Noteboook</span>
+                </div>
             </div>
-            {% endfor %}
+
+            <div class="kategoryLists victus">
+                <div class="kategoryText">
+                    <p class="kategoryTitle">victus</p>
+                    <span class="kategoryTitle">victus</span>
+                </div>
+            </div>
         </div>
     </div>
 </div>

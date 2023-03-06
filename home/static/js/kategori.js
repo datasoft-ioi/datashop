@@ -4,8 +4,22 @@ const close = document.querySelector('.fa-xmark')
 const filterMenu = document.querySelector('.categoryListMainFilter')
 const body = document.querySelector('body')
 
+const aksesuar = document.querySelector('.aksesuar').onmouseenter = fun1
+const elektronika = document.querySelector('.elektronika').onmouseenter = fun2
+const text2 = document.querySelector('.victus')
+const text1 = document.querySelector('.notebook')
 
 
+function fun1(){
+    text2.style.display = 'block'
+    text1.style.display = 'none'
+
+}
+
+function fun2(){
+    text1.style.display = 'block'
+    text2.style.display = 'none'
+}
 
 
 
