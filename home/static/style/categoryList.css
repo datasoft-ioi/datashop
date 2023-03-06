@@ -616,10 +616,22 @@ input[type="radio"] {
 
 .noutbuk{
     display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3px;
 }
 .telefon{
     display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3px;
 }
 .televizor{
     display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3px;
 }

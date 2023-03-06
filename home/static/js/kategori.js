@@ -16,28 +16,28 @@ const text4 = document.querySelector('.televizor')
 
 
 function fun1(){
-    text1.style.display = 'block'
+    text1.style.display = 'flex'
     text2.style.display = 'none'
     text3.style.display = 'none'
     text4.style.display = 'none'
 }
 
 function fun2(){
-    text2.style.display = 'block'
+    text2.style.display = 'flex'
     text1.style.display = 'none'
     text3.style.display = 'none'
     text4.style.display = 'none'
 }
 
 function fun3(){
-    text3.style.display = 'block'
+    text3.style.display = 'flex'
     text1.style.display = 'none'
     text2.style.display = 'none'
     text4.style.display = 'none'
 }
 
 function fun4(){
-    text4.style.display = 'block'
+    text4.style.display = 'flex'
     text1.style.display = 'none'
     text2.style.display = 'none'
     text3.style.display = 'none'

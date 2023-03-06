@@ -141,3 +141,13 @@ header {
 .no {
     display: none;
 }
+.Titletext{
+    color: gray;
+    font-size: 13px;
+}
+.kategoryLists{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
