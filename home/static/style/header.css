@@ -52,6 +52,7 @@ header {
     top: 0;
     padding: 10px 0px;
 }
+
 .kategory {
     min-height: 380px;
 }
@@ -109,9 +110,11 @@ header {
 
 .categoryProductsName span {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     gap: 10px;
 }
+
 
 .categoryProduct ul li {
     font-weight: 400;

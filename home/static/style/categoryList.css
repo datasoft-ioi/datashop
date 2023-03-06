@@ -614,6 +614,12 @@ input[type="radio"] {
     color: #232323;
 }
 
-.victus{
+.noutbuk{
+    display: none;
+}
+.telefon{
+    display: none;
+}
+.televizor{
     display: none;
 }
