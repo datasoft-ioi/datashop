@@ -146,8 +146,24 @@ header {
     font-size: 13px;
 }
 .kategoryLists{
+
+}
+.geymerlar{
     display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    width: 600px;
+    flex-wrap: wrap;
+
+}
+.kategoryText{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 60px;
+    height: auto;
+    gap: 3px;
+    width: 100px;
+    margin-right: 20px;
 }
