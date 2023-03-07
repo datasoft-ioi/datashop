@@ -54,16 +54,27 @@ header {
 }
 
 .kategory {
-    min-height: 380px;
+    height: 800px!important;
+z-index: 9999;
 }
 
 .kategoryCon {
     position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    gap: 60px;
 }
 
 .kategorymain {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 250px!important;
+    margin-right: -30px;
+
 }
 
 .kategorymain .categoryProducts {
@@ -141,9 +152,19 @@ header {
 .no {
     display: none;
 }
+.kategoryTitle{
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #111111;
+}
 .Titletext{
     color: gray;
     font-size: 13px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 .kategoryLists{
 
@@ -151,19 +172,50 @@ header {
 .geymerlar{
     display: flex;
     justify-content: flex-start;
-    align-items: center;
-    gap: 20px;
-    width: 600px;
+    align-items: flex-start;
+    width: 900px;
     flex-wrap: wrap;
-
+    overflow-y: scroll;
+    gap: 40px;
+    height: 750px;
+    margin-left: -30px;
 }
 .kategoryText{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     height: auto;
     gap: 3px;
-    width: 100px;
-    margin-right: 20px;
+    width: auto;
+    margin-bottom: 10px;
+}
+.kategoryProductsName{
+    border: none;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: transparent;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+.kategoryProductsName:hover{
+    background-color: #66636335;
+
+}
+.kategorymain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2px;
+    width: 250px;
+}
+.productName{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
