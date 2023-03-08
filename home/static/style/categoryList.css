@@ -617,24 +617,33 @@ input[type="radio"] {
 .noutbuk{
     display: none;
     justify-content: flex-start;
-    align-items: center;
-    gap: 20px;
-    width: 600px;
+    align-items: flex-start;
+    width: 900px;
     flex-wrap: wrap;
+    overflow-y: scroll;
+    gap: 40px;
+    height: 750px;
+    margin-left: -30px;
 }
 .telefon{
     display: none;
     justify-content: flex-start;
-    align-items: center;
-    gap: 20px;
-    width: 600px;
+    align-items: flex-start;
+    width: 900px;
     flex-wrap: wrap;
+    overflow-y: scroll;
+    gap: 40px;
+    height: 750px;
+    margin-left: -30px;
 }
 .televizor{
     display: none;
     justify-content: flex-start;
-    align-items: center;
-    gap: 20px;
-    width: 600px;
+    align-items: flex-start;
+    width: 900px;
     flex-wrap: wrap;
+    overflow-y: scroll;
+    gap: 40px;
+    height: 750px;
+    margin-left: -30px;
 }
