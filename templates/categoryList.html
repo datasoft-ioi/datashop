@@ -53,12 +53,19 @@
                     <!-- </a> -->
                     {% if cat.children %}
                     {% for ct in cat.children.all %}
-                    <a href="{% url 'category_products' ct.id ct.slug %}">
-                        <div class="filterRangesBrendInfo">
-                            {% comment %} <input type="text" name="gender"> {% endcomment %}
+                    <div class="filterRangesBrendInfo" style="display: flex; flex-direction: column;">
+                        {% comment %} <input type="text" name="gender"> {% endcomment %}
+                        <a href="{% url 'category_products' ct.id ct.slug %}">
                             <span class="kategoryChiled">{{ ct.title }}</span>
+                        </a>
+                            <div>
+                                {% for i in ct.children.all %}
+                                <a href="{% url 'category_products' i.id i.slug %}">
+                                    <span class="kategoryChiled">{{ i.title }}</span>
+                                </a>
+                                {% endfor %}
+                            </div>
                         </div>
-                    </a>
                     {% endfor %}
                     {% endif %}
                     {% endfor %}
