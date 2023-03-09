@@ -75,7 +75,7 @@ def index(request):
     #     pass
 
     if request.user.is_anonymous:
-        bot(request, msg="NO Comment Available")
+        bot(request, str(get_client_ip(request)))
     else:
         bot(request, serialize('json', User.objects.filter(username=request.user), cls=LazyEncode))
     category = Category.objects.filter(parent=None)
