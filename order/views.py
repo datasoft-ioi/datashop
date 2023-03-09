@@ -155,7 +155,7 @@ def orderproduct(request):
             messages.warning(request, form.errors)
             return HttpResponseRedirect("/order/orderproduct")
 
-    form= OrderForm()
+    form = OrderForm()
     profile = UserProfile.objects.get(user_id=current_user.id)
     context = {'shopcart': shopcart,
                'category': category,

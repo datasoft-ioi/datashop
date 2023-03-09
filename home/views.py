@@ -26,15 +26,35 @@ from datashop import settings
 from product.models import Category, Brands, Product, Images, Comment, Variants, CategoryLang # ProductLang
 from user.models import UserProfile
 
+#bot
+from ipware.ip import get_client_ip
+from django.conf import settings
+from django.core.serializers import serialize
+from django.core.serializers.json import DjangoJSONEncoder
+import telegram
+import requests
+
 
 
 URL = settings.BOT_URL
+# my_token = "6143344105:AAHxL9pG02HE0XzJfeeHrfCMSKNpAVqO4bU"
 my_token = settings.BOT_TOKEN
+# my_chat_id = "984573662"
 my_chat_id = settings.BOT_CHAT_ID
 
 message = "Nagap!"
 
-url = f"https://api.telegram.org/bot{my_token}/sendMessage?chat_id={my_chat_id}&text={message}"
+
+class LazyEncode(DjangoJSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, dict):
+            return str(obj)
+        return super().default(obj)
+
+def bot(request, msg, chat_id=my_chat_id, token=my_token):
+    bot=telegram.Bot(token=token)
+    bot.sendMessage(chat_id=chat_id, text=msg)
+
 
 def alibek(request):
 
@@ -54,6 +74,10 @@ def index(request):
     # else:
     #     pass
 
+    if request.user.is_anonymous:
+        bot(request, msg="NO Comment Available")
+    else:
+        bot(request, serialize('json', User.objects.filter(username=request.user), cls=LazyEncode))
     category = Category.objects.filter(parent=None)
 
     setting = Setting.objects.get(pk=1)
