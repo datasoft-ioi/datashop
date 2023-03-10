@@ -44,13 +44,13 @@
             </fieldset>
             <div class="filterRanges">
                 <div class="filterRangesBrend">
-                    {% for cat in category %}
-                    <!-- <a href="{% url 'category_products' cat.id cat.slug %}"> -->
-                    <div class="filterRangesBrendHeader">
-                        <span>{{ cat.title }}</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <!-- </a> -->
+                    {% for cat in cat_fil %}
+                        <!-- <a href="{% url 'category_products' cat.id cat.slug %}"> -->
+                        <div class="filterRangesBrendHeader">
+                            <span>{{ cat.title }}</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <!-- </a> -->
                     {% if cat.children %}
                     {% for ct in cat.children.all %}
                     <div class="filterRangesBrendInfo" style="display: flex; flex-direction: column;">

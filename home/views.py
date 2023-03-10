@@ -51,6 +51,7 @@ class LazyEncode(DjangoJSONEncoder):
             return str(obj)
         return super().default(obj)
 
+
 def bot(request, msg, chat_id=my_chat_id, token=my_token):
     bot=telegram.Bot(token=token)
     bot.sendMessage(chat_id=chat_id, text=msg)
@@ -211,7 +212,7 @@ def category_products(request,id,slug):
     catdata = Category.objects.get(pk=id)
     category = Category.objects.filter(parent=None)
 
-       
+    cat_fil = Category.objects.filter(pk=id)
     products = Product.objects.all() 
 
     if slug:
@@ -233,7 +234,8 @@ def category_products(request,id,slug):
     context={'products': products,
              'category':category,
 
-             'catdata':catdata 
+             'catdata':catdata,
+             'cat_fil':cat_fil,
             }
     return render(request,'categoryList.html',context)
 
