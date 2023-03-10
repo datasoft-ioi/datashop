@@ -171,7 +171,7 @@ header {
 
 
 
-.title1 {
+.geymerlar {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -194,12 +194,12 @@ header {
     margin-bottom: 10px;
 }
 
-.title1 {
+.noutbuk {
     gap: 20px;
     width: 900px;
 }
 
-.title1 .kategoryText {
+.noutbuk .kategoryText {
     gap: 5px;
     width: 202.76px;
     display: flex;
@@ -208,7 +208,7 @@ header {
     flex-direction: column;
 }
 
-.title1 .kategoryText .kategoryTitle {
+.noutbuk .kategoryText .kategoryTitle {
     width: 202.76px;
 }
 
