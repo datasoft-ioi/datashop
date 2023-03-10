@@ -169,8 +169,6 @@ header {
     align-items: flex-start;
 }
 
-
-
 .geymerlar {
     display: flex;
     justify-content: flex-start;
@@ -182,7 +180,8 @@ header {
     height: 750px;
     margin-left: -30px;
 }
-.geymerlar2{
+
+.geymerlar2 {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -191,6 +190,7 @@ header {
     gap: 40px;
     height: 750px;
 }
+
 .kategoryText {
     display: flex;
     flex-direction: column;
@@ -237,27 +237,31 @@ header {
     background-color: #6663631b;
 }
 
-.hoverTitle{
+.hoverTitle {
     background-color: #7b7a7a1b;
     color: #ff201f;
     transition: all 0.5s ease;
 }
-.Titletext:hover{
+
+.Titletext:hover {
     color: #ff201f;
     cursor: pointer;
 
 }
-.kategoryTitle:hover{
+
+.kategoryTitle:hover {
     color: #ff201f;
     cursor: pointer;
 }
-.mainTitle{
+
+.mainTitle {
     font-size: 19px;
     color: #ff201f;
     cursor: pointer;
     margin: 10px 0;
     font-weight: 700;
 }
+
 .kategorymain {
     display: flex;
     flex-direction: column;
@@ -274,7 +278,7 @@ header {
     gap: 10px;
 }
 
-.textLogin{
+.textLogin {
     color: #2b2b2b;
     font-weight: 600;
 }

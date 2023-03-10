@@ -101,9 +101,11 @@ body {
 }
 
 @keyframes massageBarAnime {
-  from{
+  from {
     transform: translateX(-999px);
-  }to{
+  }
+
+  to {
     transform: translateX(0px);
   }
 }
@@ -117,7 +119,8 @@ body {
   display: flex;
   align-items: center;
   padding: 0px 10px;
-  border: 1px solid #E81D1C;;
+  border: 1px solid #E81D1C;
+  ;
   border-radius: 3px;
   position: absolute;
   left: 2%;

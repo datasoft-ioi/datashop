@@ -1,9 +1,10 @@
-.sidebar{
+.sidebar {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
 }
-.kiyimText{
+
+.kiyimText {
     display: none;
 }

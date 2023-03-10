@@ -22,7 +22,7 @@ kategoryBtn.onclick = () => {
         navbar.classList.add('noneBox')
         kategory.classList.add('kategoryOn')
         closeKategory.classList.add('closeKategoryOn')
-    }else{
+    } else {
         korOnOff = false
         kategory.classList.remove('kategoryOn')
         navbar.classList.remove('noneBox')
@@ -35,7 +35,7 @@ kategoryBtnRes.onclick = () => {
         navbar.classList.add('noneBox')
         kategory.classList.add('kategoryOn')
         closeKategory.classList.add('closeKategoryOn')
-    }else{
+    } else {
         korOnOff = false
         kategory.classList.remove('kategoryOn')
         navbar.classList.remove('noneBox')
@@ -47,11 +47,11 @@ profilBtn.onclick = () => {
         profilShow = true
         profil.classList.add('profilOn')
         closeKategory.classList.add('closeKategoryOn')
-    }else {
+    } else {
         profilShow = false
         profil.classList.remove('profilOn')
     }
-} 
+}
 
 closeKategory.onclick = () => {
     korOnOff = false
@@ -72,9 +72,9 @@ plus.onclick = () => {
     countNumber.textContent + 1
 }
 
-console.log(typeof(+countNumber.textContent + 1));
+console.log(typeof (+countNumber.textContent + 1));
 
 
 kategoryLinksLeftTitle.onclick = () => {
-    
+
 }

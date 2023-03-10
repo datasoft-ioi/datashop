@@ -19,7 +19,7 @@ const text3 = document.querySelector('.telefon')
 const text4 = document.querySelector('.televizor')
 
 
-function fun1(){
+function fun1() {
     text1.style.display = 'flex'
     hover1.classList.add('hoverTitle')
     hover2.classList.remove('hoverTitle')
@@ -30,7 +30,7 @@ function fun1(){
     text4.style.display = 'none'
 }
 
-function fun2(){
+function fun2() {
     text2.style.display = 'flex'
     text1.style.display = 'none'
     text3.style.display = 'none'
@@ -41,7 +41,7 @@ function fun2(){
     hover4.classList.remove('hoverTitle')
 }
 
-function fun3(){
+function fun3() {
     text3.style.display = 'flex'
     text1.style.display = 'none'
     text2.style.display = 'none'
@@ -52,7 +52,7 @@ function fun3(){
     hover4.classList.remove('hoverTitle')
 }
 
-function fun4(){
+function fun4() {
     text4.style.display = 'flex'
     text1.style.display = 'none'
     text2.style.display = 'none'
