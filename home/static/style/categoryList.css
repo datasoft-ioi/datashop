@@ -620,7 +620,7 @@ input[type="radio"] {
     color: #232323;
 }
 
-.noutbuk {
+.title2 {
     display: none;
     justify-content: flex-start;
     align-items: flex-start;
@@ -632,7 +632,7 @@ input[type="radio"] {
     margin-left: -30px;
 }
 
-.telefon {
+.title3 {
     display: none;
     justify-content: flex-start;
     align-items: flex-start;
@@ -644,7 +644,7 @@ input[type="radio"] {
     margin-left: -30px;
 }
 
-.televizor {
+.title4 {
     display: none;
     justify-content: flex-start;
     align-items: flex-start;

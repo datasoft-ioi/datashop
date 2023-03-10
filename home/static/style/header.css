@@ -194,12 +194,12 @@ header {
     margin-bottom: 10px;
 }
 
-.noutbuk {
+.title1 {
     gap: 20px;
     width: 900px;
 }
 
-.noutbuk .kategoryText {
+.title1 .kategoryText {
     gap: 5px;
     width: 202.76px;
     display: flex;
@@ -208,7 +208,7 @@ header {
     flex-direction: column;
 }
 
-.noutbuk .kategoryText .kategoryTitle {
+.title1 .kategoryText .kategoryTitle {
     width: 202.76px;
 }
 
@@ -222,13 +222,18 @@ header {
     background-color: transparent;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
+    transition: all 0.5s ease;
 }
 
 .kategoryProductsName:hover {
-    background-color: #66636335;
-
+    background-color: #6663631b;
 }
 
+.hoverTitle{
+    background-color: #7b7a7a1b;
+    color: #ff201f;
+    transition: all 0.5s ease;
+}
 .kategorymain {
     display: flex;
     flex-direction: column;
@@ -243,4 +248,9 @@ header {
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+
+.textLogin{
+    color: #2b2b2b;
+    font-weight: 600;
 }
