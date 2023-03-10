@@ -182,7 +182,15 @@ header {
     height: 750px;
     margin-left: -30px;
 }
-
+.geymerlar2{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 900px;
+    flex-wrap: wrap;
+    gap: 40px;
+    height: 750px;
+}
 .kategoryText {
     display: flex;
     flex-direction: column;
@@ -233,6 +241,22 @@ header {
     background-color: #7b7a7a1b;
     color: #ff201f;
     transition: all 0.5s ease;
+}
+.Titletext:hover{
+    color: #ff201f;
+    cursor: pointer;
+
+}
+.kategoryTitle:hover{
+    color: #ff201f;
+    cursor: pointer;
+}
+.mainTitle{
+    font-size: 19px;
+    color: #ff201f;
+    cursor: pointer;
+    margin: 10px 0;
+    font-weight: 700;
 }
 .kategorymain {
     display: flex;
