@@ -548,6 +548,7 @@ input[type="radio"] {
         background-color: #00000058;
         z-index: 9;
     }
+
     .none {
         display: none;
     }
@@ -576,28 +577,32 @@ input[type="radio"] {
         line-height: 17px;
     }
 
-    .priceFilterTitle{
+    .priceFilterTitle {
         margin: 20px 0;
     }
+
     .categoryListMainProduct {
         width: 100%;
     }
+
     .categoryListMainProductMain {
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(2 , 1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-row-gap: 28px;
     }
 }
 
 @keyframes categoryAnimate {
-     0% {
+    0% {
         transform: translateY(-10px);
         opacity: 0;
-     }100% {
+    }
+
+    100% {
         transform: translateY(0px);
         opacity: 1;
-     }
+    }
 }
 
 .filterRangesBrendHeader i {
@@ -615,8 +620,19 @@ input[type="radio"] {
     color: #232323;
 }
 
+.noutbuk {
+    display: none;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 900px;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    gap: 40px;
+    height: 750px;
+    margin-left: -30px;
+}
 
-.noutbuk{
+.telefon {
     display: none;
     justify-content: flex-start;
     align-items: flex-start;
@@ -627,18 +643,8 @@ input[type="radio"] {
     height: 750px;
     margin-left: -30px;
 }
-.telefon{
-    display: none;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 900px;
-    flex-wrap: wrap;
-    overflow-y: scroll;
-    gap: 40px;
-    height: 750px;
-    margin-left: -30px;
-}
-.televizor{
+
+.televizor {
     display: none;
     justify-content: flex-start;
     align-items: flex-start;

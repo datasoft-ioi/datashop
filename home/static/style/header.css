@@ -54,8 +54,8 @@ header {
 }
 
 .kategory {
-    height: 800px!important;
-z-index: 99999978654678909;
+    height: 800px !important;
+    z-index: 99999978654678909;
 }
 
 .kategoryCon {
@@ -72,7 +72,7 @@ z-index: 99999978654678909;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    width: 250px!important;
+    width: 250px !important;
     margin-right: -30px;
 
 }
@@ -152,24 +152,26 @@ z-index: 99999978654678909;
 .no {
     display: none;
 }
-.kategoryTitle{
+
+.kategoryTitle {
     margin-bottom: 10px;
     font-weight: 700;
     font-size: 16px;
     line-height: 24px;
     color: #111111;
 }
-.Titletext{
+
+.Titletext {
     color: gray;
     font-size: 13px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
 }
-.kategoryLists{
 
-}
-.geymerlar{
+.kategoryLists {}
+
+.geymerlar {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -180,7 +182,8 @@ z-index: 99999978654678909;
     height: 750px;
     margin-left: -30px;
 }
-.kategoryText{
+
+.kategoryText {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -190,7 +193,26 @@ z-index: 99999978654678909;
     width: auto;
     margin-bottom: 10px;
 }
-.kategoryProductsName{
+
+.noutbuk {
+    gap: 20px;
+    width: 900px;
+}
+
+.noutbuk .kategoryText {
+    gap: 5px;
+    width: 202.76px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.noutbuk .kategoryText .kategoryTitle {
+    width: 202.76px;
+}
+
+.kategoryProductsName {
     border: none;
     padding: 8px;
     display: flex;
@@ -201,11 +223,13 @@ z-index: 99999978654678909;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
 }
-.kategoryProductsName:hover{
+
+.kategoryProductsName:hover {
     background-color: #66636335;
 
 }
-.kategorymain{
+
+.kategorymain {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -213,7 +237,8 @@ z-index: 99999978654678909;
     gap: 2px;
     width: 250px;
 }
-.productName{
+
+.productName {
     display: flex;
     justify-content: center;
     align-items: center;
