@@ -73,6 +73,7 @@ filterIcon.onclick = () => {
     filter.classList.remove('none')
     body.classList.add('overflow')
 }
+
 close.onclick = () => {
     filterMenu.classList.remove('filterMenu')
     filter.classList.add('none')

@@ -220,6 +220,24 @@ header {
     width: 202.76px;
 }
 
+.telefon {
+    gap: 10px;
+    width: 900px;
+}
+
+.telefon .kategoryText {
+    gap: 5px;
+    width: 202.76px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.telefon .kategoryText .kategoryTitle {
+    width: 202.76px;
+}
+
 .kategoryProductsName {
     border: none;
     padding: 8px;
