@@ -128,7 +128,7 @@ def index(request):
             'category':category,
             'category_lates':category_lates,
             "laptops_product": laptops_product,
-            "brand_img": Brands.objects.all().order_by('id')[:8],
+            "brand_img": Brands.objects.all().order_by('?'),
 
             "banner": Banner.objects.all().order_by('-id')[:8],
 

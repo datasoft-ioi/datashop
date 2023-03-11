@@ -20,7 +20,6 @@ class Category(MPTTModel):
     )
     parent = TreeForeignKey('self',blank=True, null=True ,related_name='children', on_delete=models.CASCADE)
 
-
     title = models.CharField(max_length=50)
     keywords = models.CharField(max_length=255)
     description = models.TextField(max_length=255)
@@ -253,6 +252,7 @@ class CategoryLang(models.Model):
 class Brands(models.Model):
     title = models.CharField(max_length=56, verbose_name="Brand Nomi: ")
     image = image=models.ImageField(upload_to='images/brands',null=False, verbose_name="Brand Rasmi: ")
+    url = models.CharField(max_length=255, verbose_name="Brand Havolasi")
     create_at=models.DateTimeField(auto_now_add=True)
     update_at=models.DateTimeField(auto_now=True)
 
