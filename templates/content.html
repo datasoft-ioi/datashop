@@ -17,7 +17,7 @@
 
 
         <div class="products">
-        {% for rs in products_latest %}    
+            {% for rs in products_latest %}
             <div class="product">
                 <div class="productHeader">
                     <span class="new">new</span>
@@ -25,15 +25,15 @@
                 </div>
                 <div class="productImg">
                     <a href="{% url 'product_detail' rs.id rs.slug %}">
-                        <img src="{{ rs.image.url }}" alt=""> 
+                        <img src="{{ rs.image.url }}" alt="">
                     </a>
                 </div>
                 <div class="productBottomInfo">
                     <a href="{% url 'product_detail' rs.id rs.slug %}">
-                    <span class="productTitle">
-                        {{ rs.title }}
-                    </span>
-                </a>
+                        <span class="productTitle">
+                            {{ rs.title }}
+                        </span>
+                    </a>
                     <div class="productStar">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -44,10 +44,10 @@
                     <span class="productPrice">${{ rs.price }}</span>
                 </div>
             </div>
-        {% endfor %}
+            {% endfor %}
         </div>
 
-        
+
     </div>
 
     <!-- Monitor -->
@@ -285,14 +285,15 @@
 
     {% for one in noutbuk %}
     <a href="{% url 'category_products' one.id one.slug%}">
-    <div class="headerCategroyBoxConRes" style="background: linear-gradient(180deg, {{one.bg_color}} 0%, #AC44A2 100%);">
-        <span>
-            {{one.title |truncatewords:2}}
-        </span>
-        {% if one.image %}
-        <img src="{{ one.image.url }}" alt="">
-        {% endif %}
-    </div>
+        <div class="headerCategroyBoxConRes"
+            style="background: linear-gradient(180deg, {{one.bg_color}} 0%, #AC44A2 100%);">
+            <span>
+                {{one.title |truncatewords:2}}
+            </span>
+            {% if one.image %}
+            <img src="{{ one.image.url }}" alt="">
+            {% endif %}
+        </div>
     </a>
     {% endfor %}
     <!-- Monitor -->
@@ -310,32 +311,32 @@
         </div>
         <div class="products">
             {% for mon in laptops_product %}
-                <div class="product">
-                    <div class="productHeader">
-                        <span class="new">yangi</span>
-                        <i class="fa-regular fa-heart"></i>
-                    </div>
-                    <div class="productImg">
-                        <a href="{% url 'product_detail' mon.id mon.slug %}">
-                            <img src="{{ mon.image.url }}" alt="">
-                        </a>
-                    </div>
-                    <div class="productBottomInfo">
-                        <a href="{% url 'product_detail' mon.id mon.slug %}">
+            <div class="product">
+                <div class="productHeader">
+                    <span class="new">yangi</span>
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="productImg">
+                    <a href="{% url 'product_detail' mon.id mon.slug %}">
+                        <img src="{{ mon.image.url }}" alt="">
+                    </a>
+                </div>
+                <div class="productBottomInfo">
+                    <a href="{% url 'product_detail' mon.id mon.slug %}">
                         <span class="productTitle">
                             {{mon.title | truncatewords:5}}
                         </span>
-                        </a>
-                        <div class="productStar">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <span class="productPrice">${{ mon.price }}</span>
+                    </a>
+                    <div class="productStar">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
                     </div>
+                    <span class="productPrice">${{ mon.price }}</span>
                 </div>
+            </div>
             {% endfor %}
 
         </div>
@@ -343,7 +344,8 @@
 
     {% for one in smartphone %}
     <a href="{% url 'category_products' one.id one.slug%}">
-        <div class="headerCategroyBoxConRes" style="background: linear-gradient(180deg, {{one.bg_color}} 0%, #AC44A2 100%);">
+        <div class="headerCategroyBoxConRes"
+            style="background: linear-gradient(180deg, {{one.bg_color}} 0%, #AC44A2 100%);">
             <span>
                 {{one.title}}
             </span>
@@ -367,7 +369,7 @@
             <swiper-container class="mySwiper2" init="false">
                 {% comment %} <swiper-slide class="nonSwip">
                     <div class="brendBox">
-                        <img style="width: 50% "src="{{brand.image.url}}" alt="">
+                        <img style="width: 50% " src="{{brand.image.url}}" alt="">
                     </div>
                 </swiper-slide> {% endcomment %}
                 {% for brand in brand_img %}
@@ -385,14 +387,15 @@
 
     {% for one in monitor %}
     <a href="{% url 'category_products' one.id one.slug%}">
-    <div class="headerCategroyBoxConRes" style="background: linear-gradient(180deg, {{one.bg_color}} 0%, #AC44A2 100%);">
-        <span>
-            {{one.title}}
-        </span>
-        {% if one.image %}
-        <img src="{{ one.image.url }}" alt="">
-        {% endif %}
-    </div>
+        <div class="headerCategroyBoxConRes"
+            style="background: linear-gradient(180deg, {{one.bg_color}} 0%, #AC44A2 100%);">
+            <span>
+                {{one.title}}
+            </span>
+            {% if one.image %}
+            <img src="{{ one.image.url }}" alt="">
+            {% endif %}
+        </div>
     </a>
     {% endfor %}
 
@@ -435,31 +438,41 @@
 
         <div class="products">
             {% for ct in cat_by_aksesuar %}
-                <div class="product">
-                    <div class="productHeader">
-                        <span class="new">new</span>
-                        <i class="fa-regular fa-heart"></i>
-                    </div>
-                    <div class="productImg">
-                        <a href="{% url 'product_detail' ct.id ct.slug %}"><img src="{{ ct.image.url }}" alt=""></a>
-                    </div>
-                    <div class="productBottomInfo">
-                        <span class="productTitle">
-                            {{ ct.title }}
-                        </span>
-                        <div class="productStar">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <span class="productPrice">${{ ct.price }}</span>
-                    </div>
+            <div class="product">
+                <div class="productHeader">
+                    <span class="new">new</span>
+                    <i class="fa-regular fa-heart"></i>
                 </div>
+                <div class="productImg">
+                    <a href="{% url 'product_detail' ct.id ct.slug %}"><img src="{{ ct.image.url }}" alt=""></a>
+                </div>
+                <div class="productBottomInfo">
+                    <span class="productTitle">
+                        {{ ct.title }}
+                    </span>
+                    <div class="productStar">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <span class="productPrice">${{ ct.price }}</span>
+                </div>
+            </div>
             {% endfor %}
         </div>
     </div>
+
+
+    <div class="timeWork">
+        <span>
+            Satyda dasturlash ishlari olib borlimoqda!
+            <p> bemalol kirib korishingiz mumkin </p>
+        </span>
+        <p class="ok">Ok</p>
+    </div>
+
 
     <!-- app progarm info -->
 
@@ -480,4 +493,16 @@
 
 </main>
 
+<script>
 
+    const fix = document.querySelector('.timeWork')
+    const ok = document.querySelector('.ok')
+
+    ok.onclick = () => {
+        fix.classList.add('trans')
+
+        setTimeout(() => {
+            fix.style.display = 'none'
+        }, 500)
+    }
+</script>
