@@ -128,7 +128,7 @@ def index(request):
             'category':category,
             'category_lates':category_lates,
             "laptops_product": laptops_product,
-            "brand_img": Brands.objects.all().order_by('?'),
+            "brand_img": Brands.objects.all().order_by('?')[:8],
 
             "banner": Banner.objects.all().order_by('-id')[:8],
 
@@ -140,8 +140,7 @@ def index(request):
             #Desktop contents
             "cat_by_noutbuk": Product.objects.filter(category__title="Noutbuk, printer, kompyuterlar").order_by('-id')[:10],
             "cat_by_aksesuar": Product.objects.filter(category__parent=(4)).order_by('-id')[:10],
-
-    }
+        }
 
     return render(request,'index.html',context)
 
