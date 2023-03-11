@@ -372,7 +372,7 @@
                 </swiper-slide> {% endcomment %}
                 {% for brand in brand_img %}
                 <swiper-slide>
-                    <a href="{% url 'all_products' %}">
+                    <a href="{{ brand.url }}">
                         <div class="brendBox">
                             <img style="width: 60% " src="{{brand.image.url}}" alt="">
                         </div>
