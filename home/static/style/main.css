@@ -765,6 +765,12 @@ footer {
         padding: 10px !important;
         z-index: 99999;
     }
+    .brandImg{
+        width: 40%;
+    }
+}
+.brandImg{
+    width: 60%;
 }
 
 .new {
