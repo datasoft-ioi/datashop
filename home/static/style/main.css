@@ -535,7 +535,7 @@ footer {
     }
 
     .brendBox img {
-        width: 50px;
+        width: 40px;
     }
 
     .thing {
@@ -764,9 +764,6 @@ footer {
         width: 100% !important;
         padding: 10px !important;
         z-index: 99999;
-    }
-    .brandImg{
-        width: 30%;
     }
 }
 .brandImg{
