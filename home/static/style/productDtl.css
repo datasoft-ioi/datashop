@@ -136,6 +136,8 @@
 .dtlPriceInfo {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .dtlPriceInfoPrice {
@@ -195,7 +197,7 @@
 }
 
 .dtlPriceInfoPriceInfo {
-    width: 289px;
+    width: 320px;
     height: 184px;
     background: #FFFFFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
@@ -204,6 +206,7 @@
     padding: 25px;
     gap: 20px;
     transform: translateY(-10px);
+    border-radius: 10px;
 }
 
 .dtlPriceInfoPriceInfo-1 {
