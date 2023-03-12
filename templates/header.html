@@ -136,7 +136,7 @@
         <div class="kategoryMain_text">
 
             <div class="geymerlar">
-                <span class="mainTitle">Geymerlar uchun <i class="fa-solid fa-angle-right"></i></span>
+                <a href="/category/34/geymerlar-uchun/"><span class="mainTitle">Geymerlar uchun <i class="fa-solid fa-angle-right"></i></span></a>
                 <div class="geymerlar2">
                     <div class="kategoryText">
                         <a href="/category/9/geymerlar-uchun-garnituralar/">
@@ -281,8 +281,12 @@
             <div class="noutbuk">
                 <div class="kategoryText">
                     <p class="kategoryTitle">Noutbuklar</p>
-                    <span class="Titletext">Apple</span>
-                    <span class="Titletext">HP</span>
+                    {% for cat in cat_noutbuklar %}
+                        {% for i in cat.children.all %}
+                            <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
+                        {% endfor %}
+                    {% endfor %}
+                    {% comment %} <span class="Titletext">HP</span>
                     <span class="Titletext">Dream Machines</span>
                     <span class="Titletext">Asus</span>
                     <span class="Titletext">Dell</span>
@@ -293,15 +297,19 @@
                     <span class="Titletext">MSI</span>
                     <span class="Titletext">Huawei</span>
                     <span class="Titletext">Samsung</span>
-                    <span class="Titletext">GigaByte</span>
+                    <span class="Titletext">GigaByte</span> {% endcomment %}
 
 
                 </div>
 
                 <div class="kategoryText">
                     <p class="kategoryTitle">Kompyuter qurilmalari</p>
-                    <span class="Titletext">Protsessorlar</span>
-                    <span class="Titletext">Videokartalar</span>
+                    {% for cat in kompyuter_qurilmalari %}
+                        {% for i in cat.children.all %}
+                            <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
+                        {% endfor %}
+                    {% endfor %}
+                    {% comment %} <span class="Titletext">Videokartalar</span>
                     <span class="Titletext">Kompyuter platalari</span>
                     <p class="kategoryTitle">Qattiq disklar</p>
                     <span class="Titletext">SSD to‘plagichlar</span>
@@ -310,13 +318,17 @@
                     <span class="Titletext">Kompyuter sovutish tizimlari</span>
                     <span class="Titletext">Operativ xotira</span>
                     <span class="Titletext">Kompyuter korpuslari</span>
-                    <span class="Titletext">Flesh xotiralari</span>
+                    <span class="Titletext">Flesh xotiralari</span> {% endcomment %}
                 </div>
 
                 <div class="kategoryText">
                     <p class="kategoryTitle">Noutbuk uchun sumka va ryukzaklar</p>
-                    <span class="Titletext">Rivacase</span>
-                    <span class="Titletext">Xiaomi</span>
+                    {% for cat in nb_uchun_sumka_va_ryukzaklar %}
+                        {% for i in cat.children.all %}
+                            <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
+                        {% endfor %}
+                    {% endfor %}
+                    {% comment %} <span class="Titletext">Xiaomi</span>
                     <p class="kategoryTitle">Lenovo</p>
                     <span class="Titletext">Tucano</span>
                     <span class="Titletext">Asus</span>
@@ -324,29 +336,42 @@
                     <span class="Titletext">2E</span>
                     <span class="Titletext">HP</span>
                     <span class="Titletext">Acer</span>
-                    <span class="Titletext">Baseus</span>
+                    <span class="Titletext">Baseus</span> {% endcomment %}
                 </div>
 
 
                 <div class="kategoryText">
                     <p class="kategoryTitle">Monoblok</p>
-                    <span class="Titletext">Lenovo</span>
-                    <span class="Titletext">Asus</span>
-                    <span class="Titletext">Dell</span>
+                    {% for cat in monoblok %}
+                        {% for i in cat.children.all %}
+                            <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
+                        {% endfor %}
+                    {% endfor %}
                     <p class="kategoryTitle">Proektorlar</p>
-                    <span class="Titletext">Xiaomi</span>
-                    <span class="Titletext">Samsung</span>
+                    {% for cat in proektorlar %}
+                        {% for i in cat.children.all %}
+                            <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
+                        {% endfor %}
+                    {% endfor %}
                     <p class="kategoryTitle">Stol usti kompyuterlari</p>
-                    <span class="Titletext">Mypro</span>
-                    <span class="Titletext">My Pro</span>
+                    {% for cat in stol_usti_kompyuterlari %}
+                        {% for i in cat.children.all %}
+                            <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
+                        {% endfor %}
+                    {% endfor %}
                 </div>
 
 
 
                 <div class="kategoryText">
                     <p class="kategoryTitle">Monitorlar</p>
-                    <span class="Titletext">LG</span>
-                    <span class="Titletext">HP</span>
+
+                    {% for cat in monitorlar %}
+                        {% for i in cat.children.all %}
+                            <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
+                        {% endfor %}
+                    {% endfor %}
+                    {% comment %} <span class="Titletext">HP</span>
                     <span class="Titletext">Dream Machines</span>
                     <span class="Titletext">Asus</span>
                     <span class="Titletext">Dell</span>
@@ -366,29 +391,43 @@
                     <span class="Titletext">BenQ</span>
                     <span class="Titletext">2E</span>
                     <span class="Titletext">My Pro</span>
-                    <span class="Titletext">Dahua</span>
+                    <span class="Titletext">Dahua</span> {% endcomment %}
                 </div>
 
                 <div class="kategoryText">
                     <p class="kategoryTitle">Klaviatura va Sichqoncha</p>
-                    <span class="Titletext">Klaviaturalar</span>
-                    <span class="Titletext">Sichqonchalar</span>
+                    {% for cat in klaviatura_va_sichqoncha %}
+                        {% for i in cat.children.all %}
+                            <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
+                        {% endfor %}
+                    {% endfor %}
+                    {% comment %} <span class="Titletext">Sichqonchalar</span>
                     <span class="Titletext">Sichqoncha uchun gilamchalar</span>
                     <span class="Titletext">Klaviatura va sichqoncha to‘plamlari</span>
                     <span class="Titletext">Quvvatlanish bloki</span>
-                    <span class="Titletext">Kompyuter uchun quloqchinlar</span>
+                    <span class="Titletext">Kompyuter uchun quloqchinlar</span> {% endcomment %}
                     <p class="kategoryTitle">Ofis jihozlari</p>
-                    <span class="Titletext">Printerlar va skanerlar</span>
+                    {% for cat in ofis_jihozlari %}
+                        {% for i in cat.children.all %}
+                            <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
+                        {% endfor %}
+                    {% endfor %}
                     <p class="kategoryTitle">Printerlar va KFMlar uchun moslamalar</p>
-                    <span class="Titletext">Kartridjlar</span>
-                    <span class="Titletext">Siyohlar</span>
-                    <span class="Titletext">Kassetalar</span>
+                    {% for cat in printerlar_va_kfmlar %}
+                        {% for i in cat.children.all %}
+                            <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
+                        {% endfor %}
+                    {% endfor %}
                 </div>
 
                 <div class="kategoryText">
                     <p class="kategoryTitle">Tizim uskunalari</p>
-                    <span class="Titletext">Tenda</span>
-                    <span class="Titletext">TP-Link</span>
+                    {% for cat in tizim_uskunalari %}
+                        {% for i in cat.children.all %}
+                            <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
+                        {% endfor %}
+                    {% endfor %}
+                    {% comment %} <span class="Titletext">TP-Link</span>
                     <span class="Titletext">Xiaomi</span>
                     <span class="Titletext">Asus</span>
                     <span class="Titletext">Netis</span>
@@ -407,26 +446,35 @@
                     <span class="Titletext">LB-Link</span>
                     <span class="Titletext">IP-COM</span>
                     <span class="Titletext">Anker</span>
-                    <span class="Titletext">Acer</span>
+                    <span class="Titletext">Acer</span> {% endcomment %}
                 </div>
 
                 <div class="kategoryText">
                     <p class="kategoryTitle">Monitorlar uchun kronshteyn va tagkursilar</p>
-                    <span class="Titletext">KSL</span>
-                    <span class="Titletext">Dell</span>
+                    {% for cat in monitorlar_uchun_kronshteyn %}
+                        {% for i in cat.children.all %}
+                            <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
+                        {% endfor %}
+                    {% endfor %}
+                    {% comment %} <span class="Titletext">Dell</span>
                     <span class="Titletext">2E Gaming</span>
                     <span class="Titletext">Hoco</span>
                     <span class="Titletext">Yesido</span>
                     <span class="Titletext">Razer</span>
                     <span class="Titletext">Awei</span>
-                    <span class="Titletext">Mikuso</span>
+                    <span class="Titletext">Mikuso</span> {% endcomment %}
                     <p class="kategoryTitle">Videogaolish</p>
-                    <span class="Titletext">AVerMedia</span>
+                    {% for cat in videogaolish %}
+                        {% for i in cat.children.all %}
+                            <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
+                        {% endfor %}
+                    {% endfor %}
                     <p class="kategoryTitle">Boshqa aksessuarlar</p>
-                    <span class="Titletext">Zalman</span>
-                    <span class="Titletext">Samsung</span>
-                    <span class="Titletext">Lenovo</span>
-                    <span class="Titletext">Acer</span>
+                    {% for cat in boshqa_aksessuarlar %}
+                        {% for i in cat.children.all %}
+                            <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
+                        {% endfor %}
+                    {% endfor %}
                 </div>
             </div>
 

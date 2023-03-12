@@ -23,7 +23,7 @@ class Category(MPTTModel):
     title = models.CharField(max_length=50)
     keywords = models.CharField(max_length=255)
     description = models.TextField(max_length=255)
-    image=models.ImageField(blank=True,upload_to='images/')
+    image=models.ImageField(blank=True,upload_to='images/%Y/%m/%d')
     bg_color = models.CharField(max_length=255, blank=True)
     status=models.CharField(max_length=10, choices=STATUS)
     slug = models.SlugField(null=False, unique=True)
@@ -41,7 +41,7 @@ class Category(MPTTModel):
         order_insertion_by = ['title']
 
     def get_absolute_url(self):
-        return reverse('category_detail', kwargs={'slug': self.slug})
+        return reverse('category_products', kwargs={'id': self.id, 'slug': self.slug})
 
     def __str__(self):                           # __str__ method elaborated later in
         full_path = [self.title]                  # post.  use __unicode__ in place of
@@ -73,7 +73,7 @@ class Product(models.Model):
     title = models.CharField(max_length=150)
     keywords = models.CharField(max_length=255)
     description = models.TextField(max_length=255)
-    image=models.ImageField(upload_to='images/',null=False)
+    image=models.ImageField(upload_to='images/%Y/%m/%d',null=False)
     price = models.DecimalField(max_digits=12, decimal_places=2,default=0)
     amount=models.IntegerField(default=0)
     minamount=models.IntegerField(default=3)
@@ -118,7 +118,7 @@ class Product(models.Model):
 class Images(models.Model):
     product=models.ForeignKey(Product,on_delete=models.CASCADE)
     title = models.CharField(max_length=50,blank=True)
-    image = models.ImageField(blank=True, upload_to='images/')
+    image = models.ImageField(blank=True, upload_to='images/%Y/%m/%d')
 
     def __str__(self):
         return self.title
@@ -251,7 +251,7 @@ class CategoryLang(models.Model):
 
 class Brands(models.Model):
     title = models.CharField(max_length=56, verbose_name="Brand Nomi: ")
-    image = image=models.ImageField(upload_to='images/brands',null=False, verbose_name="Brand Rasmi: ")
+    image = image=models.ImageField(upload_to='images/brands/%Y/%m/%d',null=False, verbose_name="Brand Rasmi: ")
     url = models.CharField(max_length=255, verbose_name="Brand Havolasi")
     create_at=models.DateTimeField(auto_now_add=True)
     update_at=models.DateTimeField(auto_now=True)

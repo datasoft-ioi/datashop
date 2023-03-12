@@ -75,6 +75,8 @@ def index(request):
     # else:
     #     pass
 
+
+
     if request.user.is_anonymous:
         bot(request, str(get_client_ip(request)))
     else:
@@ -132,6 +134,22 @@ def index(request):
 
             "banner": Banner.objects.all().order_by('-id')[:8],
 
+            # kategoriya sidebars
+            "cat_noutbuklar": Category.objects.filter(title="Noutbuklar"),
+            "kompyuter_qurilmalari": Category.objects.filter(title="Kompyuter qurilmalari"),
+            "nb_uchun_sumka_va_ryukzaklar": Category.objects.filter(title="Noutbuk uchun sumka va ryukzaklar"),
+            "monoblok": Category.objects.filter(title="Monoblok"),
+            "proektorlar": Category.objects.filter(title="Proektorlar"),
+            "stol_usti_kompyuterlari": Category.objects.filter(title="Stol usti kompyuterlari"),
+            "monitorlar": Category.objects.filter(title="Monitorlar"),
+            "klaviatura_va_sichqoncha": Category.objects.filter(title="Klaviatura va Sichqoncha"),
+            "ofis_jihozlari": Category.objects.filter(title="Ofis jihozlari"),
+            "printerlar_va_kfmlar": Category.objects.filter(title="Printerlar va KFMlar uchun moslamalar"),
+            "tizim_uskunalari": Category.objects.filter(title="Tizim uskunalari"),
+            "monitorlar_uchun_kronshteyn ": Category.objects.filter(title="Monitorlar uchun kronshteyn va tagkursilar"),
+            "videogaolish ": Category.objects.filter(title="Videogaolish"),
+            "boshqa_aksessuarlar ": Category.objects.filter(title="Boshqa aksessuarlar"),
+
             #mobile category by category
             "monitor": Category.objects.filter(title="Monitor")[:1],
             "smartphone": Category.objects.filter(title="Smartfon")[:1],
@@ -140,6 +158,8 @@ def index(request):
             #Desktop contents
             "cat_by_noutbuk": Product.objects.filter(category__title="Noutbuk, printer, kompyuterlar").order_by('-id')[:10],
             "cat_by_aksesuar": Product.objects.filter(category__parent=(4)).order_by('-id')[:10],
+
+
         }
 
     return render(request,'index.html',context)
@@ -232,6 +252,9 @@ def category_products(request,id,slug):
 
     context={'products': products,
              'category':category,
+
+             # kategoriya sidebars
+            "cat_noutbuklar": Category.objects.filter(title="Noutbuklar"),
 
              'catdata':catdata,
              'cat_fil':cat_fil,
