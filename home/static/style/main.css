@@ -426,6 +426,10 @@ footer {
     border-radius: 10px;
 }
 
+.brendBox img {
+    width: 60%;
+}
+
 @media screen and (max-width: 414px) and (min-width: 360px) {
     main {
         position: relative;
@@ -765,9 +769,6 @@ footer {
         padding: 10px !important;
         z-index: 99999;
     }
-}
-.brandImg{
-    width: 60%;
 }
 
 .new {
