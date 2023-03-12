@@ -126,33 +126,33 @@
             </div>
             <div class="categoryListMainProductMain">
                 {% for rs in full_products %}
-                    <div class="product">
-                        <div class="productHeader">
-                            <span class="new">new</span>
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                        <div class="productImg">
-                            <img src="{{ rs.image.url }}" alt="">
-                        </div>
-                        <div class="productBottomInfo">
-                            <span class="productTitle">
-                                {{ rs.title }}
-                            </span>
-                            <div class="productStar">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                            </div>
-                            <span class="productPrice">{{ rs.price }}</span>
-
-                            <div class="categoryListMain">
-
-                            </div>
-
-                        </div>
+                <div class="product">
+                    <div class="productHeader">
+                        <span class="new">new</span>
+                        <i class="fa-regular fa-heart"></i>
                     </div>
+                    <div class="productImg">
+                        <img src="{{ rs.image.url }}" alt="">
+                    </div>
+                    <div class="productBottomInfo">
+                        <span class="productTitle">
+                            {{ rs.title }}
+                        </span>
+                        <div class="productStar">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <span class="productPrice">{{ rs.price }}</span>
+
+                        <div class="categoryListMain">
+
+                        </div>
+
+                    </div>
+                </div>
                 {% endfor %}
             </div>
 
