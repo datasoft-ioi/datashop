@@ -358,10 +358,12 @@
         line-height: 17px;
         color: #777777;
     }
+
     .images {
         width: 100%;
         padding: 0px 10px;
     }
+
     .dtlMain {
         display: flex;
         align-items: center;
@@ -412,15 +414,17 @@
         line-height: 19px;
         color: #3C3C3C;
     }
+
     .dtlProductReqomendasiaProducts {
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(2 ,1fr);
+        grid-template-columns: repeat(2, 1fr);
         justify-content: center;
         gap: 10px;
         grid-row-gap: 20px;
         padding-bottom: 20px;
     }
+
     .dtlProductHaracterHeader {
         width: 100%;
     }
@@ -429,4 +433,3 @@
 .dtlProductInfo ul {
     max-width: 300px;
 }
-

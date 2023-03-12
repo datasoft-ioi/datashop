@@ -361,31 +361,37 @@
     }
 
     .myorderProductMainProductCon span {
-        font-weight: 5  00;
+        font-weight: 5 00;
         font-size: 12px;
         line-height: 15px;
         color: #3C3C3C;
     }
+
     .myorderProductMainProductInfos {
-        display: flex; 
-        flex-direction: column ;
+        display: flex;
+        flex-direction: column;
         gap: 10px;
     }
+
     .myOrderProductMainProduct {
         width: 100%;
         justify-content: space-between;
         gap: 0px;
     }
+
     .myOrderProductMainProductHeader {
         width: 100%;
     }
+
     .myorderProductMainProductCon {
         gap: 0px;
     }
+
     .myorderProductMainProductCon img {
         max-width: 100px;
         max-height: 100px;
     }
+
     .myOrderProductMainProductHeader span {
         padding-left: 0px;
     }
