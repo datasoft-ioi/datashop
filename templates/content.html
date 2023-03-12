@@ -426,53 +426,6 @@
 
     <div class="mainProducts">
         <div class="mainProductsHeader">
-            <div class="mainProductsHeader-title">
-                <img src="{% static 'media/aksesuar.svg' %}" alt="">
-                <span>Aksesuarlar</span>
-            </div>
-            <button>
-                <a href="category/4/aksesuar/"><span>Yana ko'rish</span></a>
-                <img src="{% static 'media/next.svg' %}" alt="">
-            </button>
-        </div>
-
-        <div class="products">
-            {% for ct in cat_by_aksesuar %}
-            <div class="product">
-                <div class="productHeader">
-                    <span class="new">new</span>
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-                <div class="productImg">
-                    <a href="{% url 'product_detail' ct.id ct.slug %}"><img src="{{ ct.image.url }}" alt=""></a>
-                </div>
-                <div class="productBottomInfo">
-                    <span class="productTitle">
-                        {{ ct.title }}
-                    </span>
-                    <div class="productStar">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <span class="productPrice">${{ ct.price }}</span>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-
-
-    <div class="timeWork">
-        <span>
-            Satyda dasturlash ishlari olib borlimoqda!
-            <p> bemalol kirib korishingiz mumkin </p>
-        </span>
-        <p class="ok">Ok</p>
-    </div>
-
 
     <!-- app progarm info -->
 

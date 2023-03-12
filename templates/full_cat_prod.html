@@ -1,22 +1,7 @@
 {% extends 'homebase.html' %}
 {% comment %} {% block title %}{{ catdata.title }} Products{% endblock %}
 {% block description %} {{ catdata.description }} {% endblock %} {% endcomment %}
-{% block keywords %} {{ category.keywords }} {% endblock %}
-
-{% load static %}
-
-{% block content %}
-<div class="categoryList">
-    <ul class="links">
-        <li>Asosiy</li>
-        {% comment %} <li>{{ catdata.title }}</li> {% endcomment %}
-    </ul>
-    <div class="categoryListHeader">
-        <div class="categoryListHeaderTitle">
-            <span class="categoryListHeaderTitle-chil">Ноутбуки HP</span>
-            <span class="categoryListHeaderTitle-chil2">36 товаров</span>
-        </div>
-        <div class="categoryListHeaderRandomBtns">
+{% block keywords %} {{      <div class="categoryListHeaderRandomBtns">
             <button>HP Victus 15</button>
             <button>Asus TUF 4R</button>
             <button>Asus TUF 4R</button>
