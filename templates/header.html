@@ -280,7 +280,7 @@
             </div>
             <div class="noutbuk">
                 <div class="kategoryText">
-                    <p class="kategoryTitle">Noutbuklar</p>
+                    <a href="category/3/noutbuklar"><p class="kategoryTitle">Noutbuklar</p></a>
                     {% for cat in cat_noutbuklar %}
                         {% for i in cat.children.all %}
                             <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
