@@ -86,7 +86,7 @@
 .dtlProductInfo {
     display: flex;
     flex-direction: column;
-    gap:0px;
+    gap: 0px;
 }
 
 .dtlProductInfoTitle {
@@ -103,10 +103,12 @@
     flex-direction: column;
     gap: 4px;
 }
-.dtlProductInfo ul p{
+
+.dtlProductInfo ul p {
     font-size: 13px;
     color: #3C3C3C;
 }
+
 .dtlProductInfo ul li {
     width: 300px;
     display: flex;
