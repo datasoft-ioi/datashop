@@ -250,15 +250,15 @@
                     {% csrf_token %}
                     <div class="dtlPriceInfoPrice">
                         <span>${{ product.price }}</span>
-                        <!-- <button type="submit" {% if product.amount < 1  %} disabled {% endif %} class="dtlPriceInfoPriceBtn1"> -->
+                        <button type="submit" disabled class="dtlPriceInfoPriceBtn1">
                             <img src="{% static 'media/korzinkaWhite.svg' %}" alt="">
                             <span>Savatga</span>
                         </button>
-                        <div class="count">
+                        {% comment %} <div class="count">
                             <button class="plus"><i class="fa-solid fa-plus"></i></button>
                             <span class="countNumber">0</span>
                             <button class="minus"><i class="fa-solid fa-minus"></i></button>
-                        </div>
+                        </div> {% endcomment %}
                     </div>
                 </form>
 
