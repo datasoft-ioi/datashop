@@ -158,6 +158,7 @@ def index(request):
             #Desktop contents
             "cat_by_noutbuk": Product.objects.filter(category__title="Noutbuklar").order_by('-id')[:10],
             "cat_by_aksesuar": Product.objects.filter(category__parent=(4)).order_by('-id')[:10],
+            "cat_by_monitor": Product.objects.filter(category__title="Monitorlar").order_by('-id')[:10],
 
 
         }
