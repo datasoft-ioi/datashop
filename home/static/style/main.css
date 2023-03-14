@@ -832,5 +832,87 @@ footer {
     transition: all 0.3s ease;
 
 }
+.ChatBtn h1 p{
+    font-size: 10px;
+}
+.ChatBtn h1{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2px;
+}
+.ChatBtn{
+    width: 60px;
+    height: 60px;
+    border-radius: 20%;
+    background-color: rgb(255, 0, 0);
+    position: fixed;
+    right: 90px;
+    top: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+}
+.mainChat{
+    display: none;
+    z-index: 99999 ;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    border: 2px solid red;
+    position: fixed;
+    right: 90px;
+    top: 14%;
+    width: 350px;
+    height: 760px;
+    transition: all 5s ease;
 
+}
 
+.chatHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100% ;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+    box-shadow: 0px -13px 48px 0px rgba(34, 60, 80, 0.2);
+    background-color: white;
+}
+.chatHeaderTitle{
+    font-size: 13px;
+}
+.fa-paper-plane{
+    color: red;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    margin-left: 10px;
+}
+.fa-paper-plane:hover{
+    transform: translateY(-5px);
+}
+.fa-paper-plane:active{
+    transform: translateY(0px);
+}
+.chatTextSend{
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 14px;
+}
+.chatTextGroup{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    width: 100%;
+    height: 60px;
+    background-color: white;
+}
+.chatTextInfo{
+    width: 100%;
+    height: 100%;
+    background-color: aliceblue;
+}

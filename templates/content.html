@@ -240,6 +240,27 @@
         <p class="ok">Ok</p>
     </div>
 
+    <div class="mainChat">
+        <div class="chatHeader">
+            <div class="chataLogo">
+                <img src="../home/static/media/datashoplogo.png" alt="" class="logoChat">
+                <p class="chatHeaderTitle">Qo'llab quvvatlash markazi</p>
+            </div>
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="chatTextInfo">
+
+        </div>
+        <div class="chatTextGroup">
+            <input placeholder="Send Messanga" type="text" class="chatTextSend">
+            <i class="fa-solid fa-paper-plane"></i>
+        </div>
+    </div>
+
+
+    <div class="ChatBtn">
+        <h1>D</h1>
+    </div>
 
     <!-- app progarm info -->
 
@@ -260,10 +281,13 @@
 
 </main>
 
-<script>
+<script>fa-xmark
 
     const fix = document.querySelector('.timeWork')
     const ok = document.querySelector('.ok')
+    const x = document.querySelector('.fa-xmark')
+    const chatBtn = document.querySelector('.ChatBtn')
+    const chat = document.querySelector('.mainChat')
 
     ok.onclick = () => {
         fix.classList.add('trans')
@@ -272,4 +296,17 @@
             fix.style.display = 'none'
         }, 500)
     }
+
+
+    // chatBtn.onclick = () => {
+    //     chat.classList.add('miniChat')
+
+    // }
+    // x.onclick = () => {
+    //     chat.style.display = 'none'
+
+    //     setTimeout(() => {
+    //         chat.style.display = 'none'
+    //     }, 100)
+    // }
 </script>
