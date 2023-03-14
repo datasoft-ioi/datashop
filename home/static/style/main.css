@@ -477,10 +477,11 @@ footer {
     }
 
     .product {
-        width: 168px;
+        width: 255px;
         height: 230px;
         justify-self: center;
         align-self: center;
+        gap: 16;
     }
 
     .productImg img {
@@ -489,7 +490,7 @@ footer {
     }
 
     .productBottomInfo {
-        gap: 6px;
+        gap: 15px;
         padding: 0 10px;
         margin-top: 0px;
     }
