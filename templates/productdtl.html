@@ -228,7 +228,7 @@
         <div class="dtlPriceInfo">
 
             {% if product.variant != 'None'%}
-                <form action="/order/addtoshopcart/{{ product.id }}" method="post"  id="addchart-form">
+                <form class="formProductDtl" action="/order/addtoshopcart/{{ product.id }}" method="post"  id="addchart-form">
                     {% csrf_token %}
                     <input type="hidden" name="variantid" id="variantid" value="{{ variant.id }}">
                     <span class="text-uppercase">QTY: </span>
@@ -246,7 +246,7 @@
                 </form>
 
             {% else %}
-                <form action="/order/addtoshopcart/{{ product.id }}" method="post" id="addchart-form">
+                <form class="formProductDtl" action="/order/addtoshopcart/{{ product.id }}" method="post" id="addchart-form">
                     {% csrf_token %}
                     <div class="dtlPriceInfoPrice">
                         <span>${{ product.price }}</span>

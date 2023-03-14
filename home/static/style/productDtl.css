@@ -147,6 +147,10 @@
     align-items: center;
 }
 
+.formProductDtl{
+    z-index: 10;
+}
+
 .dtlPriceInfoPrice {
     width: 290px;
     height: 186px;
@@ -158,7 +162,7 @@
     align-items: start;
     padding: 26px 20px;
     gap: 10px;
-    z-index: 1;
+    z-index: 2;
 }
 
 .dtlPriceInfoPrice span {
@@ -204,7 +208,7 @@
 }
 
 .dtlPriceInfoPriceInfo {
-    width: 320px;
+    width: 290px;
     height: 184px;
     background: #FFFFFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
@@ -214,6 +218,7 @@
     gap: 20px;
     transform: translateY(-10px);
     border-radius: 10px;
+    z-index: 0;
 }
 
 .dtlPriceInfoPriceInfo-1 {
@@ -403,9 +408,6 @@
         justify-content: center;
     }
 
-    .dtlPriceInfoPriceInfo {
-        width: 90%;
-    }
 
     .imgBottomCon {
         width: 355px;
