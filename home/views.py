@@ -134,6 +134,9 @@ def index(request):
 
             "banner": Banner.objects.all().order_by('-id')[:8],
 
+            # mobile cat noutbuk
+            "noutbuk_mob_cat": Category.objects.filter(title="Noutbuklar")[:1],
+
             # kategoriya sidebars
             "cat_noutbuklar": Category.objects.filter(title="Noutbuklar"),
             "kompyuter_qurilmalari": Category.objects.filter(title="Kompyuter qurilmalari"),
