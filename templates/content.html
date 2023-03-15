@@ -243,8 +243,8 @@
     <div class="mainChat">
         <div class="chatHeader">
             <div class="chataLogo">
-                <img src="../home/static/media/datashoplogo.png" alt="" class="logoChat">
                 <p class="chatHeaderTitle">Qo'llab quvvatlash markazi</p>
+                <img src="{% static 'media/datashoplogo.png' %}" alt="" class="logoChatt" >
             </div>
             <i class="fa-solid fa-xmark"></i>
         </div>
@@ -288,6 +288,8 @@
     const x = document.querySelector('.fa-xmark')
     const chatBtn = document.querySelector('.ChatBtn')
     const chat = document.querySelector('.mainChat')
+    const logo = document.querySelector('.logoChatt')
+    const chatTitle= document.querySelector('.chatHeaderTitle')
 
     ok.onclick = () => {
         fix.classList.add('trans')
@@ -297,16 +299,29 @@
         }, 500)
     }
 
+    let add = true
 
-    // chatBtn.onclick = () => {
-    //     chat.classList.add('miniChat')
+     chatBtn.onclick = () => {
+        if(add === true){
+            chat.classList.toggle('miniChat')
+            logo.style.display = 'flex'
+            chatTitle.style.display = 'flex'
+            add = false
+        }
+        if(add === false){
+            chat.classList.toggle('miniChat')
+            logo.classList.add = 'none'
+            chatTitle.classList= 'none'
+            add = false
+        }
+         
 
-    // }
-    // x.onclick = () => {
-    //     chat.style.display = 'none'
+     }
 
-    //     setTimeout(() => {
-    //         chat.style.display = 'none'
-    //     }, 100)
-    // }
+     x.onclick = () => {
+         chat.classList.remove('miniChat')
+         logo.style.display = 'none'
+         chatTitle.style.display = 'none'
+
+     }
 </script>
