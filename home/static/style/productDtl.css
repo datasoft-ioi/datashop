@@ -457,20 +457,17 @@
     font-size: 14px;
     line-height: 20px;
     color: #999999d3;
-    margin: 4px;
-    width: auto;
-
 }
 .infoList{
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
     color: #111111;
-    margin: 4px;
-    width: auto;
-
+    text-align: end;
+    margin-left: 5px;
 }
 .productListdtlInfo span{
     border: dashed 1px #c2c2c2;
-    width: 100%;
+    flex-grow: 2;
+    margin: 0 10px;
 }
