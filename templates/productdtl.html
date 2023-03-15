@@ -224,7 +224,14 @@
             </ul> {% endcomment %}
             <!-- Product info -->
             <ul>
-                <div class="productListdtlInfo"><p class="infoListaa">Turi</p> <span></span> <p class="infoList">Mexanik</p></div>
+                {% for i in futers %}
+                    <div class="productListdtlInfo"><p class="infoListaa">{{i.key}}</p> <span></span> <p class="infoList">{{i.qiymat}}</p></div>
+                {% endfor %}
+{% comment %} =======
+                {% for futer in futers %}
+                    <div class="productListdtlInfo"><p class="infoListaa">{{ futer.key }}</p><span>-------------</span> <p class="infoList">{{ futer.qiymat }}</p></div>
+                {% endfor %}
+>>>>>>> Stashed changes {% endcomment %}
             </ul>
             <span class="vseHarakter">Все характеристики</span>
         </div>
@@ -246,22 +253,17 @@
                         </button>
                         <button class="dtlPriceInfoPriceBtn2">Купить в один клик</button>
                     </div>
-                </form>
+                </form> 
 
             {% else %}
-                <form class="formProductDtl" action="/order/addtoshopcart/{{ product.id }}" method="post" id="addchart-form">
+                <form action="/order/addtoshopcart/{{ product.id }}" class="formProductDtl" id="myform" method="post">
                     {% csrf_token %}
                     <div class="dtlPriceInfoPrice">
                         <span>${{ product.price }}</span>
-                        <button type="submit" disabled class="dtlPriceInfoPriceBtn1">
+                        <button class="dtlPriceInfoPriceBtn1" type="submit">
                             <img src="{% static 'media/korzinkaWhite.svg' %}" alt="">
                             <span>Savatga</span>
                         </button>
-                        {% comment %} <div class="count">
-                            <button class="plus"><i class="fa-solid fa-plus"></i></button>
-                            <span class="countNumber">0</span>
-                            <button class="minus"><i class="fa-solid fa-minus"></i></button>
-                        </div> {% endcomment %}
                     </div>
                 </form>
 

@@ -23,7 +23,7 @@ from django.utils import translation
 from home.forms import SearchForm
 from home.models import Setting, ContactForm, ContactMessage, FAQ, SettingLang, Language, Banner
 from datashop import settings
-from product.models import Category, Brands, Product, Images, Comment, Variants, CategoryLang # ProductLang
+from product.models import Category, Brands, Product, Images, Comment, Variants, CategoryLang, ProductFuture # ProductLang
 from user.models import UserProfile
 
 #bot
@@ -322,9 +322,11 @@ def product_detail(request,id,slug):
     # <<<<<<<<<< M U L T I   L A N G U G A E <<<<<<<<<<<<<<< end
 
     images = Images.objects.filter(product_id=id)
+    futers = ProductFuture.objects.filter(product_id=id)
     comments = Comment.objects.filter(product_id=id,status='True')
     context = {'product': product,'category': category,
                'images': images, 'comments': comments,
+               'futers': futers,
                }
     if product.variant !="None": # Product have variants
         if request.method == 'POST': #if we select color
@@ -339,7 +341,7 @@ def product_detail(request,id,slug):
             sizes = Variants.objects.raw('SELECT * FROM  product_variants  WHERE product_id=%s GROUP BY size_id',[id])
             variant =Variants.objects.get(id=variants[0].id)
         context.update({'sizes': sizes, 'colors': colors,
-                        'variant': variant,'query': query
+                        'variant': variant,'query': query,
                         })
     return render(request,'productdtl.html',context)
 

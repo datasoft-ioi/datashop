@@ -128,6 +128,20 @@ class Images(models.Model):
         verbose_name_plural = "Rasmlar / 'Images'"
 
 
+# Maxsulot xaqida xarakteristika
+class ProductFuture(models.Model):
+    product=models.ForeignKey(Product,on_delete=models.CASCADE)
+    key = models.CharField(max_length=50,blank=True)
+    qiymat = models.CharField(max_length=50, blank=True)
+
+    def __str__(self):
+        return self.key
+
+    class Meta:
+        verbose_name = "Maxsulot xaqida xarakteristika"
+        verbose_name_plural = "Maxsulotlar xaqida"
+
+
 class Comment(models.Model):
     STATUS = (
         ('New', 'New'),

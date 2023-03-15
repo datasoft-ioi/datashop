@@ -5,7 +5,7 @@ from django.contrib import admin
 from mptt.admin import DraggableMPTTAdmin
 
 from product import models
-from product.models import Brands, Category, Product, Images, Comment, Color, Size, Variants, ProductLang, CategoryLang
+from product.models import Brands, ProductFuture, Category, Product, Images, Comment, Color, Size, Variants, ProductLang, CategoryLang
 
 
 class CategoryLangInline(admin.TabularInline):
@@ -54,6 +54,12 @@ class ProductImageInline(admin.TabularInline):
     readonly_fields = ('id',)
     extra = 1
 
+class ProductFutureInline(admin.TabularInline):
+    model = ProductFuture
+    extra = 1
+    show_change_link = True
+
+
 class ProductVariantsInline(admin.TabularInline):
     model = Variants
     readonly_fields = ('image_tag',)
@@ -67,8 +73,6 @@ class ProductLangInline(admin.TabularInline):
     prepopulated_fields = {'slug': ('title',)}
 
 
-
-
 @admin_thumbnails.thumbnail('image')
 class ImagesAdmin(admin.ModelAdmin):
     list_display = ['image','title','image_thumbnail']
@@ -78,7 +82,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_filter = ['category']
     readonly_fields = ('image_tag',)
     raw_id_fields = ('category',)
-    inlines = [ProductImageInline,ProductVariantsInline,ProductLangInline]
+    inlines = [ProductFutureInline,ProductImageInline,ProductVariantsInline,ProductLangInline]
     prepopulated_fields = {'slug': ('title',)}
 
 
@@ -117,3 +121,4 @@ admin.site.register(Variants,VariantsAdmin)
 admin.site.register(ProductLang,ProductLangugaeAdmin)
 admin.site.register(CategoryLang,CategoryLangugaeAdmin)
 admin.site.register(Brands)
+admin.site.register(ProductFuture)
