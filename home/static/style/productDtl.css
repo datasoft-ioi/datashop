@@ -458,6 +458,8 @@
     line-height: 20px;
     color: #999999d3;
     margin: 4px;
+    width: auto;
+
 }
 .infoList{
     font-weight: 500;
@@ -465,6 +467,7 @@
     line-height: 20px;
     color: #111111;
     margin: 4px;
+    width: auto;
 
 }
 .productListdtlInfo span{
