@@ -443,4 +443,26 @@
 
 .dtlProductInfo ul {
     max-width: 300px;
+
+}
+
+.productListdtlInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.infoListaa{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #999999d3;
+}
+.infoList{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #111111;
+}
+.productListdtlInfo span{
+    color: #c2c2c2;
 }
