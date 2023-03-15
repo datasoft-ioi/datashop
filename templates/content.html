@@ -302,10 +302,11 @@
     let add = true
 
      chatBtn.onclick = () => {
+                    logo.style.display = 'flex'
+            chatTitle.style.display = 'flex'
         if(add === true){
             chat.classList.toggle('miniChat')
-            logo.style.display = 'flex'
-            chatTitle.style.display = 'flex'
+
             add = false
         }
         if(add === false){
