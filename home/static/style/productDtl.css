@@ -442,27 +442,32 @@
 }
 
 .dtlProductInfo ul {
-    max-width: 300px;
+    max-width: 500px;
 
 }
 
 .productListdtlInfo{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    width: 300px;
 }
 .infoListaa{
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
     color: #999999d3;
+    margin: 4px;
 }
 .infoList{
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
     color: #111111;
+    margin: 4px;
+
 }
 .productListdtlInfo span{
-    color: #c2c2c2;
+    border: dashed 1px #c2c2c2;
+    width: 100%;
 }
