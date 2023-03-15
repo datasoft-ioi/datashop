@@ -254,7 +254,7 @@
             </div>
             
             <div class="divs">
-                <span class="chatUser">Alik</span>
+                <span class="chatUser" >Azdfbhxhfgnbxfgcbnvgfzjedrhkxfgejfrdhgxkjhdrgfxhkdgxfcgbxcfgnbxfchfryhdrtyhdrthjrddrtyjhftyjlik</span>
             </div>
         </div>
         <div class="chatTextGroup">
@@ -296,6 +296,8 @@
     const chat = document.querySelector('.mainChat')
     const logo = document.querySelector('.logoChatt')
     const chatTitle= document.querySelector('.chatHeaderTitle')
+    const user= document.querySelector('.chatUser')
+    const admin= document.querySelector('.chatAdmin')
 
     ok.onclick = () => {
         fix.classList.add('trans')
@@ -304,6 +306,11 @@
             fix.style.display = 'none'
         }, 500)
     }
+
+    user.style.display = 'none'
+    admin.style.display = 'none'
+    logo.style.display = 'none'
+    chatTitle.style.display = 'none'
 
     let add = true
 
@@ -321,14 +328,22 @@
         //     chatTitle.classList= 'none'
         //     add = false
         // }
-         
-
+        setTimeout(() => {
+            user.style.display = 'block'
+         admin.style.display = 'block'
+        }, 400)
+        chatBtn.style.display = 'none'
      }
 
      x.onclick = () => {
          chat.classList.remove('miniChat')
          logo.style.display = 'none'
          chatTitle.style.display = 'none'
+         user.style.display = 'none'
+         admin.style.display = 'none'
 
+        setTimeout(() => {
+            chatBtn.style.display = 'flex'
+        }, 300)
      }
 </script>

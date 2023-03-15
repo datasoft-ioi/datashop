@@ -955,25 +955,27 @@ opacity: 0;
     justify-content: flex-start;
 }
 .chatAdmin{
-    width: auto;
+    width: 100%;
     padding: 3px 15px;
     background-color: #6b6b6b52;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     color: #ffffff;
-    margin: 10px;
     text-align: left;
+    margin: 10px 0;
+    overflow-wrap: break-word;
 }
 
 .chatUser{
-    width: auto;
+    width: 100%;
     padding: 3px 15px;
     background-color: #6b6b6b52;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
     color: #ffffff;
-    margin: 10px;
+    margin: 10px 0;
     text-align: left;
+    overflow-wrap: break-word;
 }
