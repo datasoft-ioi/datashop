@@ -528,7 +528,7 @@ footer {
     border: 1px solid red;
     position: fixed;
     right: 90px;
-    top: 20%;
+    top: 10%;
     width: 0px;
     height: 0px;
     transition: all 0.3s ease;
