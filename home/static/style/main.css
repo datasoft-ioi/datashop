@@ -541,7 +541,7 @@ footer {
     opacity: 1;
     width: 350px;
     height: 760px;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease;           
     transform: translate(0px);
     border-radius: 10px;
 }
