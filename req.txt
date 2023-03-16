@@ -10,3 +10,4 @@ django-admin-thumbnails
 python-dotenv
 django-ipware
 python-telegram-bot
+whitenoise
