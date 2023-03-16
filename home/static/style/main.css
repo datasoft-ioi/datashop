@@ -664,7 +664,7 @@ footer {
 
     .ChatBtn {
         transform: translateY(-80px);
-        left: 80%;
+        left: 80%; 
     }
 
     .mainChat {
