@@ -81,7 +81,7 @@ def shopcart(request):
     context={'shopcart': shopcart,
              'category':category,
              'total': total,
-             }
+            }
     return render(request,'shopcart_products.html',context)
 
 @login_required(login_url='/login') # Check login
