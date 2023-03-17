@@ -649,6 +649,12 @@
             </div>
         </div>
     </div>
+    <div class="miniKategory">
+        <h1 class="miniTitle ">Telefon <i class="fa-solid fa-chevron-down telefonn"></i></h1>
+        <div class="telefonList ">ddd</div>
+        <h1 class="miniTitle notebookk">Telefon <i class="fa-solid fa-chevron-down"></i></h1>
+        <div class="notebookkList">ddd</div>
+    </div>
 </div>
 
 
@@ -656,7 +662,11 @@
 
 <script>
     const categoryProducts = document.querySelectorAll('.categoryProducts')
+    const title1 = document.querySelectorAll('.telefonn')
+    const text1 = document.querySelectorAll('.telefonList')
     let lastSelected = null
+
+    text1.style.display = 'none'
 
     categoryProducts.forEach(categoryProductt => {
         const btn = categoryProductt.querySelector('.categoryProductsName')

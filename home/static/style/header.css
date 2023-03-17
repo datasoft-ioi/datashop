@@ -301,10 +301,18 @@ header {
     font-weight: 600;
 }
 
+.miniKategory{
+        display: none !important;
+    
+}
+
 @media screen and (max-width: 414px) and (min-width: 360px) {
     .kategoryCon {
         display: none !important;
     }
+    .miniKategory{
+        display: flex !important;
+}
 
     .timeWork {
         position: fixed;
