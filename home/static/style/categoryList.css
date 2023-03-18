@@ -440,18 +440,6 @@ input[type="radio"] {
     gap: 10px;
 }
 
-.categoryListMainProducResponsive {
-    display: none;
-}
-
-
-.filterTop {
-    display: none;
-}
-
-.vh {
-    display: none;
-}
 
 @media screen and (max-width: 414px) and (min-width: 360px) {
     .categoryListMainFilter {
