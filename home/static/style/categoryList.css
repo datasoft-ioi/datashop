@@ -438,7 +438,7 @@ input[type="radio"] {
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
-}               
+}
 
 .categoryListMainProducResponsive {
     display: none;
