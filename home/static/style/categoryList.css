@@ -434,12 +434,24 @@ input[type="radio"] {
 
 .categoryListMainProductMain {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
 }
 
+.categoryListMainProducResponsive {
+    display: none;
+}
+
+
+.filterTop {
+    display: none;
+}
+
+.vh {
+    display: none;
+}
 
 @media screen and (max-width: 414px) and (min-width: 360px) {
     .categoryListMainFilter {
