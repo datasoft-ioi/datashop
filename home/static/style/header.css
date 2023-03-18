@@ -289,32 +289,7 @@ header {
     width: 250px;
 }
 
-.productName {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
 
-.textLogin {
-    color: #2b2b2b;
-    font-weight: 600;
-}
-
-.miniKategory{
-        display: none !important;
-    
-}
-
-@media screen and (max-width: 414px) and (min-width: 360px) {
-    .kategoryCon {
-        display: none !important;
-    }
-    .miniKategory{
-        display: flex !important;
-}
-
-    .timeWork {
         position: fixed;
         top: 41%;
         left: 0%;
