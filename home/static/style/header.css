@@ -301,16 +301,19 @@ header {
     font-weight: 600;
 }
 
-.miniKategory{
+.mobilKategory{
         display: none !important;
     
+}
+.none{
+    display: none!important;
 }
 
 @media screen and (max-width: 414px) and (min-width: 360px) {
     .kategoryCon {
         display: none !important;
     }
-    .miniKategory{
+    .mobilKategory{
         display: flex !important;
 }
 
