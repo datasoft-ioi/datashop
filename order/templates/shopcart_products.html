@@ -6,21 +6,21 @@
 
     <div class="korzinka">
         <ul class="links">
-            <li>Главная</li>
+            <li>Asosiy</li>
         </ul>
         {% load myapptags %}
         <div class="korHeader">
             {% shopcartcount user.id as count %}
-            <span class="korHeader-Chil1">Корзина</span>
-            <span class="korHeader-Chil2">Товаров в корзине ({{ count }})</span>
+            <span class="korHeader-Chil1">Savat</span>
+            <span class="korHeader-Chil2">Savatdagi mahsulotlar: ({{ count }})ta</span>
         </div>
         <div class="korMain">
             <div class="korMainProducts">
                 <div class="korMainProductsHeader">
-                    <span>Детали продуктов</span>
+                    <span>Mahsulot haqida ma'lumot:</span>
                     <div class="korMainProductsHeaderRight">
-                        <span>Цена</span>
-                        <span>Количество</span>
+                        <span>Narxi</span>
+                        <span>Miqdori</span>
                         <span>Jami</span>
                     </div>
                 </div>
@@ -36,10 +36,10 @@
                                 {% endif %}
                                 <div>
                                     <span class="korProductInfoName">{{ rs.product.title | truncatewords:3 }}</span>
-                                    <span class="korProductInfoCategory">Ноутбук</span>
+                                    <span class="korProductInfoCategory">{{ rs.category }}</span>
                                     <span class="myorderProductMainProductConPrice">${{ rs.product.price }}</span>
                                     <a href="/order/deletefromcart/{{ rs.id }}">
-                                        <button>Удалить</button>
+                                        <button>Ochirish</button>
                                     </a>
                                 </div>
                             </div>
@@ -60,27 +60,27 @@
             </div>
             <div class="korMainPriceBox">
                 <div class="korMainPriceBoxTite">
-                    <span class="korMainPriceBoxTiteInfo">Итого:</span>
+                    <span class="korMainPriceBoxTiteInfo">Hammasi:</span>
                     <span class="korMainPriceBoxTitePrice">${{ total }}</span>
                 </div>
                 <ul class="korMainPriceBoxPriceInfo">
                     <li>
-                        <span class="korMainPriceBoxPriceInfoName">Промокод:</span> 
+                        <span class="korMainPriceBoxPriceInfoName">kupon kodi:</span> 
                         <span class="korMainPriceBoxPriceInfoPrice">0 сум</span>
                     </li>
                     <li>
-                        <span class="korMainPriceBoxPriceInfoName">Сумма доставки:</span> 
+                        <span class="korMainPriceBoxPriceInfoName">Etkazib berish summasi:</span> 
                         <span class="korMainPriceBoxPriceInfoPrice">0 сум</span>
                     </li>
                     <li>
-                        <span class="korMainPriceBoxPriceInfoName">Сумма товара:</span> 
-                        <span class="korMainPriceBoxPriceInfoPrice">0 сум</span>
+                        <span class="korMainPriceBoxPriceInfoName">Jami:</span> 
+                        <span class="korMainPriceBoxPriceInfoPrice">${{total}}</span>
                     </li>
                 </ul>
                 <div class="korMainPriceBoxFooter">
                     <div class="korMainPriceBoxFooterDastafka">
-                        <span class="korMainPriceBoxFooterDastafka-chil1">Доставка:</span>
-                        <span class="korMainPriceBoxFooterDastafka-chil2">Курьером</span>
+                        <span class="korMainPriceBoxFooterDastafka-chil1">Yetkazib berish:</span>
+                        <span class="korMainPriceBoxFooterDastafka-chil2">None</span>
                     </div>
                     <div class="korMainPriceBoxFooterEnd">
                         <a href="{% url 'orderproduct' %}"><button>Оформить заказ</button></a>
