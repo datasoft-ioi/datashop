@@ -31,14 +31,13 @@ class Category(MPTTModel):
     update_at=models.DateTimeField(auto_now=True)
 
 
-
-
-
     def __str__(self):
         return self.title
 
+
     class MPTTMeta:
         order_insertion_by = ['title']
+
 
     def get_absolute_url(self):
         return reverse('category_products', kwargs={'id': self.id, 'slug': self.slug})
@@ -50,6 +49,7 @@ class Category(MPTTModel):
             full_path.append(k.title)
             k = k.parent
         return ' / '.join(full_path[::-1])
+
 
     class Meta:
         verbose_name = "Kategoriya"

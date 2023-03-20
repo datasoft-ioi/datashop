@@ -235,6 +235,11 @@ def category_products(request,id,slug):
     catdata = Category.objects.get(pk=id)
     category = Category.objects.filter(parent=None)
 
+    for cat in category:
+        productss = category.product_set.all()
+        return len(productss)
+
+
     cat_fil = Category.objects.filter(pk=id)
     products = Product.objects.all() 
 
@@ -256,6 +261,7 @@ def category_products(request,id,slug):
 
     context={'products': products,
              'category':category,
+             'cat':cat,
 
              # kategoriya sidebars
             "cat_noutbuklar": Category.objects.filter(title="Noutbuklar"),
