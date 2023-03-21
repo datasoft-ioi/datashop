@@ -96,6 +96,7 @@ class ContactMessage(models.Model):
     def __str__(self):
         return self.name
 
+
 class ContactForm(ModelForm):
     class Meta:
         model = ContactMessage
@@ -135,3 +136,8 @@ class Banner(models.Model):
         return self.title
 
     
+class Contact(models.Model):
+    title = models.CharField(max_length=255)
+    subject = models.CharField(max_length=255)
+    email = models.EmailField()
+    message = models.CharField(max_length=255)

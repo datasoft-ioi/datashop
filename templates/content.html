@@ -240,6 +240,8 @@
         <p class="ok">Ok</p>
     </div>
 
+<form method="post">
+    {% csrf_token %}
     <div class="mainChat">
         <div class="chatHeader">
             <div class="chataLogo">
@@ -261,7 +263,9 @@
             <input placeholder="Send Messanga" type="text" class="chatTextSend">
             <i class="fa-solid fa-paper-plane"></i>
         </div>
+        
     </div>
+</form>
 
 
     <div class="ChatBtn">

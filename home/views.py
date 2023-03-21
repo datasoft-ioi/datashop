@@ -37,7 +37,7 @@ import requests
 
 
 URL = settings.BOT_URL
-# my_token = "6143344105:AAHxL9pG02HE0XzJfeeHrfCMSKNpAVqO4bU"
+# my_token = "6143344105:AAHxL9pG02HE0XzJfeeHrfCMSKNpAVqO4bU
 my_token = settings.BOT_TOKEN
 # my_chat_id = "984573662"
 my_chat_id = settings.BOT_CHAT_ID
@@ -59,10 +59,23 @@ def bot(request, msg, chat_id=my_chat_id, token=my_token):
 
 def alibek(request):
 
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        msg = "Bormisan!!!"
+        if form.is_valid():
+            form.save()
+            # print(form)
+            # return HttpResponse('Siz Yutgazdingiz')
+        bot(request, serialize('json', ContactMessage.objects.all(), cls=LazyEncode))
+        
+    form = ContactForm()
+
     cateory = Category.objects.filter(parent=None)
     context = {
         "cateory": cateory,
+        "form": form,
     }
+
     return render(request, 'alibek.html', context)
 
 def index(request):
@@ -75,6 +88,7 @@ def index(request):
     # else:
     #     pass
 
+    form = ContactForm()
 
 
     if request.user.is_anonymous:
@@ -122,6 +136,7 @@ def index(request):
     page="home"
     context={'setting':setting,
             'page':page,
+            'form':form,
             #  'product':product,
             'products': products,
             'products_slider': products_slider,
