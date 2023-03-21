@@ -301,8 +301,8 @@ header {
     font-weight: 600;
 }
 
-.mobilKategory{
-        display: none !important;
+.mobilKategoryy{
+        display: none!important;
     
 }
 .none{
@@ -313,7 +313,7 @@ header {
     .kategoryCon {
         display: none !important;
     }
-    .mobilKategory{
+    .mobilKategoryy{
         display: flex !important;
 }
 
