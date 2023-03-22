@@ -37,8 +37,8 @@
                 <button><img src="{% static 'media/search.svg' %}" alt=""></button>
             </div>
             <div class="navbottomBtns">
+                {% load myapptags %}
                 <a href="{% url 'shopcart'%}">
-                    {% load myapptags %}
                     {% shopcartcount user.id as count %}
                     <span class="korzinkaConunt">{{ count }}</span>
                     <button>
@@ -136,7 +136,8 @@
         <div class="kategoryMain_text">
 
             <div class="geymerlar">
-                <a href="/category/34/geymerlar-uchun/"><span class="mainTitle">Geymerlar uchun <i class="fa-solid fa-angle-right"></i></span></a>
+                <a href="/category/34/geymerlar-uchun/"><span class="mainTitle">Geymerlar uchun <i
+                            class="fa-solid fa-angle-right"></i></span></a>
                 <div class="geymerlar2">
                     <div class="kategoryText">
                         <a href="/category/9/geymerlar-uchun-garnituralar/">
@@ -280,11 +281,13 @@
             </div>
             <div class="noutbuk">
                 <div class="kategoryText">
-                    <a href="category/3/noutbuklar"><p class="kategoryTitle">Noutbuklar</p></a>
+                    <a href="category/3/noutbuklar">
+                        <p class="kategoryTitle">Noutbuklar</p>
+                    </a>
                     {% for cat in cat_noutbuklar %}
-                        {% for i in cat.children.all %}
-                            <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
-                        {% endfor %}
+                    {% for i in cat.children.all %}
+                    <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
+                    {% endfor %}
                     {% endfor %}
                     {% comment %} <span class="Titletext">HP</span>
                     <span class="Titletext">Dream Machines</span>
@@ -305,9 +308,9 @@
                 <div class="kategoryText">
                     <p class="kategoryTitle">Kompyuter qurilmalari</p>
                     {% for cat in kompyuter_qurilmalari %}
-                        {% for i in cat.children.all %}
-                            <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
-                        {% endfor %}
+                    {% for i in cat.children.all %}
+                    <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
+                    {% endfor %}
                     {% endfor %}
                     {% comment %} <span class="Titletext">Videokartalar</span>
                     <span class="Titletext">Kompyuter platalari</span>
@@ -324,9 +327,9 @@
                 <div class="kategoryText">
                     <p class="kategoryTitle">Noutbuk uchun sumka va ryukzaklar</p>
                     {% for cat in nb_uchun_sumka_va_ryukzaklar %}
-                        {% for i in cat.children.all %}
-                            <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
-                        {% endfor %}
+                    {% for i in cat.children.all %}
+                    <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
+                    {% endfor %}
                     {% endfor %}
                     {% comment %} <span class="Titletext">Xiaomi</span>
                     <p class="kategoryTitle">Lenovo</p>
@@ -343,21 +346,21 @@
                 <div class="kategoryText">
                     <p class="kategoryTitle">Monoblok</p>
                     {% for cat in monoblok %}
-                        {% for i in cat.children.all %}
-                            <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
-                        {% endfor %}
+                    {% for i in cat.children.all %}
+                    <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
+                    {% endfor %}
                     {% endfor %}
                     <p class="kategoryTitle">Proektorlar</p>
                     {% for cat in proektorlar %}
-                        {% for i in cat.children.all %}
-                            <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
-                        {% endfor %}
+                    {% for i in cat.children.all %}
+                    <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
+                    {% endfor %}
                     {% endfor %}
                     <p class="kategoryTitle">Stol usti kompyuterlari</p>
                     {% for cat in stol_usti_kompyuterlari %}
-                        {% for i in cat.children.all %}
-                            <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
-                        {% endfor %}
+                    {% for i in cat.children.all %}
+                    <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
+                    {% endfor %}
                     {% endfor %}
                 </div>
 
@@ -367,9 +370,9 @@
                     <p class="kategoryTitle">Monitorlar</p>
 
                     {% for cat in monitorlar %}
-                        {% for i in cat.children.all %}
-                            <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
-                        {% endfor %}
+                    {% for i in cat.children.all %}
+                    <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
+                    {% endfor %}
                     {% endfor %}
                     {% comment %} <span class="Titletext">HP</span>
                     <span class="Titletext">Dream Machines</span>
@@ -397,9 +400,9 @@
                 <div class="kategoryText">
                     <p class="kategoryTitle">Klaviatura va Sichqoncha</p>
                     {% for cat in klaviatura_va_sichqoncha %}
-                        {% for i in cat.children.all %}
-                            <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
-                        {% endfor %}
+                    {% for i in cat.children.all %}
+                    <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
+                    {% endfor %}
                     {% endfor %}
                     {% comment %} <span class="Titletext">Sichqonchalar</span>
                     <span class="Titletext">Sichqoncha uchun gilamchalar</span>
@@ -408,24 +411,24 @@
                     <span class="Titletext">Kompyuter uchun quloqchinlar</span> {% endcomment %}
                     <p class="kategoryTitle">Ofis jihozlari</p>
                     {% for cat in ofis_jihozlari %}
-                        {% for i in cat.children.all %}
-                            <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
-                        {% endfor %}
+                    {% for i in cat.children.all %}
+                    <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
+                    {% endfor %}
                     {% endfor %}
                     <p class="kategoryTitle">Printerlar va KFMlar uchun moslamalar</p>
                     {% for cat in printerlar_va_kfmlar %}
-                        {% for i in cat.children.all %}
-                            <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
-                        {% endfor %}
+                    {% for i in cat.children.all %}
+                    <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
+                    {% endfor %}
                     {% endfor %}
                 </div>
 
                 <div class="kategoryText">
                     <p class="kategoryTitle">Tizim uskunalari</p>
                     {% for cat in tizim_uskunalari %}
-                        {% for i in cat.children.all %}
-                            <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
-                        {% endfor %}
+                    {% for i in cat.children.all %}
+                    <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
+                    {% endfor %}
                     {% endfor %}
                     {% comment %} <span class="Titletext">TP-Link</span>
                     <span class="Titletext">Xiaomi</span>
@@ -452,9 +455,9 @@
                 <div class="kategoryText">
                     <p class="kategoryTitle">Monitorlar uchun kronshteyn va tagkursilar</p>
                     {% for cat in monitorlar_uchun_kronshteyn %}
-                        {% for i in cat.children.all %}
-                            <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
-                        {% endfor %}
+                    {% for i in cat.children.all %}
+                    <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
+                    {% endfor %}
                     {% endfor %}
                     {% comment %} <span class="Titletext">Dell</span>
                     <span class="Titletext">2E Gaming</span>
@@ -465,15 +468,15 @@
                     <span class="Titletext">Mikuso</span> {% endcomment %}
                     <p class="kategoryTitle">Videogaolish</p>
                     {% for cat in videogaolish %}
-                        {% for i in cat.children.all %}
-                            <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
-                        {% endfor %}
+                    {% for i in cat.children.all %}
+                    <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
+                    {% endfor %}
                     {% endfor %}
                     <p class="kategoryTitle">Boshqa aksessuarlar</p>
                     {% for cat in boshqa_aksessuarlar %}
-                        {% for i in cat.children.all %}
-                            <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
-                        {% endfor %}
+                    {% for i in cat.children.all %}
+                    <a href="{{ i.get_absolute_url }}"><span class="Titletext">{{i.title}}</span></a>
+                    {% endfor %}
                     {% endfor %}
                 </div>
             </div>
