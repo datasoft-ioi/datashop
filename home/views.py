@@ -61,12 +61,17 @@ def alibek(request):
 
     if request.method == "POST":
         form = ContactForm(request.POST)
-        msg = "Bormisan!!!"
         if form.is_valid():
             form.save()
+            name = request.POST.get("name")
+            email = str(request.POST.get("email"))
+            subject = str(request.POST.get("subject"))
+            message = str(request.POST.get("message"))
+
+            msg = f"Ism: {name}\n Email: {email}\n Subject: {subject}\n Message: {message}"
             # print(form)
             # return HttpResponse('Siz Yutgazdingiz')
-        bot(request, serialize('json', ContactMessage.objects.all(), cls=LazyEncode))
+        bot(request, msg)
         
     form = ContactForm()
 
