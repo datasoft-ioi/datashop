@@ -194,6 +194,15 @@ def all_products(request):
     }
     return render(request, 'all_prod.html', context)
 
+
+def profil(request):
+
+    context = {
+        "profil": User.objects.all()
+    }
+
+    return render(request, 'profil.html')
+
 def full_cat_products(request, id, slug):
 
     context = {

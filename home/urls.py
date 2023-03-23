@@ -10,10 +10,12 @@ urlpatterns = [
     path("alibek/", views.alibek, name="alibek_detail"),
 
     # path('categoryList/', views.category_list) ,
-
     path('all_products/', views.all_products, name='all_products'),
 
+    path('profil/', views.all_products, name='all_products'),
+
     path('category/<int:id>/<slug:slug>/', views.category_products, name="category_products")
+
 
     
 ]
