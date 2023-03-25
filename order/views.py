@@ -81,8 +81,27 @@ def shopcart(request):
     context={'shopcart': shopcart,
              'category':category,
              'total': total,
+
+             # kategoriya sidebars
+            "cat_noutbuklar": Category.objects.filter(title="Noutbuklar"),
+            "kompyuter_qurilmalari": Category.objects.filter(title="Kompyuter qurilmalari"),
+            "nb_uchun_sumka_va_ryukzaklar": Category.objects.filter(title="Noutbuk uchun sumka va ryukzaklar"),
+            "monoblok": Category.objects.filter(title="Monoblok"),
+            "proektorlar": Category.objects.filter(title="Proektorlar"),
+            "stol_usti_kompyuterlari": Category.objects.filter(title="Stol usti kompyuterlari"),
+            "monitorlar": Category.objects.filter(title="Monitorlar"),
+            "klaviatura_va_sichqoncha": Category.objects.filter(title="Klaviatura va Sichqoncha"),
+            "ofis_jihozlari": Category.objects.filter(title="Ofis jihozlari"),
+            "printerlar_va_kfmlar": Category.objects.filter(title="Printerlar va KFMlar uchun moslamalar"),
+            "tizim_uskunalari": Category.objects.filter(title="Tizim uskunalari"),
+            "monitorlar_uchun_kronshteyn ": Category.objects.filter(title="Monitorlar uchun kronshteyn va tagkursilar"),
+            "videogaolish ": Category.objects.filter(title="Videogaolish"),
+            "boshqa_aksessuarlar ": Category.objects.filter(title="Boshqa aksessuarlar"),
+
             }
     return render(request,'shopcart_products.html',context)
+
+
 
 @login_required(login_url='/login') # Check login
 def deletefromcart(request,id):
@@ -150,7 +169,7 @@ def orderproduct(request):
             ShopCart.objects.filter(user_id=current_user.id).delete() # Clear & Delete shopcart
             request.session['cart_items']=0
             messages.success(request, "Your Order has been completed. Thank you ")
-            return render(request, 'Order_Completed.html',{'ordercode':ordercode,'category': category})
+            return render(request, 'Order_Completed.html',{'ordercode':ordercode,'category': category,'total': total, 'shopcart': shopcart,})
         else:
             messages.warning(request, form.errors)
             return HttpResponseRedirect("/order/orderproduct")

@@ -53,11 +53,11 @@
                             <div class="locationKontaktInputs">
                                 <div class="locationKontaktInputs-chil">
                                     <label for="">Имя</label>
-                                    <input type="text" name="first_name" placeholder="Javlonbek">
+                                    <input type="text" name="first_name" value="{{profile.user.first_name}}">
                                 </div>
                                 <div class="locationKontaktInputs-chil">
                                     <label for="">Фамилия</label>
-                                    <input type="text" name="last_name" placeholder="Javlonbekov">
+                                    <input type="text" name="last_name" value="{{profile.user.last_name}}">
                                 </div>
                                 <div class="locationKontaktInputs-chil">
                                     <label for="">Manzil</label>
@@ -79,9 +79,9 @@
                                         <option value="">Bog'ot</option>
                                     </select>
                                 </div>
-                                <div class="locationKontaktInputs-chil"> 
-                                    <label for="">Davlat</label>
-                                    <input type="text" name="country" placeholder="davlat">
+                                <div class="locationKontaktInputs-chil" > 
+                                    <!-- <label for="">Davlat</label>
+                                    <input type="text" name="country" placeholder="davlat"> -->
                                 </div>
                                 <div class="korMainPriceBoxFooterEnd">
                                     <button type="submit">Оформить заказ</button>
@@ -117,16 +117,16 @@
                     </div>
                     <div class="ProductsOrder">
                         {% for rs in shopcart %}
-                        <div class="myorderProductMainProduct">
-                            <div class="myorderProductMainProductCon">
-                                <img src="{{ rs.product.image.url }}"alt="">
-                                <div class="myorderProductMainProductInfos">
-                                    <a href="{% url 'product_detail' rs.product.id rs.product.slug %}"><span class="myorderProductMainProductConName">{{ rs.product.title }}</span></a>
-                                    <span class="myorderProductMainProductConPrice">$568</span>
+                            <div class="myorderProductMainProduct">
+                                <div class="myorderProductMainProductCon">
+                                    <img src="{{ rs.product.image.url }}"alt="">
+                                    <div class="myorderProductMainProductInfos">
+                                        <a href="{% url 'product_detail' rs.product.id rs.product.slug %}"><span class="myorderProductMainProductConName">{{ rs.product.title }}</span></a>
+                                        <span class="myorderProductMainProductConPrice">${{rs.product.price}}</span>
+                                    </div>
                                 </div>
+                                <span class="shtuk">{{ rs.quantity }}</span>
                             </div>
-                            <span class="shtuk">{{ rs.quantity }}</span>
-                        </div>
                         {% endfor %}
                         {% comment %} <div class="myorderProductMainProduct">
                             <div class="myorderProductMainProductCon">

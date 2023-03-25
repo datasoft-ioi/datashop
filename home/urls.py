@@ -14,7 +14,10 @@ urlpatterns = [
 
     path('profil/', views.all_products, name='all_products'),
 
-    path('category/<int:id>/<slug:slug>/', views.category_products, name="category_products")
+    path('category/<int:id>/<slug:slug>/', views.category_products, name="category_products"),
+    path('saqlangan/', views.saqlanganlar, name="saqlanganlar"),
+
+    path('addtosaqlangan/<int:id>', views.addtosaqlangan, name='addtosaqlangan'),
 
 
     

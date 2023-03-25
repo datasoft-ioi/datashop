@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from order.models import ShopCart, Order, OrderProduct
+from order.models import ShopCart, Order, OrderProduct, Saqlangan
 
 
 class ShopCartAdmin(admin.ModelAdmin):
@@ -29,3 +29,4 @@ class OrderProductAdmin(admin.ModelAdmin):
 admin.site.register(ShopCart,ShopCartAdmin)
 admin.site.register(Order,OrderAdmin)
 admin.site.register(OrderProduct,OrderProductAdmin)
+admin.site.register(Saqlangan)

@@ -5,6 +5,7 @@ import json
 import random
 import requests
 
+from order.models import Saqlangan, SaqlanganForm
 
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -264,9 +265,6 @@ def category_products(request,id,slug):
     catdata = Category.objects.get(pk=id)
     category = Category.objects.filter(parent=None)
 
-    for cat in category:
-        productss = category.product_set.all()
-        return len(productss)
 
 
     cat_fil = Category.objects.filter(pk=id)
@@ -290,13 +288,28 @@ def category_products(request,id,slug):
 
     context={'products': products,
              'category':category,
-             'cat':cat,
 
              # kategoriya sidebars
             "cat_noutbuklar": Category.objects.filter(title="Noutbuklar"),
 
-             'catdata':catdata,
-             'cat_fil':cat_fil,
+            'catdata':catdata,
+            'cat_fil':cat_fil,
+
+             # kategoriya sidebars
+            "cat_noutbuklar": Category.objects.filter(title="Noutbuklar"),
+            "kompyuter_qurilmalari": Category.objects.filter(title="Kompyuter qurilmalari"),
+            "nb_uchun_sumka_va_ryukzaklar": Category.objects.filter(title="Noutbuk uchun sumka va ryukzaklar"),
+            "monoblok": Category.objects.filter(title="Monoblok"),
+            "proektorlar": Category.objects.filter(title="Proektorlar"),
+            "stol_usti_kompyuterlari": Category.objects.filter(title="Stol usti kompyuterlari"),
+            "monitorlar": Category.objects.filter(title="Monitorlar"),
+            "klaviatura_va_sichqoncha": Category.objects.filter(title="Klaviatura va Sichqoncha"),
+            "ofis_jihozlari": Category.objects.filter(title="Ofis jihozlari"),
+            "printerlar_va_kfmlar": Category.objects.filter(title="Printerlar va KFMlar uchun moslamalar"),
+            "tizim_uskunalari": Category.objects.filter(title="Tizim uskunalari"),
+            "monitorlar_uchun_kronshteyn ": Category.objects.filter(title="Monitorlar uchun kronshteyn va tagkursilar"),
+            "videogaolish ": Category.objects.filter(title="Videogaolish"),
+            "boshqa_aksessuarlar ": Category.objects.filter(title="Boshqa aksessuarlar"),
             }
     return render(request,'categoryList.html',context)
 
@@ -362,6 +375,21 @@ def product_detail(request,id,slug):
     context = {'product': product,'category': category,
                'images': images, 'comments': comments,
                'futers': futers,
+                # kategoriya sidebars
+                "cat_noutbuklar": Category.objects.filter(title="Noutbuklar"),
+                "kompyuter_qurilmalari": Category.objects.filter(title="Kompyuter qurilmalari"),
+                "nb_uchun_sumka_va_ryukzaklar": Category.objects.filter(title="Noutbuk uchun sumka va ryukzaklar"),
+                "monoblok": Category.objects.filter(title="Monoblok"),
+                "proektorlar": Category.objects.filter(title="Proektorlar"),
+                "stol_usti_kompyuterlari": Category.objects.filter(title="Stol usti kompyuterlari"),
+                "monitorlar": Category.objects.filter(title="Monitorlar"),
+                "klaviatura_va_sichqoncha": Category.objects.filter(title="Klaviatura va Sichqoncha"),
+                "ofis_jihozlari": Category.objects.filter(title="Ofis jihozlari"),
+                "printerlar_va_kfmlar": Category.objects.filter(title="Printerlar va KFMlar uchun moslamalar"),
+                "tizim_uskunalari": Category.objects.filter(title="Tizim uskunalari"),
+                "monitorlar_uchun_kronshteyn ": Category.objects.filter(title="Monitorlar uchun kronshteyn va tagkursilar"),
+                "videogaolish ": Category.objects.filter(title="Videogaolish"),
+                "boshqa_aksessuarlar ": Category.objects.filter(title="Boshqa aksessuarlar"),
                }
     if product.variant !="None": # Product have variants
         if request.method == 'POST': #if we select color
@@ -379,6 +407,7 @@ def product_detail(request,id,slug):
                         'variant': variant,'query': query,
                         })
     return render(request,'productdtl.html',context)
+
 
 def ajaxcolor(request):
     data = {}
@@ -429,8 +458,91 @@ def savelangcur(request):
     data.save()  # save data
     return HttpResponseRedirect(lasturl)
 
-# Create your views here.
+@login_required(login_url='/login')
+def addtosaqlangan(request, id):
+    url = request.META.get('HTTP_REFERER')  # get last url
+    current_user = request.user  # Access User Session information
+    product= Product.objects.get(pk=id)
+
+    if product.variant != 'None':
+        variantid = request.POST.get('variantid')  # from variant add to cart
+        checkinvariant = Saqlangan.objects.filter(variant_id=variantid, user_id=current_user.id)  # Check product in shopcart
+        if checkinvariant:
+            control = 1 # The product is in the cart
+        else:
+            control = 1 # The product is not in the cart"""
+    else:
+        checkinproduct = Saqlangan.objects.filter(product_id=id, user_id=current_user.id) # Check product in shopcart
+        if checkinproduct:
+            control = 1 
+        else:
+            control = 1 # The product is not in the cart"""
+
+    if request.method == 'POST':  # if there is a post
+        form = SaqlanganForm(request.POST)
+        if form.is_valid():
+            if control==1: # Update  shopcart
+                if product.variant == 'None':
+                    data = Saqlangan.objects.get(product_id=id, user_id=current_user.id)
+                else:
+                    data = Saqlangan.objects.get(product_id=id, user_id=current_user.id)
+                data.save()  # save data
+            else : # Inser to Shopcart
+                data = Saqlangan()
+                data.user_id = current_user.id
+                data.product_id =id
+                # data.variant_id = variantid
+                data.quantity = form.cleaned_data['quantity']
+                data.save()
+        messages.success(request, "Maxsulot Saqlandii ")
+        return HttpResponseRedirect(url)
+
+    # else: # if there is no post
+    #     if control == 1:  # Update  shopcart
+    #         data = Saqlangan.objects.get(product_id=id, user_id=current_user.id)
+    #         data.quantity += 1
+    #         data.save()  #
+    #     else:  #  Inser to Shopcart
+    #         data = Saqlangan()  # model ile bağlantı kur
+    #         data.user_id = current_user.id
+    #         data.product_id = id
+    #         data.quantity = 1
+    #         data.variant_id =None
+    #         data.save()  #
+    #     messages.success(request, "Maxsulot Saqlandi")
+    #     return HttpResponseRedirect(url)
 
 
+    
 
+def saqlanganlar(request):
+    category = Category.objects.filter(parent=None)
+    current_user = request.user
+    saqlangan = Saqlangan.objects.filter(user_id=current_user.id)
+    
+    
+    context = {
+
+        "category": category,
+        "saqlangan": saqlangan,
+
+        # kategoriya sidebars
+        "cat_noutbuklar": Category.objects.filter(title="Noutbuklar"),
+        "kompyuter_qurilmalari": Category.objects.filter(title="Kompyuter qurilmalari"),
+        "nb_uchun_sumka_va_ryukzaklar": Category.objects.filter(title="Noutbuk uchun sumka va ryukzaklar"),
+        "monoblok": Category.objects.filter(title="Monoblok"),
+        "proektorlar": Category.objects.filter(title="Proektorlar"),
+        "stol_usti_kompyuterlari": Category.objects.filter(title="Stol usti kompyuterlari"),
+        "monitorlar": Category.objects.filter(title="Monitorlar"),
+        "klaviatura_va_sichqoncha": Category.objects.filter(title="Klaviatura va Sichqoncha"),
+        "ofis_jihozlari": Category.objects.filter(title="Ofis jihozlari"),
+        "printerlar_va_kfmlar": Category.objects.filter(title="Printerlar va KFMlar uchun moslamalar"),
+        "tizim_uskunalari": Category.objects.filter(title="Tizim uskunalari"),
+        "monitorlar_uchun_kronshteyn ": Category.objects.filter(title="Monitorlar uchun kronshteyn va tagkursilar"),
+        "videogaolish ": Category.objects.filter(title="Videogaolish"),
+        "boshqa_aksessuarlar ": Category.objects.filter(title="Boshqa aksessuarlar"),
+
+    }
+
+    return render(request, 'saqlanganlar.html', context)
 

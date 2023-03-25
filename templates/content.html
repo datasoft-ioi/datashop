@@ -18,10 +18,13 @@
             {% for prod in cat_by_noutbuk %}
             {% comment %} {% for chill in prod.children.all %} {% endcomment %}
             <div class="product">
-                <div class="productHeader">
-                    <span class="new">yangi</span>
-                    <i class="fa-regular fa-heart"></i>
-                </div>
+                <form action="/addtosaqlangan/{{prod.id}}" method="post">
+                    {% csrf_token %}
+                    <div class="productHeader">
+                        <span class="new">yangi</span>
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                </form>
                 <div class="productImg">
                     {% if prod.image %}
                     <a href="{% url 'product_detail' prod.id prod.slug%}">

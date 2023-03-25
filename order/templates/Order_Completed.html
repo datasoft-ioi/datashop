@@ -5,7 +5,7 @@
 
 {% block content %}
 
-    <!-- BREADCRUMB -->
+    {% comment %} <!-- BREADCRUMB -->
     <div id="breadcrumb">
         <div class="container">
             <ul class="breadcrumb">
@@ -45,6 +45,76 @@
         </div>
         <!-- /container -->
     </div>
-    <!-- /section -->
+    <!-- /section --> {% endcomment %}
+
+        <!-- My Order Products -->
+
+
+        <div class="myOrderProduct">
+            <ul class="links">
+                <li>Главная</li>
+            </ul>
+            <div class="myOrderProductMain">
+                <div class="myOrderProductMainHeader">
+                    <div class="myOrderProductMainKodData">
+                        <span class="myOrderProductMainKodDataChil1">Код заказа: {{ ordercode }}</span>
+                        <span class="myOrderProductMainKodDataChil2">Дата: 26-10-2022</span>
+                    </div>
+                    <div class="myOrderProductMainStatus">
+                        <span class="myOrderProductMainStatusChil1">Статус</span>
+                        <span class="myOrderProductMainStatusChil2">Доставлено</span>
+                    </div>
+                </div>
+                <div class="myOrderProductMainProducts">
+                    <div class="myOrderProductMainProduct">
+                        <div class="myOrderProductMainProductHeader">
+                            <span>Товар</span>
+                            <span>Штук</span>
+                        </div>
+                        <div class="ProductsOrder">
+                            {% for sp in shopcart %}
+                                <div class="myorderProductMainProduct">
+                                    <div class="myorderProductMainProductCon">
+                                        <img src="{{sp.product.image.url}}"alt="">
+                                        <div class="myorderProductMainProductInfos">
+                                            <span class="myorderProductMainProductConName">{{sp.product.title}}</span>
+                                            <span class="myorderProductMainProductConPrice">${{sp.product.price}}</span>
+                                        </div>
+                                    </div>
+                                    <span class="shtuk">{{sp.quantity}}</span>
+                                </div>
+                            {% endfor %}
+                            
+                        </div>
+                    </div>
+                    <div class="myOrderProductMainProductInfo">
+                        <span class="myOrderProductMainProductInfoTitle">Детальная информация</span>
+                        <div class="myOrderProductMainProductInfoBox">
+                            <ul>
+                                <li>
+                                    <span class="myOrderProductMainProductInfoBoxChil1">Адрес доставки:</span>
+                                    <span class="myOrderProductMainProductInfoBoxChil2">Хорезм . Ургенч . A.Bahodirxon72-uy</span>
+                                </li>
+                                {% comment %} <li>
+                                    <span class="myOrderProductMainProductInfoBoxChil1">Когда доставлено:</span>
+                                    <span class="myOrderProductMainProductInfoBoxChil2">30-10-2022</span>
+                                </li>
+                                <li>
+                                    <span class="myOrderProductMainProductInfoBoxChil1">Тип доставки:</span>
+                                    <span class="myOrderProductMainProductInfoBoxChil2">Бесплатная</span>
+                                </li>
+                                <li>
+                                    <span class="myOrderProductMainProductInfoBoxChil1">Тип оплаты:</span>
+                                    <span class="myOrderProductMainProductInfoBoxChil2">**** **** **** 9123</span> {% endcomment %}
+                                </li>
+                            </ul>
+                            <div class="myOrderProductMainProductInfoBoxPrice">
+                                <span>Итого:</span><span>${{ total }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 {% endblock %}

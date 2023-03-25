@@ -141,3 +141,5 @@ class Contact(models.Model):
     subject = models.CharField(max_length=255)
     email = models.EmailField()
     message = models.CharField(max_length=255)
+
+
