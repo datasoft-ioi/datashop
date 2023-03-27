@@ -181,7 +181,7 @@ def index(request):
         
             #Desktop contents
             "cat_by_noutbuk": Product.objects.filter(category__title="Noutbuklar").order_by('-id')[:10],
-            "cat_by_aksesuar": Product.objects.filter(category__parent=(36)).order_by('-id')[:10],
+            "cat_by_aksesuar": Product.objects.filter(category__parent=(36)).order_by('?')[:10],
             "cat_by_monitor": Product.objects.filter(category__title="Monitorlar").order_by('-id')[:10],
 
 
@@ -265,7 +265,7 @@ def category_products(request,id,slug):
     catdata = Category.objects.get(pk=id)
     category = Category.objects.filter(parent=None)
 
-
+    random_prod = Product.objects.filter(category__parent=id).order_by('?')[:3]
 
     cat_fil = Category.objects.filter(pk=id)
     products = Product.objects.all() 
@@ -288,6 +288,7 @@ def category_products(request,id,slug):
 
     context={'products': products,
              'category':category,
+             'random_prod':random_prod,
 
              # kategoriya sidebars
             "cat_noutbuklar": Category.objects.filter(title="Noutbuklar"),

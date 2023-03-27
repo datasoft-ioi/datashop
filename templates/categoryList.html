@@ -17,9 +17,9 @@
             <span class="categoryListHeaderTitle-chil2">{{catdata.count}} maxsulot</span>
         </div>
         <div class="categoryListHeaderRandomBtns">
-            <button>HP Victus 15</button>
-            <button>Asus TUF 4R</button>
-            <button>Asus TUF 4R</button>
+            {% for rm in random_prod %}
+            <button>{{ rm.title }}</button>
+            {% endfor %}
         </div>
 
     </div>
