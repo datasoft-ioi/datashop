@@ -16,8 +16,10 @@ urlpatterns = [
 
     path('category/<int:id>/<slug:slug>/', views.category_products, name="category_products"),
     path('saqlangan/', views.saqlanganlar, name="saqlanganlar"),
+    path('myorders/', views.myorders, name="myorders"),
 
     path('addtosaqlangan/<int:id>', views.addtosaqlangan, name='addtosaqlangan'),
+
 
 
     

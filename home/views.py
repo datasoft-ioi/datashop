@@ -5,7 +5,7 @@ import json
 import random
 import requests
 
-from order.models import Saqlangan, SaqlanganForm
+from order.models import Order, Saqlangan, SaqlanganForm
 
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -53,9 +53,13 @@ class LazyEncode(DjangoJSONEncoder):
         return super().default(obj)
 
 
-def bot(request, msg, chat_id=my_chat_id, token=my_token):
+def bot(request, msg, img=None, chat_id=my_chat_id, token=my_token):
     bot=telegram.Bot(token=token)
-    bot.sendMessage(chat_id=chat_id, text=msg)
+
+    if img is not None:
+        bot.sendPhoto(chat_id=chat_id, photo=img, caption=msg)
+    else:
+        bot.sendMessage(chat_id=chat_id, text=msg)
 
 
 def alibek(request):
@@ -72,7 +76,7 @@ def alibek(request):
             msg = f"Ism: {name}\n Email: {email}\n Subject: {subject}\n Message: {message}"
             # print(form)
             # return HttpResponse('Siz Yutgazdingiz')
-        bot(request, msg)
+        bot(request, msg=msg)
         
     form = ContactForm()
 
@@ -100,7 +104,7 @@ def index(request):
     if request.user.is_anonymous:
         bot(request, str(get_client_ip(request)))
     else:
-        bot(request, serialize('json', User.objects.filter(username=request.user), cls=LazyEncode))
+        bot(request, msg=serialize('json', User.objects.filter(username=request.user), cls=LazyEncode))
     category = Category.objects.filter(parent=None)
 
     setting = Setting.objects.get(pk=1)
@@ -520,12 +524,13 @@ def saqlanganlar(request):
     category = Category.objects.filter(parent=None)
     current_user = request.user
     saqlangan = Saqlangan.objects.filter(user_id=current_user.id)
-    
+    count_sq = Saqlangan.objects.filter(user_id=current_user.id).count()
     
     context = {
 
         "category": category,
         "saqlangan": saqlangan,
+        "count_sq": count_sq,
 
         # kategoriya sidebars
         "cat_noutbuklar": Category.objects.filter(title="Noutbuklar"),
@@ -547,3 +552,13 @@ def saqlanganlar(request):
 
     return render(request, 'saqlanganlar.html', context)
 
+
+def myorders(request):
+
+    order = Order.objects.all()
+    
+    context = {
+        "order": order,
+    }
+
+    return render(request, 'myorders.html', context)

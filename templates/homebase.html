@@ -72,10 +72,12 @@
                     <span>Asosiy</span>
                 </li>
             </a>
-            <li>
-                <img src="{% static 'media/star.svg' %}" alt="">
-                <span>Tanlangan</span>
-            </li>
+            <a href="{% url 'saqlanganlar' %}">
+                <li>
+                    <img src="{% static 'media/star.svg' %}" alt="">
+                    <span>Tanlangan</span>
+                </li>
+            </a>
             <a href="{% url 'shopcart' %}">
                 {% load myapptags %}
                 {% shopcartcount user.id as count %}

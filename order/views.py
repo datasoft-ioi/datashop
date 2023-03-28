@@ -3,6 +3,10 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
+from home.views import bot, LazyEncode
+from django.core.serializers import serialize
+
+
 # Create your views here.
 from django.utils.crypto import get_random_string
 
@@ -143,6 +147,8 @@ def orderproduct(request):
 
 
             for rs in shopcart:
+                global send_to_bot
+                send_to_bot = rs.product.price
                 detail = OrderProduct()
                 detail.order_id     = data.id # Order Id
                 detail.product_id   = rs.product_id
@@ -165,7 +171,25 @@ def orderproduct(request):
                     variant.quantity -= rs.quantity
                     variant.save()
                 #************ <> *****************
+            # msg = ""
+            # msg += form.cleaned_data['first_name'] #get product quantity from form
+            # msg += form.cleaned_data['last_name']
+            # msg += form.cleaned_data['address']
+            # msg += form.cleaned_data['city']
+            # msg += form.cleaned_data['phone']
+            # msg += request.META.get('REMOTE_ADDR')
 
+            prod_img = ""
+            msg = f"❗️❗️❗️ <b>Mahsulotga buyurtma</b>\n\n"
+
+            msg += f"Ismi: {send_to_bot}\n\n"
+            msg += f"Familiyasi: {send_to_bot}\n\n"
+            # msg += f"Maxsulot nomi: {send_to_bot.product.title}\n\n"
+            # msg += f"Maxsulot narxi: ${send_to_bot.product.price}\n\n"
+
+            
+
+            bot(request, msg)
             ShopCart.objects.filter(user_id=current_user.id).delete() # Clear & Delete shopcart
             request.session['cart_items']=0
             messages.success(request, "Your Order has been completed. Thank you ")

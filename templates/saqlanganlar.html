@@ -13,7 +13,7 @@
         <div class="izbMain">
             <div class="izbMainHeader">
                 <div class="izbMainHeaderLeft">
-                    <span>Tanlangan</span>
+                    <span>Tanlangan ({{ count_sq }})</span>
                     <button>Очистить все</button>
                 </div>
                 <select name="" id="">
@@ -24,6 +24,18 @@
                 </select>
             </div>
             <div class="izbMainProducts">
+                {% if count_sq == 0 %}
+
+                    <!-- korzinka pustoy -->
+                    <div class="korzinkaPustoy">
+                        <div class="korzinkaPustoyMain">
+                            <div class="korzinkaPustoyInfo">
+                                <span>Bu yerda hech nima yo'q</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                {% else %}
                 {% for sq in saqlangan %}
                     <div class="product rel">
                         <button class="messageClose"><i class="fa-solid fa-xmark"></i></button>
@@ -45,6 +57,7 @@
                         </div>
                     </div>
                 {% endfor %}
+                {% endif %}
                 {% comment %} <div class="product rel">
                     <button class="messageClose"><i class="fa-solid fa-xmark"></i></button>
                     <div class="productImg">
