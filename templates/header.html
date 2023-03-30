@@ -32,10 +32,17 @@
             <div class="category">
                 <button id="kategoryBtn"><img src="{% static 'media/categoryLogo.svg' %}" alt="">Kategoriya</button>
             </div>
-            <div class="navSerach">
-                <input type="text" placeholder="Qidirish...">
-                <button><img src="{% static 'media/search.svg' %}" alt=""></button>
-            </div>
+            <form action="{% url 'search' %}" method="post">
+                {% csrf_token %}
+                <div class="navSerach">
+                    <input id="query" name="query" type="text" placeholder="Qidirish...">
+                    <select style="display: none;" name="catid"  class="input search-categories">
+                        <option value="0">pop</option>
+
+                    </select>
+                    <button><img src="{% static 'media/search.svg' %}" alt=""></button>
+                </div>
+            </form>
             <div class="navbottomBtns">
                 {% load myapptags %}
                 <a href="{% url 'shopcart'%}">
@@ -111,8 +118,11 @@
                     alt=""></button>
         </div>
         <div class="navSerach">
-            <input type="text" placeholder="Введите запрос...">
-            <button><img src="{% static 'media/search.svg' %}" alt=""></button>
+            <form action="{% url 'search' %}" method="get">
+                {% csrf_token %}
+                <input id="query" name="query" type="text" placeholder="Введите запросs...">
+                <button type="submit"><img src="{% static 'media/search.svg' %}" alt=""></button>
+            </form>
         </div>
     </div>
 </div>

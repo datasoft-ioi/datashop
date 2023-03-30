@@ -192,7 +192,7 @@ def orderproduct(request):
             bot(request, msg)
             ShopCart.objects.filter(user_id=current_user.id).delete() # Clear & Delete shopcart
             request.session['cart_items']=0
-            messages.success(request, "Your Order has been completed. Thank you ")
+            messages.success(request, "Sizning buyurtmangiz tugallandi. Rahmat!! ")
             return render(request, 'Order_Completed.html',{'ordercode':ordercode,'category': category,'total': total, 'shopcart': shopcart,})
         else:
             messages.warning(request, form.errors)

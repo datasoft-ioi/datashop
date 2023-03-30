@@ -318,6 +318,7 @@ def category_products(request,id,slug):
             }
     return render(request,'categoryList.html',context)
 
+
 def search(request):
     if request.method == 'POST': # check post
         form = SearchForm(request.POST)
@@ -327,7 +328,7 @@ def search(request):
             if catid==0:
                 products=Product.objects.filter(title__icontains=query)  #SELECT * FROM product WHERE title LIKE '%query%'
             else:
-                products = Product.objects.filter(title__icontains=query,category_id=catid)
+                products = Product.objects.filter(title__icontains=query, category_id=catid) # category_id=catid
 
             category = Category.objects.all()
             context = {'products': products, 'query':query,
@@ -335,6 +336,19 @@ def search(request):
             return render(request, 'search_products.html', context)
 
     return HttpResponseRedirect('/')
+
+# def search(request):
+#     results = []
+
+#     if request.method == "GET":
+#         query = request.GET.get('search')
+
+#         if query == '':
+#             query = 'None'
+
+#         results = Product.objects.filter(Q(title__icontains=query) | Q(price__icontains=query) )
+
+#     return render(request, 'search_products.html', {'query': query, 'results': results})
 
 def search_auto(request):
     if request.is_ajax():

@@ -36,6 +36,7 @@ urlpatterns = [
     path('user/', include('user.urls'), name='user'),
 
     path('shopcart/', OrderViews.shopcart, name='shopcart'),
+    path('search/', views.search, name='search'),
 
     path('login/', UserViews.login_form, name='login'),
     path('logout/', UserViews.logout_func, name='logout'),

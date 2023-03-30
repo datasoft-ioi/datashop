@@ -84,10 +84,17 @@
                         <span class="korMainPriceBoxFooterDastafka-chil1">Yetkazib berish:</span>
                         <span class="korMainPriceBoxFooterDastafka-chil2">None</span>
                     </div>
-                    <div class="korMainPriceBoxFooterEnd">
-                        <a href="{% url 'orderproduct' %}"><button>Оформить заказ</button></a>
-                        <span>Нажимая 'Оформить заказ', я соглашаюсь с публичным договором оферты</span>
-                    </div>
+                    {% if count != 0 %}
+                        <div class="korMainPriceBoxFooterEnd">
+                            <a href="{% url 'orderproduct' %}"><button>Оформить заказ</button></a>
+                            <span>Нажимая 'Оформить заказ', я соглашаюсь с публичным договором оферты</span>
+                        </div>
+                    {% else %}
+                        <div class="korMainPriceBoxFooterEnd">
+                            <button>[Alibek]: Seriy rang chiqishi garak </button>
+                            <span>Нажимая 'Оформить заказ', я соглашаюсь с публичным договором оферты</span>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
