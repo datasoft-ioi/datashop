@@ -90,7 +90,7 @@ class Order(models.Model):
 class OrderForm(ModelForm):
     class Meta:
         model = Order
-        fields = ['first_name','last_name','address','phone','city','country']
+        fields = ['first_name','last_name','address','phone','city']
 
 class OrderProduct(models.Model):
     STATUS = (

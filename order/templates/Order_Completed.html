@@ -93,7 +93,9 @@
                             <ul>
                                 <li>
                                     <span class="myOrderProductMainProductInfoBoxChil1">Адрес доставки:</span>
-                                    <span class="myOrderProductMainProductInfoBoxChil2">Хорезм . Ургенч . A.Bahodirxon72-uy</span>
+                                    {% for or in order_info %}
+                                        <span class="myOrderProductMainProductInfoBoxChil2">{{ or.city }}, {{or.address}}</span>
+                                    {% endfor %}
                                 </li>
                                 {% comment %} <li>
                                     <span class="myOrderProductMainProductInfoBoxChil1">Когда доставлено:</span>

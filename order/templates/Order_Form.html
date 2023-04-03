@@ -4,7 +4,7 @@
 {% block content %}
 
 
-    <div class="oreder">
+    {% comment %} <div class="oreder">
         <ul class="links">
             <li>Главная</li>
         </ul>
@@ -95,7 +95,115 @@
             </form>
 
         </div>
-    </div>
+    </div> {% endcomment %}
+
+        <!-- oreder  -->
+
+        <div class="oreder">
+            <ul class="links">
+                <li>Главная</li>
+            </ul>
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="orederMain">
+                    <div class="orderMainLeft">
+                        {% comment %} <div class="location">
+                            <span class="locationHeader">1. Как вы хотите получить заказ?</span>
+                            <div class="locationBtns">
+                                <button><img src="../media/dastafka1.svg" alt=""><span>Самовызов</span></button>
+                                <button><img src="../media/dastafka2.svg" alt=""><span>Доставка</span></button>
+                            </div>
+                        </div> {% endcomment %}
+                        <div class="locationSelects">
+                            <span class="locationHeader">1. Укажите адрес доставки</span>
+                            <div class="selects">
+                                <div class="oblas">
+                                    <label for="">Область</label>
+                                    <select name="Выберите область" id="">
+                                        <option value="">Xorazm</option>
+                                    </select>
+                                </div>
+                                <div class="oblas">
+                                    <label for="">Город</label>
+                                    <select name="city" name="Выберите город" id="">
+                                        <option value="">Urganch</option>
+                                        <option value="">Xiva</option>
+                                        <option value="">Shovot</option>
+                                        <option value="">Yangiariq</option>
+                                        <option value="">Gurlan</option>
+                                        <option value="">Hozarasp</option>
+                                        <option value="">Bog'ot</option>
+                                    </select>
+                                </div>
+                                <div class="oblas">
+                                    <label for="">Полный адрес</label>
+                                    <input name="address" type="text" placeholder="Введите полный адрес">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="selectPay">
+                            {% comment %} <span class="locationHeader">3. Выберите способ оплаты</span>
+                            <div class="selectPayBtns">
+                                <span><button class="payClick" ><img src="../media/click.png" alt=""></button></span>
+                                <span><button class="payPayme" ><img src="../media/payme.png" alt=""></button></span>
+                                <span><button class="payNaxt">Наличными</button></span>
+                            </div> {% endcomment %}
+                        </div>
+                        <div class="locationKontakt">
+                            <span class="locationHeader">2. Контактное имя</span>
+                            <div class="locationKontaktInputs">
+                                <div class="locationKontaktInputs-chil">
+                                    <label  for="">Имя</label>
+                                    <input name="first_name" type="text" placeholder="Javlonbek">
+                                </div>
+                                <div class="locationKontaktInputs-chil">
+                                    <label for="">Фамилия</label>
+                                    <input name="last_name" type="text" placeholder="Javlonbekov">
+                                </div>
+                                <div class="locationKontaktInputs-chil">
+                                    <label for="">Телефон</label>
+                                    <input name="phone" type="text" placeholder="+998904299019">
+                                </div>
+                                <div class="locationKontaktInputs-chil"> 
+                                    <label for="">Дополнительный тел</label>
+                                    <input type="text" placeholder="+998904299019">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="korMainPriceBox">
+                        <div class="korMainPriceBoxTite">
+                            <span class="korMainPriceBoxTiteInfo">Итого:</span>
+                            <span class="korMainPriceBoxTitePrice">$766</span>
+                        </div>
+                        <ul class="korMainPriceBoxPriceInfo">
+                            <li>
+                                <span class="korMainPriceBoxPriceInfoName">Промокод:</span>
+                                <span class="korMainPriceBoxPriceInfoPrice">0 сум</span>
+                            </li>
+                            <li>
+                                <span class="korMainPriceBoxPriceInfoName">Сумма доставки:</span>
+                                <span class="korMainPriceBoxPriceInfoPrice">0 сум</span>
+                            </li>
+                            <li>
+                                <span class="korMainPriceBoxPriceInfoName">Сумма товара:</span>
+                                <span class="korMainPriceBoxPriceInfoPrice">0 сум</span>
+                            </li>
+                        </ul>
+                        <div class="korMainPriceBoxFooter">
+                            <div class="korMainPriceBoxFooterDastafka">
+                                <span class="korMainPriceBoxFooterDastafka-chil1">Доставка:</span>
+                                <span class="korMainPriceBoxFooterDastafka-chil2">Курьером</span>
+                            </div>
+                            <div class="korMainPriceBoxFooterEnd">
+                                <button type="submit">Оформить заказ</button>
+                                <span>Нажимая 'Оформить заказ', я соглашаюсь с публичным договором оферты</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
 
     <div class="myOrderProduct">
         <div class="myOrderProductMain">

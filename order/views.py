@@ -127,6 +127,7 @@ def orderproduct(request):
 
     if request.method == 'POST':  # if there is a post
         form = OrderForm(request.POST)
+        order_info = Order.objects.filter(user_id=current_user.id).order_by("-id")[:1]
         #return HttpResponse(request.POST.items())
         if form.is_valid():
             # Send Credit card to bank,  If the bank responds ok, continue, if not, show the error
@@ -193,7 +194,7 @@ def orderproduct(request):
             ShopCart.objects.filter(user_id=current_user.id).delete() # Clear & Delete shopcart
             request.session['cart_items']=0
             messages.success(request, "Sizning buyurtmangiz tugallandi. Rahmat!! ")
-            return render(request, 'Order_Completed.html',{'ordercode':ordercode,'category': category,'total': total, 'shopcart': shopcart,})
+            return render(request, 'Order_Completed.html',{'ordercode':ordercode,'category': category,'total': total, 'order_info':order_info, 'shopcart': shopcart,})
         else:
             messages.warning(request, form.errors)
             return HttpResponseRedirect("/order/orderproduct")
