@@ -38,6 +38,8 @@ urlpatterns = [
     path('shopcart/', OrderViews.shopcart, name='shopcart'),
     path('search/', views.search, name='search'),
 
+    path('load-more-products/', views.load_more_products, name='load_more_products'),
+
     path('login/', UserViews.login_form, name='login'),
     path('logout/', UserViews.logout_func, name='logout'),
     path('signup/', UserViews.signup_form, name='signup'),

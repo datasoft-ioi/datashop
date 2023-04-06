@@ -46,6 +46,13 @@ my_chat_id = settings.BOT_CHAT_ID
 message = "Nagap!"
 
 
+def load_more_products(request):
+    page = request.GET.get('page')
+    products = Product.objects.all()[page*10:(page+1)*10] # get 10 products per page
+    html = render_to_string('index.html', {'products': products})
+    return JsonResponse(html, safe=False)
+
+
 class LazyEncode(DjangoJSONEncoder):
     def default(self, obj):
         if isinstance(obj, dict):
@@ -99,6 +106,7 @@ def index(request):
     #     pass
 
     form = ContactForm()
+    page = request.GET.get('page')
 
 
     if request.user.is_anonymous:

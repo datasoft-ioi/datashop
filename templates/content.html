@@ -93,9 +93,7 @@
                 </div>
                 <div class="productBottomInfo">
                     <a href="{% url 'product_detail' mon.id mon.slug %}">
-                        <span class="productTitle">
-                            {{mon.title | truncatewords:5}}
-                        </span>
+                        <span class="productTitle">{{mon.title | truncatewords:5}}</span>
                     </a>
                     <div class="productStar">
                         <i class="fa-solid fa-star"></i>
@@ -108,7 +106,6 @@
                 </div>
             </div>
             {% endfor %}
-
         </div>
     </div>
 
@@ -243,32 +240,33 @@
         <p class="ok">Ok</p>
     </div>
 
-<form method="post">
-    {% csrf_token %}
-    <div class="mainChat">
-        <div class="chatHeader">
-            <div class="chataLogo">
-                <p class="chatHeaderTitle">Qo'llab quvvatlash markazi</p>
-                <img src="{% static 'media/datashoplogo.png' %}" alt="" class="logoChatt" >
+    <form method="post">
+        {% csrf_token %}
+        <div class="mainChat">
+            <div class="chatHeader">
+                <div class="chataLogo">
+                    <p class="chatHeaderTitle">Qo'llab quvvatlash markazi</p>
+                    <img src="{% static 'media/datashoplogo.png' %}" alt="" class="logoChatt">
+                </div>
+                <i class="fa-solid fa-xmark"></i>
             </div>
-            <i class="fa-solid fa-xmark"></i>
-        </div>
-        <div class="chatTextInfo">
-            <div class="divr">
-                <span class="chatAdmin">Salom</span>
+            <div class="chatTextInfo">
+                <div class="divr">
+                    <span class="chatAdmin">Salom</span>
+                </div>
+
+                <div class="divs">
+                    <span
+                        class="chatUser">Azdfbhxhfgnbxfgcbnvgfzjedrhkxfgejfrdhgxkjhdrgfxhkdgxfcgbxcfgnbxfchfryhdrtyhdrthjrddrtyjhftyjlik</span>
+                </div>
             </div>
-            
-            <div class="divs">
-                <span class="chatUser">Azdfbhxhfgnbxfgcbnvgfzjedrhkxfgejfrdhgxkjhdrgfxhkdgxfcgbxcfgnbxfchfryhdrtyhdrthjrddrtyjhftyjlik</span>
+            <div class="chatTextGroup">
+                <input placeholder="Send Messanga" type="text" class="chatTextSend">
+                <i class="fa-solid fa-paper-plane"></i>
             </div>
+
         </div>
-        <div class="chatTextGroup">
-            <input placeholder="Send Messanga" type="text" class="chatTextSend">
-            <i class="fa-solid fa-paper-plane"></i>
-        </div>
-        
-    </div>
-</form>
+    </form>
 
 
     <div class="ChatBtn">
@@ -302,9 +300,9 @@
     const chatBtn = document.querySelector('.ChatBtn')
     const chat = document.querySelector('.mainChat')
     const logo = document.querySelector('.logoChatt')
-    const chatTitle= document.querySelector('.chatHeaderTitle')
-    const user= document.querySelector('.chatUser')
-    const admin= document.querySelector('.chatAdmin')
+    const chatTitle = document.querySelector('.chatHeaderTitle')
+    const user = document.querySelector('.chatUser')
+    const admin = document.querySelector('.chatAdmin')
 
     ok.onclick = () => {
         fix.classList.add('trans')
@@ -321,7 +319,7 @@
 
     let add = true
 
-     chatBtn.onclick = () => {
+    chatBtn.onclick = () => {
         logo.style.display = 'flex'
         chatTitle.style.display = 'flex'
         chat.classList.toggle('miniChat')
@@ -337,20 +335,21 @@
         // }
         setTimeout(() => {
             user.style.display = 'block'
-         admin.style.display = 'block'
+            admin.style.display = 'block'
         }, 400)
         chatBtn.style.display = 'none'
-     }
+    }
 
-     x.onclick = () => {
-         chat.classList.remove('miniChat')
-         logo.style.display = 'none'
-         chatTitle.style.display = 'none'
-         user.style.display = 'none'
-         admin.style.display = 'none'
+    x.onclick = () => {
+        chat.classList.remove('miniChat')
+        logo.style.display = 'none'
+        chatTitle.style.display = 'none'
+        user.style.display = 'none'
+        admin.style.display = 'none'
 
         setTimeout(() => {
             chatBtn.style.display = 'flex'
         }, 300)
-     }
+    }
+
 </script>
