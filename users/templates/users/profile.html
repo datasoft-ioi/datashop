@@ -1,0 +1,96 @@
+{% extends 'products/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <!-- prsonal info -->
+    <div class="personInfo">
+        <ul class="links">
+            <li>Главная</li>
+        </ul>
+        <div class="personInfoMain">
+            <div class="myProfilBox">
+                <a href=""><img src="{% static 'media/profilIcons/profilRedOrder.svg' %}" alt=""><span style="color: #E81D1C;">Персональные данные</span></a>
+                <a href=""><img src="{% static 'media/profilIcons/moyZakazOrder.svg' %}" alt=""><span>Мои заказы</span></a>
+                <a href=""><img src="{% static 'media/profilIcons/bellOrder.svg' %}" alt=""><span>Уведомления</span></a>
+            </div>
+            <form action="{% url 'users:profile' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+            <div class="personalInfos">
+                <div class="personalInfosChil1">
+                    <img width='100' src="{% if user.image %}{{user.image.url}} {% else %} {% static 'media/datashoplogo.png' %}{% endif %}">
+                    <span class="personalInfosChil1Title">Информация о пользователе</span>
+                    <div class="personalInfosChil1In">
+                        <div class="personalInfosChil1InChil">
+                            <label for="">Телефон номер</label>
+                            {{form.phone}}
+                        </div>
+                        <div class="personalInfosChil1InChil">
+                            <label for="">Имя</label>
+                            {{form.first_name}}
+                        </div>
+                        <div class="personalInfosChil1InChil">
+                            <label for="">Фамилия</label>
+                            {{form.last_name}}
+                        </div>
+                        <div class="personalInfosChil1InChil">
+                            <label for="">Username:</label>
+                            {{form.username}}
+                        </div>
+                        <div class="personalInfosChil1InChil">
+                            <label for="">Rasm Yuklash</label>
+                            {{form.image}}
+                        </div>
+                    </div>
+                </div>
+                <div class="personalInfosChil1">
+                    <span class="personalInfosChil1Title">Информация об учетной записи пользователя</span>
+                    <div class="personalInfosChil1In">
+                        <div class="personalInfosChil1InChil">
+                            <label for="">Email</label>
+                            {{form.email}}
+                        </div>
+                        <div class="personalInfosChil1InChil">
+                            <label for="">Пароль</label>
+                            <input type="password" placeholder="*********">
+                        </div>
+                        <div class="personalInfosChil1InChil">
+                            <label for="">Подтвержедение Пароля</label>
+                            <input type="password" placeholder="*********">
+                        </div>
+                    </div>
+                </div>
+                <div class="personalInfosChil1">
+                    <span class="personalInfosChil1Title">Адрес доставки</span>
+                    <div class="personalInfosChil1In">
+                        <div class="personalInfosChil1InChil">
+                            <label for="">Область</label>
+                            <select name="" id="">
+                                <option value="">Xorazm</option>
+                            </select>
+                        </div>
+                        <div class="personalInfosChil1InChil">
+                            <label for="">Город</label>
+                            <select name="" id="">
+                                <option value="">Urganch</option>
+                                <option value="">Xiva</option>
+                                <option value="">Shovot</option>
+                                <option value="">Yangiariq</option>
+                                <option value="">Gurlan</option>
+                                <option value="">Hozarasp</option>
+                                <option value="">Bog'ot</option>
+                            </select>
+                        </div>
+                        <div class="personalInfosChil1InChil">
+                            <label for="">Полный адрес</label>
+                            <input class="personalInfosChil1InChilIn" type="text" placeholder="Введите полный адрес">
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="prsonalInoSave">Сохранить</button>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

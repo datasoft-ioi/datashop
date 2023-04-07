@@ -1,0 +1,1 @@
+[{"model": "products.banner", "pk": 1, "fields": {"title": "banner", "image": "images/banners/2023/04/07/Call-of-Duty-Modern-Warfare.jpg"}}, {"model": "products.banner", "pk": 2, "fields": {"title": "bryh", "image": "images/banners/2023/04/07/2023-04-03_17.15.18.jpg"}}]

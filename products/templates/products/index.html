@@ -1,0 +1,415 @@
+{% extends 'products/base.html' %}
+{% load static %}
+{% block content %}
+    <!-- main -->
+    <header>
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                {% for bn in banner %}
+                    <div class="swiper-slide"><img src="{{ bn.image.url }}" alt=""></div>
+                {% endfor %}
+                {% comment %} <div class="swiper-slide"><img src="{% static 'media/swiperImg.png' %}" alt=""></div> {% endcomment %}
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    
+        {% for cot in noutbuk %}
+        <a href="{% url 'category_products' cot.id cot.slug%}">
+            <div class="headerCategroyBoxConRes" style="background: linear-gradient(180deg, {{cot.bg_color}} 0%, rgba(41, 90, 185, 0.76) 100%);">
+                <span>
+                    {{cot.title}}
+                </span>
+                <img src="{{ cot.image.url }}" alt="">
+            </div>
+        </a>
+        {% endfor %}
+        <div class="headerCategroy">
+            <div class="headerCategroyBox">
+                {% for cat in category_lates %}
+                <a href="{% url 'category_products' cat.id cat.slug%}">
+                    <div class="headerCategroyBoxCon"style="background: linear-gradient(180deg, {{ cat.bg_color }} 0%, rgba(186,48,48, 3.76) 100%);">
+                        <span>
+                            {{ cat.title | truncatewords:1 | safe }}
+                        </span>
+                        {% if cat.image %}
+                            <img style="width: 50%"src="{{ cat.image.url }}" alt="">
+                        {% endif %}
+                    </div>
+                </a>
+                {% endfor %}
+                {% comment %} <div class="headerCategroyBoxCon">
+                    <span>
+                        Ноутбуки
+                    </span>
+                    <img src="../media/Category.png" alt="">
+                </div>
+                <div class="headerCategroyBoxCon">
+                    <span>
+                        Ноутбуки
+                    </span>
+                    <img src="../media/Category.png" alt="">
+                </div>
+                <div class="headerCategroyBoxCon">
+                    <span>
+                        Ноутбуки
+                    </span>
+                    <img src="../media/Category.png" alt="">
+                </div> {% endcomment %}
+            </div>
+        </div>
+    </header>
+<main>
+    <div class="mainProducts">
+        <div class="mainProductsHeader">
+            <div class="mainProductsHeader-title">
+                <img src="{% static 'media/laptop.svg' %}" alt="">
+                <span>Noutbuklar</span>
+            </div>
+            <button>
+                <a href="category/3/noutbuklar"><span>Yana ko'rish</span></a>
+                <img src="{% static 'media/next.svg' %}" alt="">
+            </button>
+        </div>
+        <div class="products">
+            {% for prod in cat_by_noutbuk %}
+            {% comment %} {% for chill in prod.children.all %} {% endcomment %}
+            <div class="product">
+                <form action="/addtosaqlangan/{{prod.id}}" method="post">
+                    {% csrf_token %}
+                    <div class="productHeader">
+                        <span class="new">yangi</span>
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                </form>
+                <div class="productImg">
+                    {% if prod.image %}
+                    <a href="{% url 'product_detail' prod.id prod.slug%}">
+                        <img src="{{ prod.image.url }}" alt="">
+                    </a>
+                    {% endif %}
+                </div>
+                <div class="productBottomInfo">
+                    <a href="{% url 'product_detail' prod.id prod.slug%}">
+                        <span class="productTitle">
+                            {{prod.title| truncatewords:5}}
+                        </span>
+                    </a>
+                    <div class="productStar">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <span class="productPrice">${{ prod.price }}</span>
+                </div>
+            </div>
+            {% endfor %}
+            {% comment %} {% endfor %} {% endcomment %}
+        </div>
+    </div>
+
+    {% for one in noutbuk_mob_cat %}
+    <a href="{% url 'category_products' one.id one.slug%}">
+        <div class="headerCategroyBoxConRes"
+            style="background: linear-gradient(180deg, {{one.bg_color}} 0%, #AC44A2 100%);">
+            <span>
+                {{one.title |truncatewords:2}}
+            </span>
+            {% if one.image %}
+            <img src="{{ one.image.url }}" alt="">
+            {% endif %}
+        </div>
+    </a>
+    {% endfor %}
+    <!-- Monitor -->
+
+    <div class="mainProducts">
+        <div class="mainProductsHeader">
+            <div class="mainProductsHeader-title">
+                <img src="{% static 'media/Monitor.svg' %}" alt="">
+                <span>Monitorlar</span>
+            </div>
+            <button>
+                <a href="category/12/monitory"><span>Yana ko'rish</span></a>
+                <img src="{% static 'media/next.svg' %}" alt="">
+            </button>
+        </div>
+        <div class="products">
+            {% for mon in cat_by_monitor %}
+            <div class="product">
+                <div class="productHeader">
+                    <span class="new">yangi</span>
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="productImg">
+                    <a href="{% url 'product_detail' mon.id mon.slug %}">
+                        <img src="{{ mon.image.url }}" alt="">
+                    </a>
+                </div>
+                <div class="productBottomInfo">
+                    <a href="{% url 'product_detail' mon.id mon.slug %}">
+                        <span class="productTitle">
+                            {{mon.title | truncatewords:5}}
+                        </span>
+                    </a>
+                    <div class="productStar">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <span class="productPrice">${{ mon.price }}</span>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+    {% for one in smartphone %}
+    <a href="{% url 'category_products' one.id one.slug%}">
+        <div class="headerCategroyBoxConRes"
+            style="background: linear-gradient(180deg, {{one.bg_color}} 0%, #AC44A2 100%);">
+            <span>
+                {{one.title}}
+            </span>
+            {% if one.image %}
+            <img src="{{ one.image.url }}" alt="">
+            {% endif %}
+        </div>
+    </a>
+    {% endfor %}
+
+    <!-- brend -->
+
+    <div class="brend">
+        <div class="brendCon">
+            <div class="mainProductsHeader-title">
+                <img src="{% static 'media/brend.svg' %}" alt="">
+                <span>Brendlar</span>
+            </div>
+        </div>
+        <div class="swiperCon">
+            <swiper-container class="mySwiper2" init="false">
+                {% comment %} <swiper-slide class="nonSwip">
+                    <div class="brendBox">
+                        <img style="width: 50% " src="{{brand.image.url}}" alt="">
+                    </div>
+                </swiper-slide> {% endcomment %}
+                {% for brand in brand_img %}
+                <swiper-slide>
+                    <a href="{{ brand.url }}">
+                        <div class="brendBox">
+                            <img class="brandImg" src="{{brand.image.url}}" alt="">
+                        </div>
+                    </a>
+                </swiper-slide>
+                {% endfor %}
+            </swiper-container>
+        </div>
+    </div>
+
+    {% for one in monitor %}
+    <a href="{% url 'category_products' one.id one.slug%}">
+        <div class="headerCategroyBoxConRes"
+            style="background: linear-gradient(180deg, {{one.bg_color}} 0%, #AC44A2 100%);">
+            <span>
+                {{one.title}}
+            </span>
+            {% if one.image %}
+            <img src="{{ one.image.url }}" alt="">
+            {% endif %}
+        </div>
+    </a>
+    {% endfor %}
+
+    <!-- thing img -->
+
+    <div class="thing">
+        <div class="mainProductsHeader-title">
+            <img src="{% static 'media/thing.svg' %}" alt="">
+            <span>Siz uchun bizning tanlovimiz</span>
+        </div>
+        <div class="thingimages">
+            <div class="thingImgLeft">
+                <img src="{% static 'media/thing1.png' %}" alt="" class="thingImg-1">
+                <img src="{% static 'media/thing2.png' %}" alt="" class="thingImg-2">
+            </div>
+            <div class="thingImgMain">
+                <img src="{% static 'media/thing3.png' %}" alt="" class="thingImg-3">
+                <img src="{% static 'media/thing4.png' %}" alt="" class="thingImg-4">
+            </div>
+            <div class="thingImgRigth">
+                <img src="{% static 'media/thing5.png' %}" alt="" class="thingImg-5">
+                <img src="{% static 'media/thing6.png' %}" alt="" class="thingImg-6">
+            </div>
+        </div>
+    </div>
+
+    <!-- Aksesuar -->
+
+    <div class="mainProducts">
+        <div class="mainProductsHeader">
+            <div class="mainProductsHeader-title">
+                <img src="{% static 'media/aksesuar.svg' %}" alt="">
+                <span>Aksesuarlar</span>
+            </div>
+            <button>
+                <a href="category/4/aksesuar/"><span>Yana ko'rish</span></a>
+                <img src="{% static 'media/next.svg' %}" alt="">
+            </button>
+        </div>
+
+        <div class="products">
+            {% for ct in cat_by_aksesuar %}
+            <div class="product">
+                <div class="productHeader">
+                    <span class="new">new</span>
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="productImg">
+                    <a href="{% url 'product_detail' ct.id ct.slug %}"><img src="{{ ct.image.url }}" alt=""></a>
+                </div>
+                <div class="productBottomInfo">
+                    <span class="productTitle">
+                        {{ ct.title | truncatewords:5}}
+                    </span>
+                    <div class="productStar">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <span class="productPrice">${{ ct.price }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <div class="timeWork">
+        <span>
+            Satyda dasturlash ishlari olib borlimoqda!
+            <p> bemalol kirib korishingiz mumkin </p>
+        </span>
+        <p class="ok">Ok</p>
+    </div>
+
+<form method="post">
+    {% csrf_token %}
+    <div class="mainChat">
+        <div class="chatHeader">
+            <div class="chataLogo">
+                <p class="chatHeaderTitle">Qo'llab quvvatlash markazi</p>
+                <img src="{% static 'media/datashoplogo.png' %}" alt="" class="logoChatt" >
+            </div>
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="chatTextInfo">
+            <div class="divr">
+                <span class="chatAdmin">Salom</span>
+            </div>
+            
+            <div class="divs">
+                <span class="chatUser">Azdfbhxhfgnbxfgcbnvgfzjedrhkxfgejfrdhgxkjhdrgfxhkdgxfcgbxcfgnbxfchfryhdrtyhdrthjrddrtyjhftyjlik</span>
+            </div>
+        </div>
+        <div class="chatTextGroup">
+            <input placeholder="Send Messanga" type="text" class="chatTextSend">
+            <i class="fa-solid fa-paper-plane"></i>
+        </div>
+        
+    </div>
+</form>
+
+
+    <div class="ChatBtn">
+        <h1>D</h1>
+    </div>
+
+    <!-- app progarm info -->
+
+    <div class="mobileApp">
+        <div class="mobileAppCon">
+            <div class="mobileAppLeft">
+                <span class="mobileAppTitle">Tez kunda DataShop mobil ilovasi</span>
+                <div class="mobileAppDownoladBtns">
+                    <button><img src="{% static 'media/googleplasy.png' %}" alt=""></button>
+                    <button><img src="{% static 'media/App Store.png' %}" alt=""></button>
+                </div>
+            </div>
+            <div class="mobileAppRight">
+                <img src="{% static 'media/MacBook Pro 16.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<script>
+
+    const fix = document.querySelector('.timeWork')
+    const ok = document.querySelector('.ok')
+    const x = document.querySelector('.fa-xmark')
+    const chatBtn = document.querySelector('.ChatBtn')
+    const chat = document.querySelector('.mainChat')
+    const logo = document.querySelector('.logoChatt')
+    const chatTitle= document.querySelector('.chatHeaderTitle')
+    const user= document.querySelector('.chatUser')
+    const admin= document.querySelector('.chatAdmin')
+
+    ok.onclick = () => {
+        fix.classList.add('trans')
+
+        setTimeout(() => {
+            fix.style.display = 'none'
+        }, 500)
+    }
+
+    user.style.display = 'none'
+    admin.style.display = 'none'
+    logo.style.display = 'none'
+    chatTitle.style.display = 'none'
+
+    let add = true
+
+     chatBtn.onclick = () => {
+        logo.style.display = 'flex'
+        chatTitle.style.display = 'flex'
+        chat.classList.toggle('miniChat')
+        // if(add == true){
+        //     chat.classList.toggle('miniChat')
+        //     add = false
+        // }
+        // if(add == false){
+        //     chat.classList.toggle('miniChat')
+        //     logo.classList.add = 'none'
+        //     chatTitle.classList= 'none'
+        //     add = false
+        // }
+        setTimeout(() => {
+            user.style.display = 'block'
+         admin.style.display = 'block'
+        }, 400)
+        chatBtn.style.display = 'none'
+     }
+
+     x.onclick = () => {
+         chat.classList.remove('miniChat')
+         logo.style.display = 'none'
+         chatTitle.style.display = 'none'
+         user.style.display = 'none'
+         admin.style.display = 'none'
+
+        setTimeout(() => {
+            chatBtn.style.display = 'flex'
+        }, 300)
+     }
+</script>
+{% endblock content %}
+

@@ -1,0 +1,48 @@
+{% extends 'users/base.html' %}
+
+{% load static %}
+{% block content %}
+    <div class="register">
+
+        <div class="registerBox">
+            {% if messages or form.non_field_errors %}
+                <div class="{% if messages %} orangemassageBar {% else %} redmassageBar {% endif %}">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p>{{ message }}</p>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            {% else %}
+                {{ form.non_field_errors }}
+            {% endif %}
+            <span class="registerBoxTitle">Вход / Регистрация</span>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="registerInputs">
+                    <div class="registerInputsChil">
+                        <label for="">Введите имя</label>
+                        <div class="registerInputsChilInput">
+                            <i class="fa-regular fa-user"></i>
+                            {{form.username}}
+                        </div>
+                    </div>
+                    <div class="registerInputsChil">
+                        <label for="">Пароль</label>
+                        <div class="registerInputsChilInput">
+                            <img src="{% static 'media/lock.svg' %}" alt="">
+                            {{form.password}}
+                        </div>
+                    </div>
+                </div>
+                <div class="registerFooter">
+                    <div class="registerFooterLoginNext">
+                        <span>Создавать аккаунт</span><a href="{% url 'users:registration' %}">Регистрация</a>
+                    </div>
+                    <button type="submit">Входить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
+

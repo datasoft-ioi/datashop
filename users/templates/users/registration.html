@@ -1,0 +1,65 @@
+{% extends 'users/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="register">
+    <form action='{% url 'users:registration' %}' method='post'>
+        {% csrf_token %}
+        <div class="registerBox">
+            <span class="registerBoxTitle">Вход / Регистрация</span>
+            <div class="registerInputs">
+                <div class="registerInputsChil">
+                    <label for="{{form.username.id_for_label}}">Ismingizni kiriting</label>
+                    <div class="registerInputsChilInput">
+                        <i class="fa-regular fa-user"></i>
+                        {{form.username}}
+                    </div>
+                </div>
+                <div class="registerInputsChil">
+                    <label for="">Familiyangizni kiriting</label>
+                    <div class="registerInputsChilInput">
+                        <i class="fa-regular fa-user"></i>
+                        {{form.last_name}}
+                    </div>
+                </div>
+                <div class="registerInputsChil">
+                    <label for="">Telefon raqamni kiriiting</label>
+                    <div class="registerInputsChilInput">
+                        <i class="fa-regular fa-user"></i>
+                        {{form.phone}}
+                    </div>
+                </div>
+                <div class="registerInputsChil">
+                    <label for="">Email</label>
+                    <div class="registerInputsChilInput">
+                        <i class="fa-regular fa-envelope"></i>
+                        {{form.email}}
+                    </div>
+                </div>
+                <div class="registerInputsChil">
+                    <label for="">Пароль</label>
+                    <div class="registerInputsChilInput">
+                        <img src="{% static 'media/lock.svg' %}" alt="">
+                        {{form.password1}}
+                    </div>
+                </div>
+                <div class="registerInputsChil">
+                    <label for="">Подтвердите пароль</label>
+                    <div class="registerInputsChilInput">
+                        <img src="{% static 'media/lock.svg' %}" alt="">
+                        {{form.password2}}
+                    </div>
+                </div>
+            </div>
+            <div class="registerFooter">
+                <div class="registerFooterLoginNext">
+                    <span>У меня есть аккаунт</span><a href="/login">Войти</a>
+                </div>
+                <button>Зарегистрироваться</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock content %}
