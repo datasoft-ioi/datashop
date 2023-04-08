@@ -14,7 +14,7 @@ class UserLoginForm(AuthenticationForm):
         model = User
         fields = ('username', 'password')
 
-    
+
 class UserRegistrationForm(UserCreationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={
         'placeholder': 'Ism kiriting'}))
@@ -35,7 +35,6 @@ class UserRegistrationForm(UserCreationForm):
     
 
 class UserProfileForm(UserChangeForm):
-
     phone = forms.CharField(widget=forms.TextInput(attrs={
         'placeholder': 'Telefon raqam'}))
     first_name = forms.CharField(widget=forms.TextInput(attrs={

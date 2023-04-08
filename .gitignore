@@ -4,10 +4,10 @@ __pycache__/
 *$py.class
 
 1media
-static
+
 # C extensions
 *.so
-media
+
 # Distribution / packaging
 .Python
 build/

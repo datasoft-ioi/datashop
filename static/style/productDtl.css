@@ -1,0 +1,469 @@
+.dtl {
+    width: 1140px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.links {
+    display: flex;
+    gap: 5px;
+}
+
+.links li {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #767676;
+}
+
+.dtlHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.dtlHeader span {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 31px;
+    color: #3C3C3C;
+}
+
+.dtlHeader i {
+    color: #E81D1C;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.starts span {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #777777;
+    padding-left: 10px;
+}
+
+.dtlMain {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.topImage {
+    width: 439px;
+    height: 409px;
+    border: 0.5px solid #D1D1D1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.topImage img {
+    max-width: 329px;
+    max-height: 247px;
+    min-width: 329px;
+    min-height: 247px;
+}
+
+.dtlProductImages {
+    width: 439px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.dtlProductImages img {
+    width: 60px;
+    cursor: pointer;
+}
+
+.dtlProductInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.dtlProductInfoTitle {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+}
+
+.dtlProductInfo ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+}
+
+
+.dtlProductInfo ul li {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.variant {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #828282;
+}
+
+.variant2 {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+}
+
+.vseHarakter {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration-line: underline;
+    color: #565656;
+    cursor: pointer;
+    user-select: none;
+}
+
+.dtlPriceInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formProductDtl {
+    z-index: 10;
+}
+
+.dtlPriceInfoPrice {
+    width: 290px;
+    height: 186px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 26px 20px;
+    gap: 10px;
+    z-index: 2;
+}
+
+.dtlPriceInfoPrice span {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    color: #474747;
+}
+
+.dtlPriceInfoPriceBtn1 {
+    width: 248px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #E81D1C;
+    border: none;
+}
+
+.dtlPriceInfoPriceBtn1 span {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.dtlPriceInfoPriceBtn2 {
+    width: 248px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #474747;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    border: 1px solid #E81D1C;
+    ;
+}
+
+.dtlPriceInfoPriceInfo {
+    width: 290px;
+    height: 184px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    gap: 20px;
+    transform: translateY(-10px);
+    border-radius: 10px;
+    z-index: 0;
+}
+
+.dtlPriceInfoPriceInfo-1 {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.dtlPriceInfoPriceInfo-1 span {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+}
+
+.dtlProductHaracter {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.dtlProductHaracterHeader {
+    border-bottom: 1.5px solid #D9D9D9;
+    display: flex;
+    gap: 70px;
+    padding-bottom: 15px;
+}
+
+.dtlProductHaracterHeader span {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #3C3C3C;
+    cursor: pointer;
+}
+
+.dtlProductHaracterMenu {
+    width: 746px;
+}
+
+.apisane {
+    border-bottom: 1px solid #E81D1C;
+}
+
+.dtlProductReqomendasia {
+    margin-top: 50px;
+}
+
+.dtlProductReqomendasiaTItle {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 31px;
+    color: #3C3C3C;
+}
+
+.dtlProductReqomendasiaProducts {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    margin-top: 30px;
+}
+
+.topImgCon {
+    width: 439px;
+    height: 409px;
+    background: #FFFFFF;
+    border: 0.5px solid #D1D1D1;
+    border-radius: 10px;
+}
+
+.imgBottomCon {
+    width: 439px;
+    height: 100px;
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.topIMg img {
+    max-width: 329px;
+    max-height: 247px;
+    min-width: 329px;
+    min-height: 247px;
+}
+
+.bottomIMg {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottomIMg img {
+    width: 70px;
+    height: auto;
+}
+
+@media screen and (max-width: 414px) and (min-width: 360px) {
+    .dtl {
+        width: 100%;
+        padding: 0px 10px;
+        overflow-x: hidden;
+    }
+
+    .dtlHeader span {
+        font-size: 18px;
+        width: 312px;
+    }
+
+    .starsCount {
+        font-size: 11px;
+    }
+
+    .dtlMain {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+    }
+
+    .dtlProductInfo {
+        display: none;
+    }
+
+    .dtlProductHaracterMenu {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .dtlProductHaracterHeader {
+        display: flex;
+        gap: 45px;
+        padding: 0px 10px;
+        width: 320px;
+    }
+
+    .dtlProductHaracterHeader span {
+        font-size: 14px;
+    }
+
+    .starsCount {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: #777777;
+    }
+
+    .images {
+        width: 100%;
+        padding: 0px 10px;
+    }
+
+    .dtlMain {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .topImgCon {
+        width: 100%;
+        height: 317.79px;
+    }
+
+    .topIMg img {
+        max-width: 255px;
+        max-height: 215px;
+    }
+
+    .dtlPriceInfo {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 20px;
+    }
+
+    .dtlPriceInfoPrice {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .imgBottomCon {
+        width: 355px;
+    }
+
+    .textRes {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: #777777;
+    }
+
+    .dtlProductReqomendasiaTItle {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        color: #3C3C3C;
+    }
+
+    .dtlProductReqomendasiaProducts {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        gap: 10px;
+        grid-row-gap: 20px;
+        padding-bottom: 20px;
+    }
+
+    .dtlProductHaracterHeader {
+        width: 100%;
+    }
+}
+
+.dtlProductInfo ul {
+    max-width: 500px;
+
+}
+
+.productListdtlInfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+}
+.infoListaa{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #999999d3;
+}
+.infoList{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #111111;
+    text-align: end;
+    margin-left: 5px;
+}
+.productListdtlInfo span{
+    border: dashed 1px #c2c2c2;
+    flex-grow: 2;
+    margin: 0 10px;
+}

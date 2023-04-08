@@ -1,0 +1,183 @@
+.personInfo {
+    width: 1140px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.personInfoMain {
+    margin-top: 53px;
+    display: flex;
+    gap: 90px;
+}
+
+.myProfilBox {
+    width: 270px;
+    height: 156px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: start;
+    justify-content: center;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding-left: 23px;
+    position: relative;
+}
+
+.myProfilBox a {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+}
+
+.myProfilBox a i {
+    font-size: 24px;
+    color: #3C3C3C;
+}
+
+.myProfilBox a img {
+    width: 25px;
+}
+
+.myProfilBox a span {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #3C3C3C;
+}
+
+.personalInfos {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.personalInfosChil1 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.personalInfosChil1Title {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 31px;
+    color: #3C3C3C;
+}
+
+.personalInfosChil1In {
+    width: 568px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+}
+
+.personalInfosChil1InChil {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.personalInfosChil1InChil label {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #636363;
+}
+
+.personalInfosChil1InChil input {
+    width: 270px;
+    height: 50px;
+    outline: none;
+    padding-left: 10px;
+    border: 1px solid #BCBCBC;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+
+}
+
+.myProfilBox .fa-check {
+    font-size: 10px;
+    position: absolute;
+    top: 68px;
+    left: 33px;
+    color: #ffffff;
+}
+
+.personalInfosChil1InChil select {
+    width: 270px;
+    height: 50px;
+    padding-left: 10px;
+    border: 1px solid #BCBCBC;
+}
+
+.prsonalInoSave {
+    width: 560px;
+    height: 50px;
+    background: #E81D1C;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    margin-top: 46px;
+    margin-bottom: 100px;
+}
+
+
+@media screen and (max-width: 414px) and (min-width: 360px) {
+    .personInfo {
+        width: 100%;
+        padding: 0px 10px;
+    }
+
+    .personInfoMain {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .myProfilBox {
+        width: 100%;
+        height: 172px;
+    }
+
+    .personalInfosChil1Title {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        color: #3C3C3C;
+    }
+    .personalInfosChil1In {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        grid-gap: 10px;
+    }
+    .personalInfosChil1InChil label {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        color: #636363;
+    }
+    .personalInfosChil1InChil input {
+        width: 168px;
+        height: 40px;
+    }
+    .personalInfosChil1InChil select {
+        width: 168px;
+        height: 40px;
+    }
+    .personalInfosChil1InChil .personalInfosChil1InChilIn {
+        width: 100%;
+    }
+    .prsonalInoSave {
+        width: 100%;
+        margin-bottom: 0px;
+    }
+}

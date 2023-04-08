@@ -2,8 +2,9 @@ from django.db import models
 from django.urls import reverse
 
 from mptt.fields import TreeForeignKey
-
 from mptt.models import MPTTModel
+
+from users.models import User
 
 # Maxsulot kategoriyasi
 class ProductCategory(MPTTModel):
@@ -26,8 +27,7 @@ class ProductCategory(MPTTModel):
         return ' / '.join(full_path[::-1])
 
 
-
-#Maxsulotlar
+# Maxsulotlar
 class Product(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
@@ -45,3 +45,14 @@ class Banner(models.Model):
     def __str__(self):
         return self.title
     
+
+# Savat 
+class Basket(models.Model):
+    user = models.ForeignKey(to=User, on_delete=models.CASCADE)
+    product = models.ForeignKey(to=Product, on_delete=models.CASCADE)
+    quantity = models.PositiveSmallIntegerField(default=0)
+    created_timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return f"{self.user.email} uchun Savat | Maxsulot: {self.product.name}"
+        

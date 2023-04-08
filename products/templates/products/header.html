@@ -38,7 +38,7 @@
             </div>
             <div class="navbottomBtns">
                 {% comment %} {% load myapptags %}   {% endcomment %}
-                <a href="{% url 'shopcart'%}">
+                <a href="{% url 'products:basket'%}">
                     {% comment %} {% shopcartcount user.id as count %} {% endcomment %}
                     <span class="korzinkaConunt">{{ count }}</span>
                     <button>
