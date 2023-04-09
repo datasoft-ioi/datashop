@@ -1,30 +1,31 @@
 {% extends 'products/base.html' %}
-{% comment %} {% block title %}{{ catdata.title }} Products{% endblock %}
-{% block description %} {{ catdata.description }} {% endblock %} {% endcomment %}
-{% comment %} {% block keywords %} {{ category.keywords }} {% endblock %} {% endcomment %}
+
 
 {% load static %}
 
 {% block content %}
 <div class="categoryList">
     <ul class="links">
-        <li>Asosiy</li>
-        {% comment %} <li>{{ catdata.title }}</li> {% endcomment %}
+        <li>Главная</li>
     </ul>
     <div class="categoryListHeader">
         <div class="categoryListHeaderTitle">
-            <span class="categoryListHeaderTitle-chil">{{ catdata.title }}</span>
-            <span class="categoryListHeaderTitle-chil2">{{catdata.count}} maxsulot</span>
+            <span class="categoryListHeaderTitle-chil">Ноутбуки HP</span>
+            <span class="categoryListHeaderTitle-chil2">36 товаров</span>
         </div>
         <div class="categoryListHeaderRandomBtns">
-            {% for rm in random_prod %}
-            <button>{{ rm.title }}</button>
-            {% endfor %}
+            <button>HP Victus 15</button>
+            <button>Asus TUF 4R</button>
+            <button>Asus TUF 4R</button>
         </div>
 
     </div>
     <div class="categoryListMain">
         <div class="categoryListMainFilter">
+            <div class="filterTop">
+                <p>Фильтры</p>
+                <i class="fa-solid fa-xmark"></i>
+            </div>
             <span class="priceFilterTitle">Цена(сум)</span>
             <fieldset class="filter-price">
                 <div class="price-field">
@@ -43,34 +44,23 @@
                 </div>
             </fieldset>
             <div class="filterRanges">
+                {% for cat in categories %}
                 <div class="filterRangesBrend">
-                    {% for cat in cat_fil %}
-                        <!-- <a href="{% url 'category_products' cat.id cat.slug %}"> -->
-                        <div class="filterRangesBrendHeader">
-                            <span>{{ cat.title }}</span>
-                            <i class="fa-solid fa-chevron-down"></i>
-                        </div>
-                        <!-- </a> -->
-                    {% if cat.children %}
-                    {% for ct in cat.children.all %}
-                    <div class="filterRangesBrendInfo" style="display: flex; flex-direction: column;">
-                        {% comment %} <input type="text" name="gender"> {% endcomment %}
-                        <a href="{% url 'category_products' ct.id ct.slug %}">
-                            <span class="kategoryChiled">{{ ct.title }}</span>
-                        </a>
-                            <div>
-                                {% for i in ct.children.all %}
-                                <a href="{% url 'category_products' i.id i.slug %}">
-                                    <span class="kategoryChiled">{{ i.title }}</span>
-                                </a>
-                                {% endfor %}
-                            </div>
-                        </div>
-                    {% endfor %}
-                    {% endif %}
+                    
+                    <div class="filterRangesBrendHeader">
+                        <a href="{% url 'products:category' cat.id %}"><span>{{cat.name}}</span></a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    {% for chill in cat.children.all %}
+                    <div class="filterRangesBrendInfo">
+                        <input type="radio" name="brand" id="hp">
+                        <a href="{% url 'products:category' chill.id %}"><span for="hp">{{chill.name}}</span></a>
+                    </div>
                     {% endfor %}
                 </div>
-                <div class="filterRangesBrend">
+                {% endfor %}
+                
+                {% comment %} <div class="filterRangesBrend">
                     <div class="filterRangesBrendHeader">
                         <span>Видеокарта</span>
                         <i class="fa-solid fa-chevron-down"></i>
@@ -123,9 +113,11 @@
                         <input type="radio">
                         <span>1 TB</span>
                     </div>
-                </div>
+                </div> {% endcomment %}
             </div>
+            
         </div>
+        <div class="vh"></div>
         <div class="categoryListMainProduct">
             <div class="categoryListMainProductHeader">
                 <div class="filterClickBtns">
@@ -141,25 +133,30 @@
                     <option value="">Сортировать по</option>
                 </select>
             </div>
+            <div class="categoryListMainProducResponsive">
+                <div class="SliderItem click">
+                    <img src="../media/sliders.svg" alt="" class="slider">
+                    <p class="sliderTitle">Фильтры</p>
+                </div>
+                <div class="SliderItem">
+                    <img src="../media/align-center.svg" alt="" class="slider">
+                    <p class="sliderTitle">Сортировать по</p>
+                </div>
+            </div>
             <div class="categoryListMainProductMain">
-
-                {% for rs in products %}
+                {% for product in products %}
                     <div class="product">
                         <div class="productHeader">
                             <span class="new">new</span>
                             <i class="fa-regular fa-heart"></i>
                         </div>
                         <div class="productImg">
-                            <a href="{% url 'product_detail' rs.id rs.slug %}">
-                                <img src="{{ rs.image.url }}" alt="">
-                            </a>
+                            <img src="{{product.image.url}}" alt="">
                         </div>
                         <div class="productBottomInfo">
-                            <a href="{% url 'product_detail' rs.id rs.slug %}">
-                                <span class="productTitle">
-                                    {{ rs.title | truncatewords:5 }}
-                                </span>
-                            </a>
+                            <span class="productTitle">
+                                {{product.name}}
+                            </span>
                             <div class="productStar">
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
@@ -167,7 +164,7 @@
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-regular fa-star"></i>
                             </div>
-                            <span class="productPrice">${{ rs.price }}</span>
+                            <span class="productPrice">${{ product.price }}</span>
 
                             <div class="categoryListMain">
 
@@ -178,20 +175,43 @@
                 {% endfor %}
 
             </div>
+            <div class="pagination">
+                <a href="{% if products.has_previous %}{% url 'products:paginator' products.previous_page_number %}{% else %} # {% endif %}" class="prev">Prev</a>
+                {% for page in products.paginator.page_range %}
+                    <a href="{% url 'products:paginator' page %}" class="page ">{{ page }}</a>
+                {% endfor %}
+                <a href="{% if products.has_next %} {% url 'products:paginator' products.next_page_number %} {% else %} # {% endif %}" class="next">Next</a>
+            </div> 
 
         </div>
+        </div>
 
-    </div>
 </div>
 
 
 {% endblock content %}
+
 <!-- {% block script %} -->
 <script>
 
-    const filterRangesBrendInfo = document.querySelector('.filterRangesBrendInfo')
+
+    // i va span elementlariga murojaat qilamiz
+var icon = document.querySelector(".fa-solid");
+var brand = document.querySelector("span");
+
+// ikona bosilganda
+icon.addEventListener("click", function() {
+    if (brand.style.display === "none") {
+        brand.style.display = "inline";
+    } else {
+        brand.style.display = "none";
+    }
+});
+
+
+    {% comment %} const filterRangesBrendInfo = document.querySelector('.filterRangesBrendInfo')
     console.log(filterRangesBrendInfo.textContent);
     filterRangesBrendInfo.classList.add('none')
-    
+     {% endcomment %}
 </script>
 <!-- {% endblock script %} -->

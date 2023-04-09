@@ -67,32 +67,32 @@
                 <span>Noutbuklar</span>
             </div>
             <button>
-                <a href="category/3/noutbuklar"><span>Yana ko'rish</span></a>
+                <a href="products/category/14"><span>Yana ko'rish</span></a>
                 <img src="{% static 'media/next.svg' %}" alt="">
             </button>
         </div>
         <div class="products">
-            {% for prod in cat_by_noutbuk %}
+            {% for prod in product_noutbuklar %}
             {% comment %} {% for chill in prod.children.all %} {% endcomment %}
             <div class="product">
-                <form action="/addtosaqlangan/{{prod.id}}" method="post">
-                    {% csrf_token %}
+
+
                     <div class="productHeader">
                         <span class="new">yangi</span>
                         <i class="fa-regular fa-heart"></i>
                     </div>
-                </form>
+
                 <div class="productImg">
                     {% if prod.image %}
-                    <a href="{% url 'product_detail' prod.id prod.slug%}">
+                    <a href="">
                         <img src="{{ prod.image.url }}" alt="">
                     </a>
                     {% endif %}
                 </div>
                 <div class="productBottomInfo">
-                    <a href="{% url 'product_detail' prod.id prod.slug%}">
+                    <a href="">
                         <span class="productTitle">
-                            {{prod.title| truncatewords:5}}
+                            {{prod.name| truncatewords:5}}
                         </span>
                     </a>
                     <div class="productStar">
@@ -103,6 +103,9 @@
                         <i class="fa-regular fa-star"></i>
                     </div>
                     <span class="productPrice">${{ prod.price }}</span>
+                    <a href="{% url 'products:basket_add' prod.id %}">
+                        <button><span>Savatga</span></button>
+                    </a>
                 </div>
             </div>
             {% endfor %}

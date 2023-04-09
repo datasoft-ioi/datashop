@@ -4,13 +4,15 @@
 
 {% block content %}
 
+{% if baskets %}
+
 <div class="korzinka">
     <ul class="links">
         <li>Главная</li>
     </ul>
     <div class="korHeader">
         <span class="korHeader-Chil1">Корзина</span>
-        <span class="korHeader-Chil2">Товаров в корзине (3)</span>
+        <span class="korHeader-Chil2">Товаров в корзине ({{baskets.total_quantity}})</span>
     </div>
     <div class="korMain">
         <div class="korMainProducts">
@@ -21,32 +23,36 @@
                     <span>Цена</span>
                 </div>
             </div>
+            {% for basket in baskets %}
             <div class="korProducts">
-                <div class="korProduct">
-                    <div class="korProductInfo">
-                        <img src="https://dlcdnwebimgs.asus.com/gain/6FE37E07-B41F-4238-81D8-433B425405C5" alt="">
-                        <div>
-                            <span class="korProductInfoName">HP Victus 15 RTX 3050...</span>
-                            <span class="korProductInfoCategory">Ноутбук</span>
-                            <span class="myorderProductMainProductConPrice">$568</span>
-                            <button>Удалить</button>
+                    <div class="korProduct">
+                        <div class="korProductInfo">
+                            <img width="1000" heigh="1000" src="{{ basket.product.image.url }}" alt="">
+                            <div>
+                                <span class="korProductInfoName">{{basket.product.name}}</span>
+                                <span class="korProductInfoCategory">{{ basket.category }}</span>
+                                <span class="myorderProductMainProductConPrice">${{ basket.product.price }}</span>
+                                <a href="{% url 'products:basket_remove' basket.id %}">
+                                    <button>Удалить</button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="korProductCount">
+                            <button>-</button>
+                            <span><input type="number" value="{{basket.quantity}}"></span>
+                            <button>+</button>
+                        </div>
+                        <div class="korProductPrice">
+                            <span>${{basket.sum}}</span>
                         </div>
                     </div>
-                    <div class="korProductCount">
-                        <button>-</button>
-                        <span>1</span>
-                        <button>+</button>
-                    </div>
-                    <div class="korProductPrice">
-                        <span>$680</span>
-                    </div>
                 </div>
-            </div>
+                {% endfor %}
         </div>
         <div class="korMainPriceBox">
             <div class="korMainPriceBoxTite">
                 <span class="korMainPriceBoxTiteInfo">Итого:</span>
-                <span class="korMainPriceBoxTitePrice">$766</span>
+                <span class="korMainPriceBoxTitePrice">${{baskets.total_sum}}</span>
             </div>
             <ul class="korMainPriceBoxPriceInfo">
                 <li>
@@ -75,5 +81,25 @@
         </div>
     </div>
 </div>
+
+
+{% else %}
+
+
+    <!-- korzinka pustoy -->
+
+    <div class="korzinkaPustoy">
+        <ul class="links">
+            <li>Главная</li>
+        </ul>
+        <div class="korzinkaPustoyMain">
+            <span>Корзина</span>
+            <div class="korzinkaPustoyInfo">
+                <span>Корзина пуста</span>
+            </div>
+        </div>
+    </div>
+
+{% endif %}
 
 {% endblock %}

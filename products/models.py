@@ -17,6 +17,10 @@ class ProductCategory(MPTTModel):
     class MPTTMeta:
         order_insertion_by = ['name']
 
+    class Meta:
+        verbose_name = "Kategoriya"
+        verbose_name_plural = "Kategoriyalar"
+
 
     def __str__(self):                           # __str__ method elaborated later in
         full_path = [self.name]                  # post.  use __unicode__ in place of
@@ -31,10 +35,19 @@ class ProductCategory(MPTTModel):
 class Product(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
-    price = models.DecimalField(max_digits=4, decimal_places=2)
+    price = models.DecimalField(max_digits=12, decimal_places=2, default=0)
     quantity = models.PositiveIntegerField(default=0)
     image = models.ImageField(upload_to='media/prod_images')
-    category = models.ForeignKey(to=ProductCategory, on_delete=models.PROTECT)
+    category = models.ManyToManyField(to=ProductCategory)
+
+    class Meta:
+        verbose_name = "Maxsulot"
+        verbose_name_plural = "Maxsulotlar"
+
+    
+    def __str__(self) -> str:
+        return self.name
+
 
 
 # Banner qo'shish
@@ -46,6 +59,16 @@ class Banner(models.Model):
         return self.title
     
 
+class BasketQuerySet(models.QuerySet):
+
+    def total_sum(self):
+        return sum(basket.sum() for basket in self)
+
+    def total_quantity(self):
+        return sum(basket.quantity for basket in self)
+
+
+
 # Savat 
 class Basket(models.Model):
     user = models.ForeignKey(to=User, on_delete=models.CASCADE)
@@ -53,6 +76,12 @@ class Basket(models.Model):
     quantity = models.PositiveSmallIntegerField(default=0)
     created_timestamp = models.DateTimeField(auto_now_add=True)
 
+    objects = BasketQuerySet.as_manager()
+
+
     def __str__(self) -> str:
-        return f"{self.user.email} uchun Savat | Maxsulot: {self.product.name}"
+        return f"{self.user.username} uchun Savat | Maxsulot: {self.product.name}"
         
+    def sum(self):
+        return self.product.price * self.quantity
+    
