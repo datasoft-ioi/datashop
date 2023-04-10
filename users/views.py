@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView
 from django.contrib.auth.views import LoginView
+from django.shortcuts import redirect
 
 from users.models import User
 from users.forms import UserLoginForm, UserRegistrationForm, UserProfileForm
@@ -35,6 +36,12 @@ def login(request):
 class UserLoginView(LoginView):
     template_name = 'users/login.html'
     form_class = UserLoginForm
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        if self.request.user.is_authenticated:
+            return redirect('users:profile', self.request.user.pk)
+        return response
 
 
 class UserRegristrationView(SuccessMessageMixin, CreateView):
