@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-54yj#e)67!v)gl%wz(2)x!v)l&3bw9(!v0m(uqev0j9)r6gh=$"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["datashop.uz", ".datashop.uz", "localhost", "127.0.0.1"]
 
@@ -70,6 +70,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "products.context_processor.product_category_render",
             ],
         },
     },

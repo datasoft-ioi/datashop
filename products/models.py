@@ -9,7 +9,6 @@ from users.models import User
 # Maxsulot kategoriyasi
 class ProductCategory(MPTTModel):
     name = models.CharField(max_length=124)
-    description = models.TextField(null=True, blank=True)
     parent = TreeForeignKey('self',blank=True, null=True ,related_name='children', on_delete=models.CASCADE)
     
     slug = models.SlugField(null=False, unique=True)

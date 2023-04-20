@@ -9,7 +9,7 @@ def index(request):
 
     context = {
         "banner": Banner.objects.all().order_by('-id')[:10],
-        "product_noutbuklar": Product.objects.filter(category__parent=14)
+        # "product_noutbuklar": Product.objects.filter(category__parent=14)
     }
 
     return render(request, 'products/index.html', context)
@@ -24,7 +24,7 @@ def products(request, category_id=None, page=1):
     products_paginator = paginator.page(page)
 
     context = {
-        "categories": ProductCategory.objects.filter(parent=None),
+        # "categories": ProductCategory.objects.filter(parent=None),
         "products": products_paginator,
 
     }
