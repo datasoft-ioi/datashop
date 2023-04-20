@@ -15,7 +15,7 @@
                 <a href=""><img src="{% static 'media/profilIcons/moyZakazOrder.svg' %}" alt=""><span>Мои заказы</span></a>
                 <a href=""><img src="{% static 'media/profilIcons/bellOrder.svg' %}" alt=""><span>Уведомления</span></a>
             </div>
-            <form action="{% url 'users:profile' user.id %}" method="post" enctype="multipart/form-data">
+            <form action="{% url 'users:profile' %}" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
             <div class="personalInfos">
                 <div class="personalInfosChil1">

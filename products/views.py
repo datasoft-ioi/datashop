@@ -1,43 +1,35 @@
 from django.shortcuts import render, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
-from django.views.generic.base import TemplateView
-from django.views.generic.list import ListView
-
+from django.core.paginator import Paginator
 
 from .models import Product, ProductCategory, Banner, Basket
-from common.views import TitleMixin
 
 
-class IndexView(TitleMixin, TemplateView):
-    template_name = 'products/index.html'
-    title = 'Aso'
+def index(request):
 
-    def get_context_data(self, **kwargs):
-        context = super(IndexView, self).get_context_data()
-        context['banner'] = Banner.objects.all().order_by('-id')[:10]
-        context['product_noutbuklar'] = Product.objects.filter(category__parent=14)
-        return context
+    context = {
+        "banner": Banner.objects.all().order_by('-id')[:10],
+        "product_noutbuklar": Product.objects.filter(category__parent=14)
+    }
 
-
-class ProductsListView(ListView):
-    model = Product
-    template_name = 'products/products.html'
-    paginate_by = 1
-
-    def get_queryset(self):
-        queryset = super(ProductsListView, self).get_queryset()
-        category_id = self.kwargs.get('category_id')
-
-        return queryset.filter(category__id=category_id) if category_id else queryset
+    return render(request, 'products/index.html', context)
 
 
+def products(request, category_id=None, page=1):
 
-    def get_context_data(self, object_list=None, **kwargs):
-        context = super(ProductsListView, self).get_context_data()
-        context["title"] = "title"
-        context['categories'] = ProductCategory.objects.filter(parent=None)
-        return context
+    products = Product.objects.filter(category__id=category_id) if category_id else Product.objects.all()
 
+    per_page = 1
+    paginator = Paginator(products, per_page)
+    products_paginator = paginator.page(page)
+
+    context = {
+        "categories": ProductCategory.objects.filter(parent=None),
+        "products": products_paginator,
+
+    }
+
+    return render(request, 'products/products.html', context)
 
 
 def basket(request):

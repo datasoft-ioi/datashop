@@ -144,7 +144,7 @@
                 </div>
             </div>
             <div class="categoryListMainProductMain">
-                {% for product in object_list %}
+                {% for product in products %}
                     <div class="product">
                         <div class="productHeader">
                             <span class="new">new</span>
@@ -176,11 +176,11 @@
 
             </div>
             <div class="pagination">
-                <a href="{% if page_obj.has_previous %}{% url 'products:paginator' page_obj.previous_page_number %}{% else %} # {% endif %}" class="prev">Prev</a>
-                {% for page in page_obj.paginator.page_range %}
+                <a href="{% if products.has_previous %}{% url 'products:paginator' products.previous_page_number %}{% else %} # {% endif %}" class="prev">Prev</a>
+                {% for page in products.paginator.page_range %}
                     <a href="{% url 'products:paginator' page %}" class="page ">{{ page }}</a>
                 {% endfor %}
-                <a href="{% if page_obj.has_next %} {% url 'products:paginator' page_obj.next_page_number %} {% else %} # {% endif %}" class="next">Next</a>
+                <a href="{% if products.has_next %} {% url 'products:paginator' products.next_page_number %} {% else %} # {% endif %}" class="next">Next</a>
             </div> 
 
         </div>
