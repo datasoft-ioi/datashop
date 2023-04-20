@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-54yj#e)67!v)gl%wz(2)x!v)l&3bw9(!v0m(uqev0j9)r6gh=$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["datashop.uz", ".datashop.uz", "localhost"]
+ALLOWED_HOSTS = ["datashop.uz", ".datashop.uz", "localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -125,9 +125,9 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
-# STATICFILES_DIRS = (
-#     BASE_DIR / 'static',
-# )
+STATICFILES_DIRS = (
+    BASE_DIR / 'static',
+)
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
