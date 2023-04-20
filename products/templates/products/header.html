@@ -70,7 +70,9 @@
             <div class="profilBox">
                 <span class="profilBoxName">{{ user.username }}</span>
                 <div class="profilBoxBtns">
-                    <a href="{% url 'users:profile' %}"><button><img src="{% static 'media/person.svg' %}" alt=""><span>Shaxshiy kabinet</span></button></a>
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'users:profile' user.id %}"><button><img src="{% static 'media/person.svg' %}" alt=""><span>Shaxshiy kabinet</span></button></a>
+                    {% endif %}
                     <a href="{% url 'myorders' %}"><button><img src="{% static 'media/dastafka2.svg' %}" alt=""><span>Mening
                             Buyurtmalarim</span></button></a>
                     <button><img src="{% static 'media/bell.svg' %}" alt=""><span>Xabarlar</span></button>

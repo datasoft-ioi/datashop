@@ -18,24 +18,30 @@ from django.urls import path, re_path, include
 
 from django.conf.urls.static import static
 from django.conf import settings
+from django.views.static import serve
 
-from products.views import index, products
+
+from products.views import IndexView, ProductsListView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", index, name="home"),
+    path("", IndexView.as_view(), name="home"),
     path("products/", include('products.urls', namespace='products')),
     path("users/", include('users.urls', namespace='users')),
 
     # vaqtinchalik
-    path("test/", products, name="saqlanganlar"),
-    path("shop/", products, name="shopcart"),
-    path("login/", products, name="login"),
+    path("test/", ProductsListView.as_view(), name="saqlanganlar"),
+    path("shop/", ProductsListView.as_view(), name="shopcart"),
+    path("login/", ProductsListView.as_view(), name="login"),
     # path("home/", products, name="home"),
-    path("user_index/", products, name="user_index"),
-    path("myorders/", products, name="myorders"),
-    path("logout/", products, name="logout"),
+    path("user_index/", ProductsListView.as_view(), name="user_index"),
+    path("myorders/", ProductsListView.as_view(), name="myorders"),
+    path("logout/", ProductsListView.as_view(), name="logout"),
 ]
 
-if settings.DEBUG == True:
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += [re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT, }), ]
+
+if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
