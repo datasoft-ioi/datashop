@@ -6,3 +6,5 @@ djangorestframework==3.14.0
 markdown
 Pillow
 whitenoise
+twilio
+environs

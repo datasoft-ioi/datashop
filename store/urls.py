@@ -35,7 +35,7 @@ urlpatterns = [
     # path("home/", products, name="home"),
     path("user_index/", products, name="user_index"),
     path("myorders/", products, name="myorders"),
-    path("logout/", products, name="logout"),
+    
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

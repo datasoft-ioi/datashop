@@ -2,7 +2,7 @@ from django import forms
 
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, UserChangeForm
 
-from users.models import User
+from users.models import User, Profile
 
 class UserLoginForm(AuthenticationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={
@@ -16,22 +16,16 @@ class UserLoginForm(AuthenticationForm):
 
 
 class UserRegistrationForm(UserCreationForm):
-    username = forms.CharField(widget=forms.TextInput(attrs={
+    user = forms.CharField(widget=forms.TextInput(attrs={
         'placeholder': 'Ism kiriting'}))
-    last_name = forms.CharField(widget=forms.TextInput(attrs={
-        'placeholder': 'Familiyani kiriting'}))
-    phone = forms.CharField(widget=forms.TextInput(attrs={
+
+    phone_number = forms.CharField(widget=forms.TextInput(attrs={
         'placeholder': 'telefon kiriting'}))
-    email = forms.EmailField(widget=forms.TextInput(attrs={
-        'placeholder': 'email kiriting'}))
-    password1 = forms.CharField(widget=forms.PasswordInput(attrs={
-        'placeholder': 'parol kiriting'}))
-    password2 = forms.CharField(widget=forms.PasswordInput(attrs={
-        'placeholder': 'parolni tastiqlang'}))
+
 
     class Meta:
-        model = User
-        fields = ('username', 'last_name', 'phone','email', 'password1', 'password2')
+        model = Profile
+        fields = ('user', 'phone_number', 'otp','uid')
     
 
 class UserProfileForm(UserChangeForm):
@@ -54,3 +48,20 @@ class UserProfileForm(UserChangeForm):
         fields = ('phone', 'first_name', 'last_name', 'username', 'email', 'image')
 
 
+# class UserRegistrationForm(UserCreationForm):
+#     username = forms.CharField(widget=forms.TextInput(attrs={
+#         'placeholder': 'Ism kiriting'}))
+#     last_name = forms.CharField(widget=forms.TextInput(attrs={
+#         'placeholder': 'Familiyani kiriting'}))
+#     phone = forms.CharField(widget=forms.TextInput(attrs={
+#         'placeholder': 'telefon kiriting'}))
+#     email = forms.EmailField(widget=forms.TextInput(attrs={
+#         'placeholder': 'email kiriting'}))
+#     password1 = forms.CharField(widget=forms.PasswordInput(attrs={
+#         'placeholder': 'parol kiriting'}))
+#     password2 = forms.CharField(widget=forms.PasswordInput(attrs={
+#         'placeholder': 'parolni tastiqlang'}))
+
+#     class Meta:
+#         model = User
+#         fields = ('username', 'last_name', 'phone','email', 'password1', 'password2')

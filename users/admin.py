@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import User
+from .models import User, Profile
 
 from products.admin import BasketAdmin
 
@@ -9,3 +9,6 @@ class UserAdmin(admin.ModelAdmin):
    list_display = ('username', )
    inlines = (BasketAdmin, )
    
+
+
+admin.site.register(Profile)
