@@ -1,5 +1,6 @@
 import random
 import re
+from django.db import IntegrityError
 from django.forms import ValidationError
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render
@@ -60,11 +61,16 @@ def registration(request):
         username = request.POST.get("username")
         phone_number = request.POST.get("phone_number")
         if is_valid_uzbek_phone_number(phone_number):
+            try:
 
-            user = User.objects.create(username=username)
-            profile = Profile.objects.create(user=user, phone_number=phone_number)
+                user = User.objects.create(username=username)
+                profile = Profile.objects.create(user=user, phone_number=phone_number)
 
-            return HttpResponseRedirect(reverse('users:login'))
+                return HttpResponseRedirect(reverse('users:login'))
+            
+            except IntegrityError:
+                messages.warning(request, 'Bunay username mavjud!!!')
+                
         else:
             messages.warning(request, 'uzbek raqam kiriting!!!')
 
