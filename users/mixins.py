@@ -176,9 +176,9 @@ class SendSmsApiWithEskiz:
 message = "Салом дунё"
 phone = 335646404
 eskiz_api = SendSmsApiWithEskiz(message=message, phone=phone)
-r = eskiz_api.send()
+# r = eskiz_api.send()
 
-print(r)
+# print(r)
 
 
 

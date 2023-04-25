@@ -7,7 +7,7 @@
 <div class="register">
     <form action='{% url 'users:registration' %}' method='post'>
         {% csrf_token %}
-        <div class="registerBox">
+        <div class="loginBox">
             <span class="registerBoxTitle">Вход / Регистрация</span>
             <div class="registerInputs">
                 <div class="registerInputsChil">
@@ -77,21 +77,21 @@
 <div class="register">
     <form action='{% url 'users:registration' %}' method='post'>
         {% csrf_token %}
-        <div class="registerBox">
-            <span class="registerBoxTitle">Вход / Регистрация</span>
+        <div class="loginBox">
+            <span class="registerBoxTitle">Регистрация</span>
             <div class="registerInputs">
                 <div class="registerInputsChil">
                     <label for="">Ismingizni kiriting</label>
                     <div class="registerInputsChilInput">
                         <i class="fa-regular fa-user"></i>
-                        <input name="username" type="text" placeholder="username">
+                        <input name="username" type="text" placeholder="Username">
                     </div>
                 </div>
                 <div class="registerInputsChil">
                     <label for="">Telefon raqam</label>
                     <div class="registerInputsChilInput">
-                        <i class="fa-regular fa-user"></i>
-                        <input name="phone_number" type="phone" placeholder="Telefon raqam">
+                        <p class="telTitle">+998</p>
+                        <input name="phone_number" type="phone" placeholder="00 000-00-00">
                     </div>
                 </div>
                 <div class="registerFooter">

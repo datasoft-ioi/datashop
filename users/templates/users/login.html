@@ -5,7 +5,7 @@
 {% comment %} {% block content %}
     <div class="register">
 
-        <div class="registerBox">
+        <div class="registerBox ">
             {% if messages or form.non_field_errors %}
                 <div class="{% if messages %} orangemassageBar {% else %} redmassageBar {% endif %}">
                     {% if messages %}
@@ -63,15 +63,15 @@
             {% else %}
                 {{ form.non_field_errors }}
             {% endif %}
-            <span class="registerBoxTitle">Вход / Регистрация</span>
+            <span class="registerBoxTitle">Входить</span>
             <form method="POST">
                 {% csrf_token %}
                 <div class="registerInputs">
                     <div class="registerInputsChil">
-                        <label for="">phone number: </label>
+                        <label for="">Отправим смс с кодом подтверждения</label>
                         <div class="registerInputsChilInput">
-                            <i class="fa-regular fa-user"></i>
-                            <input name="phone_number" type="text"  placeholder="phone pls">
+                            <p class="telTitle">+998</p>
+                            <input name="phone_number" type="text"  placeholder="00 000-00-00">
                         </div>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                     <div class="registerFooterLoginNext">
                         <span>Создавать аккаунт</span><a href="{% url 'users:registration' %}">Регистрация</a>
                     </div>
-                    <button type="submit">Входить</button>
+                    <button type="submit">Получить код</button>
                 </div>
             </form>
         </div>

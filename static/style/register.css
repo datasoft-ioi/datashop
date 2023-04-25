@@ -14,16 +14,29 @@
 }
 
 .registerBox {
-    width: 460px;
-    min-height: 590px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     background: #FFFFFF;
     border-radius: 5px;
-    padding-bottom: 70px;
-}
+    padding-bottom: 60px;
+    height: auto;
+    width: 414px;
+    border-radius: 8px;
 
+}
+.loginBox{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #FFFFFF;
+    border-radius: 5px;
+    height: auto;
+    width: 414px;
+    border-radius: 8px;
+}
 .registerBoxTitle {
     font-weight: 700;
     font-size: 22px;
@@ -48,10 +61,11 @@
 }
 
 .registerInputsChil label {
-    font-weight: 400;
+    font-weight: 500;
     font-size: 12px;
     line-height: 15px;
-    color: #000000;
+    color: #8b8b8bcc;
+    margin-bottom: 5px;
 }
 
 .registerInputsChilInput {
@@ -60,7 +74,9 @@
     display: flex;
     align-items: center;
     background: #FFFFFF;
-    border: 1px solid #C1C1C1;
+    padding: 16px 283px 16px 16px;
+    background: rgba(118, 121, 127, 0.05);
+    border-radius: 12px;
 }
 
 .registerInputsChilInput i {
@@ -80,6 +96,13 @@
     outline: none;
     padding-left: 10px;
     flex: 1;
+    background: transparent;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    color: #141415;
 }
 
 .registerInputsChilInput input::placeholder {
@@ -123,12 +146,23 @@
     width: 303px;
     height: 42px;
     background: #E81D1C;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 22px;
-    color: #FFFFFF;
     border: none;
     cursor: pointer;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.064px;
+    color: #FFFFFF;
+}
+
+.telTitle {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    color: #141415;
 }
 
 @media screen and (max-width: 414px) and (min-width: 360px) {
