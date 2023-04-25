@@ -1,23 +1,24 @@
 import random
 import re
+import time
 from django.db import IntegrityError
 from django.forms import ValidationError
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
-
+from django.contrib.sessions.backends.db import SessionStore
 
 from users.forms import UserLoginForm, UserRegistrationForm, UserProfileForm
 from .models import Profile, User
-from .mixins import MessageHandler
+from .mixins import MessageHandler, SendSmsApiWithEskiz
 
 from django.contrib import auth, messages
 
 
 
 def is_valid_uzbek_phone_number(phone_number):
-    pattern = r'^\+998\d{9}$'
+    pattern = r'^\d{9}$'
     return bool(re.match(pattern, phone_number))
 
 
@@ -34,7 +35,15 @@ def login_view(request):
                 return HttpResponseRedirect(reverse('users:registration'))
 
 
+            session = SessionStore(request.session.session_key)
+            last_otp_time = session.get('last_otp_time')
+            current_time = time.time()
             
+            if last_otp_time and current_time - last_otp_time < 60:
+                messages.warning(request, '60 sekunddan oldin yana bir marta so\'rov yuborishingiz mumkin')
+                return redirect('users:login')
+            
+
             try:
                 profile.otp = random.randint(1000, 9999)
                 profile.save()
@@ -42,8 +51,14 @@ def login_view(request):
             except ValidationError as e:
                 print(e)
 
-            message_handler = MessageHandler(phone_number, profile.otp ).send_otp_to_phone()
+            message_handler = SendSmsApiWithEskiz(message=str(profile.otp), phone=phone_number)
+            message_handler.send()
             
+
+            session['last_otp_time'] = current_time
+            session.save()
+
+
             return redirect(f'/users/otp/{profile.uid}')
         
         else:

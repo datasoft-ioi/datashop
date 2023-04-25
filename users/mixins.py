@@ -2,6 +2,7 @@ from twilio.rest import Client
 from django.conf import settings
 import random
 import os
+import time
 import requests
 
 from environs import Env
@@ -173,9 +174,10 @@ class SendSmsApiWithEskiz:
             return FAILED
 
 
-message = "Салом дунё"
-phone = 335646404
-eskiz_api = SendSmsApiWithEskiz(message=message, phone=phone)
+
+# message = "9980"
+# phone = 335646404
+# eskiz_api = SendSmsApiWithEskiz(message=message, phone=phone)
 # r = eskiz_api.send()
 
 # print(r)
