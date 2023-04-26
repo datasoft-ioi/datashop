@@ -16,15 +16,14 @@
             {% else %}
                 {{ form.non_field_errors }}
             {% endif %}
-            <span class="registerBoxTitle">Вход / Регистрация</span>
+            <span class="registerBoxTitle">Введите код</span>
             <form method="POST">
                 {% csrf_token %}
                 <div class="registerInputs">
                     <div class="registerInputsChil">
-                        <label for="">OTP pls:</label>
+                        <label style="width: 328px;" for="">Для подтверждения телефона отправили 4-значный код на +998 91 437-37-90</label>
                         <div class="registerInputsChilInput">
-                            <i class="fa-regular fa-user"></i>
-                            <input name="otp" type="text">
+                            <input name="otp" type="number" >
                         </div>
                     </div>
                     
