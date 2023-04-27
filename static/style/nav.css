@@ -137,6 +137,9 @@ nav {
     border-radius: 5px;
 }
 
+.navbottomBtns button red {
+    color: red;
+}
 
 /* Kategory style */
 

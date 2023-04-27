@@ -1,0 +1,110 @@
+{% extends 'products/base.html' %}
+
+{% block content %}
+
+    <!-- saqlanganlar -->
+{% if tanlanganlar %}
+
+<div class="izb">
+    <ul class="links">
+        <li>Главная</li>
+    </ul>
+    <div class="izbMain">
+        <div class="izbMainHeader">
+            <div class="izbMainHeaderLeft">
+                <span>Избранное</span>
+                <a href="{% url 'products:tanlangan_remove_all' %}">
+                    <button>Очистить все</button>
+                </a>
+            </div>
+            <select name="" id="">
+                <option value="">Сначала по дешевле</option>
+                <option value="">Сначала по дороже</option>
+                <option value="">Новые товары</option>
+                <option value="">Старые товары</option>
+            </select>
+        </div>
+        <div class="izbMainProducts">
+            {% for tanlangan in tanlanganlar %}
+                <div class="product rel">
+                    <a href="{% url 'products:tanlangan_remove' tanlangan.id%}">
+                        <button class="messageClose">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </a>
+                    <div class="productImg">
+                        <img src="{{ tanlangan.product.image.url }}" alt="">
+                    </div>
+                    <div class="productBottomInfo">
+                        <span class="productTitle">
+                            {{tanlangan.product.name}}
+                        </span>
+                        <div class="productStar">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <span class="productPrice">${{tanlangan.product.price}}</span>
+                    </div>
+                </div>
+            {% endfor %}
+            {% comment %} <div class="product rel">
+                <button class="messageClose"><i class="fa-solid fa-xmark"></i></button>
+                <div class="productImg">
+                    <img src="https://dlcdnwebimgs.asus.com/gain/6FE37E07-B41F-4238-81D8-433B425405C5" alt="">
+                </div>
+                <div class="productBottomInfo">
+                    <span class="productTitle">
+                        HP Victus 15 RTX 3050 / i5 12400f / 512 GB SSD..
+                    </span>
+                    <div class="productStar">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <span class="productPrice">$1579</span>
+                </div>
+            </div>
+            <div class="product rel">
+                <button class="messageClose"><i class="fa-solid fa-xmark"></i></button>
+                <div class="productImg">
+                    <img src="https://dlcdnwebimgs.asus.com/gain/6FE37E07-B41F-4238-81D8-433B425405C5" alt="">
+                </div>
+                <div class="productBottomInfo">
+                    <span class="productTitle">
+                        HP Victus 15 RTX 3050 / i5 12400f / 512 GB SSD..
+                    </span>
+                    <div class="productStar">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <span class="productPrice">$1579</span>
+                </div>
+            </div> {% endcomment %}
+        </div>
+    </div>
+</div>
+
+{% else %}
+
+<div class="korzinkaPustoy">
+    <ul class="links">
+        <li>Asosiy</li>
+    </ul>
+    <div class="korzinkaPustoyMain">
+        <span>Tanlangan</span>
+        <div class="korzinkaPustoyInfo">
+            <span>Tanlanganlar yo'q</span>
+        </div>
+    </div>
+</div>
+
+{% endif %}
+{% endblock content %}

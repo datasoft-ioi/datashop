@@ -46,9 +46,14 @@
                         <span>Savat</span>
                     </button>
                 </a>
-                <a href="{% url 'products:index' %}">
+
+                <a href="{% url 'products:tanlanganlar' %}">
                     <button>
+                        {% if tanlanganlar %}
+                        <i class="fa-regular fa-heart"></i>
+                        {% else %}
                         <img src="{% static 'media/izbrene.svg' %}" alt="">
+                        {% endif %}
                         <span>Tanlangan</span>
                     </button>
                 </a>

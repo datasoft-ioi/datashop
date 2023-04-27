@@ -13,6 +13,7 @@ productss = []
 # category_links = soup.find_all('div', {'class': 'subcategory-list__item'})
 products_links = soup.find_all('div', {'class': 'product-card__brand-name'})
 
+
 # for link in category_links:
 #     category_name = link.text.strip()
 
@@ -26,6 +27,9 @@ for prod in products_links:
 
 for category in productss:
     print(category)
+
+
+
 
 
 

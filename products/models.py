@@ -67,6 +67,14 @@ class BasketQuerySet(models.QuerySet):
         return sum(basket.quantity for basket in self)
 
 
+class TanlanganQuerySet(models.QuerySet):
+
+    def total_sum(self):
+        return sum(basket.sum() for basket in self)
+
+    def total_quantity(self):
+        return sum(basket.quantity for basket in self)
+
 
 # Savat 
 class Basket(models.Model):
@@ -83,4 +91,21 @@ class Basket(models.Model):
         
     def sum(self):
         return self.product.price * self.quantity
+
+
+class Tanlangan(models.Model):
+    user = models.ForeignKey(to=User, on_delete=models.CASCADE)
+    product = models.ForeignKey(to=Product, on_delete=models.CASCADE)
+    quantity = models.PositiveSmallIntegerField(default=0)
+    created_timestamp = models.DateTimeField(auto_now_add=True)
+
+    objects = TanlanganQuerySet.as_manager()
+
+
+    def __str__(self) -> str:
+        return f"{self.user.username} uchun Savat | Maxsulot: {self.product.name}"
+        
+    def sum(self):
+        return self.product.price * self.quantity
     
+

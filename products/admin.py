@@ -4,7 +4,7 @@ from django.utils.html import format_html
 
 from mptt.admin import DraggableMPTTAdmin
 
-from .models import Product, ProductCategory, Banner, Basket
+from .models import Product, ProductCategory, Banner, Basket, Tanlangan
 
 
 @admin.register(Product)
@@ -71,6 +71,11 @@ class BasketAdmin(admin.TabularInline):
     fields = ('product', 'quantity')
     extra = 0
 
+# @admin.register(Basket)
+class TanlanganAdmin(admin.TabularInline):
+    model = Tanlangan
+    fields = ('product', 'quantity')
+    extra = 1
 
 admin.site.register(Banner)
 

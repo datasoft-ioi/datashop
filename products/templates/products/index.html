@@ -79,7 +79,11 @@
 
                     <div class="productHeader">
                         <span class="new">yangi</span>
-                        <i class="fa-regular fa-heart"></i>
+                        <a href="{% url 'products:tanlangan_add' prod.id%}">
+                            {% comment %} <button class="messageClose"> {% endcomment %}
+                                <i class="fa-regular fa-heart"></i>
+                            {% comment %} </button> {% endcomment %}
+                        </a>
                     </div>
 
                 <div class="productImg">
