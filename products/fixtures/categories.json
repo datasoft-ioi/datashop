@@ -1,0 +1,54 @@
+[
+    {
+        "model": "products.productcategory",
+        "pk": 1,
+        "fields": {
+            "name": "Elektronika",
+            "parent": null,
+            "slug": "elektronika",
+            "lft": 1,
+            "rght": 8,
+            "tree_id": 1,
+            "level": 0
+        }
+    },
+    {
+        "model": "products.productcategory",
+        "pk": 2,
+        "fields": {
+            "name": "Noutbuklar",
+            "parent": 1,
+            "slug": "noutbuklar",
+            "lft": 2,
+            "rght": 7,
+            "tree_id": 1,
+            "level": 1
+        }
+    },
+    {
+        "model": "products.productcategory",
+        "pk": 3,
+        "fields": {
+            "name": "Asus",
+            "parent": 2,
+            "slug": "asus",
+            "lft": 3,
+            "rght": 4,
+            "tree_id": 1,
+            "level": 2
+        }
+    },
+    {
+        "model": "products.productcategory",
+        "pk": 4,
+        "fields": {
+            "name": "HP",
+            "parent": 2,
+            "slug": "hp",
+            "lft": 5,
+            "rght": 6,
+            "tree_id": 1,
+            "level": 2
+        }
+    }
+]

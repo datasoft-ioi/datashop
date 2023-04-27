@@ -1,0 +1,34 @@
+[
+    {
+        "model": "products.product",
+        "pk": 1,
+        "fields": {
+            "name": "Asus ZenBook Pro MX",
+            "description": "dffgdf",
+            "price": "889.00",
+            "quantity": 12,
+            "image": "media/prod_images/5RPRGOs4icgz53GpvuaOzDInLFYn6TyMCfdcAvQN1N38sSRzE9U5rls6ViaN.jpg",
+            "category": [
+                1,
+                2,
+                3
+            ]
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 2,
+        "fields": {
+            "name": "HP Victus 15,6 IPS Full Hd",
+            "description": "asdfasdf",
+            "price": "889.00",
+            "quantity": 24,
+            "image": "media/prod_images/noutbuk-hp-victus-15-fa0028nr-r7-5800h-16512gb-ssd-rtx3050ti-4gb-156-f_t31gjPB.jpg",
+            "category": [
+                1,
+                2,
+                4
+            ]
+        }
+    }
+]
