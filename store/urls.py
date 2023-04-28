@@ -20,13 +20,21 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.views.static import serve
 
+from orders.views import stripe_webhook_view
+
 from products.views import index, products
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", index, name="home"),
     path("products/", include('products.urls', namespace='products')),
+    path('orders/', include('orders.urls', namespace='orders')),
     path("users/", include('users.urls', namespace='users')),
+    path('webhook/stripe/', stripe_webhook_view, name='stripe_webhook'),
+
+
+
+
 
     # vaqtinchalik
     path("test/", products, name="saqlanganlar"),

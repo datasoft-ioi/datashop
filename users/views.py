@@ -64,6 +64,7 @@ def login_view(request):
         else:
             messages.warning(request, 'uzbek raqam kiriting!!!\n(+998)yoddan chiqmasin')
 
+
     return render(request, 'users/login.html')
 
 

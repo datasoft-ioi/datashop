@@ -8,3 +8,4 @@ Pillow
 whitenoise
 twilio
 environs
+stripe
