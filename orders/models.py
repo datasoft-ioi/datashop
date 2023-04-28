@@ -3,12 +3,35 @@ from django.db import models
 from products.models import Basket
 from users.models import User
 
+from django.db import models
+
+class Order(models.Model):
+    DELIVERY_METHOD_CHOICES = [
+        ('pickup', 'Самовывоз'),
+        ('delivery', 'Доставка'),
+    ]
+    PAYMENT_METHOD_CHOICES = [
+        ('click', 'Click'),
+        ('payme', 'Payme'),
+        ('cash', 'Наличными'),
+    ]
+    delivery_method = models.CharField(max_length=20, choices=DELIVERY_METHOD_CHOICES)
+    region = models.CharField(max_length=100)
+    city = models.CharField(max_length=100)
+    address = models.CharField(max_length=200)
+    payment_method = models.CharField(max_length=20, choices=PAYMENT_METHOD_CHOICES)
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    phone_number = models.CharField(max_length=20)
+    additional_phone_number = models.CharField(max_length=20, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
 class Order(models.Model):
     CREATED = 0
     PAID = 1
     ON_WAY = 2
     DELIVERED = 3
+
     STATUSES = (
         (CREATED, 'Создан'),
         (PAID, 'Оплачен'),
@@ -16,8 +39,27 @@ class Order(models.Model):
         (DELIVERED, 'Доставлен'),
     )
 
+    DELIVERY_METHOD_CHOICES = [
+        ('pickup', 'Самовывоз'),
+        ('delivery', 'Доставка'),
+    ]
+
+    PAYMENT_METHOD_CHOICES = [
+        ('click', 'Click'),
+        ('payme', 'Payme'),
+        ('cash', 'Наличными'),
+    ]
+
+    delivery_method = models.CharField(max_length=20, choices=DELIVERY_METHOD_CHOICES)
+    region = models.CharField(max_length=100)
+    city = models.CharField(max_length=100)
+    address = models.CharField(max_length=200)
+    payment_method = models.CharField(max_length=20, choices=PAYMENT_METHOD_CHOICES)   
     first_name = models.CharField(max_length=64)
     last_name = models.CharField(max_length=64)
+    phone_number = models.CharField(max_length=20)
+    additional_phone_number = models.CharField(max_length=20, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     email = models.EmailField(max_length=256)
     address = models.CharField(max_length=256)
     basket_history = models.JSONField(default=dict)
@@ -37,3 +79,4 @@ class Order(models.Model):
         }
         baskets.delete()
         self.save()
+
