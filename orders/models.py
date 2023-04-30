@@ -5,26 +5,26 @@ from users.models import User
 
 from django.db import models
 
-class Order(models.Model):
-    DELIVERY_METHOD_CHOICES = [
-        ('pickup', 'Самовывоз'),
-        ('delivery', 'Доставка'),
-    ]
-    PAYMENT_METHOD_CHOICES = [
-        ('click', 'Click'),
-        ('payme', 'Payme'),
-        ('cash', 'Наличными'),
-    ]
-    delivery_method = models.CharField(max_length=20, choices=DELIVERY_METHOD_CHOICES)
-    region = models.CharField(max_length=100)
-    city = models.CharField(max_length=100)
-    address = models.CharField(max_length=200)
-    payment_method = models.CharField(max_length=20, choices=PAYMENT_METHOD_CHOICES)
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
-    phone_number = models.CharField(max_length=20)
-    additional_phone_number = models.CharField(max_length=20, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
+# class Order(models.Model):
+#     DELIVERY_METHOD_CHOICES = [
+#         ('pickup', 'Самовывоз'),
+#         ('delivery', 'Доставка'),
+#     ]
+#     PAYMENT_METHOD_CHOICES = [
+#         ('click', 'Click'),
+#         ('payme', 'Payme'),
+#         ('cash', 'Наличными'),
+#     ]
+#     delivery_method = models.CharField(max_length=20, choices=DELIVERY_METHOD_CHOICES)
+##     region = models.CharField(max_length=100)
+#     city = models.CharField(max_length=100)
+#     address = models.CharField(max_length=200)
+#     payment_method = models.CharField(max_length=20, choices=PAYMENT_METHOD_CHOICES)
+#     first_name = models.CharField(max_length=100)
+#     last_name = models.CharField(max_length=100)
+#     phone_number = models.CharField(max_length=20)
+#     additional_phone_number = models.CharField(max_length=20, blank=True)
+#     created_at = models.DateTimeField(auto_now_add=True)
 
 class Order(models.Model):
     CREATED = 0

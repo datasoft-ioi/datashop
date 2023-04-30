@@ -78,6 +78,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "products.context_processor.product_category_render",
+                "products.templatetags.shopcountag",
             ],
         },
     },
