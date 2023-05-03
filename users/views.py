@@ -62,10 +62,12 @@ def login_view(request):
             return redirect(f'/users/otp/{profile.uid}')
         
         else:
-            messages.warning(request, 'uzbek raqam kiriting!!!\n(+998)yoddan chiqmasin')
+            messages.warning(request, 'uzbek raqam kiriting!!!\n')
+
 
 
     return render(request, 'users/login.html')
+
 
 
 def logout_view(request):

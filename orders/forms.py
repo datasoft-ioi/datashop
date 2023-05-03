@@ -18,6 +18,7 @@ from orders.models import Order
         
 
 class OrderForm(forms.ModelForm):
+    
     class Meta:
         model = Order
         fields = ['delivery_method', 'region', 'city', 'address', 'payment_method', 'first_name', 'last_name', 'phone_number', 'additional_phone_number']
@@ -35,4 +36,5 @@ class OrderForm(forms.ModelForm):
         widgets = {
             'delivery_method': forms.RadioSelect(),
             'payment_method': forms.RadioSelect(),
+
         }
