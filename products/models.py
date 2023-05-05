@@ -58,15 +58,6 @@ class Banner(models.Model):
         return self.title
     
 
-class BasketQuerySet(models.QuerySet):
-
-    def total_sum(self):
-        return sum(basket.sum() for basket in self)
-
-    def total_quantity(self):
-        return sum(basket.quantity for basket in self)
-
-
 class TanlanganQuerySet(models.QuerySet):
 
     def total_sum(self):
@@ -74,7 +65,15 @@ class TanlanganQuerySet(models.QuerySet):
 
     def total_quantity(self):
         return sum(basket.quantity for basket in self)
+    
 
+class BasketQuerySet(models.QuerySet):
+
+    def total_sum(self):
+        return sum(basket.sum() for basket in self)
+
+    def total_quantity(self):
+        return sum(basket.quantity for basket in self)
 
 # Savat 
 class Basket(models.Model):

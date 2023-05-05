@@ -74,6 +74,7 @@ def logout_view(request):
     auth.logout(request)
     return HttpResponseRedirect(reverse("users:login"))
 
+
 def registration(request):
     if request.method == 'POST':
         username = request.POST.get("username")
