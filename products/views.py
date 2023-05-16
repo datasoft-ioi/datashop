@@ -45,6 +45,18 @@ def basket(request):
     return render(request, 'products/basket.html', context)
 
 
+@login_required
+def tanlangan(request):
+
+    tanlangan = Tanlangan.objects.filter(user=request.user)
+    context = {
+        "tanlanganlar": tanlangan,
+        "total_sum": sum(basket.sum() for basket in tanlangan),
+        "total_quantity": sum(basket.quantity for basket in tanlangan),
+    }
+
+    return render(request, 'products/tanlangan.html', context)
+
 
 @login_required
 def basket_add(request, product_id):
@@ -61,27 +73,6 @@ def basket_add(request, product_id):
 
 
 @login_required
-def basket_remove(request, basket_id):
-
-    basket = Basket.objects.get(id=basket_id)
-    basket.delete()
-
-    return HttpResponseRedirect(request.META['HTTP_REFERER'])
-
-
-@login_required
-def tanlangan(request):
-
-    tanlangan = Tanlangan.objects.filter(user=request.user)
-    context = {
-        "tanlanganlar": tanlangan,
-        "total_sum": sum(basket.sum() for basket in tanlangan),
-        "total_quantity": sum(basket.quantity for basket in tanlangan),
-    }
-
-    return render(request, 'products/tanlangan.html', context)
-
-@login_required
 def tanlangan_add(request, product_id):
     product = Product.objects.get(id=product_id)
     tanlangan = Tanlangan.objects.filter(user=request.user, product=product)
@@ -95,6 +86,14 @@ def tanlangan_add(request, product_id):
     return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
 
+@login_required
+def basket_remove(request, basket_id):
+    basket = Basket.objects.get(id=basket_id)
+    basket.delete()
+
+    return HttpResponseRedirect(request.META['HTTP_REFERER'])
+
+    
 @login_required
 def tanlangan_remove_all(request):
     basket = Tanlangan.objects.all()

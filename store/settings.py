@@ -15,7 +15,6 @@ from pathlib import Path
 from environs import Env
 
 env = Env()
-
 env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -44,10 +43,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
-    'django.contrib.humanize',
 
     "products",
-    "orders",
     "users",
 
 
@@ -78,11 +75,6 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "products.context_processor.product_category_render",
-
-                "products.templatetags.shopcountag",
-
-                # "products.templatetags.shopcountag",
-
             ],
         },
     },
@@ -166,10 +158,3 @@ LOGIN_URL = "/users/login/"
 
 SID_ACCOUNT = env.str("SID_ACCOUNT")
 AUTH_TOKEN_TWLO = env.str("AUTH_TOKEN_TWLO")
-
-
-# Stripe
-
-STRIPE_PUBLIC_KEY = env.str('STRIPE_PUBLIC_KEY')
-STRIPE_SECRET_KEY = env.str('STRIPE_SECRET_KEY')
-STRIPE_WEBHOOK_SECRET = env.str('STRIPE_WEBHOOK_SECRET')

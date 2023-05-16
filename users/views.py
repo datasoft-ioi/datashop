@@ -62,18 +62,14 @@ def login_view(request):
             return redirect(f'/users/otp/{profile.uid}')
         
         else:
-            messages.warning(request, 'uzbek raqam kiriting!!!\n')
-
-
+            messages.warning(request, 'uzbek raqam kiriting!!!\n(+998)yoddan chiqmasin')
 
     return render(request, 'users/login.html')
-
 
 
 def logout_view(request):
     auth.logout(request)
     return HttpResponseRedirect(reverse("users:login"))
-
 
 def registration(request):
     if request.method == 'POST':

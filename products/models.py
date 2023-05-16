@@ -58,15 +58,6 @@ class Banner(models.Model):
         return self.title
     
 
-class TanlanganQuerySet(models.QuerySet):
-
-    def total_sum(self):
-        return sum(basket.sum() for basket in self)
-
-    def total_quantity(self):
-        return sum(basket.quantity for basket in self)
-    
-
 class BasketQuerySet(models.QuerySet):
 
     def total_sum(self):
@@ -74,6 +65,16 @@ class BasketQuerySet(models.QuerySet):
 
     def total_quantity(self):
         return sum(basket.quantity for basket in self)
+
+
+class TanlanganQuerySet(models.QuerySet):
+
+    def total_sum(self):
+        return sum(basket.sum() for basket in self)
+
+    def total_quantity(self):
+        return sum(basket.quantity for basket in self)
+
 
 # Savat 
 class Basket(models.Model):
@@ -90,31 +91,6 @@ class Basket(models.Model):
         
     def sum(self):
         return self.product.price * self.quantity
-
-
-    def de_json(self):
-        basket_item = {
-            'product_name': self.product.name,
-            'quantity': self.quantity,
-            'price': float(self.product.price),
-            'sum': float(self.sum()),
-        }
-        return basket_item
-
-    @classmethod
-    def create_or_update(cls, product_id, user):
-        baskets = Basket.objects.filter(user=user, product_id=product_id)
-
-        if not baskets.exists():
-            obj = Basket.objects.create(user=user, product_id=product_id, quantity=1)
-            is_created = True
-            return obj, is_created
-        else:
-            basket = baskets.first()
-            basket.quantity += 1
-            basket.save()
-            is_crated = False
-            return basket, is_crated
 
 
 class Tanlangan(models.Model):
