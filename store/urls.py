@@ -22,11 +22,15 @@ from django.views.static import serve
 
 from products.views import index, products
 
+from api import urls
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", index, name="home"),
     path("products/", include('products.urls', namespace='products')),
     path("users/", include('users.urls', namespace='users')),
+    path('api-auth/', include('rest_framework.urls')),
+    path('api/', include(urls)),
 
     # vaqtinchalik
     path("test/", products, name="saqlanganlar"),
